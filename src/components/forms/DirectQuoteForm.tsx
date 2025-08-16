@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import confetti from "canvas-confetti";
 
 interface DirectQuoteFormProps {
   source?: string;
@@ -40,26 +41,64 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
     setSubmitStatus("idle");
 
     try {
-      // For now, simulate a successful submission since Supabase is not configured
-      // In production, this would call the actual API
-      console.log("Form data to be sent:", {
-        ...formData,
-        source,
-        type: "quote_request"
+      // Call the simplified contact API
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          source,
+          type: "quote_request"
+        }),
       });
 
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        whatsapp: "",
-        message: ""
-      });
-      alert("Thank you! Your quote request has been received. We'll get back to you within 24 hours.");
+      const result = await response.json();
+
+      if (response.ok && result.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          whatsapp: "",
+          message: ""
+        });
+
+        // Trigger confetti effect
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+        });
+
+        // Second burst for better effect
+        setTimeout(() => {
+          confetti({
+            particleCount: 50,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+          });
+        }, 250);
+
+        setTimeout(() => {
+          confetti({
+            particleCount: 50,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+          });
+        }, 400);
+
+        alert(result.message || "Thank you! Your quote request has been received. We'll get back to you within 24 hours.");
+      } else {
+        throw new Error(result.error || "Failed to submit form");
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");

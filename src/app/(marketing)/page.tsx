@@ -14,7 +14,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Mobile: Image first, Desktop: Text first */}
           <div className="relative order-1 lg:order-2">
-            <div className="aspect-[4/3] bg-arzir-gray-200 rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] lg:aspect-[4/4] bg-arzir-gray-200 rounded-2xl overflow-hidden">
               {/* Placeholder for hero image */}
               <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
                 <div className="text-center">
@@ -184,14 +184,14 @@ export default function HomePage() {
                 </div>
 
                 {/* Floating Stats Cards */}
-                <div className="absolute top-4 left-4 lg:-top-8 lg:-left-8 bg-white rounded-2xl p-3 lg:p-4 shadow-xl border border-arzir-gray-100">
+                <div className="absolute top-6 left-6 lg:top-4 lg:left-4 bg-white rounded-2xl p-3 lg:p-4 shadow-xl border border-arzir-gray-100 z-20">
                   <div className="text-center">
                     <div className="text-lg lg:text-2xl font-bold text-arzir-primary">30,000㎡</div>
                     <div className="text-xs text-arzir-gray-600">Manufacturing Facility</div>
                   </div>
                 </div>
 
-                <div className="absolute bottom-4 right-4 lg:-bottom-8 lg:-right-8 bg-white rounded-2xl p-3 lg:p-4 shadow-xl border border-arzir-gray-100">
+                <div className="absolute bottom-6 right-6 lg:bottom-4 lg:right-4 bg-white rounded-2xl p-3 lg:p-4 shadow-xl border border-arzir-gray-100 z-20">
                   <div className="text-center">
                     <div className="text-lg lg:text-2xl font-bold text-arzir-primary">2012</div>
                     <div className="text-xs text-arzir-gray-600">Founded</div>
@@ -255,7 +255,7 @@ export default function HomePage() {
             },
             {
               title: "Aluminum Processing",
-              description: "Stable extrusion and compacting for clean aluminum streams with precision engineering",
+              description: "Stable extrusion and compacting for clean aluminum streams with precision engineering. Advanced technology for optimal material recovery and processing efficiency.",
               href: "/applications/aluminum-processing",
               image: "⚙️",
               stats: "95% material recovery",
@@ -263,7 +263,7 @@ export default function HomePage() {
             },
             {
               title: "Steel Mills",
-              description: "Handle mill scrap safely and consistently with industrial-grade processing equipment",
+              description: "Handle mill scrap safely and consistently with industrial-grade processing equipment. Designed for continuous operation in demanding steel production environments.",
               href: "/applications/steel-mills",
               image: "🏗️",
               stats: "24/7 operation",
