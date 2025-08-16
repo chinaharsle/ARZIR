@@ -42,7 +42,7 @@ export function SiteFooter() {
                     <Link
                       href={item.href}
                       className="text-gray-300 hover:text-arzir-primary transition-colors text-sm"
-                    >
+                     >
                       {item.title}
                     </Link>
                   </li>
@@ -59,7 +59,7 @@ export function SiteFooter() {
                     <Link
                       href={item.href}
                       className="text-gray-300 hover:text-arzir-primary transition-colors text-sm"
-                    >
+                     >
                       {item.title}
                     </Link>
                   </li>

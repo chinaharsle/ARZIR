@@ -68,7 +68,7 @@ export function SignUpUserSteps() {
             href="https://supabase.com/docs/guides/auth/redirect-urls#vercel-preview-urls"
             target="_blank"
             className="text-primary/50 hover:text-primary flex items-center text-sm gap-1 mt-4"
-          >
+           >
             Redirect URLs Docs <ArrowUpRight size={14} />
           </Link>
         </TutorialStep>

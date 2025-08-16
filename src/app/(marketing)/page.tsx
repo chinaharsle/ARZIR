@@ -65,7 +65,6 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
-
       {/* About Section - Redesigned */}
       <Section background="white" size="xl" className="pt-8 lg:pt-16">
         <div className="relative overflow-hidden">
@@ -203,7 +202,6 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
-
       {/* Products Interactive Section */}
       <Section background="gray">
         <div className="text-center mb-16">
@@ -217,7 +215,6 @@ export default function HomePage() {
 
         <ProductShowcase />
       </Section>
-
       {/* Applications Section - Redesigned */}
       <Section background="white" size="xl">
         <div className="text-center mb-20">
@@ -323,7 +320,6 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
-
       {/* Case Studies Section */}
       <Section background="gray">
         <div className="text-center mb-16">
@@ -384,7 +380,6 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
-
       {/* Bottom CTA Section - Two Column Layout */}
       <Section background="gray">
         <div className="bg-white rounded-3xl p-4 sm:p-6 lg:p-12">

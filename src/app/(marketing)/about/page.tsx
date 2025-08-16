@@ -39,7 +39,6 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
-
       {/* Company Overview */}
       <Section background="white" size="xl">
         <div className="text-center mb-16">
@@ -124,7 +123,6 @@ export default function AboutPage() {
           </Button>
         </div>
       </Section>
-
       {/* Mission, Vision & Values */}
       <Section background="gray" size="xl">
         <div className="text-center mb-20">
@@ -222,7 +220,6 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
-
       {/* Our History */}
       <Section background="white" size="xl">
         <div className="text-center mb-16">
@@ -395,7 +392,6 @@ export default function AboutPage() {
           `
         }} />
       </Section>
-
       {/* Our Team */}
       <Section background="gray">
         <div className="text-center mb-16">
@@ -459,7 +455,6 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
-
       {/* Global Presence */}
       <Section background="white" size="xl">
         <div className="text-center mb-16">
@@ -609,7 +604,6 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
-
       {/* Certifications & Awards */}
       <Section background="gray">
         <div className="text-center mb-16">
@@ -657,7 +651,6 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
-
       {/* Bottom CTA */}
       <Section background="white" size="xl">
         <div className="bg-gradient-to-r from-arzir-primary to-primary-600 rounded-3xl overflow-hidden">

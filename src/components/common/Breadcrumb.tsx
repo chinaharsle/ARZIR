@@ -32,7 +32,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
             <Link
               href={item.href}
               className="text-arzir-gray-500 hover:text-arzir-primary transition-colors"
-            >
+             >
               {item.title}
             </Link>
           )}

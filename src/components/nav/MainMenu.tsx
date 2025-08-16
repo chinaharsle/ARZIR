@@ -49,7 +49,7 @@ function DesktopMenu() {
                         <Link
                           href={child.href}
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-arzir-gray-50 hover:text-arzir-primary focus:bg-arzir-gray-50 focus:text-arzir-primary"
-                        >
+                         >
                           <div className="text-sm font-medium leading-none">
                             {child.title}
                           </div>
@@ -65,7 +65,7 @@ function DesktopMenu() {
                 </NavigationMenuContent>
               </>
             ) : (
-              <Link href={item.href} legacyBehavior passHref>
+              <Link href={item.href} passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   <span className="text-black hover:text-arzir-primary">
                     {item.title}
@@ -99,7 +99,7 @@ function MobileMenu({ onItemClick }: { onItemClick?: () => void }) {
                         href={child.href}
                         onClick={onItemClick}
                         className="block py-2 text-sm text-arzir-gray-600 hover:text-arzir-primary"
-                      >
+                       >
                         {child.title}
                       </Link>
                     ))}
@@ -112,7 +112,7 @@ function MobileMenu({ onItemClick }: { onItemClick?: () => void }) {
                   href={item.href}
                   onClick={onItemClick}
                   className="block text-base font-medium hover:text-arzir-primary"
-                >
+                 >
                   {item.title}
                 </Link>
               </div>

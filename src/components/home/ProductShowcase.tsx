@@ -202,7 +202,6 @@ export function ProductShowcase() {
           </div>
         </div>
       </div>
-
       {/* Right Column - Product Showcase (Desktop Only) */}
       <div className="hidden lg:block bg-white rounded-2xl p-8 shadow-card">
         <div className="space-y-6">
