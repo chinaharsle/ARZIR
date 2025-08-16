@@ -255,7 +255,7 @@ export default function HomePage() {
             },
             {
               title: "Aluminum Processing",
-              description: "Stable extrusion and compacting for clean aluminum streams with precision engineering. Advanced technology for optimal material recovery and processing efficiency.",
+              description: "Stable extrusion and compacting solutions for clean aluminum streams. Advanced technology ensures optimal material recovery rates.",
               href: "/applications/aluminum-processing",
               image: "⚙️",
               stats: "95% material recovery",
@@ -263,7 +263,7 @@ export default function HomePage() {
             },
             {
               title: "Steel Mills",
-              description: "Handle mill scrap safely and consistently with industrial-grade processing equipment. Designed for continuous operation in demanding steel production environments.",
+              description: "Handle mill scrap safely with industrial-grade processing equipment. Designed for continuous operation in demanding production environments.",
               href: "/applications/steel-mills",
               image: "🏗️",
               stats: "24/7 operation",

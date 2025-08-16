@@ -25,16 +25,13 @@ export function SiteFooter() {
                   Powering the Future of Recycling
                 </p>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Leading manufacturer of advanced recycling and metal processing equipment with over 12 years of industry experience.
-                </p>
-                <p className="text-gray-400 text-xs leading-relaxed">
-                  Serving customers in 100+ countries worldwide with comprehensive solutions for recycling and metal processing industries.
+                  Leading manufacturer of advanced recycling and metal processing equipment with over 12 years of industry experience. Committed to delivering innovative solutions that transform waste into valuable resources for a sustainable future.
                 </p>
               </div>
             </div>
 
-            {/* Products Column - Takes 2.67 columns */}
-            <div className="lg:col-span-3">
+            {/* Products Column - Takes 2.5 columns */}
+            <div className="lg:col-span-2">
               <h3 className="text-white text-lg font-semibold mb-6">Products</h3>
               <ul className="space-y-3">
                 {siteConfig.navigation.footer.products.map((item) => (
@@ -50,8 +47,8 @@ export function SiteFooter() {
               </ul>
             </div>
 
-            {/* Company Column - Takes 2.67 columns */}
-            <div className="lg:col-span-3">
+            {/* Company Column - Takes 2.5 columns */}
+            <div className="lg:col-span-2">
               <h3 className="text-white text-lg font-semibold mb-6">Company</h3>
               <ul className="space-y-3">
                 {siteConfig.navigation.footer.company.map((item) => (
@@ -67,13 +64,16 @@ export function SiteFooter() {
               </ul>
             </div>
 
-            {/* Contact Column - Takes 2.67 columns */}
-            <div className="lg:col-span-2">{/* Contact section content remains the same */}
+            {/* Contact Column - Takes 4 columns (increased width) */}
+            <div className="lg:col-span-4">{/* Contact section content remains the same */}
               <h3 className="text-white text-lg font-semibold mb-6">Contact</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-arzir-primary flex-shrink-0 mt-0.5" />
-                  <p className="text-gray-300 text-sm leading-relaxed">{siteConfig.company.address}</p>
+                  <div className="text-gray-300 text-sm leading-relaxed">
+                    <div>Building A1, Industrial Zone</div>
+                    <div>Nanjing, Jiangsu Province, China</div>
+                  </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-arzir-primary flex-shrink-0" />

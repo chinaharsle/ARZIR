@@ -61,7 +61,7 @@ export function QuoteDialog({ children, productSlug, source = "website" }: Quote
   const onSubmit = async (data: LeadFormData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/lead", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,9 @@ export function QuoteDialog({ children, productSlug, source = "website" }: Quote
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.ok) {
         setShowSuccess(true);
         form.reset();
         
@@ -84,19 +86,41 @@ export function QuoteDialog({ children, productSlug, source = "website" }: Quote
           particleCount: 100,
           spread: 70,
           origin: { y: 0.6 },
+          colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
         });
 
-        // Auto close success dialog after 3 seconds
+        // Second burst for better effect
+        setTimeout(() => {
+          confetti({
+            particleCount: 50,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+          });
+        }, 250);
+
+        setTimeout(() => {
+          confetti({
+            particleCount: 50,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+          });
+        }, 400);
+
+        // Auto close success dialog after 4 seconds
         setTimeout(() => {
           setShowSuccess(false);
           setOpen(false);
-        }, 3000);
+        }, 4000);
       } else {
-        throw new Error("Failed to submit form");
+        throw new Error(result.error || "Failed to submit form");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      // Handle error (you might want to show an error toast here)
+      alert("Sorry, there was an error submitting your request. Please try again or contact us directly at info@arzir.com.");
     } finally {
       setIsSubmitting(false);
     }

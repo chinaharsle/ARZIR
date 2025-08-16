@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import confetti from "canvas-confetti";
+import { SuccessNotification } from "@/components/ui/SuccessNotification";
 
 interface DirectQuoteFormProps {
   source?: string;
@@ -20,6 +20,7 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [showSuccessNotification, setShowSuccessNotification] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -66,36 +67,8 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
           message: ""
         });
 
-        // Trigger confetti effect
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
-        });
-
-        // Second burst for better effect
-        setTimeout(() => {
-          confetti({
-            particleCount: 50,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
-          });
-        }, 250);
-
-        setTimeout(() => {
-          confetti({
-            particleCount: 50,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
-          });
-        }, 400);
-
-        alert(result.message || "Thank you! Your quote request has been received. We'll get back to you within 24 hours.");
+        // Show beautiful success notification instead of alert
+        setShowSuccessNotification(true);
       } else {
         throw new Error(result.error || "Failed to submit form");
       }
@@ -109,76 +82,86 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`space-y-4 w-full max-w-none ${className}`}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <>
+      <form onSubmit={handleSubmit} className={`space-y-4 w-full max-w-none ${className}`}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Name *"
+              required
+              className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Email *"
+              required
+              className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
+            />
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <input
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleInputChange}
+              placeholder="Company"
+              className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
+            />
+          </div>
+          <div>
+            <input
+              type="tel"
+              name="whatsapp"
+              value={formData.whatsapp}
+              onChange={handleInputChange}
+              placeholder="WhatsApp"
+              className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
+            />
+          </div>
+        </div>
+        
         <div>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
+          <textarea
+            name="message"
+            value={formData.message}
             onChange={handleInputChange}
-            placeholder="Name *"
+            placeholder="Message *"
             required
-            className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
+            rows={4}
+            className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[96px] text-sm placeholder:text-arzir-gray-500 resize-none"
           />
         </div>
-        <div>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Email *"
-            required
-            className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
-          />
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <input
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={handleInputChange}
-            placeholder="Company"
-            className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
-          />
-        </div>
-        <div>
-          <input
-            type="tel"
-            name="whatsapp"
-            value={formData.whatsapp}
-            onChange={handleInputChange}
-            placeholder="WhatsApp"
-            className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[48px] text-sm placeholder:text-arzir-gray-500"
-          />
-        </div>
-      </div>
-      
-      <div>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleInputChange}
-          placeholder="Message *"
-          required
-          rows={4}
-          className="w-full bg-white rounded-lg p-4 border border-arzir-gray-200 hover:border-arzir-primary/30 focus:border-arzir-primary focus:outline-none transition-colors min-h-[96px] text-sm placeholder:text-arzir-gray-500 resize-none"
-        />
-      </div>
-      
-      <Button 
-        type="submit"
-        size="lg" 
-        disabled={isSubmitting}
-        className="w-full bg-arzir-primary hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-        <ArrowRight className="ml-2 h-5 w-5" />
-      </Button>
-    </form>
+        
+        <Button 
+          type="submit"
+          size="lg" 
+          disabled={isSubmitting}
+          className="w-full bg-arzir-primary hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </Button>
+      </form>
+
+      {/* Success Notification */}
+      <SuccessNotification
+        isOpen={showSuccessNotification}
+        onClose={() => setShowSuccessNotification(false)}
+        title="Thank you!"
+        message="Your quote request has been received. We'll get back to you within 24 hours."
+      />
+    </>
   );
 }
