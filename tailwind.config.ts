@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { themeConfig } from "./src/config/theme";
 
 export default {
   darkMode: ["class"],
@@ -22,7 +23,14 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: themeConfig.colors.primary.DEFAULT,
+          50: themeConfig.colors.primary[50],
+          100: themeConfig.colors.primary[100],
+          500: themeConfig.colors.primary[500],
+          600: themeConfig.colors.primary[600],
+          700: themeConfig.colors.primary[700],
+          800: themeConfig.colors.primary[800],
+          900: themeConfig.colors.primary[900],
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -51,13 +59,43 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        // ARZIR custom colors
+        "arzir-primary": themeConfig.colors.primary.DEFAULT,
+        "arzir-gray": themeConfig.colors.gray,
+        success: themeConfig.colors.success,
+        warning: themeConfig.colors.warning,
+        danger: themeConfig.colors.danger,
+      },
+      fontFamily: {
+        heading: [...themeConfig.fonts.heading],
+        body: [...themeConfig.fonts.body],
+      },
+      maxWidth: {
+        container: themeConfig.spacing.container,
+      },
+      spacing: {
+        section: themeConfig.spacing.section,
+      },
+      boxShadow: {
+        card: themeConfig.shadows.card,
+        "card-hover": themeConfig.shadows["card-hover"],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        card: themeConfig.borderRadius.card,
+        button: themeConfig.borderRadius.button,
+      },
+      transitionDuration: {
+        fast: themeConfig.animation.duration.fast,
+        normal: themeConfig.animation.duration.normal,
+        slow: themeConfig.animation.duration.slow,
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 } satisfies Config;

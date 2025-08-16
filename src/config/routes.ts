@@ -1,0 +1,73 @@
+export const routes = {
+  home: "/",
+  about: "/about",
+  products: {
+    root: "/products",
+    recyclingBaler: "/products/recycling-baler",
+    scrapMetalShear: "/products/scrap-metal-shear", 
+    shredder: "/products/shredder",
+    aluminiumExtrusionPress: "/products/aluminium-extrusion-press",
+    briquettingMachine: "/products/briquetting-machine",
+    // Product details
+    scrapMetalBaler: "/products/scrap-metal-baler",
+    carBodyBaler: "/products/car-body-baler",
+    verticalBaler: "/products/vertical-baler",
+    horizontalBaler: "/products/horizontal-baler",
+    containerShear: "/products/container-shear",
+    gantryShear: "/products/gantry-shear",
+    alligatorShear: "/products/alligator-shear",
+    singleShaftShredder: "/products/single-shaft-shredder",
+    doubleShaftShredder: "/products/double-shaft-shredder",
+    fourShaftShredder: "/products/four-shaft-shredder",
+    hammerShredder: "/products/hammer-shredder",
+  },
+  applications: {
+    root: "/applications",
+    scrapRecycling: "/applications/scrap-recycling",
+    metalFabrication: "/applications/metal-fabrication",
+    automotiveDismantling: "/applications/automotive-dismantling",
+    aluminumProcessing: "/applications/aluminum-processing",
+    steelMills: "/applications/steel-mills",
+    shipbreaking: "/applications/shipbreaking",
+    constructionDemolition: "/applications/construction-demolition-recycling",
+    railwayScrapping: "/applications/railway-scrapping",
+    ewasteRecycling: "/applications/ewaste-recycling",
+    nonFerrousRecycling: "/applications/non-ferrous-recycling",
+  },
+  blog: {
+    root: "/blog",
+    preview: "/blog/preview",
+  },
+  calculator: {
+    root: "/calculator",
+  },
+  contact: "/contact",
+  api: {
+    lead: "/api/lead",
+    revalidate: "/api/revalidate",
+    preview: "/api/preview",
+    geo: "/api/geo",
+  },
+} as const;
+
+export const breadcrumbMap = {
+  [routes.home]: "Home",
+  [routes.about]: "About",
+  [routes.products.root]: "Products",
+  [routes.applications.root]: "Applications",
+  [routes.blog.root]: "Blog",
+  [routes.calculator.root]: "Calculator", 
+  [routes.contact]: "Contact",
+  // Product categories
+  [routes.products.recyclingBaler]: "Recycling Baler",
+  [routes.products.scrapMetalShear]: "Scrap Metal Shear",
+  [routes.products.shredder]: "Shredder",
+  [routes.products.aluminiumExtrusionPress]: "Aluminium Extrusion Press",
+  [routes.products.briquettingMachine]: "Briquetting Machine",
+  // Applications
+  [routes.applications.scrapRecycling]: "Scrap Recycling",
+  [routes.applications.metalFabrication]: "Metal Fabrication",
+  [routes.applications.automotiveDismantling]: "Automotive Dismantling",
+  [routes.applications.aluminumProcessing]: "Aluminum Processing",
+  [routes.applications.steelMills]: "Steel Mills",
+} as const;
