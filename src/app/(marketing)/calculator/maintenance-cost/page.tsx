@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Calculator, RefreshCw, AlertCircle, CheckCircle, Wrench } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface CalculationInputs {
   equipmentType: string;
@@ -47,11 +47,7 @@ export default function MaintenanceCostEstimator() {
   const [inputs, setInputs] = useState<CalculationInputs>(defaultInputs);
   const [results, setResults] = useState<CalculationResults | null>(null);
 
-  useEffect(() => {
-    calculateResults();
-  }, [inputs]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     // Base maintenance rate as percentage of equipment value
     const baseRates = {
       'baler': 0.06,
@@ -146,7 +142,11 @@ export default function MaintenanceCostEstimator() {
       maintenanceStrategy,
       status
     });
-  };
+  }, [inputs]);
+
+  useEffect(() => {
+    calculateResults();
+  }, [calculateResults]);
 
   const resetCalculator = () => {
     setInputs(defaultInputs);

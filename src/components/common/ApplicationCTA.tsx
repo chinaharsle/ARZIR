@@ -4,12 +4,10 @@ import { Section } from "@/components/common/Section";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 
 interface ApplicationCTAProps {
-  applicationName: string;
   formSource: string;
 }
 
 export function ApplicationCTA({ 
-  applicationName, 
   formSource
 }: ApplicationCTAProps) {
   return (

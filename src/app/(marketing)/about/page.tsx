@@ -2,7 +2,6 @@
 
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 import { 
   ArrowRight, 
@@ -362,7 +361,7 @@ export default function AboutPage() {
                   image: "/images/about/journey/2024-innovation.svg",
                   highlight: "Future Ready"
                 }
-              ].map((milestone, index) => (
+              ].map((milestone) => (
                 <div key={milestone.year} className="flex-shrink-0 w-80 snap-center">
                   <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-arzir-gray-200 h-full relative overflow-hidden">
                     {/* Background decoration */}

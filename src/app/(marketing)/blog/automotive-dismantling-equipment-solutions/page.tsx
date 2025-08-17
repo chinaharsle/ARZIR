@@ -1,7 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { ArrowRight, Car, Recycle, Zap } from "lucide-react";
+import { Car, Recycle, Zap } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 

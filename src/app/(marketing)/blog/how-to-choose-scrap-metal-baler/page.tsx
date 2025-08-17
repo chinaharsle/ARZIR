@@ -201,7 +201,7 @@ export default function ScrapMetalBalerGuidePage() {
             <div id="press-force" className="bg-arzir-gray-50 p-6 rounded-xl">
               <h3 className="text-2xl font-heading font-semibold text-black mb-4">Press Force</h3>
               <p className="mb-4">
-                Press force determines the maximum bale density achievable and directly impacts material value. Here's how to match 
+                Press force determines the maximum bale density achievable and directly impacts material value. Here&apos;s how to match 
                 press force to your material mix:
               </p>
               <div className="overflow-x-auto">
@@ -237,7 +237,7 @@ export default function ScrapMetalBalerGuidePage() {
             <div id="bale-size" className="bg-blue-50 p-6 rounded-xl">
               <h3 className="text-2xl font-heading font-semibold text-black mb-4">Bale Size</h3>
               <p className="mb-4">
-                Bale dimensions must match your customers' handling equipment and furnace specifications. Standard sizes include:
+                Bale dimensions must match your customers&apos; handling equipment and furnace specifications. Standard sizes include:
               </p>
               <ul className="space-y-2">
                 <li><strong>1.1 x 1.1 x 1.6m:</strong> Standard for mixed scrap, fits most truck configurations</li>
@@ -256,7 +256,7 @@ export default function ScrapMetalBalerGuidePage() {
               Cycle Time & Energy Efficiency
             </h2>
             <p>
-              Productivity depends on the balance between cycle time and bale quality. Faster cycles don't always mean higher throughput 
+              Productivity depends on the balance between cycle time and bale quality. Faster cycles don&apos;t always mean higher throughput 
               if bale density suffers. Key considerations:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

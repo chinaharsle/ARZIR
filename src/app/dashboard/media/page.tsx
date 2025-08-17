@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -11,13 +11,11 @@ import {
   Upload, 
   Search, 
   Grid3X3, 
-  List, 
-  Filter,
+  List,
   Image as ImageIcon,
   File,
   Trash2,
   Copy,
-  Download,
   Eye,
   Edit
 } from "lucide-react";
@@ -142,7 +140,7 @@ const mockMediaFiles: MediaFile[] = [
 
 export default function MediaLibraryPage() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(true);
   const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([]);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -245,7 +243,7 @@ export default function MediaLibraryPage() {
         const filePath = `${fileName}`;
 
         // Upload file to Supabase Storage
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const { error: uploadError } = await supabase.storage
           .from('media')
           .upload(filePath, file);
 
@@ -267,7 +265,7 @@ export default function MediaLibraryPage() {
         }
 
         // Save file metadata to database
-        const { data: mediaData, error: mediaError } = await supabase
+        const { error: mediaError } = await supabase
           .from('media')
           .insert({
             filename: fileName,

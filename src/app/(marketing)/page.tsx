@@ -285,7 +285,7 @@ export default function HomePage() {
               stats: "1000+ ton capacity",
               color: "from-teal-500 to-blue-600"
             }
-          ].map((application, index) => (
+          ].map((application) => (
             <div key={application.title} className="group cursor-pointer">
               <Link href={application.href}>
                 <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-arzir-gray-100 overflow-hidden">

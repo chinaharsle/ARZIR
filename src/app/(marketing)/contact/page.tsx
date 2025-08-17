@@ -78,8 +78,8 @@ export default function ContactPage() {
       });
 
       // Trigger confetti animation
-      if (typeof window !== 'undefined' && (window as any).confetti) {
-        (window as any).confetti({
+      if (typeof window !== 'undefined' && (window as Window & { confetti?: (options: { particleCount: number; spread: number; origin: { y: number } }) => void }).confetti) {
+        (window as Window & { confetti: (options: { particleCount: number; spread: number; origin: { y: number } }) => void }).confetti({
           particleCount: 100,
           spread: 70,
           origin: { y: 0.6 }

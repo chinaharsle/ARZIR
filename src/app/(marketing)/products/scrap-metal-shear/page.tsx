@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -170,7 +170,7 @@ export default function ScrapMetalShearPage() {
             Shear Models
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product, index) => (
+            {products.map((product) => (
               <div key={product.title} className="group h-full">
                 <Link href={product.href}>
                   <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full flex flex-col">
@@ -243,7 +243,7 @@ export default function ScrapMetalShearPage() {
             Applications
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {applications.map((app, index) => (
+            {applications.map((app) => (
               <div key={app.title} className="bg-white p-6 rounded-xl shadow-sm border border-arzir-gray-100 text-center space-y-3">
                 <h3 className="text-lg font-heading font-semibold text-black">
                   {app.title}

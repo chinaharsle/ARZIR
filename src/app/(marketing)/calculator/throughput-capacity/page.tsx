@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Calculator, RefreshCw, AlertCircle, CheckCircle, Factory } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface CalculationInputs {
   targetThroughput: number;
@@ -45,11 +45,7 @@ export default function ThroughputCapacityCalculator() {
   const [inputs, setInputs] = useState<CalculationInputs>(defaultInputs);
   const [results, setResults] = useState<CalculationResults | null>(null);
 
-  useEffect(() => {
-    calculateResults();
-  }, [inputs]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     // Material processing factors
     const materialFactors = {
       'mixed_scrap': 1.0,
@@ -116,7 +112,11 @@ export default function ThroughputCapacityCalculator() {
       configuration,
       status
     });
-  };
+  }, [inputs]);
+
+  useEffect(() => {
+    calculateResults();
+  }, [calculateResults]);
 
   const resetCalculator = () => {
     setInputs(defaultInputs);

@@ -8,8 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Calculator, RefreshCw, AlertCircle, CheckCircle } from "lucide-react";
-import { useState, useEffect } from "react";
-import type { Metadata } from "next";
+import { useState, useEffect, useCallback } from "react";
 
 interface CalculationInputs {
   dailyThroughput: number;
@@ -45,11 +44,7 @@ export default function ScrapBalerSizingCalculator() {
   const [results, setResults] = useState<CalculationResults | null>(null);
 
   // Auto-calculate when inputs change
-  useEffect(() => {
-    calculateResults();
-  }, [inputs]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     const hourlyThroughput = inputs.dailyThroughput / inputs.operatingHours;
     
     // Base calculations (simplified for demo)
@@ -105,7 +100,11 @@ export default function ScrapBalerSizingCalculator() {
       status,
       efficiency: Math.round(efficiency)
     });
-  };
+  }, [inputs]);
+
+  useEffect(() => {
+    calculateResults();
+  }, [calculateResults]);
 
   const resetCalculator = () => {
     setInputs(defaultInputs);

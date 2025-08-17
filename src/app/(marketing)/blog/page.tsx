@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight, Search, Clock, User } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import type { Metadata } from "next";
 
 const blogPosts = [
   {

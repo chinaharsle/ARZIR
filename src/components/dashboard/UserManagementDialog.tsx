@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Plus, Shield, UserPlus, Mail, Phone, Building, Calendar } from "lucide-react";
+import { Users, Shield, UserPlus, Mail, Calendar } from "lucide-react";
 import { useState } from "react";
 
 interface User {

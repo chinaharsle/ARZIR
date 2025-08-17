@@ -1,6 +1,4 @@
 import { Section } from "@/components/common/Section";
-import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 import { ArrowRight, CheckCircle, Globe, Shield } from "lucide-react";
 import Link from "next/link";
@@ -157,7 +155,7 @@ export default function ApplicationsPage() {
       {/* Applications Grid */}
       <Section background="gray" size="xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {applications.map((application, index) => (
+          {applications.map((application) => (
             <div key={application.title} className="group">
               <Link href={application.href}>
                 <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">
@@ -212,7 +210,7 @@ export default function ApplicationsPage() {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {advantages.map((advantage, index) => (
+          {advantages.map((advantage) => (
             <div key={advantage.title} className="text-center space-y-4">
               <div className="w-16 h-16 bg-arzir-primary/10 rounded-2xl flex items-center justify-center mx-auto">
                 <advantage.icon className="h-8 w-8 text-arzir-primary" />

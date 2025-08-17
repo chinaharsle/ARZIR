@@ -1,8 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
-import { ArrowRight, Calculator, Clock, TrendingUp } from "lucide-react";
+import { ArrowRight, Calculator, Clock } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -94,7 +93,7 @@ export default function CalculatorPage() {
       {/* Calculator Grid */}
       <Section background="white" size="xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {calculators.map((calculator, index) => (
+          {calculators.map((calculator) => (
             <div key={calculator.title} className="group">
               <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">
                 {/* Header */}
@@ -113,8 +112,8 @@ export default function CalculatorPage() {
                     <span className="px-2 py-1 bg-arzir-primary/10 text-arzir-primary rounded-md text-xs font-medium">
                       {calculator.category}
                     </span>
-                    {calculator.tags.slice(1).map((tag, tagIndex) => (
-                      <span key={tagIndex} className="px-2 py-1 bg-arzir-gray-100 text-arzir-gray-600 rounded-md text-xs">
+                    {calculator.tags.slice(1).map((tag) => (
+                      <span key={tag} className="px-2 py-1 bg-arzir-gray-100 text-arzir-gray-600 rounded-md text-xs">
                         {tag}
                       </span>
                     ))}

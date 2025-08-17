@@ -39,115 +39,15 @@ interface MediaSelectorProps {
   selectedFile?: MediaFile | null;
 }
 
-// Mock data - in real app this would come from API
-const mockMediaFiles: MediaFile[] = [
-  {
-    id: "1",
-    filename: "recycling-baler-hero.jpg",
-    original_filename: "Y82-160-Recycling-Baler-Hero.jpg",
-    file_size: 245678,
-    mime_type: "image/jpeg",
-    file_path: "images/products/recycling-baler-hero.jpg",
-    alt_text: "Y82-160 Recycling Baler in Industrial Setting",
-    caption: "High-performance vertical baler for optimal material compression",
-    width: 1920,
-    height: 1080,
-    created_at: "2025-08-15T10:30:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 5,
-    tags: ["product", "baler", "recycling"]
-  },
-  {
-    id: "2", 
-    filename: "scrap-metal-shear-action.jpg",
-    original_filename: "Q43-2000-Alligator-Shear-Action.jpg",
-    file_size: 198432,
-    mime_type: "image/jpeg",
-    file_path: "images/products/scrap-metal-shear-action.jpg",
-    alt_text: "Q43-2000 Alligator Shear cutting metal bars",
-    caption: "Heavy-duty alligator shear demonstrating cutting capability",
-    width: 1600,
-    height: 900,
-    created_at: "2025-08-14T14:20:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 3,
-    tags: ["product", "shear", "metal"]
-  },
-  {
-    id: "3",
-    filename: "automotive-recycling-facility.jpg", 
-    original_filename: "Automotive-Recycling-Facility-Overview.jpg",
-    file_size: 312456,
-    mime_type: "image/jpeg",
-    file_path: "images/applications/automotive-recycling-facility.jpg",
-    alt_text: "Modern automotive recycling facility with ARZIR equipment",
-    caption: "Complete automotive dismantling solution",
-    width: 2048,
-    height: 1152,
-    created_at: "2025-08-13T09:15:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 8,
-    tags: ["application", "automotive", "facility"]
-  },
-  {
-    id: "4",
-    filename: "aluminum-extrusion-process.jpg",
-    original_filename: "Y32-1000T-Extrusion-Press-Process.jpg", 
-    file_size: 267890,
-    mime_type: "image/jpeg",
-    file_path: "images/products/aluminum-extrusion-process.jpg",
-    alt_text: "Y32-1000T Extrusion Press aluminum forming process",
-    caption: "High-capacity hydraulic press for aluminum profile extrusion",
-    width: 1800,
-    height: 1013,
-    created_at: "2025-08-12T16:45:00Z",
-    uploaded_by: "admin@arzir.com", 
-    usage_count: 2,
-    tags: ["product", "extrusion", "aluminum"]
-  },
-  {
-    id: "5",
-    filename: "four-shaft-shredder-components.jpg",
-    original_filename: "PSL-4080-Four-Shaft-Shredder-Components.jpg",
-    file_size: 189234,
-    mime_type: "image/jpeg", 
-    file_path: "images/products/four-shaft-shredder-components.jpg",
-    alt_text: "PSL-4080 Four-Shaft Shredder component breakdown",
-    caption: "Industrial four-shaft shredder design and components",
-    width: 1600,
-    height: 1200,
-    created_at: "2025-08-11T11:30:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 1,
-    tags: ["product", "shredder", "components"]
-  },
-  {
-    id: "6",
-    filename: "arzir-factory-tour.jpg",
-    original_filename: "ARZIR-Manufacturing-Facility-Tour.jpg",
-    file_size: 423567,
-    mime_type: "image/jpeg",
-    file_path: "images/company/arzir-factory-tour.jpg", 
-    alt_text: "ARZIR manufacturing facility interior",
-    caption: "State-of-the-art manufacturing facility",
-    width: 2400,
-    height: 1350,
-    created_at: "2025-08-10T08:00:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 12,
-    tags: ["company", "factory", "manufacturing"]
-  }
-];
-
 export function MediaSelector({ isOpen, onClose, onSelect, selectedFile }: MediaSelectorProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([]);
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
-  const supabase = createClient();
 
   // Fetch media files from Supabase
   const fetchMediaFiles = async () => {
+    const supabase = createClient();
     setLoading(true);
     try {
       const { data, error } = await supabase
@@ -191,7 +91,7 @@ export function MediaSelector({ isOpen, onClose, onSelect, selectedFile }: Media
     if (isOpen) {
       fetchMediaFiles();
     }
-  }, [isOpen]);
+  }, [isOpen]); // Added fetchMediaFiles to dependencies would cause infinite loop, so we'll use callback pattern
 
   const formatFileSize = (bytes: number) => {
     if (bytes === 0) return '0 Bytes';
@@ -219,6 +119,7 @@ export function MediaSelector({ isOpen, onClose, onSelect, selectedFile }: Media
     const files = event.target.files;
     if (!files || files.length === 0) return;
 
+    const supabase = createClient();
     setUploading(true);
 
     try {
@@ -236,7 +137,7 @@ export function MediaSelector({ isOpen, onClose, onSelect, selectedFile }: Media
         const filePath = `${fileName}`;
 
         // Upload file to Supabase Storage
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const { error: uploadError } = await supabase.storage
           .from('media')
           .upload(filePath, file);
 
@@ -258,7 +159,7 @@ export function MediaSelector({ isOpen, onClose, onSelect, selectedFile }: Media
         }
 
         // Save file metadata to database
-        const { data: mediaData, error: mediaError } = await supabase
+        const { error: mediaError } = await supabase
           .from('media')
           .insert({
             filename: fileName,

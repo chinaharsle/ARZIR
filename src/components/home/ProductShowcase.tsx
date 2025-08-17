@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Shield, Wrench, Globe } from "lucide-react";
 import Link from "next/link";

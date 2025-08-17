@@ -3,7 +3,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Building, MessageSquare, Calendar, User, Globe } from "lucide-react";
+import { Mail, Building, MessageSquare, User, Globe } from "lucide-react";
 
 interface Inquiry {
   id: number;

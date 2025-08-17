@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Calculator, RefreshCw, AlertCircle, CheckCircle, Zap } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface CalculationInputs {
   materialType: string;
@@ -43,11 +43,7 @@ export default function ShredderPowerCalculator() {
   const [inputs, setInputs] = useState<CalculationInputs>(defaultInputs);
   const [results, setResults] = useState<CalculationResults | null>(null);
 
-  useEffect(() => {
-    calculateResults();
-  }, [inputs]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     // Material hardness factors
     const materialFactors = {
       'mixed_metal': 1.0,
@@ -105,7 +101,11 @@ export default function ShredderPowerCalculator() {
       efficiency: Math.round(efficiency),
       status
     });
-  };
+  }, [inputs]);
+
+  useEffect(() => {
+    calculateResults();
+  }, [calculateResults]);
 
   const resetCalculator = () => {
     setInputs(defaultInputs);

@@ -1,6 +1,5 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -137,7 +136,7 @@ export default function ProductsPage() {
             Our Products
           </h1>
           <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore ARZIR's complete range of high-performance recycling and metal processing machinery.
+            Explore ARZIR&apos;s complete range of high-performance recycling and metal processing machinery.
           </p>
         </div>
       </Section>
@@ -164,7 +163,7 @@ export default function ProductsPage() {
 
             {/* Products Grid */}
             <div className={`grid grid-cols-1 md:grid-cols-2 ${category.products.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-6`}>
-              {category.products.map((product, productIndex) => (
+              {category.products.map((product) => (
                 <div key={product.title} className="group">
                   <Link href={product.href}>
                     <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">

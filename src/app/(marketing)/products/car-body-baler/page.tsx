@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Truck, Wrench, Shield, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -184,7 +184,7 @@ export default function CarBodyBalerPage() {
             Technical Specifications
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {specifications.map((spec, index) => (
+            {specifications.map((spec) => (
               <div key={spec.parameter} className="bg-arzir-gray-50 p-6 rounded-xl">
                 <h3 className="text-lg font-heading font-semibold text-black mb-2">
                   {spec.parameter}
@@ -208,7 +208,7 @@ export default function CarBodyBalerPage() {
             Key Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div key={feature.title} className="bg-white p-6 rounded-xl shadow-sm border border-arzir-gray-100">
                 <div className="flex items-start gap-4">
                   <div className="text-4xl">{feature.icon}</div>
@@ -268,7 +268,7 @@ export default function CarBodyBalerPage() {
             Economic Benefits
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
+            {benefits.map((benefit) => (
               <div key={benefit.title} className="bg-white p-6 rounded-xl shadow-sm border border-arzir-gray-100 text-center space-y-4">
                 <div className="text-3xl font-bold text-arzir-primary">
                   {benefit.metric}

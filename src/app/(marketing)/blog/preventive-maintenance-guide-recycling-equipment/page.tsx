@@ -1,7 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { ArrowRight, Wrench, CheckCircle, Calendar } from "lucide-react";
+import { ArrowRight, Wrench, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -220,7 +220,7 @@ export default function PreventiveMaintenanceBlogPost() {
               </p>
               
               <div className="space-y-8">
-                {maintenanceSchedules.map((schedule, index) => (
+                {maintenanceSchedules.map((schedule) => (
                   <div key={schedule.equipment} className="border border-arzir-gray-200 rounded-xl p-6">
                     <h3 className="text-xl font-semibold text-black mb-4">{schedule.equipment}</h3>
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
@@ -292,7 +292,7 @@ export default function PreventiveMaintenanceBlogPost() {
               </p>
               
               <div className="space-y-6">
-                {commonIssues.map((issue, index) => (
+                {commonIssues.map((issue) => (
                   <div key={issue.issue} className="bg-arzir-gray-50 p-6 rounded-xl">
                     <h3 className="text-lg font-semibold text-black mb-4">{issue.issue}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -381,7 +381,7 @@ export default function PreventiveMaintenanceBlogPost() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {bestPractices.map((category, index) => (
+                {bestPractices.map((category) => (
                   <div key={category.category} className="bg-white border border-arzir-gray-200 p-6 rounded-xl">
                     <h3 className="text-lg font-semibold text-black mb-4">{category.category}</h3>
                     <div className="space-y-3">

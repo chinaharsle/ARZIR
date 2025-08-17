@@ -10,12 +10,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { 
   Mail, 
-  Phone, 
   Building, 
   MessageSquare, 
-  Calendar, 
   User, 
-  Globe, 
   ArrowLeft,
   Save,
   Edit3
@@ -117,9 +114,9 @@ const capitalizePriority = (priority: string) => {
 export default function InquiryDetailPage() {
   const router = useRouter();
   const params = useParams();
-  const [inquiry, setInquiry] = useState<any>(null);
+  const [inquiry, setInquiry] = useState<Record<string, unknown> | null>(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState<any>({});
+  const [formData, setFormData] = useState<Record<string, unknown>>({});
   const [loading, setLoading] = useState(true);
   const supabase = createClient();
 

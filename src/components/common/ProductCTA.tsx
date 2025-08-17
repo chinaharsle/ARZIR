@@ -4,14 +4,12 @@ import { Section } from "@/components/common/Section";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 
 interface ProductCTAProps {
-  productName: string;
   formSource: string;
   title?: string;
   description?: string;
 }
 
 export function ProductCTA({ 
-  productName, 
   formSource,
   title,
   description

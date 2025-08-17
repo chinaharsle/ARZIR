@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 
 interface RichTextEditorProps {
   value: string;
@@ -17,6 +17,16 @@ export function RichTextEditor({
 }: RichTextEditorProps) {
   const editorRef = useRef<unknown>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const onChangeRef = useRef(onChange);
+
+  // Keep onChange ref up to date
+  useEffect(() => {
+    onChangeRef.current = onChange;
+  }, [onChange]);
+
+  const stableOnChange = useCallback((content: string) => {
+    onChangeRef.current(content);
+  }, []);
 
   useEffect(() => {
     let editorInstance: unknown = null;
@@ -178,7 +188,7 @@ export function RichTextEditor({
             
             (editor as { on: (event: string, callback: () => void) => void }).on('change keyup paste input', () => {
               const content = (editor as { getContent: () => string }).getContent();
-              onChange(content);
+              stableOnChange(content);
             });
           }
         });
@@ -196,7 +206,7 @@ export function RichTextEditor({
         }
       }
     };
-  }, [height, placeholder, onChange]); // Include onChange in dependencies
+  }, [height, placeholder, stableOnChange, value]); // Use stable onChange reference
 
   // Update content when value prop changes
   useEffect(() => {

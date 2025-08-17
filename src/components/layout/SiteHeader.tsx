@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
 import { MainMenu } from "@/components/nav/MainMenu";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { cn } from "@/lib/utils";
@@ -12,8 +11,6 @@ import { Menu, X } from "lucide-react";
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 

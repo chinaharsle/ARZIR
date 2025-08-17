@@ -241,7 +241,7 @@ export default function ScrapMetalBalerPage() {
             Why Choose ARZIR Scrap Metal Baler
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {keyFeatures.map((feature, index) => (
+            {keyFeatures.map((feature) => (
               <div key={feature.title} className="bg-white p-6 rounded-xl shadow-sm border border-arzir-gray-100">
                 <div className="space-y-4">
                   <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center">
@@ -336,7 +336,7 @@ export default function ScrapMetalBalerPage() {
             Applications
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {applications.map((app, index) => (
+            {applications.map((app) => (
               <div key={app.title} className="group">
                 <Link href={app.href}>
                   <div className="bg-arzir-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 text-center space-y-4">
@@ -366,7 +366,7 @@ export default function ScrapMetalBalerPage() {
             Customer Success Stories
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <div key={study.title} className="bg-white p-8 rounded-xl shadow-sm border border-arzir-gray-100">
                 <div className="space-y-4">
                   <h3 className="text-xl font-heading font-semibold text-black">

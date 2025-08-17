@@ -154,7 +154,7 @@ export default function MaximizingROIBlogPost() {
           <div className="space-y-8">
             <div>
               <p className="text-lg leading-relaxed text-arzir-gray-700">
-                In today's competitive scrap metal market, maximizing return on investment (ROI) requires a systematic approach to operational excellence. Whether you're running a small scrap yard or a large-scale processing facility, the principles of profitable operation remain consistent: optimize equipment utilization, streamline processes, and focus on value-added activities.
+                In today&apos;s competitive scrap metal market, maximizing return on investment (ROI) requires a systematic approach to operational excellence. Whether you&apos;re running a small scrap yard or a large-scale processing facility, the principles of profitable operation remain consistent: optimize equipment utilization, streamline processes, and focus on value-added activities.
               </p>
             </div>
 
@@ -165,7 +165,7 @@ export default function MaximizingROIBlogPost() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {roiStrategies.map((strategy, index) => (
+                {roiStrategies.map((strategy) => (
                   <div key={strategy.strategy} className="bg-arzir-gray-50 p-6 rounded-xl">
                     <div className="space-y-4">
                       <div className="flex items-start justify-between">
@@ -205,7 +205,7 @@ export default function MaximizingROIBlogPost() {
               </p>
               
               <div className="space-y-4">
-                {costReductionAreas.map((area, index) => (
+                {costReductionAreas.map((area) => (
                   <div key={area.area} className="border border-arzir-gray-200 rounded-lg p-6">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-lg font-semibold text-black">{area.area}</h3>
@@ -230,7 +230,7 @@ export default function MaximizingROIBlogPost() {
               </p>
               
               <div className="space-y-6">
-                {revenueEnhancement.map((method, index) => (
+                {revenueEnhancement.map((method) => (
                   <div key={method.method} className="flex gap-6 p-6 bg-white border border-arzir-gray-200 rounded-xl">
                     <div className="w-12 h-12 bg-arzir-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <TrendingUp className="h-6 w-6 text-arzir-primary" />

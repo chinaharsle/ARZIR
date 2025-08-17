@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Calculator, RefreshCw, AlertCircle, CheckCircle, Target } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface CalculationInputs {
   materialType: string;
@@ -47,11 +47,7 @@ export default function BaleDensityOptimizer() {
   const [inputs, setInputs] = useState<CalculationInputs>(defaultInputs);
   const [results, setResults] = useState<CalculationResults | null>(null);
 
-  useEffect(() => {
-    calculateResults();
-  }, [inputs]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     // Material density potentials
     const materialPotentials = {
       'mixed_steel': { max: 1.8, optimal: 1.5 },
@@ -111,7 +107,11 @@ export default function BaleDensityOptimizer() {
       netBenefit: Math.round(netBenefit),
       status
     });
-  };
+  }, [inputs]);
+
+  useEffect(() => {
+    calculateResults();
+  }, [calculateResults]);
 
   const resetCalculator = () => {
     setInputs(defaultInputs);

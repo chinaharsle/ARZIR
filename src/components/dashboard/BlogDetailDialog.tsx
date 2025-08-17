@@ -3,11 +3,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Eye, Edit, Calendar, User, Plus } from "lucide-react";
+import { Eye, Edit, Calendar, User } from "lucide-react";
 import { useState } from "react";
 import { BlogEditor } from "./BlogEditor";
 
@@ -29,25 +25,6 @@ interface BlogDialogProps {
 
 export function BlogDetailDialog({ post, isOpen, onClose, isCreating = false }: BlogDialogProps) {
   const [showEditor, setShowEditor] = useState(isCreating);
-  const [formData, setFormData] = useState({
-    title: post?.title || "",
-    status: post?.status || "draft",
-    content: "",
-    excerpt: "",
-    category: "Industry News",
-    tags: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Blog post saved:", formData);
-    onClose();
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
 
   const handleEdit = () => {
     setShowEditor(true);
@@ -63,7 +40,7 @@ export function BlogDetailDialog({ post, isOpen, onClose, isCreating = false }: 
       excerpt: "",
       category: "Industry News",
       tags: [],
-      status: post.status as any,
+      status: post.status as "draft" | "published" | "archived",
       author: post.author,
       locale: "en"
     } : undefined;

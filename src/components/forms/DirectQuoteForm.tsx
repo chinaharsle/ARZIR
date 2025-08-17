@@ -19,7 +19,6 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [showSuccessNotification, setShowSuccessNotification] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -39,7 +38,6 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
     }
 
     setIsSubmitting(true);
-    setSubmitStatus("idle");
 
     try {
       // Call the simplified contact API
@@ -58,7 +56,6 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
       const result = await response.json();
 
       if (response.ok && result.ok) {
-        setSubmitStatus("success");
         setFormData({
           name: "",
           email: "",
@@ -74,7 +71,6 @@ export function DirectQuoteForm({ source = "direct_form", className = "" }: Dire
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setSubmitStatus("error");
       alert("Sorry, there was an error submitting your request. Please try again or contact us directly at info@arzir.com.");
     } finally {
       setIsSubmitting(false);

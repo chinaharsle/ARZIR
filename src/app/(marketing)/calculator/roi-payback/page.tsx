@@ -4,11 +4,10 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Calculator, RefreshCw, AlertCircle, CheckCircle, TrendingUp } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface CalculationInputs {
   equipmentCost: number;
@@ -49,11 +48,7 @@ export default function ROIPaybackCalculator() {
   const [inputs, setInputs] = useState<CalculationInputs>(defaultInputs);
   const [results, setResults] = useState<CalculationResults | null>(null);
 
-  useEffect(() => {
-    calculateResults();
-  }, [inputs]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     const totalInvestment = inputs.equipmentCost + inputs.installationCost;
     const totalOperatingCosts = inputs.operatingCosts + inputs.maintenanceCosts + 
                                inputs.energyCosts + inputs.laborCosts + inputs.materialCosts;
@@ -104,7 +99,11 @@ export default function ROIPaybackCalculator() {
       breakEvenPoint: Math.round(breakEvenPoint * 10) / 10,
       status
     });
-  };
+  }, [inputs]);
+
+  useEffect(() => {
+    calculateResults();
+  }, [calculateResults]);
 
   const resetCalculator = () => {
     setInputs(defaultInputs);

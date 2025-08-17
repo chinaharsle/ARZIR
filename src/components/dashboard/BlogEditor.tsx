@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,7 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { 
   ArrowLeft, 
   Save, 
@@ -84,7 +82,6 @@ export function BlogEditor({ post, isOpen, onClose, isCreating = false }: BlogEd
   const [isSaving, setIsSaving] = useState(false);
   const [newTag, setNewTag] = useState("");
   const [seoScore, setSeoScore] = useState(0);
-  const router = useRouter();
 
   // Auto-generate slug from title
   useEffect(() => {
@@ -97,7 +94,7 @@ export function BlogEditor({ post, isOpen, onClose, isCreating = false }: BlogEd
         .trim();
       setFormData(prev => ({ ...prev, slug }));
     }
-  }, [formData.title, isCreating]);
+  }, [formData.title, formData.slug, isCreating]);
 
   // Calculate SEO score
   useEffect(() => {
@@ -132,7 +129,7 @@ export function BlogEditor({ post, isOpen, onClose, isCreating = false }: BlogEd
     setSeoScore(score);
   }, [formData]);
 
-  const handleInputChange = (field: keyof BlogPost, value: any) => {
+  const handleInputChange = (field: keyof BlogPost, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -520,7 +517,7 @@ export function BlogEditor({ post, isOpen, onClose, isCreating = false }: BlogEd
             <CardContent className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="status">Status</Label>
-                <Select value={formData.status} onValueChange={(value: any) => handleInputChange("status", value)}>
+                <Select value={formData.status} onValueChange={(value: BlogPost['status']) => handleInputChange("status", value)}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
