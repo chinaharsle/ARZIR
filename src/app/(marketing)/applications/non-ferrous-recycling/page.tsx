@@ -300,7 +300,7 @@ export default function NonFerrousRecyclingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="non ferrous recycling"
+        
         formSource="non-ferrous-recycling_bottom" 
       />
     </>

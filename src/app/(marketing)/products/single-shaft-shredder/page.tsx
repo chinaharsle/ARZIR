@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -367,7 +366,7 @@ export default function SingleShaftShredderPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="single-shaft-shredder"
+        
         formSource="single-shaft-shredder_bottom" 
       />
     </>

@@ -307,7 +307,7 @@ export default function CableRecyclingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="cable recycling"
+        
         formSource="cable-recycling_bottom" 
       />
     </>

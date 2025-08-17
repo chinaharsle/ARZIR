@@ -289,7 +289,7 @@ export default function EwasteRecyclingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="ewaste recycling"
+        
         formSource="ewaste-recycling_bottom" 
       />
     </>

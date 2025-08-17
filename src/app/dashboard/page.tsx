@@ -8,8 +8,7 @@ import {
   MessageSquare, 
   FileText, 
   BarChart3, 
-  Settings, 
-  Mail,
+  Settings,
   TrendingUp,
   Eye,
   Edit,
@@ -18,11 +17,20 @@ import {
   LogOut,
   Image
 } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { BlogDetailDialog } from "@/components/dashboard/BlogDetailDialog";
 import type { User } from "@supabase/supabase-js";
+
+interface BlogPost {
+  id: number;
+  title: string;
+  status: string;
+  author: string;
+  publishedAt: string | null;
+  views: number;
+}
 
 // Mock data for stats
 const dashboardStats = [
@@ -100,12 +108,8 @@ export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState("overview");
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedInquiry] = useState<Record<string, unknown> | null>(null);
   const [selectedBlogPost, setSelectedBlogPost] = useState<Record<string, unknown> | null>(null);
-  const [showInquiryDetail, setShowInquiryDetail] = useState(false);
   const [showBlogDetail, setShowBlogDetail] = useState(false);
-  const [showCreateBlog, setShowCreateBlog] = useState(false);
-  const [showUserManagement, setShowUserManagement] = useState(false);
   
   // Delete confirmation states
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -121,7 +125,7 @@ export default function DashboardPage() {
   const supabase = createClient();
   const initialDataLoaded = useRef(false);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setDataLoading(true);
       
@@ -165,7 +169,7 @@ export default function DashboardPage() {
     } finally {
       setDataLoading(false);
     }
-  };
+  }, [supabase]);
 
   // Manual refresh function for when we need to re-fetch data
   // const refreshData = async () => {
@@ -216,8 +220,10 @@ export default function DashboardPage() {
       }
     );
 
-    return () => subscription.unsubscribe();
-  }, [fetchData, router, supabase.auth, user]);
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [fetchData, router, supabase]);
 
   const handleViewInquiry = (inquiry: Record<string, unknown>) => {
     // Navigate directly to inquiry detail page instead of showing dialog
@@ -436,7 +442,7 @@ export default function DashboardPage() {
                     <div className="space-y-4">
                       {inquiries.slice(0, 5).map((inquiry) => (
                         <div 
-                          key={inquiry.id} 
+                          key={String(inquiry.id)} 
                           className="p-4 border border-arzir-gray-200 rounded-lg hover:bg-arzir-gray-50 cursor-pointer"
                           onClick={() => handleViewInquiry(inquiry)}
                         >
@@ -500,7 +506,7 @@ export default function DashboardPage() {
                     <div className="space-y-4">
                       {blogs.slice(0, 5).map((post) => (
                         <div 
-                          key={post.id} 
+                          key={String(post.id)} 
                           className="p-4 border border-arzir-gray-200 rounded-lg hover:bg-arzir-gray-50 cursor-pointer"
                           onClick={() => handleViewBlogPost(post)}
                         >
@@ -592,7 +598,7 @@ export default function DashboardPage() {
                       </thead>
                       <tbody className="bg-white divide-y divide-arzir-gray-200">
                         {inquiries.map((inquiry) => (
-                          <tr key={inquiry.id} className="hover:bg-arzir-gray-50">
+                          <tr key={String(inquiry.id)} className="hover:bg-arzir-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div>
                                 <div className="text-sm font-medium text-black">{inquiry.name as string}</div>
@@ -680,7 +686,7 @@ export default function DashboardPage() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {blogs.map((post) => (
-                  <Card key={post.id} className="hover:shadow-md transition-shadow">
+                  <Card key={String(post.id)} className="hover:shadow-md transition-shadow">
                     <CardContent className="p-6">
                       <div className="space-y-4">
                         <div>
@@ -743,7 +749,7 @@ export default function DashboardPage() {
                   <p className="text-arzir-gray-600 mb-4">Manage user accounts and permissions.</p>
                   <Button 
                     variant="outline"
-                    onClick={() => setShowUserManagement(true)}
+                    onClick={() => console.log('User management coming soon')}
                   >
                     Manage Users
                   </Button>
@@ -771,7 +777,7 @@ export default function DashboardPage() {
 
       {/* Blog Detail Dialog */}
       <BlogDetailDialog
-        post={selectedBlogPost}
+        post={selectedBlogPost as unknown as BlogPost}
         isOpen={showBlogDetail}
         onClose={() => {
           setShowBlogDetail(false);

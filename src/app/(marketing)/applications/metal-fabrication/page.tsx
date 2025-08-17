@@ -428,7 +428,7 @@ export default function MetalFabricationPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="metal fabrication"
+        
         formSource="metal-fabrication_bottom" 
       />
     </>

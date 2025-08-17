@@ -360,7 +360,7 @@ export default function CarBodyBalerPage() {
       </Section>
 
       <ProductCTA 
-        productName="Car Body Baler"
+        
         formSource="car_body_baler_bottom"
         title="Transform Your ELV Processing Operations"
         description="Maximize value from end-of-life vehicles with our specialized car body balers. Achieve higher bale densities, reduce transport costs, and process 20-40 vehicles per day with robust compression chambers designed for automotive recycling."

@@ -899,7 +899,7 @@ export default function RecyclingBalerPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="recycling-baler"
+        
         formSource="recycling-baler_bottom" 
       />
     </>

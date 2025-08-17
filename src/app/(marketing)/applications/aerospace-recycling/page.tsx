@@ -351,7 +351,6 @@ export default function AerospaceRecyclingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="Aerospace Recycling"
         formSource="aerospace_recycling_bottom" 
       />
     </>

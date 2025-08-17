@@ -270,7 +270,7 @@ export default function RailwayScrappingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="railway scrapping"
+        
         formSource="railway-scrapping_bottom" 
       />
     </>

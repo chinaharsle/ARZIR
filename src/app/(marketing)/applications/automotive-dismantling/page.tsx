@@ -253,7 +253,7 @@ export default function AutomotiveDismantlingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="automotive dismantling"
+        
         formSource="automotive-dismantling_bottom" 
       />
     </>

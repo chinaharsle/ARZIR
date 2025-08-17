@@ -432,7 +432,7 @@ export default function FourShaftShredderPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="four-shaft-shredder"
+        
         formSource="four-shaft-shredder_bottom" 
       />
     </>

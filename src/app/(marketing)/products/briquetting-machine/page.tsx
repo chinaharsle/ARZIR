@@ -328,7 +328,7 @@ export default function BriquettingMachinePage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="briquetting-machine"
+        
         formSource="briquetting-machine_bottom" 
       />
     </>

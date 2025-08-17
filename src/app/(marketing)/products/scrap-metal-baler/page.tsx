@@ -454,7 +454,7 @@ export default function ScrapMetalBalerPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="scrap-metal-baler"
+        
         formSource="scrap-metal-baler_bottom" 
       />
     </>

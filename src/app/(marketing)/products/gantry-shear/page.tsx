@@ -354,7 +354,7 @@ export default function GantryShearPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="gantry-shear"
+        
         formSource="gantry-shear_bottom" 
       />
     </>

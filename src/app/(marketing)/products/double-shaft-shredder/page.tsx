@@ -419,7 +419,7 @@ export default function DoubleShaftShredderPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="double-shaft-shredder"
+        
         formSource="double-shaft-shredder_bottom" 
       />
     </>

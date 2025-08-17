@@ -221,7 +221,7 @@ export default function ShipbreakingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="shipbreaking"
+        
         formSource="shipbreaking_bottom" 
       />
     </>

@@ -134,7 +134,7 @@ export default function SteelMillsPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="steel mills"
+        
         formSource="steel-mills_bottom" 
       />
     </>

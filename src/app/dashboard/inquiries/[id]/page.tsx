@@ -150,7 +150,9 @@ export default function InquiryDetailPage() {
   };
 
   const handleCancel = () => {
-    setFormData(inquiry);
+    if (inquiry) {
+      setFormData(inquiry);
+    }
     setIsEditing(false);
   };
 
@@ -191,7 +193,7 @@ export default function InquiryDetailPage() {
                 Back to Dashboard
               </Button>
               <h1 className="text-2xl font-heading font-bold text-black">
-                Inquiry #{inquiry.id.toString().padStart(6, '0')}
+                Inquiry #{String(inquiry.id).padStart(6, '0')}
               </h1>
             </div>
             <div className="flex items-center gap-3">
@@ -227,11 +229,11 @@ export default function InquiryDetailPage() {
                   Inquiry Overview
                 </CardTitle>
                 <div className="flex items-center gap-2">
-                  <Badge className={getStatusColor(inquiry.status)}>
-                    {capitalizeStatus(inquiry.status)}
+                  <Badge className={getStatusColor(String(inquiry.status))}>
+                    {capitalizeStatus(String(inquiry.status))}
                   </Badge>
-                  <Badge className={getPriorityColor(inquiry.priority)}>
-                    {capitalizePriority(inquiry.priority)} Priority
+                  <Badge className={getPriorityColor(String(inquiry.priority))}>
+                    {capitalizePriority(String(inquiry.priority))} Priority
                   </Badge>
                 </div>
               </div>
@@ -241,13 +243,13 @@ export default function InquiryDetailPage() {
                 <div>
                   <div className="text-sm text-arzir-gray-600 mb-1">Received Date</div>
                   <div className="font-medium text-black">
-                    {new Date(inquiry.createdAt).toLocaleDateString()} at {new Date(inquiry.createdAt).toLocaleTimeString()}
+                    {new Date(String(inquiry.createdAt)).toLocaleDateString()} at {new Date(String(inquiry.createdAt)).toLocaleTimeString()}
                   </div>
                 </div>
                 <div>
                   <div className="text-sm text-arzir-gray-600 mb-1">Status</div>
                   {isEditing ? (
-                    <Select value={formData.status} onValueChange={(value) => setFormData({...formData, status: value})}>
+                    <Select value={String(formData.status)} onValueChange={(value) => setFormData({...formData, status: value})}>
                       <SelectTrigger className="w-full">
                         <SelectValue />
                       </SelectTrigger>
@@ -260,13 +262,13 @@ export default function InquiryDetailPage() {
                       </SelectContent>
                     </Select>
                   ) : (
-                    <div className="font-medium text-black">{capitalizeStatus(inquiry.status)}</div>
+                    <div className="font-medium text-black">{capitalizeStatus(String(inquiry.status))}</div>
                   )}
                 </div>
                 <div>
                   <div className="text-sm text-arzir-gray-600 mb-1">Priority</div>
                   {isEditing ? (
-                    <Select value={formData.priority} onValueChange={(value) => setFormData({...formData, priority: value})}>
+                    <Select value={String(formData.priority)} onValueChange={(value) => setFormData({...formData, priority: value})}>
                       <SelectTrigger className="w-full">
                         <SelectValue />
                       </SelectTrigger>
@@ -277,7 +279,7 @@ export default function InquiryDetailPage() {
                       </SelectContent>
                     </Select>
                   ) : (
-                    <div className="font-medium text-black">{capitalizePriority(inquiry.priority)}</div>
+                    <div className="font-medium text-black">{capitalizePriority(String(inquiry.priority))}</div>
                   )}
                 </div>
               </div>
@@ -301,11 +303,11 @@ export default function InquiryDetailPage() {
                     </div>
                     {isEditing ? (
                       <Input 
-                        value={formData.name} 
+                        value={String(formData.name)} 
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
                     ) : (
-                      <div className="font-medium text-black">{inquiry.name}</div>
+                      <div className="font-medium text-black">{String(inquiry.name)}</div>
                     )}
                   </div>
                   
@@ -316,11 +318,11 @@ export default function InquiryDetailPage() {
                     </div>
                     {isEditing ? (
                       <Input 
-                        value={formData.company} 
+                        value={String(formData.company)} 
                         onChange={(e) => setFormData({...formData, company: e.target.value})}
                       />
                     ) : (
-                      <div className="font-medium text-black">{inquiry.company || "Not provided"}</div>
+                      <div className="font-medium text-black">{String(inquiry.company) || "Not provided"}</div>
                     )}
                   </div>
                 </div>
@@ -334,12 +336,12 @@ export default function InquiryDetailPage() {
                     {isEditing ? (
                       <Input 
                         type="email"
-                        value={formData.email} 
+                        value={String(formData.email)} 
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                       />
                     ) : (
-                      <a href={`mailto:${inquiry.email}`} className="font-medium text-arzir-primary hover:underline">
-                        {inquiry.email}
+                      <a href={`mailto:${String(inquiry.email)}`} className="font-medium text-arzir-primary hover:underline">
+                        {String(inquiry.email)}
                       </a>
                     )}
                   </div>
@@ -351,18 +353,18 @@ export default function InquiryDetailPage() {
                     </div>
                     {isEditing ? (
                       <Input 
-                        value={formData.whatsapp || ""} 
+                        value={String(formData.whatsapp || "")} 
                         onChange={(e) => setFormData({...formData, whatsapp: e.target.value})}
                       />
                     ) : (
-                      inquiry.whatsapp ? (
+                      String(inquiry.whatsapp) ? (
                         <a 
-                          href={`https://wa.me/${inquiry.whatsapp.replace(/[^0-9]/g, '')}`} 
+                          href={`https://wa.me/${String(inquiry.whatsapp).replace(/[^0-9]/g, '')}`} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="font-medium text-arzir-primary hover:underline"
                         >
-                          {inquiry.whatsapp}
+                          {String(inquiry.whatsapp)}
                         </a>
                       ) : (
                         <div className="text-arzir-gray-500">Not provided</div>
@@ -383,24 +385,24 @@ export default function InquiryDetailPage() {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {inquiry.sourceUrl && (
+                {String(inquiry.sourceUrl) && (
                   <div>
                     <div className="text-sm text-arzir-gray-600 mb-2">Source URL</div>
                     <a 
-                      href={inquiry.sourceUrl} 
+                      href={String(inquiry.sourceUrl)} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-sm text-arzir-primary hover:underline break-all"
                     >
-                      {inquiry.sourceUrl}
+                      {String(inquiry.sourceUrl)}
                     </a>
                   </div>
                 )}
                 
-                {inquiry.country && (
+                {String(inquiry.country) && (
                   <div>
                     <div className="text-sm text-arzir-gray-600 mb-2">Country</div>
-                    <div className="font-medium text-black">{inquiry.country}</div>
+                    <div className="font-medium text-black">{String(inquiry.country)}</div>
                   </div>
                 )}
               </div>
@@ -417,7 +419,7 @@ export default function InquiryDetailPage() {
             <CardContent>
               {isEditing ? (
                 <Textarea
-                  value={formData.message}
+                  value={String(formData.message)}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   rows={8}
                   className="w-full"
@@ -425,7 +427,7 @@ export default function InquiryDetailPage() {
               ) : (
                 <div className="bg-arzir-gray-50 rounded-lg p-4 border-l-4 border-arzir-primary">
                   <p className="text-sm text-arzir-gray-700 leading-relaxed whitespace-pre-wrap">
-                    {inquiry.message}
+                    {String(inquiry.message)}
                   </p>
                 </div>
               )}

@@ -301,7 +301,7 @@ export default function ContainerShearPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="container-shear"
+        
         formSource="container-shear_bottom" 
       />
     </>

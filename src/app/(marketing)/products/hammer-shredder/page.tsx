@@ -469,7 +469,7 @@ export default function HammerShredderPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="hammer-shredder"
+        
         formSource="hammer-shredder_bottom" 
       />
     </>

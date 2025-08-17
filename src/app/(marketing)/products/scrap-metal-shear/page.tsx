@@ -286,7 +286,7 @@ export default function ScrapMetalShearPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="scrap-metal-shear"
+        
         formSource="scrap-metal-shear_bottom" 
       />
     </>

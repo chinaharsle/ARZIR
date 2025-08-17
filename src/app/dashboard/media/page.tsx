@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,7 @@ import {
   Edit
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import type { User } from "@supabase/supabase-js";
 
 interface MediaFile {
   id: string;
@@ -37,110 +38,9 @@ interface MediaFile {
   usage_count: number;
   tags: string[];
 }
-
-// Mock data for development
-const mockMediaFiles: MediaFile[] = [
-  {
-    id: "1",
-    filename: "recycling-baler-hero.jpg",
-    original_filename: "Y82-160-Recycling-Baler-Hero.jpg",
-    file_size: 245678,
-    mime_type: "image/jpeg",
-    file_path: "images/products/recycling-baler-hero.jpg",
-    alt_text: "Y82-160 Recycling Baler in Industrial Setting",
-    caption: "High-performance vertical baler for optimal material compression",
-    width: 1920,
-    height: 1080,
-    created_at: "2025-08-15T10:30:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 5,
-    tags: ["product", "baler", "recycling"]
-  },
-  {
-    id: "2", 
-    filename: "scrap-metal-shear-action.jpg",
-    original_filename: "Q43-2000-Alligator-Shear-Action.jpg",
-    file_size: 198432,
-    mime_type: "image/jpeg",
-    file_path: "images/products/scrap-metal-shear-action.jpg",
-    alt_text: "Q43-2000 Alligator Shear cutting metal bars",
-    caption: "Heavy-duty alligator shear demonstrating cutting capability",
-    width: 1600,
-    height: 900,
-    created_at: "2025-08-14T14:20:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 3,
-    tags: ["product", "shear", "metal"]
-  },
-  {
-    id: "3",
-    filename: "automotive-recycling-facility.jpg", 
-    original_filename: "Automotive-Recycling-Facility-Overview.jpg",
-    file_size: 312456,
-    mime_type: "image/jpeg",
-    file_path: "images/applications/automotive-recycling-facility.jpg",
-    alt_text: "Modern automotive recycling facility with ARZIR equipment",
-    caption: "Complete automotive dismantling solution",
-    width: 2048,
-    height: 1152,
-    created_at: "2025-08-13T09:15:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 8,
-    tags: ["application", "automotive", "facility"]
-  },
-  {
-    id: "4",
-    filename: "aluminum-extrusion-process.jpg",
-    original_filename: "Y32-1000T-Extrusion-Press-Process.jpg", 
-    file_size: 267890,
-    mime_type: "image/jpeg",
-    file_path: "images/products/aluminum-extrusion-process.jpg",
-    alt_text: "Y32-1000T Extrusion Press aluminum forming process",
-    caption: "High-capacity hydraulic press for aluminum profile extrusion",
-    width: 1800,
-    height: 1013,
-    created_at: "2025-08-12T16:45:00Z",
-    uploaded_by: "admin@arzir.com", 
-    usage_count: 2,
-    tags: ["product", "extrusion", "aluminum"]
-  },
-  {
-    id: "5",
-    filename: "four-shaft-shredder-components.jpg",
-    original_filename: "PSL-4080-Four-Shaft-Shredder-Components.jpg",
-    file_size: 189234,
-    mime_type: "image/jpeg", 
-    file_path: "images/products/four-shaft-shredder-components.jpg",
-    alt_text: "PSL-4080 Four-Shaft Shredder component breakdown",
-    caption: "Industrial four-shaft shredder design and components",
-    width: 1600,
-    height: 1200,
-    created_at: "2025-08-11T11:30:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 1,
-    tags: ["product", "shredder", "components"]
-  },
-  {
-    id: "6",
-    filename: "arzir-factory-tour.jpg",
-    original_filename: "ARZIR-Manufacturing-Facility-Tour.jpg",
-    file_size: 423567,
-    mime_type: "image/jpeg",
-    file_path: "images/company/arzir-factory-tour.jpg", 
-    alt_text: "ARZIR manufacturing facility interior",
-    caption: "State-of-the-art manufacturing facility",
-    width: 2400,
-    height: 1350,
-    created_at: "2025-08-10T08:00:00Z",
-    uploaded_by: "admin@arzir.com",
-    usage_count: 12,
-    tags: ["company", "factory", "manufacturing"]
-  }
-];
-
 export default function MediaLibraryPage() {
   const router = useRouter();
-  const [user, setUser] = useState<Record<string, unknown> | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([]);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -151,7 +51,7 @@ export default function MediaLibraryPage() {
   const supabase = createClient();
 
   // Fetch media files from Supabase
-  const fetchMediaFiles = async () => {
+  const fetchMediaFiles = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('media')
@@ -185,7 +85,7 @@ export default function MediaLibraryPage() {
     } catch (error) {
       console.error('Error fetching media files:', error);
     }
-  };
+  }, [supabase]);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -202,7 +102,7 @@ export default function MediaLibraryPage() {
     };
 
     checkAuth();
-  }, [router, supabase.auth]);
+  }, [fetchMediaFiles, router, supabase.auth]);
 
   const formatFileSize = (bytes: number) => {
     if (bytes === 0) return '0 Bytes';

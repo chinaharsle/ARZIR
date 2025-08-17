@@ -269,7 +269,7 @@ export default function AluminiumExtrusionPressPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="aluminium-extrusion-press"
+        
         formSource="aluminium-extrusion-press_bottom" 
       />
     </>

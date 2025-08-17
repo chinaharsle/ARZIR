@@ -350,7 +350,7 @@ export default function AlligatorShearPage() {
             FAQs
           </h2>
           <div className="space-y-6 max-w-4xl mx-auto">
-            {faqs.map((faq) => (
+            {faqs.map((faq, index) => (
               <div key={index} className="bg-white p-6 rounded-xl border-b border-arzir-gray-200 pb-6">
                 <h3 className="text-lg font-heading font-semibold text-black mb-3">
                   {faq.question}
@@ -366,7 +366,7 @@ export default function AlligatorShearPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="alligator-shear"
+        
         formSource="alligator-shear_bottom" 
       />
     </>

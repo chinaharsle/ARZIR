@@ -181,7 +181,6 @@ export default function AluminumProcessingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="aluminum processing"
         formSource="aluminum-processing_bottom" 
       />
     </>

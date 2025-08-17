@@ -29,6 +29,23 @@ import { createClient } from "@/lib/supabase/client";
 import { MediaSelector } from "@/components/dashboard/MediaSelector";
 import { RichTextEditor } from "@/components/dashboard/RichTextEditor";
 
+interface MediaFile {
+  id: string;
+  filename: string;
+  original_filename: string;
+  file_size: number;
+  mime_type: string;
+  file_path: string;
+  alt_text?: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+  created_at: string;
+  uploaded_by: string;
+  usage_count: number;
+  tags: string[];
+}
+
 interface BlogPost {
   id?: number;
   title: string;
@@ -114,7 +131,6 @@ export default function BlogEditPage() {
   const isCreating = searchParams.get('mode') === 'create';
   const postId = searchParams.get('id');
   
-  const [user, setUser] = useState<any>(null);
   const [formData, setFormData] = useState<BlogPost>({
     title: "",
     slug: "",
@@ -130,17 +146,16 @@ export default function BlogEditPage() {
   const [newTag, setNewTag] = useState("");
   const [seoScore, setSeoScore] = useState(0);
   const [showMediaSelector, setShowMediaSelector] = useState(false);
-  const [selectedMedia, setSelectedMedia] = useState<any>(null);
+  const [selectedMedia, setSelectedMedia] = useState<MediaFile | null>(null);
 
   // Get current user
   useEffect(() => {
     const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user) {
-        setUser(user);
+      const { data: { user: authUser } } = await supabase.auth.getUser();
+      if (authUser) {
         setFormData(prev => ({ 
           ...prev, 
-          author: user.email?.split('@')[0] || "ARZIR Editorial Team"
+          author: authUser.email?.split('@')[0] || "ARZIR Editorial Team"
         }));
       }
     };
@@ -197,11 +212,19 @@ export default function BlogEditPage() {
             if (post.featured_image) {
               const mockMedia = {
                 id: "post-" + post.id,
+                filename: `${post.title.replace(/\s+/g, '-').toLowerCase()}.jpg`,
                 original_filename: `${post.title.replace(/\s+/g, '-').toLowerCase()}.jpg`,
+                file_size: 1024000,
+                mime_type: "image/jpeg",
                 file_path: post.featured_image,
                 alt_text: post.title,
                 width: 1920,
-                height: 1080
+                height: 1080,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString(),
+                uploaded_by: "system",
+                usage_count: 1,
+                tags: []
               };
               setSelectedMedia(mockMedia);
             }
@@ -234,7 +257,7 @@ export default function BlogEditPage() {
         .trim();
       setFormData(prev => ({ ...prev, slug }));
     }
-  }, [formData.title, isCreating]);
+  }, [formData.title, formData.slug, isCreating]);
 
   // Auto-generate SEO title and description
   useEffect(() => {
@@ -249,7 +272,7 @@ export default function BlogEditPage() {
     if (formData.title && (!formData.coverImageAlt || isCreating)) {
       setFormData(prev => ({ ...prev, coverImageAlt: formData.title }));
     }
-  }, [formData.title, isCreating]);
+  }, [formData.title, formData.coverImageAlt, isCreating]);
 
   useEffect(() => {
     if (formData.content && formData.content.length > 100) {
@@ -287,7 +310,7 @@ export default function BlogEditPage() {
     setSeoScore(score);
   }, [formData]);
 
-  const handleInputChange = (field: keyof BlogPost, value: any) => {
+  const handleInputChange = (field: keyof BlogPost, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -342,7 +365,7 @@ export default function BlogEditPage() {
     return AlertTriangle;
   };
 
-  const handleMediaSelect = (media: any) => {
+  const handleMediaSelect = (media: MediaFile) => {
     setSelectedMedia(media);
     setFormData(prev => ({ 
       ...prev, 
@@ -690,7 +713,7 @@ export default function BlogEditPage() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="status">Status</Label>
-                  <Select value={formData.status} onValueChange={(value: any) => handleInputChange("status", value)}>
+                  <Select value={formData.status} onValueChange={(value: BlogPost['status']) => handleInputChange("status", value)}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>

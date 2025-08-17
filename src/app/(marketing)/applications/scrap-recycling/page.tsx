@@ -381,7 +381,7 @@ export default function ScrapRecyclingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        applicationName="Scrap Recycling"
+        
         formSource="scrap_recycling_bottom" 
       />
     </>
