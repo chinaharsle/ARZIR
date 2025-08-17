@@ -4,7 +4,7 @@ import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ApplicationCTA } from "@/components/common/ApplicationCTA";
 import { ArrowRight, CheckCircle, Shield, Zap } from "lucide-react";
 import Link from "next/link";
-import type { Metadata } from "next";
+import Image from "next/image";import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Metal Fabrication Applications & Solutions | ARZIR",
@@ -117,7 +117,7 @@ export default function MetalFabricationPage() {
   return (
     <>
       {/* Page Hero */}
-      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white !pt-2 lg:!pt-8">
+      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black leading-tight">
@@ -143,12 +143,13 @@ export default function MetalFabricationPage() {
           </div>
           <div className="relative">
             <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
-              <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                <div className="text-center">
-                  <div className="text-8xl mb-4">🔨</div>
-                  <p className="text-lg font-medium">Metal Fabrication Facility</p>
-                </div>
-              </div>
+              <Image
+                src="/images/applications/metal-fabrication-full.jpg"
+                alt="Metal Fabrication Facility"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

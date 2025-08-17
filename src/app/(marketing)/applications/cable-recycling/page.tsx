@@ -15,7 +15,7 @@ export default function CableRecyclingPage() {
   return (
     <>
       {/* Page Hero */}
-      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white !pt-2 lg:!pt-8">
+      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black leading-tight">

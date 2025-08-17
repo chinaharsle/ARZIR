@@ -454,10 +454,8 @@ export default function ScrapMetalBalerPage() {
 
       {/* Bottom CTA */}
       <ProductCTA 
-        productName="Scrap Metal Baler"
-        formSource="scrap_metal_baler_bottom"
-        title="Ready to Boost Your Recycling Efficiency?"
-        description="Discover how our high-performance scrap metal baler can transform your recycling operations and increase profitability."
+        productName="scrap-metal-baler"
+        formSource="scrap-metal-baler_bottom" 
       />
     </>
   );

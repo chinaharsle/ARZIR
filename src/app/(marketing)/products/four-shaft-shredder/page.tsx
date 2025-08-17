@@ -1,6 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
+import { ProductCTA } from "@/components/common/ProductCTA";
 import { ArrowRight, CheckCircle, Target, Layers } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -431,22 +432,10 @@ export default function FourShaftShredderPage() {
       </Section>
 
       {/* Bottom CTA */}
-      <Section background="gray" size="lg">
-        <div className="bg-white rounded-3xl p-8 lg:p-12 text-center space-y-6">
-          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-black">
-            Need fine size reduction?
-          </h2>
-          <p className="text-arzir-gray-600 max-w-2xl mx-auto">
-            Our engineers can help you configure the optimal four-shaft shredder for your fine processing requirements and material liberation goals.
-          </p>
-          <QuoteDialog source="four_shaft_shredder_bottom">
-            <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
-              Get Fine Processing Solution
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </QuoteDialog>
-        </div>
-      </Section>
+      <ProductCTA 
+        productName="four-shaft-shredder"
+        formSource="four-shaft-shredder_bottom" 
+      />
     </>
   );
 }

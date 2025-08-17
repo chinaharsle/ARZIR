@@ -4,6 +4,7 @@ import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 import { ArrowRight, CheckCircle, Globe, Shield } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ const applications = [
     title: "Scrap Recycling",
     description: "Maximize recovery value with high-density compaction solutions that transform waste into valuable resources",
     href: "/applications/scrap-recycling",
-    image: "♻️",
+    image: "/images/applications/scrap-recycling.png",
     stats: "85% efficiency increase",
     alt: "Scrap recycling yard using ARZIR balers and shears"
   },
@@ -24,7 +25,7 @@ const applications = [
     title: "Metal Fabrication",
     description: "Turn offcuts into value with efficient baling & shearing systems designed for continuous operation",
     href: "/applications/metal-fabrication", 
-    image: "🔨",
+    image: "/images/applications/metal-fabrication-full.jpg",
     stats: "60% waste reduction",
     alt: "Metal fabrication shop with ARZIR equipment"
   },
@@ -32,7 +33,7 @@ const applications = [
     title: "Automotive Dismantling",
     description: "Faster ELV processing with robust baling & shearing equipment built for heavy-duty applications",
     href: "/applications/automotive-dismantling",
-    image: "🚗",
+    image: "/images/applications/automotive-dismantling-full.jpg",
     stats: "45% faster processing",
     alt: "Automotive dismantling facility using ARZIR balers"
   },
@@ -40,7 +41,7 @@ const applications = [
     title: "Aluminum Processing",
     description: "Stable extrusion and compacting solutions for clean aluminum streams with optimal material recovery",
     href: "/applications/aluminum-processing",
-    image: "⚙️",
+    image: "/images/applications/aluminum-processing-full.jpg",
     stats: "95% material recovery",
     alt: "Aluminum processing plant with ARZIR equipment"
   },
@@ -48,7 +49,7 @@ const applications = [
     title: "Steel Mills",
     description: "Handle mill scrap safely with industrial-grade processing equipment designed for continuous operation",
     href: "/applications/steel-mills",
-    image: "🏗️",
+    image: "/images/applications/steel-mills-full.jpg",
     stats: "24/7 operation",
     alt: "Steel mill using ARZIR scrap processing equipment"
   },
@@ -56,7 +57,7 @@ const applications = [
     title: "Shipbreaking",
     description: "Safe vessel dismantling solutions with specialized equipment for maritime recycling operations",
     href: "/applications/shipbreaking",
-    image: "🚢",
+    image: "/images/applications/shipbreaking-full.jpg",
     stats: "98% material recovery",
     alt: "Shipbreaking yard with ARZIR heavy-duty shears"
   },
@@ -134,14 +135,12 @@ export default function ApplicationsPage() {
       {/* Page Hero */}
       <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white">
         <div className="text-center space-y-6">
-          <div className="space-y-4">
-            <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black">
-              Applications
-            </h1>
-            <p className="text-xl lg:text-2xl text-arzir-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Real-world use cases of ARZIR machinery across recycling and metal processing industries.
-            </p>
-          </div>
+          <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black">
+            Applications
+          </h1>
+          <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Real-world use cases of ARZIR machinery across recycling and metal processing industries.
+          </p>
         </div>
       </Section>
 
@@ -162,13 +161,26 @@ export default function ApplicationsPage() {
             <div key={application.title} className="group">
               <Link href={application.href}>
                 <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">
-                  {/* Header with Icon and Stats */}
-                  <div className="relative h-48 bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 flex items-center justify-center">
+                  {/* Header with Image and Stats */}
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    {application.image.startsWith('/') ? (
+                      <Image
+                        src={application.image}
+                        alt={application.alt}
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 text-arzir-gray-500">
+                        <div className="text-center">
+                          <div className="text-8xl mb-4">{application.image}</div>
+                          <p className="text-lg font-medium">{application.title}</p>
+                        </div>
+                      </div>
+                    )}
                     <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm text-arzir-primary rounded-full text-xs font-semibold border border-arzir-primary/20">
                       {application.stats}
-                    </div>
-                    <div className="w-24 h-24 bg-white/80 backdrop-blur-sm rounded-3xl flex items-center justify-center shadow-lg border border-white/50 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-5xl filter drop-shadow-lg">{application.image}</span>
                     </div>
                   </div>
 

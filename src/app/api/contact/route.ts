@@ -170,10 +170,7 @@ export async function POST(request: NextRequest) {
               <div style="max-width: 680px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                 
                 <!-- Header -->
-                <div style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); padding: 32px 40px; text-align: center; position: relative;">
-                  <div style="position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 20px; color: white; font-size: 12px; font-weight: 600;">
-                    ${body.type === 'quote_request' ? '💰 QUOTE REQUEST' : '📧 NEW INQUIRY'}
-                  </div>
+                <div style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); padding: 32px 20px; text-align: center;">
                   <h1 style="color: #ffffff; margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.5px;">
                     ${body.type === 'quote_request' ? 'Quote Request' : 'New Inquiry'}
                   </h1>
@@ -188,7 +185,7 @@ export async function POST(request: NextRequest) {
                 </div>
 
                 <!-- Priority Alert -->
-                <div style="background: linear-gradient(90deg, #FEF3C7 0%, #FDE68A 100%); border-left: 4px solid #F59E0B; padding: 20px 40px; margin: 0;">
+                <div style="background: linear-gradient(90deg, #FEF3C7 0%, #FDE68A 100%); border-left: 4px solid #F59E0B; padding: 16px 20px; margin: 0;">
                   <div style="display: flex; align-items: center; justify-content: center;">
                     <span style="color: #D97706; font-weight: 700; font-size: 15px; text-align: center;">
                       ⚡ HIGH PRIORITY - Immediate Response Required
@@ -197,86 +194,83 @@ export async function POST(request: NextRequest) {
                 </div>
 
                 <!-- Main Content -->
-                <div style="padding: 40px;">
+                <div style="padding: 20px;">
                   
                   <!-- Customer Information -->
-                  <div style="background: linear-gradient(145deg, #F8FAFC 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; margin-bottom: 32px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <h2 style="color: #1E293B; margin: 0 0 24px 0; font-size: 22px; font-weight: 700; border-bottom: 3px solid #1E40AF; padding-bottom: 12px; display: flex; align-items: center;">
+                  <div style="background: linear-gradient(145deg, #F8FAFC 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <h2 style="color: #1E293B; margin: 0 0 16px 0; font-size: 20px; font-weight: 700; border-bottom: 3px solid #1E40AF; padding-bottom: 8px; display: flex; align-items: center;">
                       <span style="margin-right: 8px;">👤</span> Customer Information
                     </h2>
                     
-                    <div style="display: grid; gap: 18px;">
-                      <div style="display: flex; align-items: center; padding: 16px; background: white; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                        <span style="font-weight: 700; color: #374151; width: 140px; flex-shrink: 0; font-size: 14px;">👤 Full Name:</span>
-                        <span style="color: #111827; font-weight: 600; font-size: 16px;">${body.name}</span>
+                    <div style="display: grid; gap: 12px;">
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <span style="font-weight: 700; color: #374151; width: 110px; flex-shrink: 0; font-size: 14px;">👤 Name:</span>
+                        <span style="color: #111827; font-weight: 600; font-size: 15px; word-break: break-word;">${body.name}</span>
                       </div>
                       
-                      <div style="display: flex; align-items: center; padding: 16px; background: white; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                        <span style="font-weight: 700; color: #374151; width: 140px; flex-shrink: 0; font-size: 14px;">📧 Email:</span>
-                        <a href="mailto:${body.email}" style="color: #1E40AF; text-decoration: none; font-weight: 600; font-size: 16px; border-bottom: 1px dotted #1E40AF;">${body.email}</a>
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <span style="font-weight: 700; color: #374151; width: 110px; flex-shrink: 0; font-size: 14px;">📧 Email:</span>
+                        <a href="mailto:${body.email}" style="color: #1E40AF; text-decoration: none; font-weight: 600; font-size: 15px; word-break: break-all;">${body.email}</a>
                       </div>
                       
-                      <div style="display: flex; align-items: center; padding: 16px; background: white; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                        <span style="font-weight: 700; color: #374151; width: 140px; flex-shrink: 0; font-size: 14px;">🏢 Company:</span>
-                        <span style="color: #111827; font-size: 16px;">${body.company || 'Not provided'}</span>
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <span style="font-weight: 700; color: #374151; width: 110px; flex-shrink: 0; font-size: 14px;">🏢 Company:</span>
+                        <span style="color: #111827; font-size: 15px; word-break: break-word;">${body.company || 'Not provided'}</span>
                       </div>
                       
-                      <div style="display: flex; align-items: center; padding: 16px; background: white; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                        <span style="font-weight: 700; color: #374151; width: 140px; flex-shrink: 0; font-size: 14px;">📱 WhatsApp:</span>
-                        <span style="color: #111827; font-size: 16px;">${body.whatsapp || 'Not provided'}</span>
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <span style="font-weight: 700; color: #374151; width: 110px; flex-shrink: 0; font-size: 14px;">📱 WhatsApp:</span>
+                        <span style="color: #111827; font-size: 15px; word-break: break-word;">${body.whatsapp || 'Not provided'}</span>
                       </div>
                       
                       ${country !== 'Unknown' ? `
-                      <div style="display: flex; align-items: center; padding: 16px; background: white; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                        <span style="font-weight: 700; color: #374151; width: 140px; flex-shrink: 0; font-size: 14px;">🌍 Location:</span>
-                        <span style="color: #111827; font-size: 16px;">${city !== 'Unknown' ? city + ', ' : ''}${country}</span>
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <span style="font-weight: 700; color: #374151; width: 110px; flex-shrink: 0; font-size: 14px;">🌍 Country:</span>
+                        <span style="color: #111827; font-size: 15px; word-break: break-word;">${city !== 'Unknown' ? city + ', ' : ''}${country}</span>
                       </div>
                       ` : ''}
                       
                       ${body.productSlug ? `
-                      <div style="display: flex; align-items: center; padding: 16px; background: linear-gradient(135deg, #EBF4FF 0%, #DBEAFE 100%); border-radius: 12px; border: 1px solid #3B82F6; box-shadow: 0 1px 3px rgba(59,130,246,0.1);">
-                        <span style="font-weight: 700; color: #1E40AF; width: 140px; flex-shrink: 0; font-size: 14px;">🛠️ Product Interest:</span>
-                        <span style="color: #1E40AF; font-weight: 700; font-size: 16px; background: white; padding: 4px 12px; border-radius: 20px;">${body.productSlug}</span>
+                      <div style="display: flex; align-items: center; padding: 12px; background: linear-gradient(135deg, #EBF4FF 0%, #DBEAFE 100%); border-radius: 8px; border: 1px solid #3B82F6;">
+                        <span style="font-weight: 700; color: #1E40AF; width: 110px; flex-shrink: 0; font-size: 14px;">🛠️ Product:</span>
+                        <span style="color: #1E40AF; font-weight: 700; font-size: 15px; background: white; padding: 4px 8px; border-radius: 12px; word-break: break-word;">${body.productSlug}</span>
                       </div>
                       ` : ''}
                     </div>
                   </div>
 
                   <!-- Message Content -->
-                  <div style="background: white; border: 2px solid #E2E8F0; border-radius: 16px; padding: 32px; margin-bottom: 32px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <h2 style="color: #1E293B; margin: 0 0 24px 0; font-size: 22px; font-weight: 700; border-bottom: 3px solid #1E40AF; padding-bottom: 12px; display: flex; align-items: center;">
+                  <div style="background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <h2 style="color: #1E293B; margin: 0 0 16px 0; font-size: 20px; font-weight: 700; border-bottom: 3px solid #1E40AF; padding-bottom: 8px; display: flex; align-items: center;">
                       <span style="margin-right: 8px;">💬</span> Customer Message
                     </h2>
-                    <div style="background: linear-gradient(145deg, #F8FAFC 0%, #F1F5F9 100%); padding: 24px; border-radius: 12px; border-left: 6px solid #1E40AF; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);">
-                      <p style="color: #374151; line-height: 1.7; margin: 0; white-space: pre-wrap; font-size: 16px; font-weight: 500;">${body.message}</p>
+                    <div style="background: linear-gradient(145deg, #F8FAFC 0%, #F1F5F9 100%); padding: 16px; border-radius: 8px; border-left: 4px solid #1E40AF;">
+                      <p style="color: #374151; line-height: 1.6; margin: 0; white-space: pre-wrap; font-size: 15px; font-weight: 500; word-break: break-word;">${body.message}</p>
                     </div>
                   </div>
 
                   <!-- Source & Technical Information -->
-                  <div style="background: linear-gradient(145deg, #F1F5F9 0%, #E2E8F0 100%); border: 1px solid #CBD5E1; border-radius: 16px; padding: 32px; margin-bottom: 32px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <h2 style="color: #1E293B; margin: 0 0 24px 0; font-size: 20px; font-weight: 700; border-bottom: 3px solid #64748B; padding-bottom: 12px; display: flex; align-items: center;">
-                      <span style="margin-right: 8px;">🔍</span> Source & Technical Details
+                  <div style="background: linear-gradient(145deg, #F1F5F9 0%, #E2E8F0 100%); border: 1px solid #CBD5E1; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <h2 style="color: #1E293B; margin: 0 0 16px 0; font-size: 20px; font-weight: 700; border-bottom: 3px solid #64748B; padding-bottom: 8px; display: flex; align-items: center;">
+                      <span style="margin-right: 8px;">🔍</span> Technical Details
                     </h2>
                     
-                    <div style="display: grid; gap: 16px; font-size: 15px;">
-                      <div style="display: flex; align-items: center; padding: 14px; background: white; border-radius: 10px; border: 1px solid #CBD5E1;">
-                        <span style="font-weight: 700; color: #475569; width: 160px; flex-shrink: 0;">🌐 Source Page:</span>
-                        <a href="${referer}" style="color: #1E40AF; text-decoration: none; word-break: break-all; font-weight: 500; border-bottom: 1px dotted #1E40AF;">${referer}</a>
+                    <div style="display: grid; gap: 12px; font-size: 14px;">
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #CBD5E1;">
+                        <span style="font-weight: 700; color: #475569; width: 120px; flex-shrink: 0;">🌐 Source Page:</span>
+                        <a href="${referer}" style="color: #1E40AF; text-decoration: none; word-break: break-all; font-weight: 500;">${referer}</a>
                       </div>
                       
-                      <div style="display: flex; align-items: center; padding: 14px; background: white; border-radius: 10px; border: 1px solid #CBD5E1;">
-                        <span style="font-weight: 700; color: #475569; width: 160px; flex-shrink: 0;">📝 Form Source:</span>
-                        <span style="color: #374151; background: #E2E8F0; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 14px;">${body.source || 'website'}</span>
+                      ${country !== 'Unknown' ? `
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #CBD5E1;">
+                        <span style="font-weight: 700; color: #475569; width: 120px; flex-shrink: 0;">🌍 Country:</span>
+                        <span style="color: #374151; background: #E2E8F0; padding: 4px 8px; border-radius: 12px; font-weight: 600;">${country}</span>
                       </div>
+                      ` : ''}
                       
-                      <div style="display: flex; align-items: center; padding: 14px; background: white; border-radius: 10px; border: 1px solid #CBD5E1;">
-                        <span style="font-weight: 700; color: #475569; width: 160px; flex-shrink: 0;">🖥️ Client IP:</span>
-                        <span style="color: #374151; font-family: 'Courier New', monospace; background: #F8FAFC; padding: 4px 8px; border-radius: 6px; font-size: 14px;">${clientIp}</span>
-                      </div>
-                      
-                      <div style="display: flex; align-items: center; padding: 14px; background: white; border-radius: 10px; border: 1px solid #CBD5E1;">
-                        <span style="font-weight: 700; color: #475569; width: 160px; flex-shrink: 0;">⏰ Submission:</span>
-                        <span style="color: #374151; font-weight: 600;">${new Date().toLocaleString('en-US', { 
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #CBD5E1;">
+                        <span style="font-weight: 700; color: #475569; width: 120px; flex-shrink: 0;">⏰ Submission:</span>
+                        <span style="color: #374151; font-weight: 600; word-break: break-word;">${new Date().toLocaleString('en-US', { 
                           timeZone: timezone !== 'Unknown' ? timezone : 'Asia/Shanghai',
                           year: 'numeric',
                           month: 'long', 
@@ -290,44 +284,37 @@ export async function POST(request: NextRequest) {
                   </div>
 
                   <!-- Next Steps -->
-                  <div style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(30, 64, 175, 0.3);">
-                    <h3 style="color: #ffffff; margin: 0 0 20px 0; font-size: 24px; font-weight: 700;">
-                      🎯 Recommended Next Steps
+                  <div style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px;">
+                    <h3 style="color: #ffffff; margin: 0 0 16px 0; font-size: 20px; font-weight: 700;">
+                      🎯 Next Steps
                     </h3>
-                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
-                      <div style="display: grid; gap: 12px; text-align: left; color: white;">
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                          <span style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">1</span>
-                          <span style="font-size: 14px;">Respond within 2 hours for hot leads</span>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                      <div style="display: grid; gap: 8px; text-align: left; color: white;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                          <span style="background: rgba(255,255,255,0.2); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 11px;">1</span>
+                          <span style="font-size: 13px;">Respond within 2 hours</span>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                          <span style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">2</span>
-                          <span style="font-size: 14px;">Prepare customized product information</span>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                          <span style="background: rgba(255,255,255,0.2); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 11px;">2</span>
+                          <span style="font-size: 13px;">Prepare product information</span>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                          <span style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">3</span>
-                          <span style="font-size: 14px;">Schedule a consultation call if needed</span>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                          <span style="background: rgba(255,255,255,0.2); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 11px;">3</span>
+                          <span style="font-size: 13px;">Schedule consultation call</span>
                         </div>
                       </div>
                     </div>
-                    <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px; font-style: italic;">
-                      Direct contact: <strong>info@arzir.com</strong> | CRM Dashboard: <a href="https://arzir.com/dashboard" style="color: #FED7AA; text-decoration: underline;">View All Leads</a>
+                    <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 13px;">
+                      <strong>info@arzir.com</strong> | <a href="https://arzir.com/dashboard" style="color: #FED7AA; text-decoration: none;">CRM Dashboard</a>
                     </p>
                   </div>
                 </div>
 
                 <!-- Footer -->
-                <div style="background: linear-gradient(145deg, #F8FAFC 0%, #F1F5F9 100%); border-top: 2px solid #E2E8F0; padding: 30px 40px; text-align: center;">
-                  <p style="color: #6B7280; font-size: 14px; margin: 0 0 16px 0; line-height: 1.6;">
-                    <strong>Automated Notification System</strong><br>
-                    This inquiry was generated from your ARZIR website contact form.<br>
-                    Maintain excellent response times for optimal customer satisfaction.
-                  </p>
-                  <div style="margin-top: 20px;">
-                    <span style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); color: #ffffff; padding: 10px 20px; border-radius: 25px; font-size: 13px; font-weight: 700; box-shadow: 0 2px 4px rgba(30, 64, 175, 0.3);">
-                      ARZIR - Leading Industrial Equipment Manufacturer
-                    </span>
-                  </div>
+                <div style="background: linear-gradient(145deg, #F8FAFC 0%, #F1F5F9 100%); border-top: 1px solid #E2E8F0; padding: 16px 20px; text-align: center;">
+                  <span style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 700;">
+                    ARZIR - Leading Industrial Equipment Manufacturer
+                  </span>
                 </div>
               </div>
             </body>

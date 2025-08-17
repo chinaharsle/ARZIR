@@ -1,6 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
+import { ProductCTA } from "@/components/common/ProductCTA";
 import { ArrowRight, CheckCircle, Truck, Wrench } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -300,22 +301,10 @@ export default function ContainerShearPage() {
       </Section>
 
       {/* Bottom CTA */}
-      <Section background="gray" size="lg">
-        <div className="bg-white rounded-3xl p-8 lg:p-12 text-center space-y-6">
-          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-black">
-            Need mobile scrap processing?
-          </h2>
-          <p className="text-arzir-gray-600 max-w-2xl mx-auto">
-            Our engineers can help you evaluate the benefits of mobile container shears for your specific applications and site requirements.
-          </p>
-          <QuoteDialog source="container_shear_bottom">
-            <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
-              Get Mobile Solution Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </QuoteDialog>
-        </div>
-      </Section>
+      <ProductCTA 
+        productName="container-shear"
+        formSource="container-shear_bottom" 
+      />
     </>
   );
 }

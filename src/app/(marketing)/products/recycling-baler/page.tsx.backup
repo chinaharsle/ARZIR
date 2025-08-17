@@ -1,0 +1,309 @@
+import { Section } from "@/components/common/Section";
+import { Button } from "@/components/ui/button";
+import { QuoteDialog } from "@/components/forms/QuoteDialog";
+import { ProductCTA } from "@/components/common/ProductCTA";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Recycling Balers - Scrap Metal, Vertical & Horizontal Compactors",
+  description: "High-performance recycling balers for scrap metal, cardboard, and waste materials. Vertical and horizontal models with superior compaction ratios and energy efficiency.",
+};
+
+const products = [
+  {
+    title: "Scrap Metal Baler",
+    description: "Heavy-duty baler for mixed ferrous and non-ferrous scrap with high bale density.",
+    href: "/products/scrap-metal-baler",
+    image: "📦",
+    alt: "Scrap Metal Baler compressing mixed scrap"
+  },
+  {
+    title: "Car Body Baler", 
+    description: "Designed for ELV processing with robust compression chambers and faster cycles.",
+    href: "/products/car-body-baler",
+    image: "🚗",
+    alt: "Car Body Baler compacting end-of-life vehicles"
+  },
+  {
+    title: "Vertical Baler",
+    description: "Space-saving vertical baler for low-to-medium throughput operations.",
+    href: "/products/vertical-baler",
+    image: "📦",
+    alt: "Vertical Baler for compact operations"
+  },
+  {
+    title: "Horizontal Baler",
+    description: "Continuous horizontal baler for high throughput and consistent bale sizes.",
+    href: "/products/horizontal-baler",
+    image: "📦",
+    alt: "Horizontal Baler for continuous compaction"
+  }
+];
+
+const comparisonData = [
+  {
+    model: "Scrap Metal Baler",
+    pressForce: "300-1200T",
+    baleDensity: "1.2-2.5 t/m³",
+    baleSize: "1.1-1.2m",
+    cycleTime: "45-90s",
+    feedType: "Manual/Crane"
+  },
+  {
+    model: "Car Body Baler", 
+    pressForce: "600-1500T",
+    baleDensity: "1.8-2.8 t/m³",
+    baleSize: "1.2-1.4m",
+    cycleTime: "60-120s",
+    feedType: "Crane/Loader"
+  },
+  {
+    model: "Vertical Baler",
+    pressForce: "200-600T",
+    baleDensity: "1.0-2.0 t/m³", 
+    baleSize: "0.8-1.1m",
+    cycleTime: "30-60s",
+    feedType: "Manual/Conveyor"
+  },
+  {
+    model: "Horizontal Baler",
+    pressForce: "400-1000T",
+    baleDensity: "1.5-2.5 t/m³",
+    baleSize: "1.1-1.3m",
+    cycleTime: "40-80s",
+    feedType: "Conveyor/Auto"
+  }
+];
+
+const applications = [
+  {
+    title: "Scrap Yards",
+    description: "High-volume processing for mixed scrap materials",
+    href: "/applications/scrap-recycling"
+  },
+  {
+    title: "Automotive Dismantling",
+    description: "Specialized ELV processing and car body compaction",
+    href: "/applications/automotive-dismantling"
+  },
+  {
+    title: "Metal Fabrication",
+    description: "Efficient processing of manufacturing offcuts",
+    href: "/applications/metal-fabrication"
+  },
+  {
+    title: "Foundries",
+    description: "Compaction of foundry scrap and returns",
+    href: "/applications/steel-mills"
+  }
+];
+
+const faqs = [
+  {
+    question: "How to choose between vertical and horizontal balers?",
+    answer: "Vertical balers are ideal for limited space and lower throughput (5-20 tons/day), while horizontal balers suit high-volume operations (20-100+ tons/day) with continuous feeding requirements."
+  },
+  {
+    question: "What press force do I need for mixed scrap?",
+    answer: "For mixed ferrous/non-ferrous scrap, typically 400-800 tons press force provides optimal bale density (1.5-2.2 t/m³). Lighter materials may need less, while heavy structural steel requires more."
+  },
+  {
+    question: "What is the typical cycle time and maintenance interval?",
+    answer: "Cycle times range from 30-120 seconds depending on baler size and material. Maintenance intervals are typically 500-1000 operating hours for hydraulic systems and 2000-3000 hours for major components."
+  },
+  {
+    question: "Can balers handle contaminated scrap materials?",
+    answer: "Yes, ARZIR balers are designed for real-world conditions including light contamination. However, excessive oils, chemicals, or foreign materials should be removed for optimal performance and equipment longevity."
+  },
+  {
+    question: "What safety features are included with ARZIR balers?",
+    answer: "All balers include safety barriers, emergency stops, automatic door interlocks, pressure relief systems, and comprehensive safety controls meeting international standards including CE marking."
+  }
+];
+
+export default function RecyclingBalerPage() {
+  return (
+    <>
+      {/* Page Hero */}
+      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="space-y-6">
+            <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black leading-tight">
+              Recycling Balers
+            </h1>
+            <p className="text-xl text-arzir-gray-600 leading-relaxed">
+              High-density balers engineered for ferrous and non-ferrous scrap with reliable compaction and throughput.
+            </p>
+            <div className="flex items-center gap-4 pt-4">
+              <div className="px-4 py-2 bg-arzir-primary/10 rounded-full text-arzir-primary font-semibold text-sm">
+                1.2-2.8 t/m³ density
+              </div>
+              <div className="px-4 py-2 bg-success/10 rounded-full text-success font-semibold text-sm">
+                300-1500T force
+              </div>
+            </div>
+            <QuoteDialog source="recycling_baler_hero">
+              <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
+                Get a Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </QuoteDialog>
+          </div>
+          <div className="relative">
+            <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/products/recycling-baler.png"
+                alt="ARZIR Recycling Balers - High-Density Compaction Equipment"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Category Introduction */}
+      <Section background="white" size="lg">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <p className="text-lg text-arzir-gray-600 leading-relaxed">
+            ARZIR recycling balers process 5-200 tons per day of mixed ferrous and non-ferrous materials. 
+            Our baler range serves scrap yards, automotive dismantling facilities, foundries, and metal fabrication shops. 
+            Each model is engineered for specific throughput requirements and material types, ensuring optimal bale density 
+            and consistent quality for downstream processing.
+          </p>
+        </div>
+      </Section>
+
+      {/* Product Grid */}
+      <Section background="gray" size="xl">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            Baler Models
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {products.map((product, index) => (
+              <div key={product.title} className="group h-full">
+                <Link href={product.href}>
+                  <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full flex flex-col">
+                    {/* Product Image */}
+                    <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                      <span className="text-6xl filter drop-shadow-lg">{product.image}</span>
+                    </div>
+
+                    {/* Product Info */}
+                    <div className="p-6 space-y-3 flex-1 flex flex-col">
+                      <h3 className="text-lg font-heading font-semibold text-black group-hover:text-arzir-primary transition-colors duration-300">
+                        {product.title}
+                      </h3>
+                      <p className="text-sm text-arzir-gray-600 leading-relaxed flex-1">
+                        {product.description}
+                      </p>
+                      <Button variant="outline" size="sm" className="w-full mt-auto">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Compare Models */}
+      <Section background="white" size="lg">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            Compare Models
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-arzir-gray-200 rounded-lg">
+              <caption className="sr-only">Comparison of ARZIR recycling baler models</caption>
+              <thead>
+                <tr className="bg-arzir-gray-50">
+                  <th className="border border-arzir-gray-200 p-4 text-left font-semibold text-black">Model</th>
+                  <th className="border border-arzir-gray-200 p-4 text-left font-semibold text-black">Press Force</th>
+                  <th className="border border-arzir-gray-200 p-4 text-left font-semibold text-black">Bale Density</th>
+                  <th className="border border-arzir-gray-200 p-4 text-left font-semibold text-black">Bale Size</th>
+                  <th className="border border-arzir-gray-200 p-4 text-left font-semibold text-black">Cycle Time</th>
+                  <th className="border border-arzir-gray-200 p-4 text-left font-semibold text-black">Feed Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row, index) => (
+                  <tr key={row.model} className={index % 2 === 0 ? "bg-white" : "bg-arzir-gray-25"}>
+                    <td className="border border-arzir-gray-200 p-4 font-medium text-black">{row.model}</td>
+                    <td className="border border-arzir-gray-200 p-4 text-arzir-gray-700">{row.pressForce}</td>
+                    <td className="border border-arzir-gray-200 p-4 text-arzir-gray-700">{row.baleDensity}</td>
+                    <td className="border border-arzir-gray-200 p-4 text-arzir-gray-700">{row.baleSize}</td>
+                    <td className="border border-arzir-gray-200 p-4 text-arzir-gray-700">{row.cycleTime}</td>
+                    <td className="border border-arzir-gray-200 p-4 text-arzir-gray-700">{row.feedType}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Section>
+
+      {/* Applications */}
+      <Section background="gray" size="lg">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            Applications
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {applications.map((app, index) => (
+              <div key={app.title} className="bg-white p-6 rounded-xl shadow-sm border border-arzir-gray-100 text-center space-y-3">
+                <h3 className="text-lg font-heading font-semibold text-black">
+                  {app.title}
+                </h3>
+                <p className="text-sm text-arzir-gray-600">
+                  {app.description}
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={app.href}>
+                    Explore Solutions
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section background="white" size="lg">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            FAQs
+          </h2>
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border-b border-arzir-gray-200 pb-6">
+                <h3 className="text-lg font-heading font-semibold text-black mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-arzir-gray-600">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Bottom CTA */}
+      <ProductCTA 
+        productName="recycling baler"
+        formSource="recycling_baler_bottom" 
+      />
+    </>
+  );
+}

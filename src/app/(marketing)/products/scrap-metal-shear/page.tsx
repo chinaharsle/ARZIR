@@ -1,6 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
+import { ProductCTA } from "@/components/common/ProductCTA";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -284,22 +285,10 @@ export default function ScrapMetalShearPage() {
       </Section>
 
       {/* Bottom CTA */}
-      <Section background="gray" size="lg">
-        <div className="bg-white rounded-3xl p-8 lg:p-12 text-center space-y-6">
-          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-black">
-            Need help selecting the right shear?
-          </h2>
-          <p className="text-arzir-gray-600 max-w-2xl mx-auto">
-            Our engineers can help you choose the optimal shear configuration based on your material types, cutting requirements, and site constraints.
-          </p>
-          <QuoteDialog source="scrap_metal_shear_bottom">
-            <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
-              Get Expert Help
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </QuoteDialog>
-        </div>
-      </Section>
+      <ProductCTA 
+        productName="scrap-metal-shear"
+        formSource="scrap-metal-shear_bottom" 
+      />
     </>
   );
 }

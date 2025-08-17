@@ -356,7 +356,7 @@ export default function ScrapMetalBalerGuidePage() {
       </Section>
 
       {/* FAQs */}
-      <Section background="gray" size="lg" id="faqs">
+      <Section background="gray" size="lg">
         <div className="max-w-4xl mx-auto space-y-8">
           <h2 className="text-3xl font-heading font-bold text-black text-center">
             Frequently Asked Questions

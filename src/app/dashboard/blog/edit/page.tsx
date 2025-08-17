@@ -23,17 +23,11 @@ import {
   CheckCircle,
   AlertTriangle,
   BarChart3,
-  Bold,
-  Italic,
-  Link,
-  List,
-  Quote,
-  Code,
-  Youtube,
   Upload
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { MediaSelector } from "@/components/dashboard/MediaSelector";
+import { RichTextEditor } from "@/components/dashboard/RichTextEditor";
 
 interface BlogPost {
   id?: number;
@@ -153,33 +147,81 @@ export default function BlogEditPage() {
     getUser();
   }, [supabase]);
 
-  // Load blog post data when editing
+  // Load blog post data when editing - fetch from database instead of mock data
   useEffect(() => {
-    if (postId && !isCreating) {
-      const blogPost = mockBlogPosts.find(post => post.id === parseInt(postId));
-      if (blogPost) {
-        setFormData({
-          ...blogPost,
-          coverImageAlt: blogPost.coverImageAlt || blogPost.title
-        });
-        
-        // If there's a cover image, try to find it in the media library
-        if (blogPost.coverImage) {
-          // In a real implementation, you would fetch the media file details from the API
-          // For now, we'll create a mock media object
-          const mockMedia = {
-            id: "mock-" + blogPost.id,
-            original_filename: `${blogPost.title.replace(/\s+/g, '-').toLowerCase()}.jpg`,
-            file_path: blogPost.coverImage,
-            alt_text: blogPost.coverImageAlt,
-            width: 1920,
-            height: 1080
-          };
-          setSelectedMedia(mockMedia);
+    const fetchBlogPost = async () => {
+      if (postId && !isCreating) {
+        try {
+          // Fetch from database first
+          const { data: post, error } = await supabase
+            .from('posts')
+            .select('*')
+            .eq('id', postId) // Remove parseInt since IDs are UUIDs
+            .single();
+
+          if (error) {
+            console.error('Error fetching blog post:', error);
+            // Fall back to mock data if database query fails
+            const blogPost = mockBlogPosts.find(post => post.id.toString() === postId);
+            if (blogPost) {
+              console.log('Using fallback mock data for post:', blogPost.title);
+              setFormData({
+                ...blogPost,
+                coverImageAlt: blogPost.coverImageAlt || blogPost.title
+              });
+            } else {
+              console.log('No matching blog post found in database or mock data for ID:', postId);
+            }
+          } else if (post) {
+            console.log('Successfully fetched blog post from database:', post.title);
+            // Map database fields to form data format
+            setFormData({
+              id: post.id,
+              title: post.title,
+              slug: post.slug,
+              content: post.content || '',
+              category: post.category || 'Industry News',
+              tags: post.tags || [],
+              coverImage: post.featured_image || '',
+              coverImageAlt: post.title, // No alt field in database, use title
+              status: post.status || 'draft',
+              publishedAt: post.published_at,
+              scheduledAt: post.scheduled_at, // No scheduled_at in schema
+              author: post.author_name || 'ARZIR Editorial Team',
+              seoTitle: post.seo_title,
+              seoDescription: post.seo_description,
+              canonicalUrl: post.canonical_url // No canonical_url in schema
+            });
+            
+            // If there's a featured image, try to find it in the media library
+            if (post.featured_image) {
+              const mockMedia = {
+                id: "post-" + post.id,
+                original_filename: `${post.title.replace(/\s+/g, '-').toLowerCase()}.jpg`,
+                file_path: post.featured_image,
+                alt_text: post.title,
+                width: 1920,
+                height: 1080
+              };
+              setSelectedMedia(mockMedia);
+            }
+          }
+        } catch (error) {
+          console.error('Error in fetchBlogPost:', error);
+          // Fall back to mock data if there's an error
+          const blogPost = mockBlogPosts.find(post => post.id.toString() === postId);
+          if (blogPost) {
+            setFormData({
+              ...blogPost,
+              coverImageAlt: blogPost.coverImageAlt || blogPost.title
+            });
+          }
         }
       }
-    }
-  }, [postId, isCreating]);
+    };
+
+    fetchBlogPost();
+  }, [postId, isCreating, supabase]);
 
   // Auto-generate slug from title
   useEffect(() => {
@@ -211,7 +253,9 @@ export default function BlogEditPage() {
 
   useEffect(() => {
     if (formData.content && formData.content.length > 100) {
-      const description = formData.content
+      // Strip HTML tags and get plain text
+      const plainText = formData.content.replace(/<[^>]*>/g, '');
+      const description = plainText
         .replace(/[#*\[\]]/g, '')
         .substring(0, 160)
         .trim();
@@ -226,7 +270,9 @@ export default function BlogEditPage() {
     if (formData.title.length >= 5 && formData.title.length <= 60) score += 20;
     if (formData.seoDescription && formData.seoDescription.length >= 120 && formData.seoDescription.length <= 160) score += 20;
     
-    const wordCount = formData.content.split(/\s+/).length;
+    // Strip HTML tags for word count
+    const plainText = formData.content.replace(/<[^>]*>/g, '');
+    const wordCount = plainText.split(/\s+/).filter(word => word.length > 0).length;
     if (wordCount >= 800) score += 25;
     else if (wordCount >= 300) score += 15;
     
@@ -234,7 +280,8 @@ export default function BlogEditPage() {
     if (formData.tags.length >= 1 && formData.tags.length <= 6) score += 10;
     if (formData.category) score += 5;
     
-    const hasHeadings = /#{2,3}\s/.test(formData.content);
+    // Check for headings in HTML content
+    const hasHeadings = /<h[2-3][^>]*>/i.test(formData.content) || /#{2,3}\s/.test(formData.content);
     if (hasHeadings) score += 5;
     
     setSeoScore(score);
@@ -293,24 +340,6 @@ export default function BlogEditPage() {
     if (score >= 80) return CheckCircle;
     if (score >= 60) return AlertTriangle;
     return AlertTriangle;
-  };
-
-  const insertAtCursor = (text: string) => {
-    const textarea = document.getElementById('content') as HTMLTextAreaElement;
-    if (!textarea) return;
-    
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const currentContent = formData.content;
-    
-    const newContent = currentContent.substring(0, start) + text + currentContent.substring(end);
-    setFormData(prev => ({ ...prev, content: newContent }));
-    
-    // Reset cursor position
-    setTimeout(() => {
-      textarea.selectionStart = textarea.selectionEnd = start + text.length;
-      textarea.focus();
-    }, 0);
   };
 
   const handleMediaSelect = (media: any) => {
@@ -540,51 +569,20 @@ export default function BlogEditPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Content Editor</CardTitle>
-                <div className="flex flex-wrap gap-2">
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("## ")}>
-                    <span className="font-bold">H2</span>
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("### ")}>
-                    <span className="font-bold">H3</span>
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("**bold text**")}>
-                    <Bold className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("*italic text*")}>
-                    <Italic className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("- ")}>
-                    <List className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("> ")}>
-                    <Quote className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("[link text](url)")}>
-                    <Link className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("```\ncode\n```")}>
-                    <Code className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("![alt text](image-url)")}>
-                    <Image className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="sm" onClick={() => insertAtCursor("{% youtube id=\"VIDEO_ID\" %}")}>
-                    <Youtube className="h-4 w-4" />
-                  </Button>
-                </div>
+                <p className="text-sm text-gray-600">
+                  Use the visual editor below to create your content. You can insert images, videos, and format text.
+                </p>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <Textarea
-                    id="content"
+                  <RichTextEditor
                     value={formData.content}
-                    onChange={(e) => handleInputChange("content", e.target.value)}
-                    placeholder="Write your blog post content here... Use the toolbar above for formatting options."
-                    rows={25}
-                    className="text-sm resize-none border-arzir-gray-300 focus:border-arzir-primary focus:ring-arzir-primary/20"
+                    onChange={(content) => handleInputChange("content", content)}
+                    placeholder="Write your blog post content here... Use the toolbar to format text, insert images, and embed videos."
+                    height={600}
                   />
                   <div className="flex justify-between text-xs text-gray-500">
-                    <span>{formData.content.split(/\s+/).length} words</span>
+                    <span>{formData.content.replace(/<[^>]*>/g, '').split(/\s+/).filter(word => word.length > 0).length} words</span>
                     <span>{formData.content.length} characters</span>
                   </div>
                 </div>
@@ -621,8 +619,8 @@ export default function BlogEditPage() {
                   </div>
                   <div className="flex justify-between">
                     <span>Content length</span>
-                    <span className={formData.content.split(/\s+/).length >= 300 ? "text-green-600" : "text-red-600"}>
-                      {formData.content.split(/\s+/).length >= 300 ? "✓" : "✗"}
+                    <span className={formData.content.replace(/<[^>]*>/g, '').split(/\s+/).filter(word => word.length > 0).length >= 300 ? "text-green-600" : "text-red-600"}>
+                      {formData.content.replace(/<[^>]*>/g, '').split(/\s+/).filter(word => word.length > 0).length >= 300 ? "✓" : "✗"}
                     </span>
                   </div>
                   <div className="flex justify-between">

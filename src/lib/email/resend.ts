@@ -42,62 +42,60 @@ export async function sendLeadNotificationEmail(data: EmailData) {
         </div>
 
         <!-- Content -->
-        <div style="padding: 24px;">
+        <div style="padding: 20px;">
           
           <!-- Contact Information -->
-          <div style="margin-bottom: 24px; background: #F8FAFC; padding: 20px; border-radius: 8px; border-left: 4px solid #1E40AF;">
-            <h3 style="color: #1E293B; margin: 0 0 16px 0; font-size: 18px; font-weight: 600;">
+          <div style="margin-bottom: 20px; background: #F8FAFC; padding: 16px; border-radius: 8px; border-left: 4px solid #1E40AF;">
+            <h3 style="color: #1E293B; margin: 0 0 12px 0; font-size: 18px; font-weight: 600;">
               👤 Contact Information
             </h3>
-            <div style="display: grid; gap: 8px;">
+            <div style="display: grid; gap: 6px; font-size: 14px;">
               <div><strong>Name:</strong> ${data.name}</div>
-              <div><strong>Email:</strong> <a href="mailto:${data.email}" style="color: #1E40AF;">${data.email}</a></div>
+              <div><strong>Email:</strong> <a href="mailto:${data.email}" style="color: #1E40AF; word-break: break-all;">${data.email}</a></div>
               ${data.company ? `<div><strong>Company:</strong> ${data.company}</div>` : ''}
-              ${data.phone ? `<div><strong>Phone/WhatsApp:</strong> ${data.phone}</div>` : ''}
-              <div><strong>Location:</strong> ${data.country}</div>
+              ${data.phone ? `<div><strong>WhatsApp:</strong> ${data.phone}</div>` : ''}
+              <div><strong>Country:</strong> ${data.country}</div>
             </div>
           </div>
           
           <!-- Message -->
-          <div style="margin-bottom: 24px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #E2E8F0;">
-            <h3 style="color: #1E293B; margin: 0 0 16px 0; font-size: 18px; font-weight: 600;">
+          <div style="margin-bottom: 20px; background: white; padding: 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+            <h3 style="color: #1E293B; margin: 0 0 12px 0; font-size: 18px; font-weight: 600;">
               💬 Message
             </h3>
-            <div style="background: #F8FAFC; padding: 16px; border-radius: 6px; border-left: 4px solid #1E40AF;">
-              <p style="margin: 0; line-height: 1.6; white-space: pre-wrap;">${data.message}</p>
+            <div style="background: #F8FAFC; padding: 12px; border-radius: 6px; border-left: 4px solid #1E40AF;">
+              <p style="margin: 0; line-height: 1.6; white-space: pre-wrap; word-break: break-word;">${data.message}</p>
             </div>
           </div>
           
-          <!-- Inquiry Details -->
-          <div style="margin-bottom: 24px; background: #F1F5F9; padding: 20px; border-radius: 8px;">
-            <h3 style="color: #1E293B; margin: 0 0 16px 0; font-size: 18px; font-weight: 600;">
-              🔍 Inquiry Details
+          <!-- Technical Details -->
+          <div style="margin-bottom: 20px; background: #F1F5F9; padding: 16px; border-radius: 8px;">
+            <h3 style="color: #1E293B; margin: 0 0 12px 0; font-size: 18px; font-weight: 600;">
+              🔍 Technical Details
             </h3>
-            <div style="display: grid; gap: 8px; font-size: 14px;">
-              <div><strong>Source:</strong> <span style="background: #E2E8F0; padding: 4px 8px; border-radius: 4px;">${data.source}</span></div>
+            <div style="display: grid; gap: 6px; font-size: 13px;">
               ${data.productSlug ? `<div><strong>Product Interest:</strong> <span style="color: #1E40AF; font-weight: 600;">${data.productSlug}</span></div>` : ''}
-              ${data.category ? `<div><strong>Category:</strong> ${data.category}</div>` : ''}
               <div><strong>Source Page:</strong> <a href="${data.referrer}" style="color: #1E40AF; word-break: break-all;">${data.referrer}</a></div>
               <div><strong>Timestamp:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })} (Beijing Time)</div>
             </div>
           </div>
           
           <!-- Action Required -->
-          <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #F59E0B;">
-            <h3 style="color: #92400E; margin: 0 0 8px 0; font-size: 16px; font-weight: 700;">
+          <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 16px; border-radius: 8px; text-align: center; border: 1px solid #F59E0B;">
+            <h3 style="color: #92400E; margin: 0 0 6px 0; font-size: 16px; font-weight: 700;">
               ⚡ Action Required
             </h3>
-            <p style="color: #92400E; margin: 0; font-size: 14px;">
-              Please respond within 24 hours to maintain excellent customer service standards.
+            <p style="color: #92400E; margin: 0; font-size: 13px;">
+              Please respond within 24 hours
             </p>
           </div>
         </div>
         
         <!-- Footer -->
-        <div style="background: #F8FAFC; padding: 16px 24px; text-align: center; border-radius: 0 0 12px 12px; border-top: 1px solid #E2E8F0;">
-          <p style="color: #6B7280; font-size: 12px; margin: 0;">
-            Automated notification from ARZIR website contact form
-          </p>
+        <div style="background: #F8FAFC; padding: 12px 20px; text-align: center; border-radius: 0 0 12px 12px; border-top: 1px solid #E2E8F0;">
+          <span style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); color: #ffffff; padding: 6px 12px; border-radius: 16px; font-size: 12px; font-weight: 700;">
+            ARZIR - Leading Industrial Equipment Manufacturer
+          </span>
         </div>
       </div>
     </body>

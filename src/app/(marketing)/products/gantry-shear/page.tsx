@@ -1,6 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
+import { ProductCTA } from "@/components/common/ProductCTA";
 import { ArrowRight, CheckCircle, Zap, Shield } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -353,22 +354,10 @@ export default function GantryShearPage() {
       </Section>
 
       {/* Bottom CTA */}
-      <Section background="white" size="lg">
-        <div className="bg-arzir-gray-50 rounded-3xl p-8 lg:p-12 text-center space-y-6">
-          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-black">
-            Need maximum cutting capacity?
-          </h2>
-          <p className="text-arzir-gray-600 max-w-2xl mx-auto">
-            Our engineers can help you design the optimal gantry shear configuration for your heavy-duty cutting requirements and facility layout.
-          </p>
-          <QuoteDialog source="gantry_shear_bottom">
-            <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
-              Get Heavy-Duty Solution
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </QuoteDialog>
-        </div>
-      </Section>
+      <ProductCTA 
+        productName="gantry-shear"
+        formSource="gantry-shear_bottom" 
+      />
     </>
   );
 }
