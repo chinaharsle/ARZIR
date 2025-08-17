@@ -1,105 +1,257 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# ARZIR 工业设备网站
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+<div align="center">
+  <img alt="ARZIR Logo" src="./logo/ARZIR-Original-LOGO.png" width="300">
+  
+  <h3>工业回收与金属加工机械制造商</h3>
+  
+  <p>
+    <strong>专业的回收设备制造商，专注于金属加工和工业回收解决方案</strong>
+  </p>
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+  <p>
+    <a href="#功能特性"><strong>功能特性</strong></a> ·
+    <a href="#技术栈"><strong>技术栈</strong></a> ·
+    <a href="#快速开始"><strong>快速开始</strong></a> ·
+    <a href="#项目结构"><strong>项目结构</strong></a> ·
+    <a href="#部署"><strong>部署</strong></a>
+  </p>
+</div>
 
-## Features
+## 关于 ARZIR
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+ARZIR 工业设备有限公司成立于2012年，是一家专业从事工业回收和金属加工机械制造的企业。我们致力于为全球客户提供高质量的回收设备和解决方案。
 
-## Demo
+### 我们的产品
+- 回收打包机 (Recycling Baler)
+- 废金属剪切机 (Scrap Metal Shear)  
+- 破碎机 (Shredder)
+- 铝挤压机 (Aluminium Extrusion Press)
+- 压块机 (Briquetting Machine)
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+### 应用行业
+- 汽车拆解
+- 铝材加工
+- 金属制造
+- 航空回收
+- 电缆回收
+- 钢铁厂
+- 船舶拆解
 
-## Deploy to Vercel
+## 功能特性
 
-Vercel deployment will guide you through creating a Supabase account and project.
+### 🏭 产品展示系统
+- 全面的产品目录和详细信息
+- 产品图片展示和技术规格
+- 应用案例和解决方案
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+### 📝 内容管理
+- 博客文章管理系统
+- 媒体文件管理
+- 动态内容编辑
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+### 🧮 工程计算器
+- 多种工程计算工具
+- 设备参数计算
+- 性能评估工具
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+### 💬 客户互动
+- 联系表单和询价系统
+- 客户询问管理
+- 销售线索跟踪
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+### 🌍 国际化支持
+- 多语言支持
+- 地区化内容
+- 国际化路由
 
-## Clone and run locally
+## 技术栈
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+### 前端技术
+- **[Next.js 15](https://nextjs.org)** - React 全栈框架
+- **[React 19](https://reactjs.org)** - 用户界面库
+- **[TypeScript](https://www.typescriptlang.org)** - 类型安全的 JavaScript
+- **[Tailwind CSS](https://tailwindcss.com)** - 实用优先的 CSS 框架
+- **[shadcn/ui](https://ui.shadcn.com)** - 现代化 UI 组件库
 
-2. Create a Next.js app using the Supabase Starter template npx command
+### 后端服务
+- **[Supabase](https://supabase.io)** - 开源 Firebase 替代方案
+  - PostgreSQL 数据库
+  - 身份认证系统
+  - 实时订阅
+  - 存储服务
+- **[Resend](https://resend.com)** - 邮件发送服务
 
+### 开发工具
+- **[ESLint](https://eslint.org)** - 代码质量检查
+- **[Prettier](https://prettier.io)** - 代码格式化
+- **[Turbopack](https://turbo.build/pack)** - 快速构建工具
+
+### 第三方集成
+- **[TinyMCE](https://www.tiny.cloud)** - 富文本编辑器
+- **[Lucide React](https://lucide.dev)** - 图标库
+- **[React Hook Form](https://react-hook-form.com)** - 表单处理
+- **[Zod](https://zod.dev)** - 类型验证
+
+## 快速开始
+
+### 环境要求
+- Node.js 18.17 或更高版本
+- npm, yarn 或 pnpm
+- Supabase 项目
+
+### 安装步骤
+
+1. **克隆项目**
    ```bash
-   npx create-next-app --example with-supabase with-supabase-app
+   git clone https://github.com/your-org/arzir-website.git
+   cd arzir-website
    ```
 
+2. **安装依赖**
    ```bash
-   yarn create next-app --example with-supabase with-supabase-app
+   npm install
+   # 或者
+   yarn install
+   # 或者
+   pnpm install
    ```
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
+3. **配置环境变量**
+   
+   创建 `.env.local` 文件并配置以下变量：
+   ```env
+   # Supabase 配置
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+   
+   # 邮件服务配置
+   RESEND_API_KEY=your_resend_api_key
+   
+   # 网站配置
+   NEXT_PUBLIC_SITE_URL=http://localhost:3000
    ```
 
-3. Use `cd` to change into the app's directory
-
-   ```bash
-   cd with-supabase-app
-   ```
-
-4. Rename `.env.example` to `.env.local` and update the following:
-
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
-
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
-
-5. You can now run the Next.js local development server:
-
+4. **启动开发服务器**
    ```bash
    npm run dev
    ```
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+5. **访问应用**
+   
+   打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+### 可用脚本
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+```bash
+npm run dev          # 启动开发服务器（使用 Turbopack）
+npm run build        # 构建生产版本
+npm run start        # 启动生产服务器
+npm run lint         # 运行 ESLint 检查
+npm run typecheck    # TypeScript 类型检查
+```
 
-## Feedback and issues
+## 项目结构
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+```
+src/
+├── app/                          # Next.js App Router
+│   ├── (marketing)/             # 营销页面组
+│   │   ├── about/              # 关于我们
+│   │   ├── applications/       # 应用案例
+│   │   ├── blog/              # 博客
+│   │   ├── calculator/        # 计算器
+│   │   ├── contact/           # 联系我们
+│   │   └── products/          # 产品页面
+│   ├── api/                    # API 路由
+│   ├── auth/                   # 认证相关页面
+│   ├── dashboard/              # 管理后台
+│   └── protected/              # 受保护的页面
+├── components/                  # React 组件
+│   ├── ui/                     # 基础 UI 组件
+│   ├── forms/                  # 表单组件
+│   ├── layout/                 # 布局组件
+│   └── dashboard/              # 后台组件
+├── config/                     # 配置文件
+├── lib/                        # 工具库
+│   ├── supabase/              # Supabase 配置
+│   ├── email/                 # 邮件服务
+│   └── validators/            # 数据验证
+├── server/                     # 服务器端代码
+├── types/                      # TypeScript 类型定义
+└── styles/                     # 样式文件
+```
 
-## More Supabase examples
+## 部署
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+### Vercel 部署（推荐）
+
+1. **连接 GitHub 仓库**
+   - 登录 [Vercel](https://vercel.com)
+   - 导入 GitHub 项目
+
+2. **配置环境变量**
+   
+   在 Vercel 项目设置中添加环境变量：
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `RESEND_API_KEY`
+   - `NEXT_PUBLIC_SITE_URL`
+
+3. **部署**
+   - Vercel 会自动构建和部署项目
+   - 每次推送到主分支都会触发自动部署
+
+### 其他部署平台
+
+项目支持部署到任何支持 Node.js 的平台：
+- Netlify
+- Railway
+- Render
+- DigitalOcean App Platform
+
+## 开发指南
+
+### 添加新页面
+1. 在 `src/app/(marketing)/` 下创建新目录
+2. 添加 `page.tsx` 文件
+3. 在 `src/config/site.ts` 中更新导航配置
+
+### 添加新组件
+1. 在 `src/components/` 相应目录下创建组件
+2. 遵循现有的命名约定
+3. 使用 TypeScript 进行类型定义
+
+### 数据库操作
+1. 使用 Supabase 客户端进行数据库操作
+2. 在 `src/server/` 中编写服务器端查询
+3. 在 `src/types/` 中定义数据类型
+
+## 贡献指南
+
+1. Fork 项目
+2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+## 许可证
+
+此项目使用 MIT 许可证。查看 [LICENSE](LICENSE) 文件了解详情。
+
+## 联系我们
+
+- **公司**: ARZIR 工业设备有限公司
+- **地址**: 中国江苏省南京市溧水区明觉工业园
+- **邮箱**: info@arzir.com
+- **电话**: +86-25-56200956
+- **微信/WhatsApp**: +8618151685977
+- **网站**: [www.arzir.com](https://www.arzir.com)
+
+---
+
+<div align="center">
+  <p>由 <strong>ARZIR</strong> 团队精心开发 ❤️</p>
+</div>
