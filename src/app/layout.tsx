@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { siteConfig } from "@/config/site";
+import { Analytics } from '@vercel/analytics/react';
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -77,6 +78,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-body antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
