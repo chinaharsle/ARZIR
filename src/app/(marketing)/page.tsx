@@ -5,23 +5,31 @@ import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { ArrowRight, CheckCircle, Globe, Award, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Industrial Recycling & Metal Processing Machinery Manufacturer",
+  description: "Over 12 years of expertise in designing and manufacturing high-performance recycling equipment. Trusted by customers in 100+ countries worldwide.",
+};
 
 export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white pt-4 lg:pt-8">
+      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Mobile: Image first, Desktop: Text first */}
           <div className="relative order-1 lg:order-2">
-            <div className="aspect-[4/3] lg:aspect-[4/4] bg-arzir-gray-200 rounded-2xl overflow-hidden">
-              {/* Placeholder for hero image */}
-              <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🏭</div>
-                  <p>Industrial Equipment Image</p>
-                </div>
-              </div>
+            <div className="aspect-[4/3] lg:aspect-[5/4] bg-arzir-gray-200 rounded-2xl overflow-hidden">
+              <Image
+                src="/images/hero/home-hero.png"
+                alt="Industrial Equipment - ARZIR Manufacturing Machinery"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
           
@@ -171,13 +179,13 @@ export default function HomePage() {
               <div className="relative">
                 {/* Main Image Container */}
                 <div className="aspect-[4/5] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-3xl overflow-hidden shadow-2xl relative">
-                  <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                    <div className="text-center">
-                      <div className="text-8xl mb-6">🏭</div>
-                      <p className="text-lg font-medium">ARZIR Manufacturing</p>
-                      <p className="text-sm text-arzir-gray-400">Excellence in Engineering</p>
-                    </div>
-                  </div>
+                  <Image
+                    src="/images/about/about-home.png"
+                    alt="ARZIR Manufacturing Facility - Excellence in Engineering"
+                    width={600}
+                    height={750}
+                    className="w-full h-full object-cover"
+                  />
                   
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
@@ -233,7 +241,7 @@ export default function HomePage() {
               title: "Scrap Recycling",
               description: "Maximize recovery value with high-density compaction solutions that transform waste into valuable resources",
               href: "/applications/scrap-recycling",
-              image: "♻️",
+              image: "/images/applications/scrap-recycling.png",
               stats: "85% efficiency increase",
               color: "from-green-500 to-emerald-600"
             },
@@ -241,7 +249,7 @@ export default function HomePage() {
               title: "Metal Fabrication",
               description: "Turn offcuts into value with efficient baling & shearing systems designed for continuous operation",
               href: "/applications/metal-fabrication", 
-              image: "🔨",
+              image: "/images/applications/metal-fabrication-full.jpg",
               stats: "60% waste reduction",
               color: "from-blue-500 to-cyan-600"
             },
@@ -249,23 +257,23 @@ export default function HomePage() {
               title: "Automotive Dismantling",
               description: "Faster ELV processing with robust baling & shearing equipment built for heavy-duty applications",
               href: "/applications/automotive-dismantling",
-              image: "🚗",
+              image: "/images/applications/automotive-dismantling-full.jpg",
               stats: "45% faster processing",
               color: "from-orange-500 to-red-600"
             },
             {
               title: "Aluminum Processing",
-              description: "Stable extrusion and compacting solutions for clean aluminum streams. Advanced technology ensures optimal material recovery rates.",
+              description: "Stable extrusion and compacting solutions for aluminum streams. Advanced technology ensures optimal material recovery rates.",
               href: "/applications/aluminum-processing",
-              image: "⚙️",
+              image: "/images/applications/aluminum-processing-full.jpg",
               stats: "95% material recovery",
               color: "from-purple-500 to-violet-600"
             },
             {
               title: "Steel Mills",
-              description: "Handle mill scrap safely with industrial-grade processing equipment. Designed for continuous operation in demanding production environments.",
+              description: "Handle mill scrap safely with industrial-grade processing equipment. Designed for continuous operation in demanding production.",
               href: "/applications/steel-mills",
-              image: "🏗️",
+              image: "/images/applications/steel-mills-full.jpg",
               stats: "24/7 operation",
               color: "from-gray-500 to-slate-600"
             },
@@ -273,47 +281,56 @@ export default function HomePage() {
               title: "Shipbreaking",
               description: "Heavy sections processing with high-tonnage equipment designed for maritime industry demands",
               href: "/applications/shipbreaking",
-              image: "🚢",
+              image: "/images/applications/shipbreaking-full.jpg",
               stats: "1000+ ton capacity",
               color: "from-teal-500 to-blue-600"
             }
           ].map((application, index) => (
             <div key={application.title} className="group cursor-pointer">
               <Link href={application.href}>
-                <div className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-arzir-gray-100 overflow-hidden">
+                <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-arzir-gray-100 overflow-hidden">
                   {/* Background Gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${application.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                   
-                  {/* Floating Icon Background */}
-                  <div className="absolute top-4 right-4 w-20 h-20 bg-arzir-gray-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-3xl">{application.image}</span>
+                  {/* Top Image Section */}
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={application.image}
+                      alt={`${application.title} Application`}
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    
+                    {/* Stats Badge */}
+                    <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm text-arzir-primary rounded-full text-xs font-semibold border border-arzir-primary/20">
+                      {application.stats}
+                    </div>
                   </div>
 
-                  <div className="relative z-10 space-y-6">
-                    {/* Title and Stats */}
-                    <div className="space-y-3">
+                  {/* Content Section */}
+                  <div className="p-8">
+                    <div className="space-y-4">
+                      {/* Title */}
                       <h3 className="text-2xl lg:text-3xl font-heading font-bold text-black group-hover:text-arzir-primary transition-colors duration-300">
                         {application.title}
                       </h3>
-                      <div className="inline-flex items-center px-4 py-2 bg-arzir-primary/10 text-arzir-primary rounded-full text-sm font-semibold">
-                        {application.stats}
+                      
+                      {/* Description */}
+                      <p className="text-arzir-gray-600 leading-relaxed text-base line-clamp-3">
+                        {application.description}
+                      </p>
+
+                      {/* CTA */}
+                      <div className="flex items-center text-arzir-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300 pt-2">
+                        <span>Explore Solutions</span>
+                        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-arzir-gray-600 leading-relaxed text-lg pr-24">
-                      {application.description}
-                    </p>
-
-                    {/* CTA */}
-                    <div className="flex items-center text-arzir-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300">
-                      <span>Explore Solutions</span>
-                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
 
-                  {/* Decorative Elements */}
-                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-arzir-primary/5 rounded-full -translate-x-16 translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+                  {/* Bottom Decorative Element */}
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-arzir-primary/5 rounded-full translate-x-10 translate-y-10 group-hover:scale-150 transition-transform duration-700"></div>
                 </div>
               </Link>
             </div>
@@ -338,7 +355,7 @@ export default function HomePage() {
               location: "Brazil",
               equipment: "Scrap Metal Baler + Gantry Shear",
               results: "+45% throughput, -30% labor costs",
-              image: "🏭",
+              image: "/images/case-studies/metal-recycling-facility.jpg",
               metrics: "850 tons/day capacity"
             },
             {
@@ -346,7 +363,7 @@ export default function HomePage() {
               location: "USA",
               equipment: "Car Body Baler + Container Shear", 
               results: "+60% processing speed, ROI in 18 months",
-              image: "🚗",
+              image: "/images/case-studies/automotive-dismantling.jpg",
               metrics: "120 vehicles/day"
             },
             {
@@ -354,15 +371,19 @@ export default function HomePage() {
               location: "Germany",
               equipment: "Extrusion Press + Briquetting Machine",
               results: "+35% material recovery, -25% waste",
-              image: "⚙️", 
+              image: "/images/case-studies/aluminum-processing.jpg", 
               metrics: "500 tons/month output"
             }
           ].map((caseStudy) => (
             <div key={caseStudy.title} className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-200">
               <div className="aspect-[4/3] bg-arzir-gray-200 rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-5xl">
-                  {caseStudy.image}
-                </div>
+                <Image
+                  src={caseStudy.image}
+                  alt={`${caseStudy.title} Case Study`}
+                  width={500}
+                  height={375}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-sm text-arzir-gray-500">

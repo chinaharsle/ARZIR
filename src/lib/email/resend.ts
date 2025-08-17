@@ -21,36 +21,87 @@ export interface EmailData {
 
 export async function sendLeadNotificationEmail(data: EmailData) {
   const emailContent = `
-    <h2>New Inquiry from ARZIR Website</h2>
-    
-    <h3>Contact Information:</h3>
-    <ul>
-      <li><strong>Name:</strong> ${data.name}</li>
-      <li><strong>Email:</strong> ${data.email}</li>
-      ${data.company ? `<li><strong>Company:</strong> ${data.company}</li>` : ''}
-      ${data.phone ? `<li><strong>WhatsApp/Phone:</strong> ${data.phone}</li>` : ''}
-      <li><strong>Country:</strong> ${data.country}</li>
-    </ul>
-    
-    <h3>Inquiry Details:</h3>
-    <ul>
-      <li><strong>Message:</strong></li>
-      <p style="background: #f5f5f5; padding: 15px; border-left: 4px solid #006EB6; margin: 10px 0;">${data.message}</p>
-      <li><strong>Source:</strong> ${data.source}</li>
-      ${data.productSlug ? `<li><strong>Product Interest:</strong> ${data.productSlug}</li>` : ''}
-      ${data.category ? `<li><strong>Category:</strong> ${data.category}</li>` : ''}
-    </ul>
-    
-    <h3>Technical Information:</h3>
-    <ul>
-      <li><strong>Source Page:</strong> ${data.referrer}</li>
-      <li><strong>Timestamp:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })} (Beijing Time)</li>
-    </ul>
-    
-    <hr style="margin: 20px 0;">
-    <p style="color: #666; font-size: 12px;">
-      This email was automatically generated from the ARZIR website contact form.
-    </p>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>New Lead from ARZIR</title>
+    </head>
+    <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px;">
+      <div style="max-width: 650px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        
+        <!-- Header -->
+        <div style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); padding: 24px; text-align: center; border-radius: 12px 12px 0 0;">
+          <h1 style="color: white; margin: 0; font-size: 24px; font-weight: 700;">
+            🔔 New Lead from ARZIR Website
+          </h1>
+          <p style="color: #E5E7EB; margin: 8px 0 0 0; font-size: 14px;">
+            ${data.country !== 'Unknown' ? `From: ${data.country}` : 'Website Contact Form'}
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div style="padding: 24px;">
+          
+          <!-- Contact Information -->
+          <div style="margin-bottom: 24px; background: #F8FAFC; padding: 20px; border-radius: 8px; border-left: 4px solid #1E40AF;">
+            <h3 style="color: #1E293B; margin: 0 0 16px 0; font-size: 18px; font-weight: 600;">
+              👤 Contact Information
+            </h3>
+            <div style="display: grid; gap: 8px;">
+              <div><strong>Name:</strong> ${data.name}</div>
+              <div><strong>Email:</strong> <a href="mailto:${data.email}" style="color: #1E40AF;">${data.email}</a></div>
+              ${data.company ? `<div><strong>Company:</strong> ${data.company}</div>` : ''}
+              ${data.phone ? `<div><strong>Phone/WhatsApp:</strong> ${data.phone}</div>` : ''}
+              <div><strong>Location:</strong> ${data.country}</div>
+            </div>
+          </div>
+          
+          <!-- Message -->
+          <div style="margin-bottom: 24px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #E2E8F0;">
+            <h3 style="color: #1E293B; margin: 0 0 16px 0; font-size: 18px; font-weight: 600;">
+              💬 Message
+            </h3>
+            <div style="background: #F8FAFC; padding: 16px; border-radius: 6px; border-left: 4px solid #1E40AF;">
+              <p style="margin: 0; line-height: 1.6; white-space: pre-wrap;">${data.message}</p>
+            </div>
+          </div>
+          
+          <!-- Inquiry Details -->
+          <div style="margin-bottom: 24px; background: #F1F5F9; padding: 20px; border-radius: 8px;">
+            <h3 style="color: #1E293B; margin: 0 0 16px 0; font-size: 18px; font-weight: 600;">
+              🔍 Inquiry Details
+            </h3>
+            <div style="display: grid; gap: 8px; font-size: 14px;">
+              <div><strong>Source:</strong> <span style="background: #E2E8F0; padding: 4px 8px; border-radius: 4px;">${data.source}</span></div>
+              ${data.productSlug ? `<div><strong>Product Interest:</strong> <span style="color: #1E40AF; font-weight: 600;">${data.productSlug}</span></div>` : ''}
+              ${data.category ? `<div><strong>Category:</strong> ${data.category}</div>` : ''}
+              <div><strong>Source Page:</strong> <a href="${data.referrer}" style="color: #1E40AF; word-break: break-all;">${data.referrer}</a></div>
+              <div><strong>Timestamp:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })} (Beijing Time)</div>
+            </div>
+          </div>
+          
+          <!-- Action Required -->
+          <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #F59E0B;">
+            <h3 style="color: #92400E; margin: 0 0 8px 0; font-size: 16px; font-weight: 700;">
+              ⚡ Action Required
+            </h3>
+            <p style="color: #92400E; margin: 0; font-size: 14px;">
+              Please respond within 24 hours to maintain excellent customer service standards.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Footer -->
+        <div style="background: #F8FAFC; padding: 16px 24px; text-align: center; border-radius: 0 0 12px 12px; border-top: 1px solid #E2E8F0;">
+          <p style="color: #6B7280; font-size: 12px; margin: 0;">
+            Automated notification from ARZIR website contact form
+          </p>
+        </div>
+      </div>
+    </body>
+    </html>
   `;
 
   try {

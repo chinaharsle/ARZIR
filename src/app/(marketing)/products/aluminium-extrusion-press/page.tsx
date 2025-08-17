@@ -1,0 +1,288 @@
+import { Section } from "@/components/common/Section";
+import { Button } from "@/components/ui/button";
+import { QuoteDialog } from "@/components/forms/QuoteDialog";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Aluminum Extrusion Press - Precision Hydraulic Manufacturing Systems",
+  description: "High-performance aluminum extrusion presses for profile manufacturing. Precision hydraulic systems with advanced control technology for consistent quality and efficiency.",
+};
+
+
+const specifications = [
+  {
+    parameter: "Press Force",
+    value: "800-8000 tons",
+    description: "Hydraulic force capacity range"
+  },
+  {
+    parameter: "Profile Size",
+    value: "Up to 500mm",
+    description: "Maximum circumscribing circle"
+  },
+  {
+    parameter: "Billet Length",
+    value: "300-1200mm",
+    description: "Standard billet dimensions"
+  },
+  {
+    parameter: "Extrusion Speed",
+    value: "0.1-20 m/min",
+    description: "Variable speed control"
+  },
+  {
+    parameter: "Temperature Control",
+    value: "±5°C",
+    description: "Precision temperature management"
+  },
+  {
+    parameter: "Die Size",
+    value: "150-500mm",
+    description: "Supported die diameters"
+  }
+];
+
+const features = [
+  {
+    title: "Precision Control",
+    description: "Advanced hydraulic systems with precise pressure and speed control for consistent profile quality",
+    icon: "⚙️"
+  },
+  {
+    title: "Temperature Management",
+    description: "Integrated heating and cooling systems maintaining optimal extrusion temperatures",
+    icon: "🌡️"
+  },
+  {
+    title: "Automation Ready",
+    description: "PLC control systems with options for full automation and Industry 4.0 integration",
+    icon: "🤖"
+  },
+  {
+    title: "Quick Die Change",
+    description: "Efficient die changing systems minimizing downtime between production runs",
+    icon: "🔄"
+  }
+];
+
+const applications = [
+  {
+    title: "Architectural Profiles",
+    description: "Window frames, curtain walls, and structural glazing systems",
+    href: "/applications/aluminum-processing"
+  },
+  {
+    title: "Industrial Profiles",
+    description: "Machine frames, conveyors, and industrial automation components",
+    href: "/applications/metal-fabrication"
+  },
+  {
+    title: "Automotive Components",
+    description: "Heat sinks, crash management systems, and structural components",
+    href: "/applications/automotive-dismantling"
+  },
+  {
+    title: "Heat Exchangers",
+    description: "Multi-port tubes and complex cooling system profiles",
+    href: "/applications/aluminum-processing"
+  }
+];
+
+const faqs = [
+  {
+    question: "What alloys can be processed with ARZIR extrusion presses?",
+    answer: "Our presses handle all common aluminium alloys including 6xxx series (6063, 6061), 1xxx series (1050, 1100), and 3xxx series (3003, 3105) with proper temperature control."
+  },
+  {
+    question: "How is profile quality controlled during extrusion?",
+    answer: "Quality control includes billet preheating, die temperature monitoring, extrusion speed control, and cooling rate management. Optional online thickness measurement ensures consistent dimensions."
+  },
+  {
+    question: "What maintenance is required for extrusion presses?",
+    answer: "Regular maintenance includes hydraulic fluid changes, seal inspection, die cleaning, and calibration checks. Typical service intervals are 1000-2000 operating hours."
+  },
+  {
+    question: "Can the press handle complex profile geometries?",
+    answer: "Yes, with proper die design, complex hollow profiles, multi-cavity dies, and intricate geometries can be extruded. Die design support is available for complex applications."
+  },
+  {
+    question: "What energy efficiency features are included?",
+    answer: "Energy-efficient features include variable speed hydraulic pumps, heat recovery systems, optimized heating profiles, and standby modes reducing energy consumption by up to 30%."
+  }
+];
+
+export default function AluminiumExtrusionPressPage() {
+  return (
+    <>
+      {/* Page Hero */}
+      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="space-y-6">
+            <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black leading-tight">
+              Aluminium Extrusion Press
+            </h1>
+            <p className="text-xl text-arzir-gray-600 leading-relaxed">
+              Precision extrusion presses for high-quality aluminium profiles with advanced control systems and consistent output.
+            </p>
+            <div className="flex items-center gap-4 pt-4">
+              <div className="px-4 py-2 bg-arzir-primary/10 rounded-full text-arzir-primary font-semibold text-sm">
+                800-8000 tons
+              </div>
+              <div className="px-4 py-2 bg-success/10 rounded-full text-success font-semibold text-sm">
+                ±5°C precision
+              </div>
+            </div>
+            <QuoteDialog source="aluminium_extrusion_press_hero">
+              <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
+                Get a Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </QuoteDialog>
+          </div>
+          <div className="relative">
+            <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/products/aluminum-extrusion-press.png"
+                alt="ARZIR Aluminium Extrusion Press - Precision Profile Manufacturing"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Category Introduction */}
+      <Section background="white" size="lg">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <p className="text-lg text-arzir-gray-600 leading-relaxed">
+            ARZIR aluminium extrusion presses deliver precision manufacturing for architectural, industrial, 
+            and automotive profiles. Our press systems feature advanced hydraulic control, integrated heating 
+            systems, and automation capabilities for consistent quality and high productivity. Each press is 
+            engineered for specific capacity requirements with comprehensive support for die design and process optimization.
+          </p>
+        </div>
+      </Section>
+
+      {/* Technical Specifications */}
+      <Section background="white" size="lg">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            Technical Specifications
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {specifications.map((spec, index) => (
+              <div key={spec.parameter} className="bg-arzir-gray-50 p-6 rounded-xl">
+                <h3 className="text-lg font-heading font-semibold text-black mb-2">
+                  {spec.parameter}
+                </h3>
+                <div className="text-2xl font-bold text-arzir-primary mb-2">
+                  {spec.value}
+                </div>
+                <p className="text-sm text-arzir-gray-600">
+                  {spec.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Key Features */}
+      <Section background="gray" size="lg">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            Key Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {features.map((feature, index) => (
+              <div key={feature.title} className="bg-white p-6 rounded-xl shadow-sm border border-arzir-gray-100">
+                <div className="flex items-start gap-4">
+                  <div className="text-4xl">{feature.icon}</div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-heading font-semibold text-black">
+                      {feature.title}
+                    </h3>
+                    <p className="text-arzir-gray-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Applications */}
+      <Section background="white" size="lg">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            Applications
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {applications.map((app, index) => (
+              <div key={app.title} className="bg-arzir-gray-50 p-6 rounded-xl text-center space-y-3">
+                <h3 className="text-lg font-heading font-semibold text-black">
+                  {app.title}
+                </h3>
+                <p className="text-sm text-arzir-gray-600">
+                  {app.description}
+                </p>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={app.href}>
+                    Explore Solutions
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section background="gray" size="lg">
+        <div className="space-y-8">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
+            FAQs
+          </h2>
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl border-b border-arzir-gray-200 pb-6">
+                <h3 className="text-lg font-heading font-semibold text-black mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-arzir-gray-600">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Bottom CTA */}
+      <Section background="white" size="lg">
+        <div className="bg-arzir-gray-50 rounded-3xl p-8 lg:p-12 text-center space-y-6">
+          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-black">
+            Ready to enhance your aluminium processing?
+          </h2>
+          <p className="text-arzir-gray-600 max-w-2xl mx-auto">
+            Our engineers can help you select the optimal extrusion press configuration and provide comprehensive support for die design and process optimization.
+          </p>
+          <QuoteDialog source="aluminium_extrusion_press_bottom">
+            <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
+              Get Expert Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </QuoteDialog>
+        </div>
+      </Section>
+    </>
+  );
+}

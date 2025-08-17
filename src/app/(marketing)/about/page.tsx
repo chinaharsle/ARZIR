@@ -1,6 +1,9 @@
+"use client";
+
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
+import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 import { 
   ArrowRight, 
   Target, 
@@ -13,8 +16,48 @@ import {
   Leaf
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { useRef, useEffect, useState } from "react";
 
 export default function AboutPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollAmount = 320; // card width + gap
+  const totalCards = 6;
+
+  const scrollNext = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const scrollPrev = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({ left: index * scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const scrollLeft = containerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / scrollAmount);
+      setCurrentIndex(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
   return (
     <>
       {/* Page Hero */}
@@ -31,12 +74,13 @@ export default function AboutPage() {
         
         {/* Hero Image */}
         <div className="mt-16 aspect-[21/9] bg-arzir-gray-200 rounded-3xl overflow-hidden">
-          <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-            <div className="text-center">
-              <div className="text-8xl mb-4">🏭</div>
-              <p className="text-lg">ARZIR Manufacturing Facility</p>
-            </div>
-          </div>
+          <Image
+            src="/images/about/hero/manufacturing-facility.svg"
+            alt="ARZIR Manufacturing Facility - State-of-the-Art Production Center"
+            width={1260}
+            height={540}
+            className="w-full h-full object-cover"
+          />
         </div>
       </Section>
       {/* Company Overview */}
@@ -54,12 +98,13 @@ export default function AboutPage() {
           {/* Block 1 - Manufacturing */}
           <div className="bg-gradient-to-br from-white to-arzir-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="aspect-[4/3] bg-arzir-gray-200 rounded-2xl mb-6 overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🏭</div>
-                  <p>Advanced Manufacturing</p>
-                </div>
-              </div>
+              <Image
+                src="/images/about/overview/manufacturing.svg"
+                alt="Advanced Manufacturing - CNC & Automation"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">World-Class Manufacturing</h3>
             <p className="text-arzir-gray-600 leading-relaxed mb-4">
@@ -71,12 +116,13 @@ export default function AboutPage() {
           {/* Block 2 - Global Reach */}
           <div className="bg-gradient-to-br from-white to-arzir-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="aspect-[4/3] bg-arzir-gray-200 rounded-2xl mb-6 overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🌍</div>
-                  <p>Global Network</p>
-                </div>
-              </div>
+              <Image
+                src="/images/about/overview/global-network.svg"
+                alt="Global Network - 100+ Countries"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">Global Market Leader</h3>
             <p className="text-arzir-gray-600 leading-relaxed mb-4">
@@ -88,12 +134,13 @@ export default function AboutPage() {
           {/* Block 3 - Innovation */}
           <div className="bg-gradient-to-br from-white to-arzir-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="aspect-[4/3] bg-arzir-gray-200 rounded-2xl mb-6 overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🔬</div>
-                  <p>R&D Innovation</p>
-                </div>
-              </div>
+              <Image
+                src="/images/about/overview/innovation.svg"
+                alt="R&D Innovation - Technology Excellence"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">Continuous Innovation</h3>
             <p className="text-arzir-gray-600 leading-relaxed mb-4">
@@ -163,10 +210,29 @@ export default function AboutPage() {
                 <Eye className="h-8 w-8 text-arzir-primary" />
               </div>
               <h3 className="text-2xl font-heading font-bold text-black mb-6">Our Vision</h3>
-              <p className="text-arzir-gray-600 leading-relaxed text-lg">
+              <p className="text-arzir-gray-600 leading-relaxed text-lg mb-6">
                 To be the global leader in recycling machinery manufacturing, recognized for innovation, 
                 quality, and customer success in creating a more sustainable world through advanced technology.
               </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-arzir-gray-50">
+                  <div className="w-2 h-2 bg-arzir-primary rounded-full"></div>
+                  <span className="text-sm text-arzir-gray-700">Leading technology innovation</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-arzir-gray-50">
+                  <div className="w-2 h-2 bg-arzir-primary rounded-full"></div>
+                  <span className="text-sm text-arzir-gray-700">Global market expansion</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-arzir-gray-50">
+                  <div className="w-2 h-2 bg-arzir-primary rounded-full"></div>
+                  <span className="text-sm text-arzir-gray-700">Sustainable future focus</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-arzir-gray-50">
+                  <div className="w-2 h-2 bg-arzir-primary rounded-full"></div>
+                  <span className="text-sm text-arzir-gray-700">Customer success driven</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -235,16 +301,16 @@ export default function AboutPage() {
           {/* Navigation arrows */}
           <div className="absolute top-1/2 -translate-y-1/2 left-4 z-10">
             <button 
+              onClick={scrollPrev}
               className="w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white"
-              id="prevHistory"
             >
               <ArrowRight className="h-5 w-5 rotate-180" />
             </button>
           </div>
           <div className="absolute top-1/2 -translate-y-1/2 right-4 z-10">
             <button 
+              onClick={scrollNext}
               className="w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white"
-              id="nextHistory"
             >
               <ArrowRight className="h-5 w-5" />
             </button>
@@ -252,48 +318,48 @@ export default function AboutPage() {
 
           {/* Scrollable timeline container */}
           <div className="overflow-hidden px-8">
-            <div className="flex gap-8 pb-8 snap-x snap-mandatory overflow-x-auto scrollbar-hide" id="historyContainer">
+            <div className="flex gap-8 pb-8 snap-x snap-mandatory overflow-x-auto scrollbar-hide" ref={containerRef}>
               {[
                 {
                   year: "2012",
                   title: "Company Founded",
                   description: "ARZIR established in Nanjing, China, with a vision to revolutionize recycling machinery manufacturing.",
-                  image: "🏭",
+                  image: "/images/about/journey/2012-foundation.svg",
                   highlight: "Foundation Year"
                 },
                 {
                   year: "2014",
                   title: "First International Export",
                   description: "Successfully exported our first recycling baler to Southeast Asia, marking the beginning of global expansion.",
-                  image: "🚢",
+                  image: "/images/about/journey/2014-export.svg",
                   highlight: "Global Reach"
                 },
                 {
                   year: "2015",
                   title: "New Manufacturing Facility",
                   description: "Opened state-of-the-art 30,000㎡ production facility with advanced manufacturing capabilities.",
-                  image: "🏗️",
+                  image: "/images/about/journey/2015-facility.svg",
                   highlight: "Scale Up"
                 },
                 {
                   year: "2017",
                   title: "ISO Certification",
                   description: "Achieved ISO 9001 certification, demonstrating our commitment to quality management systems.",
-                  image: "🏆",
+                  image: "/images/about/journey/2017-iso.svg",
                   highlight: "Quality Excellence"
                 },
                 {
                   year: "2019",
                   title: "Global Service Network",
                   description: "Established international offices and service centers to better serve customers worldwide.",
-                  image: "🌍",
+                  image: "/images/about/journey/2019-service.svg",
                   highlight: "Service Excellence"
                 },
                 {
                   year: "2024",
                   title: "Innovation Leadership",
                   description: "Leading the industry with cutting-edge technology and sustainable manufacturing practices.",
-                  image: "🚀",
+                  image: "/images/about/journey/2024-innovation.svg",
                   highlight: "Future Ready"
                 }
               ].map((milestone, index) => (
@@ -309,8 +375,14 @@ export default function AboutPage() {
                       </div>
                       
                       {/* Icon */}
-                      <div className="text-5xl mb-6 text-center">
-                        {milestone.image}
+                      <div className="mb-6 text-center">
+                        <Image
+                          src={milestone.image}
+                          alt={`${milestone.year} ${milestone.title}`}
+                          width={320}
+                          height={240}
+                          className="w-full h-40 object-cover rounded-xl"
+                        />
                       </div>
                       
                       {/* Content */}
@@ -334,63 +406,17 @@ export default function AboutPage() {
 
           {/* Progress indicators */}
           <div className="flex justify-center mt-8 gap-2">
-            {Array.from({ length: 6 }).map((_, index) => (
+            {Array.from({ length: totalCards }).map((_, index) => (
               <button
                 key={index}
-                className="w-2 h-2 rounded-full bg-arzir-gray-300 hover:bg-arzir-primary transition-colors duration-200"
-                data-index={index}
+                onClick={() => scrollToIndex(index)}
+                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                  currentIndex === index ? 'bg-arzir-primary' : 'bg-arzir-gray-300 hover:bg-arzir-primary'
+                }`}
               />
             ))}
           </div>
         </div>
-
-        {/* Client-side script for interactivity */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            document.addEventListener('DOMContentLoaded', function() {
-              const container = document.getElementById('historyContainer');
-              const prevBtn = document.getElementById('prevHistory');
-              const nextBtn = document.getElementById('nextHistory');
-              const indicators = document.querySelectorAll('[data-index]');
-              
-              if (!container || !prevBtn || !nextBtn) return;
-              
-              const scrollAmount = 320; // card width + gap
-              
-              nextBtn.addEventListener('click', () => {
-                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-              });
-              
-              prevBtn.addEventListener('click', () => {
-                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-              });
-              
-              // Update indicators based on scroll position
-              container.addEventListener('scroll', () => {
-                const scrollLeft = container.scrollLeft;
-                const cardWidth = 320;
-                const currentIndex = Math.round(scrollLeft / cardWidth);
-                
-                indicators.forEach((indicator, index) => {
-                  if (index === currentIndex) {
-                    indicator.classList.add('bg-arzir-primary');
-                    indicator.classList.remove('bg-arzir-gray-300');
-                  } else {
-                    indicator.classList.remove('bg-arzir-primary');
-                    indicator.classList.add('bg-arzir-gray-300');
-                  }
-                });
-              });
-              
-              // Click indicators to scroll to position
-              indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                  container.scrollTo({ left: index * scrollAmount, behavior: 'smooth' });
-                });
-              });
-            });
-          `
-        }} />
       </Section>
       {/* Our Team */}
       <Section background="gray">
@@ -409,44 +435,48 @@ export default function AboutPage() {
               name: "Michael Chen",
               role: "Chief Executive Officer",
               bio: "15+ years in industrial machinery with expertise in global market expansion.",
-              image: "👨‍💼"
+              image: "/images/about/team/ceo.svg"
             },
             {
               name: "Sarah Wang",
               role: "Chief Technology Officer", 
               bio: "Leading our R&D initiatives with 12+ years in mechanical engineering.",
-              image: "👩‍🔬"
+              image: "/images/about/team/cto.svg"
             },
             {
               name: "David Liu",
               role: "VP of Sales & Marketing",
               bio: "Expert in international business development and customer relationship management.",
-              image: "👨‍💻"
+              image: "/images/about/team/vp-sales.svg"
             },
             {
               name: "Anna Zhang",
               role: "Head of Quality Assurance",
               bio: "Ensuring excellence through systematic quality control and ISO compliance.",
-              image: "👩‍🏭"
+              image: "/images/about/team/qa-head.svg"
             },
             {
               name: "Robert Kim",
               role: "International Sales Director",
               bio: "Building global partnerships with extensive experience in export markets.",
-              image: "👨‍🌾"
+              image: "/images/about/team/sales-director.svg"
             },
             {
               name: "Lisa Brown",
               role: "Customer Service Manager",
               bio: "Dedicated to exceptional customer support and after-sales service excellence.",
-              image: "👩‍💼"
+              image: "/images/about/team/service-manager.svg"
             }
           ].map((member) => (
             <div key={member.name} className="bg-white rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-200">
               <div className="aspect-[4/3] bg-arzir-gray-200 rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-6xl">
-                  {member.image}
-                </div>
+                <Image
+                  src={member.image}
+                  alt={`${member.name} - ${member.role}`}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h4 className="text-lg font-heading font-semibold text-black mb-1">{member.name}</h4>
               <p className="text-sm text-arzir-primary font-medium mb-3">{member.role}</p>
@@ -467,141 +497,52 @@ export default function AboutPage() {
         </div>
 
         <div className="space-y-16">
-          {/* World Map Visualization */}
+          {/* Global Sales Statistics - Clean Design */}
           <div className="relative">
-            <div className="aspect-[2/1] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 rounded-3xl overflow-hidden relative">
-              {/* Background pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-arzir-primary rounded-full"></div>
-                <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-arzir-primary rounded-full"></div>
-                <div className="absolute bottom-1/3 left-1/2 w-20 h-20 bg-arzir-primary rounded-full"></div>
+            <div className="bg-gradient-to-br from-arzir-primary/5 to-blue-50 rounded-3xl p-8 lg:p-12 text-center">
+              <Globe className="h-16 w-16 text-arzir-primary mx-auto mb-6" />
+              <h3 className="text-2xl lg:text-3xl font-heading font-bold text-black mb-4">
+                Global Sales Network
+              </h3>
+              <p className="text-lg text-arzir-gray-600 max-w-2xl mx-auto mb-8">
+                Over 2,500 machines delivered worldwide with comprehensive after-sales support
+              </p>
+              
+              {/* Sales Statistics Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-arzir-primary mb-2">950</div>
+                  <div className="text-sm font-medium text-black mb-1">Asia Pacific</div>
+                  <div className="text-xs text-arzir-gray-600">Primary Market</div>
+                </div>
+                
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-arzir-primary mb-2">120</div>
+                  <div className="text-sm font-medium text-black mb-1">Europe</div>
+                  <div className="text-xs text-arzir-gray-600">Growing Market</div>
+                </div>
+                
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-arzir-primary mb-2">85</div>
+                  <div className="text-sm font-medium text-black mb-1">North America</div>
+                  <div className="text-xs text-arzir-gray-600">Key Region</div>
+                </div>
+                
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-arzir-primary mb-2">345</div>
+                  <div className="text-sm font-medium text-black mb-1">Other Regions</div>
+                  <div className="text-xs text-arzir-gray-600">Africa, Americas, ME</div>
+                </div>
               </div>
               
-              <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center p-12">
-                <Globe className="h-24 w-24 text-arzir-primary mb-6" />
-                <h3 className="text-3xl font-heading font-bold text-black mb-4">
-                  100+ Countries Served
-                </h3>
-                <p className="text-lg text-arzir-gray-600 max-w-2xl">
-                  From our headquarters in Nanjing, China, we've expanded globally with 
-                  strategic partnerships and service centers across all continents
-                </p>
-              </div>
-
-              {/* Floating location markers */}
-              <div className="absolute top-1/4 left-1/4 animate-pulse">
-                <div className="w-4 h-4 bg-arzir-primary rounded-full shadow-lg"></div>
-              </div>
-              <div className="absolute top-1/3 right-1/3 animate-pulse" style={{animationDelay: '0.5s'}}>
-                <div className="w-4 h-4 bg-arzir-primary rounded-full shadow-lg"></div>
-              </div>
-              <div className="absolute bottom-1/3 left-1/2 animate-pulse" style={{animationDelay: '1s'}}>
-                <div className="w-4 h-4 bg-arzir-primary rounded-full shadow-lg"></div>
-              </div>
-              <div className="absolute top-1/2 left-1/6 animate-pulse" style={{animationDelay: '1.5s'}}>
-                <div className="w-4 h-4 bg-arzir-primary rounded-full shadow-lg"></div>
-              </div>
-              <div className="absolute bottom-1/4 right-1/4 animate-pulse" style={{animationDelay: '2s'}}>
-                <div className="w-4 h-4 bg-arzir-primary rounded-full shadow-lg"></div>
+              <div className="mt-8 inline-flex items-center px-6 py-3 bg-arzir-primary text-white rounded-full text-lg font-semibold">
+                2,500+ Total Machines Delivered
               </div>
             </div>
           </div>
 
-          {/* Regional Statistics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { 
-                region: "Asia Pacific", 
-                count: "45+", 
-                icon: "🌏",
-                description: "Leading presence in growing Asian markets",
-                highlight: "Primary Region"
-              },
-              { 
-                region: "Europe", 
-                count: "25+", 
-                icon: "🇪🇺",
-                description: "Strong partnerships across European Union",
-                highlight: "Key Markets"
-              },
-              { 
-                region: "Americas", 
-                count: "20+", 
-                icon: "🌎",
-                description: "Expanding footprint in North and South America",
-                highlight: "Growth Focus"
-              },
-              { 
-                region: "Middle East & Africa", 
-                count: "15+", 
-                icon: "🌍",
-                description: "Emerging opportunities in diverse markets",
-                highlight: "New Frontiers"
-              }
-            ].map((region) => (
-              <div key={region.region} className="text-center group">
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-arzir-gray-200 relative overflow-hidden">
-                  {/* Background decoration */}
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-arzir-primary/5 rounded-full -translate-y-8 translate-x-8"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {region.icon}
-                    </div>
-                    <div className="text-3xl font-bold text-arzir-primary mb-2">
-                      {region.count}
-                    </div>
-                    <div className="text-lg font-semibold text-black mb-2">
-                      {region.region}
-                    </div>
-                    <p className="text-sm text-arzir-gray-600 mb-3 leading-relaxed">
-                      {region.description}
-                    </p>
-                    <div className="inline-flex items-center px-3 py-1 bg-arzir-primary/10 text-arzir-primary rounded-full text-xs font-medium">
-                      {region.highlight}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* Key Markets Highlight */}
-          <div className="bg-gradient-to-r from-arzir-gray-50 to-white rounded-3xl p-8 lg:p-12">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl lg:text-3xl font-heading font-bold text-black mb-4">
-                Key International Markets
-              </h3>
-              <p className="text-lg text-arzir-gray-600 max-w-3xl mx-auto">
-                Strategic partnerships and local service centers in major industrial regions
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {[
-                { country: "Brazil", flag: "🇧🇷", market: "South America Leader" },
-                { country: "USA", flag: "🇺🇸", market: "North America Hub" },
-                { country: "Germany", flag: "🇩🇪", market: "European Gateway" },
-                { country: "UAE", flag: "🇦🇪", market: "Middle East Center" },
-                { country: "India", flag: "🇮🇳", market: "Asia Growth Market" },
-                { country: "South Africa", flag: "🇿🇦", market: "Africa Operations" }
-              ].map((market) => (
-                <div key={market.country} className="text-center group">
-                  <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-200 border border-arzir-gray-100">
-                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-200">
-                      {market.flag}
-                    </div>
-                    <div className="font-semibold text-black mb-1">
-                      {market.country}
-                    </div>
-                    <div className="text-xs text-arzir-gray-600">
-                      {market.market}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+
         </div>
       </Section>
       {/* Certifications & Awards */}
@@ -654,21 +595,24 @@ export default function AboutPage() {
       {/* Bottom CTA */}
       <Section background="white" size="xl">
         <div className="bg-gradient-to-r from-arzir-primary to-primary-600 rounded-3xl overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left Column - Content */}
-            <div className="p-8 lg:p-12 flex flex-col justify-center text-white relative overflow-hidden">
+            <div className="lg:col-span-1 p-8 lg:p-12 flex flex-col justify-center text-white relative overflow-hidden min-h-[600px]">
               {/* Background decoration */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -translate-y-24 translate-x-24"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-16 -translate-x-16"></div>
               
-              <div className="relative z-10">
-                <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-6">
-                  Ready to Work with ARZIR?
-                </h2>
-                <p className="text-xl text-blue-100 leading-relaxed mb-8">
-                  Join thousands of satisfied customers worldwide who trust ARZIR for their 
-                  recycling and metal processing equipment needs.
-                </p>
+              <div className="relative z-10 space-y-8">
+                <div>
+                  <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-6">
+                    Ready to Work with ARZIR?
+                  </h2>
+                  <p className="text-xl text-blue-100 leading-relaxed">
+                    Join thousands of satisfied customers worldwide who trust ARZIR for their 
+                    recycling and metal processing equipment needs.
+                  </p>
+                </div>
+                
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -687,78 +631,50 @@ export default function AboutPage() {
                     <span className="text-blue-100">Guaranteed spare parts availability</span>
                   </div>
                 </div>
+                
+                <div className="grid grid-cols-2 gap-6 pt-6">
+                  <div className="bg-white/10 rounded-2xl p-4 text-center">
+                    <div className="text-2xl font-bold mb-1">2,500+</div>
+                    <div className="text-sm text-blue-200">Machines Delivered</div>
+                  </div>
+                  <div className="bg-white/10 rounded-2xl p-4 text-center">
+                    <div className="text-2xl font-bold mb-1">100+</div>
+                    <div className="text-sm text-blue-200">Countries Served</div>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Right Column - Contact Form */}
-            <div className="bg-white p-8 lg:p-12 flex flex-col justify-center">
-              <div className="max-w-md mx-auto w-full">
-                <h3 className="text-2xl font-heading font-bold text-black mb-2">
-                  Get Your Quote
-                </h3>
-                <p className="text-arzir-gray-600 mb-8">
-                  Tell us about your project and we'll respond within 24 hours.
-                </p>
+            <div className="lg:col-span-1 bg-arzir-gray-50 p-8 lg:p-12 flex flex-col justify-center min-h-[600px]">
+              <div className="w-full space-y-6">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-heading font-bold text-black mb-2">
+                    Get Your Quote
+                  </h3>
+                  <p className="text-sm text-arzir-gray-600">
+                    Start your recycling equipment journey with ARZIR
+                  </p>
+                </div>
                 
-                <QuoteDialog source="about_page_form">
-                  <div className="space-y-4">
-                    {/* Form Preview - This will trigger the actual form dialog */}
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-sm font-medium text-arzir-gray-700 mb-2">
-                          Name *
-                        </label>
-                        <div className="w-full px-4 py-3 border border-arzir-gray-200 rounded-lg bg-arzir-gray-50 text-arzir-gray-500 cursor-pointer hover:bg-arzir-gray-100 transition-colors">
-                          Your full name
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-sm font-medium text-arzir-gray-700 mb-2">
-                            Email *
-                          </label>
-                          <div className="w-full px-4 py-3 border border-arzir-gray-200 rounded-lg bg-arzir-gray-50 text-arzir-gray-500 cursor-pointer hover:bg-arzir-gray-100 transition-colors">
-                            name@company.com
-                          </div>
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-arzir-gray-700 mb-2">
-                            Company
-                          </label>
-                          <div className="w-full px-4 py-3 border border-arzir-gray-200 rounded-lg bg-arzir-gray-50 text-arzir-gray-500 cursor-pointer hover:bg-arzir-gray-100 transition-colors">
-                            Company name
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-arzir-gray-700 mb-2">
-                          WhatsApp
-                        </label>
-                        <div className="w-full px-4 py-3 border border-arzir-gray-200 rounded-lg bg-arzir-gray-50 text-arzir-gray-500 cursor-pointer hover:bg-arzir-gray-100 transition-colors">
-                          +1234567890
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-arzir-gray-700 mb-2">
-                          Message *
-                        </label>
-                        <div className="w-full px-4 py-3 h-24 border border-arzir-gray-200 rounded-lg bg-arzir-gray-50 text-arzir-gray-500 cursor-pointer hover:bg-arzir-gray-100 transition-colors flex items-start">
-                          Tell us about your project requirements...
-                        </div>
-                      </div>
-                      
-                      <button className="w-full bg-arzir-primary hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
-                        Get a Quote
-                        <ArrowRight className="h-4 w-4" />
-                      </button>
-                    </div>
+                <DirectQuoteForm source="about_page_form" />
+                
+                <div className="space-y-3 pt-4">
+                  <div className="flex items-center justify-center gap-2 text-xs text-arzir-gray-500">
+                    <div className="w-1 h-1 bg-arzir-gray-400 rounded-full"></div>
+                    <span>Free consultation included</span>
                   </div>
-                </QuoteDialog>
+                  <div className="flex items-center justify-center gap-2 text-xs text-arzir-gray-500">
+                    <div className="w-1 h-1 bg-arzir-gray-400 rounded-full"></div>
+                    <span>Custom solution design</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-xs text-arzir-gray-500">
+                    <div className="w-1 h-1 bg-arzir-gray-400 rounded-full"></div>
+                    <span>24-hour response guarantee</span>
+                  </div>
+                </div>
                 
-                <p className="text-sm text-arzir-gray-500 mt-4 text-center">
+                <p className="text-xs text-arzir-gray-500 text-center pt-4">
                   By submitting this form, you agree to our privacy policy.
                 </p>
               </div>

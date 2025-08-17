@@ -10,8 +10,8 @@ export function SiteFooter() {
     <footer className="bg-black text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
-            {/* Left Column - Logo & Description - Takes 4 columns (reduced from 5) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8">
+            {/* Left Column - Logo & Description - Takes 4 columns */}
             <div className="lg:col-span-4 space-y-6">
               <Image
                 src="/logo/ARZIR-LOGO-white.png"
@@ -30,8 +30,8 @@ export function SiteFooter() {
               </div>
             </div>
 
-            {/* Products Column - Takes 2.5 columns */}
-            <div className="lg:col-span-2">
+            {/* Products Column - Takes 2 columns with consistent spacing */}
+            <div className="lg:col-span-2 lg:px-2">
               <h3 className="text-white text-lg font-semibold mb-6">Products</h3>
               <ul className="space-y-3">
                 {siteConfig.navigation.footer.products.map((item) => (
@@ -47,8 +47,8 @@ export function SiteFooter() {
               </ul>
             </div>
 
-            {/* Company Column - Takes 2.5 columns */}
-            <div className="lg:col-span-2">
+            {/* Company Column - Takes 2 columns with consistent spacing */}
+            <div className="lg:col-span-2 lg:px-2">
               <h3 className="text-white text-lg font-semibold mb-6">Company</h3>
               <ul className="space-y-3">
                 {siteConfig.navigation.footer.company.map((item) => (
@@ -64,8 +64,8 @@ export function SiteFooter() {
               </ul>
             </div>
 
-            {/* Contact Column - Takes 4 columns (increased width) */}
-            <div className="lg:col-span-4">{/* Contact section content remains the same */}
+            {/* Contact Column - Takes 4 columns with right padding to match left column */}
+            <div className="lg:col-span-4 lg:pl-2">{/* Contact section content remains the same */}
               <h3 className="text-white text-lg font-semibold mb-6">Contact</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">

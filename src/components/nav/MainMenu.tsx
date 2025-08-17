@@ -43,7 +43,9 @@ function DesktopMenu() {
                   {item.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[400px] gap-3 p-6">
+                  <div className={`${
+                    item.children.length >= 4 ? 'grid-cols-2 w-[500px]' : 'grid-cols-3 w-[600px]'
+                  } grid gap-3 p-6`}>
                     {item.children.map((child) => (
                       <NavigationMenuLink asChild key={child.title}>
                         <Link
@@ -65,13 +67,13 @@ function DesktopMenu() {
                 </NavigationMenuContent>
               </>
             ) : (
-              <Link href={item.href} passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link href={item.href}>
                   <span className="text-black hover:text-arzir-primary">
                     {item.title}
                   </span>
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             )}
           </NavigationMenuItem>
         ))}
@@ -82,13 +84,13 @@ function DesktopMenu() {
 
 function MobileMenu({ onItemClick }: { onItemClick?: () => void }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <Accordion type="multiple" className="w-full">
         {siteConfig.navigation.main.map((item) => (
           <div key={item.title}>
             {"children" in item && item.children ? (
               <AccordionItem value={item.title} className="border-none">
-                <AccordionTrigger className="py-2 text-left hover:no-underline">
+                <AccordionTrigger className="py-3 text-left hover:no-underline">
                   <span className="text-base font-medium">{item.title}</span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-2">
@@ -107,7 +109,7 @@ function MobileMenu({ onItemClick }: { onItemClick?: () => void }) {
                 </AccordionContent>
               </AccordionItem>
             ) : (
-              <div className="py-2">
+              <div className="py-3">
                 <Link
                   href={item.href}
                   onClick={onItemClick}

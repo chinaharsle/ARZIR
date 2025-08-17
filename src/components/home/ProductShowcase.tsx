@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Shield, Wrench, Globe } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const products = [
   {
@@ -11,6 +12,7 @@ const products = [
     title: "Recycling Baler",
     href: "/products/recycling-baler",
     image: "📦",
+    displayImage: "/images/products/recycling-baler.png",
     description: "High-density balers engineered for ferrous and non-ferrous scrap with reliable compaction and superior throughput. Our balers deliver consistent bale quality while maximizing material recovery and operational efficiency.",
     features: ["High-density compaction", "Robust steel frame", "PLC control system", "Low maintenance design"],
     tagline: "Efficient Metal Compaction"
@@ -20,6 +22,7 @@ const products = [
     title: "Scrap Metal Shear", 
     href: "/products/scrap-metal-shear",
     image: "✂️",
+    displayImage: "/images/products/scrap-metal-shear.png",
     description: "Heavy-duty shearing solutions for scrap yards, demolition sites, and recycling facilities. Built to handle the toughest materials with precision cutting and maximum uptime for continuous operations.",
     features: ["High cutting force", "Versatile feed options", "Quick blade replacement", "Heavy-duty construction"],
     tagline: "Precision Cutting Power"
@@ -29,6 +32,7 @@ const products = [
     title: "Shredder",
     href: "/products/shredder",
     image: "🔧",
+    displayImage: "/images/products/shredder.png",
     description: "Powerful shredders designed to handle various scrap materials with precision size reduction. From single-shaft to four-shaft configurations, delivering consistent particle size and high throughput.",
     features: ["Variable speed control", "Hardened steel blades", "Overload protection", "Easy maintenance access"],
     tagline: "Advanced Size Reduction"
@@ -38,6 +42,7 @@ const products = [
     title: "Aluminium Extrusion Press",
     href: "/products/aluminium-extrusion-press",
     image: "🏭",
+    displayImage: "/images/products/aluminum-extrusion-press.png",
     description: "Precision extrusion presses for high-quality aluminium profiles with exceptional dimensional accuracy. Advanced hydraulic systems ensure consistent pressure and superior surface finish.",
     features: ["Precision pressure control", "Advanced heating system", "Profile die technology", "Quality monitoring"],
     tagline: "Precision Profile Manufacturing"
@@ -47,6 +52,7 @@ const products = [
     title: "Briquetting Machine",
     href: "/products/briquetting-machine", 
     image: "🧱",
+    displayImage: "/images/products/Briquetting-Machine.png",
     description: "Efficient briquetting systems for compacting metal chips, turnings, and waste into dense, transportable briquettes. Maximize material value while reducing storage and transportation costs.",
     features: ["High compression ratio", "Oil recovery system", "Automatic operation", "Compact briquette output"],
     tagline: "Smart Waste Compacting"
@@ -60,17 +66,20 @@ export function ProductShowcase() {
   const handleProductClick = (product: typeof products[0]) => {
     setSelectedProduct(product);
     
-    // Scroll to the mobile detail on mobile devices
+    // Improved scroll behavior for mobile devices
     setTimeout(() => {
       const ref = mobileDetailRefs.current[product.id];
       if (ref && window.innerWidth < 1024) { // lg breakpoint
-        ref.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start',
-          inline: 'nearest'
+        // Scroll to position the expanded content optimally
+        const rect = ref.getBoundingClientRect();
+        const offsetTop = window.pageYOffset + rect.top - 100; // 100px offset from top
+        
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
         });
       }
-    }, 100); // Small delay to ensure DOM is updated
+    }, 150); // Slightly longer delay for better animation coordination
   };
 
   return (
@@ -110,32 +119,40 @@ export function ProductShowcase() {
               {selectedProduct.id === product.id && (
                 <div 
                   ref={(el) => { mobileDetailRefs.current[product.id] = el; }}
-                  className="lg:hidden mt-4 bg-white rounded-2xl p-6 shadow-card border border-arzir-gray-200"
+                  className="lg:hidden mt-4 bg-white rounded-2xl p-6 shadow-lg border border-arzir-primary/20 animate-in slide-in-from-top-4 duration-400 ease-out"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     {/* Product Image */}
-                    <div className="aspect-[16/9] bg-arzir-gray-200 rounded-xl overflow-hidden">
-                      <div className="w-full h-full flex items-center justify-center text-6xl">
-                        {selectedProduct.image}
-                      </div>
+                    <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-xl overflow-hidden animate-in zoom-in-95 duration-500 delay-100 shadow-inner">
+                      <Image
+                        src={selectedProduct.displayImage}
+                        alt={`${selectedProduct.title} - Industrial Equipment`}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover animate-in zoom-in duration-300 delay-200"
+                      />
                     </div>
 
                     {/* Product Info */}
                     <div className="space-y-4">
-                      <h3 className="text-xl font-heading font-bold text-black">
+                      <h3 className="text-xl font-heading font-bold text-black animate-in slide-in-from-bottom-2 duration-300 delay-150">
                         {selectedProduct.title}
                       </h3>
                       
-                      <p className="text-arzir-gray-600 leading-relaxed text-sm">
+                      <p className="text-arzir-gray-600 leading-relaxed text-sm animate-in slide-in-from-bottom-2 duration-300 delay-200">
                         {selectedProduct.description}
                       </p>
 
                       {/* Key Features */}
-                      <div>
+                      <div className="animate-in slide-in-from-bottom-2 duration-300 delay-250">
                         <h4 className="font-semibold text-black mb-3">Key Features:</h4>
                         <div className="grid grid-cols-1 gap-2">
                           {selectedProduct.features.map((feature, index) => (
-                            <div key={index} className="flex items-center gap-2">
+                            <div 
+                              key={index} 
+                              className="flex items-center gap-2 animate-in slide-in-from-left duration-200"
+                              style={{ animationDelay: `${300 + (index * 50)}ms` }}
+                            >
                               <div className="w-1.5 h-1.5 bg-arzir-primary rounded-full flex-shrink-0"></div>
                               <span className="text-sm text-arzir-gray-600">{feature}</span>
                             </div>
@@ -144,8 +161,8 @@ export function ProductShowcase() {
                       </div>
 
                       {/* CTA Button */}
-                      <div className="pt-2">
-                        <Button variant="outline" asChild className="w-full justify-center">
+                      <div className="pt-2 animate-in slide-in-from-bottom-2 duration-300 delay-300">
+                        <Button variant="outline" asChild className="w-full justify-center hover:scale-105 transition-transform duration-200 border-arzir-primary text-arzir-primary hover:bg-arzir-primary hover:text-white">
                           <Link href={selectedProduct.href}>
                             Learn More
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -207,9 +224,13 @@ export function ProductShowcase() {
         <div className="space-y-6">
           {/* Product Image */}
           <div className="aspect-[16/9] bg-arzir-gray-200 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-200">
-            <div className="w-full h-full flex items-center justify-center text-8xl">
-              {selectedProduct.image}
-            </div>
+            <Image
+              src={selectedProduct.displayImage}
+              alt={`${selectedProduct.title} - Industrial Equipment`}
+              width={400}
+              height={300}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Product Info */}

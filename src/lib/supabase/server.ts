@@ -32,3 +32,37 @@ export async function createClient() {
     },
   );
 }
+
+/**
+ * Create a Supabase client for administrative operations.
+ * This should only be used for operations that require elevated permissions.
+ */
+export async function createAdminClient() {
+  // For admin operations, we need the service role key
+  // If not available, fall back to the regular client
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  
+  if (!serviceKey) {
+    console.warn('SUPABASE_SERVICE_ROLE_KEY not found, using regular client');
+    return createClient();
+  }
+
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    serviceKey,
+    {
+      cookies: {
+        getAll() {
+          return [];
+        },
+        setAll() {
+          // Admin client doesn't need cookies
+        },
+      },
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    },
+  );
+}
