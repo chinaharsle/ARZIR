@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { Analytics } from '@vercel/analytics/react';
+import { WebVitals } from "@/components/analytics/WebVitals";
+import { ServiceWorker } from "@/components/analytics/ServiceWorker";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -67,6 +69,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
 });
 
 export default function RootLayout({
@@ -76,9 +79,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://vercel.live" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </head>
       <body className={`${inter.variable} font-body antialiased`}>
         {children}
         <Analytics />
+        <WebVitals />
+        <ServiceWorker />
       </body>
     </html>
   );

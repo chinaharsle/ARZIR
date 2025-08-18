@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import confetti from "canvas-confetti";
 import {
   Dialog,
   DialogContent,
@@ -25,6 +24,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+
+// Lazy load confetti to reduce initial bundle size
+const lazyConfetti = () => import("canvas-confetti");
 
 const leadFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -81,34 +83,39 @@ export function QuoteDialog({ children, productSlug, source = "website" }: Quote
         setShowSuccess(true);
         form.reset();
         
-        // Trigger confetti animation
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+        // Lazy load and trigger confetti animation
+        lazyConfetti().then((confettiModule) => {
+          const confetti = confettiModule.default;
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+          });
+
+          // Second burst for better effect
+          setTimeout(() => {
+            confetti({
+              particleCount: 50,
+              angle: 60,
+              spread: 55,
+              origin: { x: 0 },
+              colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+            });
+          }, 250);
+
+          setTimeout(() => {
+            confetti({
+              particleCount: 50,
+              angle: 120,
+              spread: 55,
+              origin: { x: 1 },
+              colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
+            });
+          }, 400);
+        }).catch(() => {
+          // Silently fail if confetti fails to load
         });
-
-        // Second burst for better effect
-        setTimeout(() => {
-          confetti({
-            particleCount: 50,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
-          });
-        }, 250);
-
-        setTimeout(() => {
-          confetti({
-            particleCount: 50,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD']
-          });
-        }, 400);
 
         // Auto close success dialog after 4 seconds
         setTimeout(() => {

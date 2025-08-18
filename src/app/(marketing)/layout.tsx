@@ -1,5 +1,7 @@
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
+import { Suspense, lazy } from "react";
+
+const SiteFooter = lazy(() => import("@/components/layout/SiteFooter").then(mod => ({ default: mod.SiteFooter })));
 
 export default function MarketingLayout({
   children,
@@ -12,7 +14,9 @@ export default function MarketingLayout({
       <main className="min-h-screen">
         {children}
       </main>
-      <SiteFooter />
+      <Suspense fallback={<div className="h-32 bg-gray-100 animate-pulse" />}>
+        <SiteFooter />
+      </Suspense>
     </>
   );
 }

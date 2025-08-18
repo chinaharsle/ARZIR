@@ -2,11 +2,13 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
-import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { ArrowRight, CheckCircle, Globe, Award, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense, lazy } from "react";
 import type { Metadata } from "next";
+
+const ProductShowcase = lazy(() => import("@/components/home/ProductShowcase").then(mod => ({ default: mod.ProductShowcase })));
 
 export const metadata: Metadata = {
   title: "Industrial Recycling & Metal Processing Machinery Manufacturer",
@@ -29,6 +31,7 @@ export default function HomePage() {
                 height={600}
                 className="w-full h-full object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
             </div>
           </div>
@@ -185,6 +188,8 @@ export default function HomePage() {
                     width={600}
                     height={750}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                   />
                   
                   {/* Overlay Gradient */}
@@ -221,7 +226,13 @@ export default function HomePage() {
           </p>
         </div>
 
-        <ProductShowcase />
+        <Suspense fallback={
+          <div className="flex items-center justify-center h-64">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-arzir-primary"></div>
+          </div>
+        }>
+          <ProductShowcase />
+        </Suspense>
       </Section>
       {/* Applications Section - Redesigned */}
       <Section background="white" size="xl">
@@ -300,6 +311,8 @@ export default function HomePage() {
                       width={600}
                       height={400}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     
                     {/* Stats Badge */}
@@ -383,6 +396,8 @@ export default function HomePage() {
                   width={500}
                   height={375}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <div className="space-y-3">
