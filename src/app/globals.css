@@ -122,4 +122,50 @@
       scroll-behavior: auto !important;
     }
   }
+  
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    /* Disable hover effects on mobile to improve performance */
+    .group:hover .group-hover\:scale-105 {
+      transform: none;
+    }
+    
+    /* Optimize font rendering for mobile */
+    body {
+      font-size: 16px; /* Prevent iOS zoom */
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    
+    /* Improve scrolling performance */
+    .scroll-smooth {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    
+    /* Reduce complex transitions on mobile */
+    .transition-transform,
+    .transition-all {
+      transition-duration: 0.2s;
+    }
+  }
+  
+  /* Touch optimization */
+  .touch-action-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Performance optimization for animations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Critical resource optimization */
+  .critical-font {
+    font-display: swap;
+  }
 }

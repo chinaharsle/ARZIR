@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 
-interface SectionProps {
+interface SectionProps extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   children: ReactNode;
   className?: string;
   containerClassName?: string;
@@ -30,6 +30,7 @@ export function Section({
   background = "white",
   size = "lg",
   as: Component = "section",
+  ...props
 }: SectionProps) {
   return (
     <Component
@@ -38,6 +39,7 @@ export function Section({
         sizeVariants[size],
         className
       )}
+      {...props}
     >
       <div
         className={cn(

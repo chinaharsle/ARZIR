@@ -94,6 +94,9 @@ export function DeleteConfirmDialog({
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
         <DialogContent className="max-w-md transform transition-all duration-300 ease-in-out">
+          <DialogHeader>
+            <DialogTitle className="sr-only">Deletion Success</DialogTitle>
+          </DialogHeader>
           <div className="text-center py-8">
             <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4 animate-pulse">
               <CheckCircle2 className="h-8 w-8 text-green-600 animate-bounce" />

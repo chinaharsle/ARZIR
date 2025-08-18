@@ -4,6 +4,7 @@ import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ApplicationCTA } from "@/components/common/ApplicationCTA";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -41,12 +42,17 @@ export default function RailwayScrappingPage() {
           </div>
           <div className="relative">
             <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
-              <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                <div className="text-center">
-                  <div className="text-8xl mb-4">🚂</div>
-                  <p className="text-lg font-medium">Railway Scrapping Yard</p>
-                </div>
-              </div>
+              <Image
+                src="/images/applications/Railway Scrapping Solutions.jpg"
+                alt="Railway Scrapping Facility with ARZIR Heavy-Duty Equipment"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+                priority
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiEiQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyoizDvj7V8fEK5vBa5Lxh9AVFt9Q6mF5jRAhR5EhHMKu8vqDgFPdNBOHbYRGPhLGO3iGgKDWSqz44Lp+hRRWGcqRG0E26SbLYf8sCo4Gj/2Q=="
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

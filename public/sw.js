@@ -1,7 +1,9 @@
 const CACHE_NAME = 'arzir-v1';
 const urlsToCache = [
   '/',
+  '/site.webmanifest',
   '/images/hero/home-hero.png',
+  '/images/about/about-home.png',
   '/_next/static/css/app/layout.css',
   '/_next/static/chunks/webpack.js',
 ];

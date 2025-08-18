@@ -9,7 +9,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
   Accordion,
@@ -39,13 +38,11 @@ function DesktopMenu() {
           <NavigationMenuItem key={item.title}>
             {"children" in item && item.children ? (
               <>
-                <NavigationMenuTrigger className="text-black hover:text-arzir-primary">
+                <NavigationMenuTrigger className="text-black hover:text-arzir-primary font-normal bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   {item.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className={`${
-                    item.children.length >= 4 ? 'grid-cols-2 w-[500px]' : 'grid-cols-3 w-[600px]'
-                  } grid gap-3 p-6`}>
+                  <div className={item.children.length >= 4 ? 'grid grid-cols-2 w-[500px] gap-3 p-6' : 'grid grid-cols-3 w-[600px] gap-3 p-6'}>
                     {item.children.map((child) => (
                       <NavigationMenuLink asChild key={child.title}>
                         <Link
@@ -67,9 +64,9 @@ function DesktopMenu() {
                 </NavigationMenuContent>
               </>
             ) : (
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link href={item.href}>
-                  <span className="text-black hover:text-arzir-primary">
+              <NavigationMenuLink asChild>
+                <Link href={item.href} className="text-black hover:text-arzir-primary bg-transparent hover:bg-transparent focus:bg-transparent px-4 py-2 flex flex-col gap-1 rounded-sm text-sm transition-all outline-none">
+                  <span>
                     {item.title}
                   </span>
                 </Link>

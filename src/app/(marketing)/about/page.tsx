@@ -1,8 +1,6 @@
-"use client";
-
-import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
+import { TimelineCarousel } from "./components/TimelineCarousel";
 import { 
   ArrowRight, 
   Target, 
@@ -16,74 +14,88 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useEffect, useState } from "react";
 
 export default function AboutPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollAmount = 320; // card width + gap
-  const totalCards = 6;
-
-  const scrollNext = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
-
-  const scrollPrev = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    }
-  };
-
-  const scrollToIndex = (index: number) => {
-    if (containerRef.current) {
-      containerRef.current.scrollTo({ left: index * scrollAmount, behavior: 'smooth' });
-    }
-  };
-
-  const handleScroll = () => {
-    if (containerRef.current) {
-      const scrollLeft = containerRef.current.scrollLeft;
-      const newIndex = Math.round(scrollLeft / scrollAmount);
-      setCurrentIndex(newIndex);
-    }
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('scroll', handleScroll);
-      return () => container.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
   return (
     <>
-      {/* Page Hero */}
-      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white">
-        <div className="text-center space-y-6">
-          <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black">
-            About ARZIR
-          </h1>
-          <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Engineering high-performance recycling machinery for a sustainable future. 
-            Trusted by industry leaders worldwide for over 12 years.
-          </p>
+      {/* Hero Section - Force Full Screen */}
+      <div 
+        className="relative w-full overflow-hidden" 
+        style={{ 
+          height: '100vh',
+          minHeight: '100vh',
+          maxHeight: '100vh'
+        }}
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/about/factory.jpg"
+            alt="ARZIR Manufacturing Factory - Advanced Production Facility"
+            fill
+            className="object-cover object-center"
+            priority
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiEiQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyoizDvj7V8fEK5vBa5Lxh9AVFt9Q6mF5jRAhR5EhHMKu8vqDgFPdNBOHbYRGPhLGO3iGgKDWSqz44Lp+hRRWGcqRG0E26SbLYf8sCo4Gj/2Q=="
+          />
+          {/* Dark Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
         </div>
         
-        {/* Hero Image */}
-        <div className="mt-16 aspect-[21/9] bg-arzir-gray-200 rounded-3xl overflow-hidden">
-          <Image
-            src="/images/about/hero/manufacturing-facility.svg"
-            alt="ARZIR Manufacturing Facility - State-of-the-Art Production Center"
-            width={1260}
-            height={540}
-            className="w-full h-full object-cover"
-          />
+        {/* Content Container - Full Width */}
+        <div className="relative h-full flex items-center justify-center px-2 md:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+          <div className="w-full max-w-none text-center text-white">
+            <div className="space-y-4 md:space-y-6 lg:space-y-8">
+              {/* Main Title */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold leading-tight px-4">
+                <span className="text-white">About </span>
+                <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                  ARZIR
+                </span>
+              </h1>
+              
+              {/* Subtitle */}
+              <p className="text-base md:text-lg text-gray-200 max-w-5xl mx-auto leading-relaxed font-medium px-4">
+                Engineering high-performance recycling machinery for a sustainable future
+              </p>
+              
+              {/* Key Statistics - Full Width Layout */}
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-12 xl:gap-16 pt-2 md:pt-4 px-4">
+                <div className="text-center flex-1 max-w-xs">
+                  <div className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-1">12+</div>
+                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">Years Experience</div>
+                </div>
+                <div className="hidden sm:block w-px h-8 md:h-10 lg:h-12 bg-gray-400/50"></div>
+                <div className="text-center flex-1 max-w-xs">
+                  <div className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-1">100+</div>
+                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">Countries Served</div>
+                </div>
+                <div className="hidden sm:block w-px h-8 md:h-10 lg:h-12 bg-gray-400/50"></div>
+                <div className="text-center flex-1 max-w-xs">
+                  <div className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-1">30,000㎡</div>
+                  <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">Manufacturing Facility</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </Section>
+        
+        {/* Enhanced Scroll Indicator */}
+        <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="flex flex-col items-center text-white animate-bounce">
+            <span className="text-sm font-medium mb-3 text-white drop-shadow-lg">Scroll Down</span>
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center bg-white/10 backdrop-blur-sm shadow-lg">
+              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse drop-shadow-sm"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* Company Overview */}
-      <Section background="white" size="xl">
+      <section className="bg-white py-section" id="company-overview">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black mb-6">
             Company Overview
@@ -98,7 +110,7 @@ export default function AboutPage() {
           <div className="bg-gradient-to-br from-white to-arzir-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="aspect-[4/3] bg-arzir-gray-200 rounded-2xl mb-6 overflow-hidden">
               <Image
-                src="/images/about/overview/manufacturing.svg"
+                src="/images/company overview/World-Class Manufacturing.jpg"
                 alt="Advanced Manufacturing - CNC & Automation"
                 width={400}
                 height={300}
@@ -116,7 +128,7 @@ export default function AboutPage() {
           <div className="bg-gradient-to-br from-white to-arzir-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="aspect-[4/3] bg-arzir-gray-200 rounded-2xl mb-6 overflow-hidden">
               <Image
-                src="/images/about/overview/global-network.svg"
+                src="/images/company overview/Global Market Leader.jpg"
                 alt="Global Network - 100+ Countries"
                 width={400}
                 height={300}
@@ -134,7 +146,7 @@ export default function AboutPage() {
           <div className="bg-gradient-to-br from-white to-arzir-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="aspect-[4/3] bg-arzir-gray-200 rounded-2xl mb-6 overflow-hidden">
               <Image
-                src="/images/about/overview/innovation.svg"
+                src="/images/company overview/Continuous Innovation.jpg"
                 alt="R&D Innovation - Technology Excellence"
                 width={400}
                 height={300}
@@ -168,9 +180,11 @@ export default function AboutPage() {
             </Link>
           </Button>
         </div>
-      </Section>
+        </div>
+      </section>
       {/* Mission, Vision & Values */}
-      <Section background="gray" size="xl">
+      <section className="bg-arzir-gray-50 py-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black mb-6">
             Our Foundation
@@ -284,141 +298,26 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </Section>
-      {/* Our History */}
-      <Section background="white" size="xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black mb-6">
-            Our Journey
-          </h2>
-          <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A decade of growth, innovation, and global expansion in recycling machinery manufacturing
-          </p>
         </div>
-
-        <div className="relative">
-          {/* Navigation arrows */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-4 z-10">
-            <button 
-              onClick={scrollPrev}
-              className="w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white"
-            >
-              <ArrowRight className="h-5 w-5 rotate-180" />
-            </button>
-          </div>
-          <div className="absolute top-1/2 -translate-y-1/2 right-4 z-10">
-            <button 
-              onClick={scrollNext}
-              className="w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white"
-            >
-              <ArrowRight className="h-5 w-5" />
-            </button>
+      </section>
+      {/* Our Journey */}
+      <section className="bg-white py-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black mb-6">
+              Our Journey
+            </h2>
+            <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto leading-relaxed">
+              A decade of growth, innovation, and global expansion in recycling machinery manufacturing
+            </p>
           </div>
 
-          {/* Scrollable timeline container */}
-          <div className="overflow-hidden px-8">
-            <div className="flex gap-8 pb-8 snap-x snap-mandatory overflow-x-auto scrollbar-hide" ref={containerRef}>
-              {[
-                {
-                  year: "2012",
-                  title: "Company Founded",
-                  description: "ARZIR established in Nanjing, China, with a vision to revolutionize recycling machinery manufacturing.",
-                  image: "/images/about/journey/2012-foundation.svg",
-                  highlight: "Foundation Year"
-                },
-                {
-                  year: "2014",
-                  title: "First International Export",
-                  description: "Successfully exported our first recycling baler to Southeast Asia, marking the beginning of global expansion.",
-                  image: "/images/about/journey/2014-export.svg",
-                  highlight: "Global Reach"
-                },
-                {
-                  year: "2015",
-                  title: "New Manufacturing Facility",
-                  description: "Opened state-of-the-art 30,000㎡ production facility with advanced manufacturing capabilities.",
-                  image: "/images/about/journey/2015-facility.svg",
-                  highlight: "Scale Up"
-                },
-                {
-                  year: "2017",
-                  title: "ISO Certification",
-                  description: "Achieved ISO 9001 certification, demonstrating our commitment to quality management systems.",
-                  image: "/images/about/journey/2017-iso.svg",
-                  highlight: "Quality Excellence"
-                },
-                {
-                  year: "2019",
-                  title: "Global Service Network",
-                  description: "Established international offices and service centers to better serve customers worldwide.",
-                  image: "/images/about/journey/2019-service.svg",
-                  highlight: "Service Excellence"
-                },
-                {
-                  year: "2024",
-                  title: "Innovation Leadership",
-                  description: "Leading the industry with cutting-edge technology and sustainable manufacturing practices.",
-                  image: "/images/about/journey/2024-innovation.svg",
-                  highlight: "Future Ready"
-                }
-              ].map((milestone) => (
-                <div key={milestone.year} className="flex-shrink-0 w-80 snap-center">
-                  <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-arzir-gray-200 h-full relative overflow-hidden">
-                    {/* Background decoration */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-arzir-primary/5 rounded-full -translate-y-12 translate-x-12"></div>
-                    
-                    <div className="relative z-10">
-                      {/* Year badge */}
-                      <div className="inline-flex items-center justify-center px-4 py-2 bg-arzir-primary text-white rounded-full text-sm font-semibold mb-4">
-                        {milestone.year}
-                      </div>
-                      
-                      {/* Icon */}
-                      <div className="mb-6 text-center">
-                        <Image
-                          src={milestone.image}
-                          alt={`${milestone.year} ${milestone.title}`}
-                          width={320}
-                          height={240}
-                          className="w-full h-40 object-cover rounded-xl"
-                        />
-                      </div>
-                      
-                      {/* Content */}
-                      <h3 className="text-xl font-heading font-bold text-black mb-3">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-arzir-gray-600 leading-relaxed mb-4">
-                        {milestone.description}
-                      </p>
-                      
-                      {/* Highlight tag */}
-                      <div className="inline-flex items-center px-3 py-1 bg-arzir-gray-100 text-arzir-gray-700 rounded-full text-xs font-medium">
-                        {milestone.highlight}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Progress indicators */}
-          <div className="flex justify-center mt-8 gap-2">
-            {Array.from({ length: totalCards }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => scrollToIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                  currentIndex === index ? 'bg-arzir-primary' : 'bg-arzir-gray-300 hover:bg-arzir-primary'
-                }`}
-              />
-            ))}
-          </div>
+          <TimelineCarousel />
         </div>
-      </Section>
+      </section>
       {/* Our Team */}
-      <Section background="gray">
+      <section className="bg-arzir-gray-50 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black mb-4">
             Our Team
@@ -434,37 +333,37 @@ export default function AboutPage() {
               name: "Michael Chen",
               role: "Chief Executive Officer",
               bio: "15+ years in industrial machinery with expertise in global market expansion.",
-              image: "/images/about/team/ceo.svg"
+              image: "/images/our team/Michael Chen.png"
             },
             {
               name: "Sarah Wang",
               role: "Chief Technology Officer", 
               bio: "Leading our R&D initiatives with 12+ years in mechanical engineering.",
-              image: "/images/about/team/cto.svg"
+              image: "/images/our team/Sarah Wang.png"
             },
             {
               name: "David Liu",
               role: "VP of Sales & Marketing",
               bio: "Expert in international business development and customer relationship management.",
-              image: "/images/about/team/vp-sales.svg"
+              image: "/images/our team/David Liu.png"
             },
             {
               name: "Anna Zhang",
               role: "Head of Quality Assurance",
               bio: "Ensuring excellence through systematic quality control and ISO compliance.",
-              image: "/images/about/team/qa-head.svg"
+              image: "/images/our team/Anna Zhang.png"
             },
             {
               name: "Robert Kim",
               role: "International Sales Director",
               bio: "Building global partnerships with extensive experience in export markets.",
-              image: "/images/about/team/sales-director.svg"
+              image: "/images/our team/Robert Kim.png"
             },
             {
               name: "Lisa Brown",
               role: "Customer Service Manager",
               bio: "Dedicated to exceptional customer support and after-sales service excellence.",
-              image: "/images/about/team/service-manager.svg"
+              image: "/images/our team/Lisa Brown.png"
             }
           ].map((member) => (
             <div key={member.name} className="bg-white rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-200">
@@ -483,9 +382,11 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </Section>
+        </div>
+      </section>
       {/* Global Presence */}
-      <Section background="white" size="xl">
+      <section className="bg-white py-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black mb-6">
             Global Presence
@@ -543,9 +444,11 @@ export default function AboutPage() {
 
 
         </div>
-      </Section>
+        </div>
+      </section>
       {/* Certifications & Awards */}
-      <Section background="gray">
+      <section className="bg-arzir-gray-50 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black mb-4">
             Certifications & Awards
@@ -590,9 +493,11 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </Section>
+        </div>
+      </section>
       {/* Bottom CTA */}
-      <Section background="white" size="xl">
+      <section className="bg-white py-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-container">
         <div className="bg-gradient-to-r from-arzir-primary to-primary-600 rounded-3xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left Column - Content */}
@@ -680,7 +585,8 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </Section>
+        </div>
+      </section>
     </>
   );
 }

@@ -63,7 +63,7 @@ const applications = [
     title: "Construction & Demolition Recycling",
     description: "Efficient processing of construction debris with advanced sorting and recovery systems",
     href: "/applications/construction-demolition-recycling",
-    image: "🏗️",
+    image: "/images/applications/Construction & Demolition Recycling.jpg",
     stats: "85% recovery rate",
     alt: "Construction site metal recycling with ARZIR equipment"
   },
@@ -71,7 +71,7 @@ const applications = [
     title: "Railway Scrapping",
     description: "Specialized equipment for railway car dismantling and locomotive recycling with heavy-duty capabilities",
     href: "/applications/railway-scrapping",
-    image: "🚂",
+    image: "/images/applications/Railway Scrapping Solutions.jpg",
     stats: "92% material recovery",
     alt: "Railway scrapping operation using ARZIR shears"
   },
@@ -79,7 +79,7 @@ const applications = [
     title: "E-Waste Recycling",
     description: "Advanced electronic waste processing systems for safe recovery of precious metals and components",
     href: "/applications/ewaste-recycling",
-    image: "💻",
+    image: "/images/applications/E-Waste Recycling Solutions.jpg",
     stats: "99% precious metal recovery",
     alt: "Electronic waste recycling facility with ARZIR equipment"
   },
@@ -87,7 +87,7 @@ const applications = [
     title: "Non-Ferrous Recycling",
     description: "Specialized processing systems for aluminum, copper, brass, and other non-ferrous metals",
     href: "/applications/non-ferrous-recycling",
-    image: "🟡",
+    image: "/images/applications/Non-Ferrous Recycling Solutions.jpg",
     stats: "98% purity levels",
     alt: "Non-ferrous metal recycling using ARZIR equipment"
   },
@@ -95,7 +95,7 @@ const applications = [
     title: "Cable Recycling",
     description: "Efficient wire and cable processing systems for copper recovery with automated stripping technology",
     href: "/applications/cable-recycling",
-    image: "🔌",
+    image: "/images/applications/Cable Recycling Solutions.jpg",
     stats: "99.5% copper recovery",
     alt: "Cable recycling facility with ARZIR processing equipment"
   },
@@ -103,7 +103,7 @@ const applications = [
     title: "Aerospace Recycling",
     description: "Specialized aircraft dismantling and aerospace material recovery systems for high-value alloys",
     href: "/applications/aerospace-recycling",
-    image: "✈️",
+    image: "/images/applications/Aerospace Recycling Solutions.jpg",
     stats: "Aviation certified",
     alt: "Aerospace recycling facility processing aircraft materials"
   }

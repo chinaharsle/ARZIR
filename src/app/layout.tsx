@@ -80,10 +80,24 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* DNS prefetch and preconnect for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://vercel.live" />
+        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
+        
+        {/* Preload critical resources for LCP */}
+        <link rel="preload" as="image" href="/images/hero/home-hero.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/about/about-home.png" />
+        
+        {/* Mobile optimizations */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        
+        {/* Performance hints */}
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
       </head>
       <body className={`${inter.variable} font-body antialiased`}>
         {children}
