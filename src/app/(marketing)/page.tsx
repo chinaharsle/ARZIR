@@ -20,7 +20,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <Section size="xl" className="hero-section relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white pt-8 lg:pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Mobile: Image first, Desktop: Text first */}
           <div className="relative order-1 lg:order-2">
             <div className="aspect-[4/3] lg:aspect-[5/4] bg-arzir-gray-200 rounded-2xl overflow-hidden">
@@ -35,6 +35,8 @@ export default function HomePage() {
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiEiQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyoizDvj7V8fEK5vBa5Lxh9AVFt9Q6mF5jRAhR5EhHMKu8vqDgFPdNBOHbYRGPhLGO3iGgKDWSqz44Lp+hRRWGcqRG0E26SbLYf8sCo4Gj/2Q=="
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                quality={85}
+                loading="eager"
               />
             </div>
           </div>
@@ -193,8 +195,10 @@ export default function HomePage() {
                     className="w-full h-full object-cover"
                     loading="lazy"
                     placeholder="blur"
+                    quality={80}
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAMAA8DASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGBP/EACgQAAIBAwMCBgIDAAAAAAAAAAECAwAEEQUhMRJBBhMiUWGBcZGh0f/EABYBAQEBAAAAAAAAAAAAAAAAAAABBP/EABsRAQEBAQADAAAAAAAAAAAAAAABEQIhMQP/2gAMAwEAAhEDEQA/AKmxthJdRRMHZVBJOOeK6FSzAYCg+mABhfxmqp5HjZJFlkWaLPTmNzkt3G4rmt4Y5wAcKSDhyD7cHFHpDhiIADKrKMnOTjGTNJ+RJ2uCXDNESzEDYEk5GKdXFsIe2WZfhR/FQ6iCWMRAg4Yfej8V0CvMOJJWaX9djRRaGdfmkv2o09jJfwPHbKgEh6Q7KBgqxGffbmr3w1aWsljcQSypJJJB0JggKu52X3ooqscfKUmv0f/Z"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                    decoding="async"
                   />
                   
                   {/* Overlay Gradient */}
@@ -318,6 +322,7 @@ export default function HomePage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                       placeholder="blur"
+                      quality={80}
                       blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAJAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGB//EACgQAAIBAwMCBAcAAAAAAAAAAAECAwAEEQUhMRJBBhMiUWEHQnGBkcE/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAT/xAAeEQACAgEFAQAAAAAAAAAAAAABAgARAyExQVGBsf/aAAwDAQACEQMRAD8AptvomsXFz5cdhM2c5wh9z2FaytNHY2zR3QmPUMB8MewPlx6Fb6lbRxJN5R6nKlxHtkKOFBP/2Q=="
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       decoding="async"
@@ -406,6 +411,7 @@ export default function HomePage() {
                   className="w-full h-full object-cover"
                   loading="lazy"
                   placeholder="blur"
+                  quality={75}
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAA8DASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGB//EACgQAAIBAwMCBAcAAAAAAAAAAAECAwAEEQUhMRJBBhMiUWEHQnGBkcE/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAT/xAAeEQACAgEFAQAAAAAAAAAAAAABAgARAyExQVGBsf/aAAwDAQACEQMRAD8AptvomsXFz5cdhM2c5wh9z2FaytNHY2zR3QmPUMB8MewPlx6Fb6lbRxJN5R6nKlxHtkKOFBP/2Q=="
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   decoding="async"

@@ -107,6 +107,19 @@ export default function RootLayout({
         
         {/* Performance hints */}
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3SR3ZF4T6"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Q3SR3ZF4T6');
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-body antialiased`}>
         {children}

@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Mail, Phone, MessageSquare, Youtube, Facebook, Instagram, Clock, CheckCircle, Globe, Users, Headphones, Award } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
+import { siteConfig } from "@/config/site";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -182,7 +183,7 @@ export default function ContactPage() {
                     type="tel"
                     value={formData.whatsapp}
                     onChange={(e) => handleInputChange('whatsapp', e.target.value)}
-                    placeholder="+86 181... (with country code)"
+                    placeholder="+86 18112987553 (with country code)"
                   />
                 </div>
 
@@ -249,7 +250,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-black mb-1">Address</h3>
                     <p className="text-arzir-gray-600 text-sm">
-                      Mingjue Industrial Park, Lishui, Nanjing, Jiangsu, China
+                      Lishui Industrial Park, Nanjing, Jiangsu, China
                     </p>
                   </div>
                 </div>
@@ -291,12 +292,12 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-black mb-1">WhatsApp</h3>
                     <a 
-                      href="https://wa.me/8618151685977" 
+                      href="https://wa.me/8618112987553" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-arzir-primary hover:underline text-sm"
                     >
-                      +86 181 5168 5977
+                      +86 18112987553
                     </a>
                   </div>
                 </div>
@@ -307,28 +308,36 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-black mb-4">Follow Us</h3>
                 <div className="flex items-center gap-4">
                   <a 
-                    href="#" 
+                    href={siteConfig.links.youtube} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-arzir-gray-100 hover:bg-arzir-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-200"
                     aria-label="YouTube"
                   >
                     <Youtube className="h-5 w-5" />
                   </a>
                   <a 
-                    href="#" 
+                    href={siteConfig.links.facebook} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-arzir-gray-100 hover:bg-arzir-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-200"
                     aria-label="Facebook"
                   >
                     <Facebook className="h-5 w-5" />
                   </a>
                   <a 
-                    href="#" 
+                    href={siteConfig.links.instagram} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-arzir-gray-100 hover:bg-arzir-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-200"
                     aria-label="Instagram"
                   >
                     <Instagram className="h-5 w-5" />
                   </a>
                   <a 
-                    href="#" 
+                    href={siteConfig.links.tiktok} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-arzir-gray-100 hover:bg-arzir-primary hover:text-white rounded-full flex items-center justify-center transition-colors duration-200"
                     aria-label="TikTok"
                   >

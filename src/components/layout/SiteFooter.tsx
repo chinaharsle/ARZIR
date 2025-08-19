@@ -71,8 +71,7 @@ export function SiteFooter() {
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-arzir-primary flex-shrink-0 mt-0.5" />
                   <div className="text-gray-300 text-sm leading-relaxed">
-                    <div>Building A1, Industrial Zone</div>
-                    <div>Nanjing, Jiangsu Province, China</div>
+                    {siteConfig.company.address}
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

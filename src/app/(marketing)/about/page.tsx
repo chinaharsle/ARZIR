@@ -49,7 +49,7 @@ export default function AboutPage() {
             className="object-cover object-center"
             priority
             fetchPriority="high"
-            quality={90}
+            quality={85}
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiEiQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyoizDvj7V8fEK5vBa5Lxh9AVFt9Q6mF5jRAhR5EhHMKu8vqDgFPdNBOHbYRGPhLGO3iGgKDWSqz44Lp+hRRWGcqRG0E26SbLYf8sCo4Gj/2Q=="
           />
@@ -132,6 +132,10 @@ export default function AboutPage() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                quality={75}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAJAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGB//EACgQAAIBAwMCBAcAAAAAAAAAAAECAwAEEQUhMRJBBhMiUWEHQnGBkcE/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAT/xAAeEQACAgEFAQAAAAAAAAAAAAABAgARAyExQVGBsf/aAAwDAQACEQMRAD8AptvomsXFz5cdhM2c5wh9z2FaytNHY2zR3QmPUMB8MewPlx6Fb6lbRxJN5R6nKlxHtkKOFBP/2Q=="
+                decoding="async"
               />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">World-Class Manufacturing</h3>
@@ -152,6 +156,10 @@ export default function AboutPage() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                quality={75}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAJAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGB//EACgQAAIBAwMCBAcAAAAAAAAAAAECAwAEEQUhMRJBBhMiUWEHQnGBkcE/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAT/xAAeEQACAgEFAQAAAAAAAAAAAAABAgARAyExQVGBsf/aAAwDAQACEQMRAD8AptvomsXFz5cdhM2c5wh9z2FaytNHY2zR3QmPUMB8MewPlx6Fb6lbRxJN5R6nKlxHtkKOFBP/2Q=="
+                decoding="async"
               />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">Global Market Leader</h3>
@@ -172,6 +180,10 @@ export default function AboutPage() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                quality={75}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAJAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGB//EACgQAAIBAwMCBAcAAAAAAAAAAAECAwAEEQUhMRJBBhMiUWEHQnGBkcE/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAT/xAAeEQACAgEFAQAAAAAAAAAAAAABAgARAyExQVGBsf/aAAwDAQACEQMRAD8AptvomsXFz5cdhM2c5wh9z2FaytNHY2zR3QmPUMB8MewPlx6Fb6lbRxJN5R6nKlxHtkKOFBP/2Q=="
+                decoding="async"
               />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">Continuous Innovation</h3>

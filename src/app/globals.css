@@ -31,6 +31,22 @@
     content-visibility: auto;
     contain-intrinsic-size: 800px 600px;
   }
+
+  /* Preload critical resources */
+  html {
+    font-display: swap;
+  }
+  
+  /* Reduce layout shift */
+  img {
+    content-visibility: auto;
+  }
+  
+  /* Optimize font loading */
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+  }
 }
 
 @layer base {
@@ -160,6 +176,43 @@
     .transition-transform,
     .transition-all {
       transition-duration: 0.2s;
+    }
+
+    /* Mobile image optimizations */
+    img {
+      will-change: auto;
+      contain: layout style paint;
+    }
+
+    /* Reduce animation complexity on mobile */
+    .group-hover\:scale-110,
+    .group-hover\:scale-105 {
+      transform: none !important;
+    }
+  }
+  
+  /* Tablet optimizations */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    /* Moderate animations for tablets */
+    .transition-transform {
+      transition-duration: 0.3s;
+    }
+  }
+  
+  /* Desktop optimizations */
+  @media (min-width: 1024px) {
+    /* Full animations for desktop */
+    .transition-transform {
+      transition-duration: 0.5s;
+    }
+    
+    /* Enable advanced effects on desktop */
+    .group:hover .group-hover\:scale-105 {
+      transform: scale(1.05);
+    }
+    
+    .group:hover .group-hover\:scale-110 {
+      transform: scale(1.1);
     }
   }
   
