@@ -113,7 +113,9 @@ export function TimelineCarousel() {
                       alt={`${milestone.year} ${milestone.title}`}
                       width={320}
                       height={240}
+                      sizes="320px"
                       className="w-full h-40 object-cover rounded-xl"
+                      loading="lazy"
                     />
                   </div>
                   

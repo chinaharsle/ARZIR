@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Mail, Phone, MessageSquare, Youtube, Facebook, Instagram } from "lucide-react";
+import { MapPin, Mail, Phone, MessageSquare, Youtube, Facebook, Instagram, Clock, CheckCircle, Globe, Users, Headphones, Award } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
 
@@ -340,6 +340,221 @@ export default function ContactPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </Section>
+
+      {/* Response Timeline */}
+      <Section background="gray" size="lg">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black">
+              Our Response Process
+            </h2>
+            <p className="text-xl text-arzir-gray-600 max-w-2xl mx-auto">
+              From initial contact to project completion, here's what you can expect when working with ARZIR.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="relative">
+              <div className="w-16 h-16 bg-arzir-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <MessageSquare className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">Initial Contact</h3>
+              <p className="text-sm text-arzir-gray-600">
+                We acknowledge your inquiry within 2 hours and assign a dedicated specialist.
+              </p>
+              <div className="hidden md:block absolute top-8 -right-4 w-8 h-0.5 bg-arzir-gray-300"></div>
+            </div>
+
+            <div className="relative">
+              <div className="w-16 h-16 bg-arzir-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">Consultation</h3>
+              <p className="text-sm text-arzir-gray-600">
+                Technical consultation within 24 hours to understand your specific requirements.
+              </p>
+              <div className="hidden md:block absolute top-8 -right-4 w-8 h-0.5 bg-arzir-gray-300"></div>
+            </div>
+
+            <div className="relative">
+              <div className="w-16 h-16 bg-arzir-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">Proposal</h3>
+              <p className="text-sm text-arzir-gray-600">
+                Detailed technical and commercial proposal delivered within 3-5 business days.
+              </p>
+              <div className="hidden md:block absolute top-8 -right-4 w-8 h-0.5 bg-arzir-gray-300"></div>
+            </div>
+
+            <div>
+              <div className="w-16 h-16 bg-arzir-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">Partnership</h3>
+              <p className="text-sm text-arzir-gray-600">
+                Project execution with dedicated support and regular progress updates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Service Guarantees */}
+      <Section background="white" size="lg">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black">
+              Our Service Commitments
+            </h2>
+            <p className="text-xl text-arzir-gray-600">
+              Quality assurance and support you can count on.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Clock className="h-6 w-6 text-arzir-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">24-Hour Response</h3>
+                  <p className="text-arzir-gray-600 text-sm">
+                    All inquiries receive initial response within 24 hours, with detailed follow-up within 48 hours.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Award className="h-6 w-6 text-arzir-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Quality Guarantee</h3>
+                  <p className="text-arzir-gray-600 text-sm">
+                    ISO 9001 certified manufacturing with comprehensive warranty and parts support.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Users className="h-6 w-6 text-arzir-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Expert Team</h3>
+                  <p className="text-arzir-gray-600 text-sm">
+                    Dedicated project managers and technical engineers assigned to every project.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Headphones className="h-6 w-6 text-arzir-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Ongoing Support</h3>
+                  <p className="text-arzir-gray-600 text-sm">
+                    Lifetime technical support with remote diagnostics and on-site service available.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Globe className="h-6 w-6 text-arzir-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Global Reach</h3>
+                  <p className="text-arzir-gray-600 text-sm">
+                    Worldwide installation and service network with local language support.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-arzir-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Project Success</h3>
+                  <p className="text-arzir-gray-600 text-sm">
+                    Performance guarantees and commissioning support to ensure project success.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQ Section */}
+      <Section background="gray" size="lg">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-arzir-gray-600">
+              Quick answers to common questions about working with ARZIR.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  What information do you need for a quote?
+                </h3>
+                <p className="text-arzir-gray-600">
+                  We need details about your material types, processing volumes, site constraints, and specific requirements. 
+                  Our technical team will guide you through a detailed questionnaire to ensure accurate sizing and pricing.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Do you provide installation and training?
+                </h3>
+                <p className="text-arzir-gray-600">
+                  Yes, we provide complete turnkey solutions including site preparation guidance, equipment installation, 
+                  commissioning, operator training, and ongoing technical support.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  What are your typical delivery times?
+                </h3>
+                <p className="text-arzir-gray-600">
+                  Standard equipment typically ships within 12-16 weeks. Customized solutions may require 16-24 weeks. 
+                  We provide detailed project timelines during the proposal stage.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Do you offer financing or leasing options?
+                </h3>
+                <p className="text-arzir-gray-600">
+                  We work with various financing partners to provide flexible payment options including equipment financing, 
+                  leasing programs, and performance-based contracts. Contact us to discuss available options.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </Section>
 

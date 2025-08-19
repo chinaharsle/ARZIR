@@ -41,7 +41,7 @@ export default function NonFerrousRecyclingPage() {
             </QuoteDialog>
           </div>
           <div className="relative">
-            <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
+            <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/images/applications/Non-Ferrous Recycling Solutions.jpg"
                 alt="Non-Ferrous Metal Recycling Facility with ARZIR Equipment"

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Search, Clock, User } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const blogPosts = [
@@ -16,7 +17,7 @@ const blogPosts = [
     publishedAt: "2025-08-10",
     readTime: "7 min read",
     author: "ARZIR Engineering Team",
-    image: "📦",
+    image: "/images/blog/How to Choose the Right Scrap Metal Baler for Your Yard.png",
     featured: true
   },
   {
@@ -27,7 +28,7 @@ const blogPosts = [
     publishedAt: "2025-08-05",
     readTime: "5 min read",
     author: "Sarah Chen",
-    image: "💰",
+    image: "/images/blog/Maximizing ROI in Metal Recycling Operations.jpg",
     featured: true
   },
   {
@@ -38,7 +39,7 @@ const blogPosts = [
     publishedAt: "2025-07-28",
     readTime: "6 min read", 
     author: "Mike Rodriguez",
-    image: "🔧",
+    image: "/images/blog/Preventive Maintenance Guide for Recycling Equipment.png",
     featured: true
   },
   {
@@ -49,7 +50,7 @@ const blogPosts = [
     publishedAt: "2025-07-20",
     readTime: "8 min read",
     author: "ARZIR Engineering Team",
-    image: "🏗️",
+    image: "/images/blog/Steel Mill Scrap Processing Best Practices and Equipment Selection.jpg",
     featured: false
   },
   {
@@ -60,7 +61,7 @@ const blogPosts = [
     publishedAt: "2025-07-15",
     readTime: "4 min read",
     author: "Anna Thompson",
-    image: "📊",
+    image: "/images/blog/Understanding Bale Density Impact on Transport and Value.jpg",
     featured: false
   },
   {
@@ -71,7 +72,7 @@ const blogPosts = [
     publishedAt: "2025-07-08",
     readTime: "6 min read",
     author: "David Kim",
-    image: "🚗",
+    image: "/images/blog/Automotive Dismantling Equipment Solutions for ELV Processing.jpg",
     featured: false
   }
 ];
@@ -155,8 +156,17 @@ export default function BlogPage() {
                   <Link href={`/blog/${post.slug}`}>
                     <article className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">
                       {/* Featured Image */}
-                      <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-                        <span className="text-6xl filter drop-shadow-lg">{post.image}</span>
+                      <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 group-hover:scale-105 transition-transform duration-300 overflow-hidden relative">
+                        <Image 
+                          src={post.image} 
+                          alt={post.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={post.featured}
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                        />
                       </div>
 
                       {/* Content */}
@@ -228,8 +238,17 @@ export default function BlogPage() {
                   <Link href={`/blog/${post.slug}`}>
                     <article className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">
                       {/* Image */}
-                      <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-                        <span className="text-5xl filter drop-shadow-lg">{post.image}</span>
+                      <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 group-hover:scale-105 transition-transform duration-300 overflow-hidden relative">
+                        <Image 
+                          src={post.image} 
+                          alt={post.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          loading="lazy"
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                        />
                       </div>
 
                       {/* Content */}

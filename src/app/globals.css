@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Critical above-the-fold styles */
+/* Critical above-the-fold styles - inline for fastest rendering */
 @layer base {
   /* Prevent layout shift by setting fallback fonts */
   body {
@@ -11,12 +11,25 @@
     font-variant-ligatures: contextual;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-display: swap; /* Improve font loading performance */
   }
 
   /* Improve font rendering */
   h1, h2, h3, h4, h5, h6 {
     font-feature-settings: 'cv11', 'ss01';
     font-variant-ligatures: contextual;
+    font-display: swap;
+  }
+  
+  /* Critical layout styles to prevent CLS */
+  .hero-section {
+    min-height: 50vh;
+    contain: layout style paint;
+  }
+  
+  .hero-image {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px 600px;
   }
 }
 

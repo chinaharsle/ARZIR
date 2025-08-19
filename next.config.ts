@@ -22,7 +22,8 @@ const nextConfig: NextConfig = {
       '@radix-ui/react-select',
       'lucide-react'
     ],
-    webVitalsAttribution: ['CLS', 'LCP'],
+    webVitalsAttribution: ['CLS', 'LCP', 'FID', 'FCP', 'TTFB'],
+    scrollRestoration: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

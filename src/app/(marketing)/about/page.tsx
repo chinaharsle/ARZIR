@@ -14,6 +14,18 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense } from "react";
+
+// Metadata for better SEO and performance
+export const metadata = {
+  title: "About ARZIR - Leading Recycling Machinery Manufacturer",
+  description: "Learn about ARZIR's 12+ years of excellence in manufacturing recycling and metal processing equipment. Serving 100+ countries with innovation and quality.",
+  keywords: "ARZIR, recycling machinery, metal processing, manufacturing, industrial equipment",
+  openGraph: {
+    title: "About ARZIR - Leading Recycling Machinery Manufacturer",
+    description: "Learn about ARZIR's 12+ years of excellence in manufacturing recycling and metal processing equipment. Serving 100+ countries with innovation and quality.",
+  }
+};
 
 export default function AboutPage() {
   return (
@@ -33,8 +45,11 @@ export default function AboutPage() {
             src="/images/about/factory.jpg"
             alt="ARZIR Manufacturing Factory - Advanced Production Facility"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
+            fetchPriority="high"
+            quality={90}
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiEiQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyoizDvj7V8fEK5vBa5Lxh9AVFt9Q6mF5jRAhR5EhHMKu8vqDgFPdNBOHbYRGPhLGO3iGgKDWSqz44Lp+hRRWGcqRG0E26SbLYf8sCo4Gj/2Q=="
           />
@@ -114,7 +129,9 @@ export default function AboutPage() {
                 alt="Advanced Manufacturing - CNC & Automation"
                 width={400}
                 height={300}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">World-Class Manufacturing</h3>
@@ -132,7 +149,9 @@ export default function AboutPage() {
                 alt="Global Network - 100+ Countries"
                 width={400}
                 height={300}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">Global Market Leader</h3>
@@ -150,7 +169,9 @@ export default function AboutPage() {
                 alt="R&D Innovation - Technology Excellence"
                 width={400}
                 height={300}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <h3 className="text-xl font-heading font-bold text-black mb-4">Continuous Innovation</h3>
@@ -312,7 +333,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <TimelineCarousel />
+          <Suspense fallback={<div className="h-96 bg-arzir-gray-100 rounded-2xl animate-pulse"></div>}>
+            <TimelineCarousel />
+          </Suspense>
         </div>
       </section>
       {/* Our Team */}
@@ -373,7 +396,9 @@ export default function AboutPage() {
                   alt={`${member.name} - ${member.role}`}
                   width={400}
                   height={300}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <h4 className="text-lg font-heading font-semibold text-black mb-1">{member.name}</h4>

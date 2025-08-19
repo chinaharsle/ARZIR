@@ -130,44 +130,165 @@ const advantages = [
 export default function ApplicationsPage() {
   return (
     <>
-      {/* Page Hero */}
-      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white">
-        <div className="text-center space-y-6">
-          <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black">
-            Applications
-          </h1>
-          <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Real-world use cases of ARZIR machinery across recycling and metal processing industries.
-          </p>
+      {/* Enhanced Page Hero */}
+      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 via-white to-arzir-gray-50/30">
+        {/* Background decoration */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-1/4 -right-40 w-80 h-80 bg-gradient-to-br from-arzir-primary/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-arzir-primary/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-transparent via-arzir-primary/3 to-transparent rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="text-center space-y-8 relative z-10">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-arzir-primary/10 border border-arzir-primary/20 rounded-full text-arzir-primary font-semibold text-sm">
+            <div className="w-2 h-2 bg-arzir-primary rounded-full animate-pulse"></div>
+            Industrial Applications
+          </div>
+          
+          <div className="space-y-6">
+            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-heading font-bold text-black leading-tight">
+              Real-World
+              <span className="block text-arzir-primary">Applications</span>
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-arzir-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Discover how ARZIR machinery transforms recycling and metal processing 
+              <span className="text-arzir-primary font-semibold"> across diverse industries</span>
+            </p>
+          </div>
+          
+          {/* Key stats */}
+          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8">
+            <div className="text-center">
+              <div className="text-2xl lg:text-3xl font-bold text-arzir-primary mb-2">12+</div>
+              <div className="text-sm text-arzir-gray-600">Industries Served</div>
+            </div>
+            <div className="text-center border-x border-arzir-gray-200">
+              <div className="text-2xl lg:text-3xl font-bold text-arzir-primary mb-2">2,500+</div>
+              <div className="text-sm text-arzir-gray-600">Machines Deployed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl lg:text-3xl font-bold text-arzir-primary mb-2">100+</div>
+              <div className="text-sm text-arzir-gray-600">Countries</div>
+            </div>
+          </div>
         </div>
       </Section>
 
-      {/* Introduction */}
-      <Section background="white" size="lg">
-        <div className="text-center max-w-4xl mx-auto space-y-6">
-          <p className="text-lg text-arzir-gray-600 leading-relaxed">
-            We provide tailored equipment combinations and capacity planning solutions for different industrial applications. 
-            Our experienced engineering team ensures optimal workflow design and maximum efficiency for your specific requirements.
-          </p>
+      {/* Enhanced Introduction Section */}
+      <Section background="white" size="xl">
+        <div className="relative overflow-hidden">
+          {/* Background patterns */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-arzir-primary/20 to-transparent"></div>
+            <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-arzir-primary/20 to-transparent"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-3 px-4 py-2 bg-arzir-primary/10 rounded-full text-arzir-primary font-semibold text-sm">
+                  <CheckCircle className="h-4 w-4" />
+                  Customized Solutions
+                </div>
+                
+                <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black leading-tight">
+                  Tailored Equipment for
+                  <span className="block text-arzir-primary">Every Application</span>
+                </h2>
+                
+                <p className="text-lg text-arzir-gray-600 leading-relaxed">
+                  We provide tailored equipment combinations and capacity planning solutions for different industrial applications. 
+                  Our experienced engineering team ensures optimal workflow design and maximum efficiency for your specific requirements.
+                </p>
+              </div>
+              
+              {/* Feature highlights */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4 p-4 bg-arzir-gray-50 rounded-xl">
+                  <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-6 w-6 text-arzir-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-black mb-1">Custom Engineering</h3>
+                    <p className="text-sm text-arzir-gray-600">Tailored solutions for unique requirements</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4 p-4 bg-arzir-gray-50 rounded-xl">
+                  <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Globe className="h-6 w-6 text-arzir-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-black mb-1">Global Support</h3>
+                    <p className="text-sm text-arzir-gray-600">Worldwide service and maintenance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column - Visual Element */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-arzir-primary/10 via-arzir-primary/5 to-transparent rounded-3xl p-8 h-full min-h-[400px] flex items-center justify-center relative overflow-hidden">
+                {/* Background decoration */}
+                <div className="absolute top-4 right-4 w-24 h-24 bg-arzir-primary/10 rounded-full"></div>
+                <div className="absolute bottom-4 left-4 w-16 h-16 bg-arzir-primary/5 rounded-full"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-arzir-primary/5 rounded-full blur-xl"></div>
+                
+                {/* Central content */}
+                <div className="text-center space-y-6 relative z-10">
+                  <div className="w-20 h-20 bg-arzir-primary rounded-2xl flex items-center justify-center mx-auto shadow-2xl">
+                    <CheckCircle className="h-10 w-10 text-white" />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-2xl font-heading font-bold text-black mb-3">
+                      Proven Excellence
+                    </h3>
+                    <p className="text-arzir-gray-600 leading-relaxed max-w-sm">
+                      Over 12 years of delivering reliable solutions across diverse industrial applications
+                    </p>
+                  </div>
+                  
+                  {/* Mini stats */}
+                  <div className="grid grid-cols-2 gap-4 pt-4">
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-arzir-primary">95%</div>
+                      <div className="text-xs text-arzir-gray-600">Success Rate</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-arzir-primary">24/7</div>
+                      <div className="text-xs text-arzir-gray-600">Support</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
       {/* Applications Grid */}
       <Section background="gray" size="xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {applications.map((application) => (
+          {applications.map((application, index) => (
             <div key={application.title} className="group">
               <Link href={application.href}>
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">
+                <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-arzir-gray-100 overflow-hidden h-full relative">
+                  {/* Gradient background overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-arzir-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
                   {/* Header with Image and Stats */}
-                  <div className="relative aspect-[16/9] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     {application.image.startsWith('/') ? (
                       <Image
                         src={application.image}
                         alt={application.alt}
                         width={600}
                         height={400}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 text-arzir-gray-500">
@@ -177,24 +298,48 @@ export default function ApplicationsPage() {
                         </div>
                       </div>
                     )}
-                    <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm text-arzir-primary rounded-full text-xs font-semibold border border-arzir-primary/20">
+                    
+                    {/* Enhanced stats badge */}
+                    <div className="absolute top-6 left-6 px-4 py-2 bg-gradient-to-r from-white to-white/95 backdrop-blur-md text-arzir-primary rounded-full text-sm font-bold border border-arzir-primary/30 shadow-lg group-hover:scale-105 transition-transform duration-300">
                       {application.stats}
                     </div>
+                    
+                    {/* Decorative number badge */}
+                    <div className="absolute top-6 right-6 w-10 h-10 bg-arzir-primary/90 backdrop-blur-sm text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+                    
+                    {/* Bottom gradient overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-heading font-bold text-black group-hover:text-arzir-primary transition-colors duration-300">
-                      {application.title}
-                    </h3>
-                    <p className="text-arzir-gray-600 leading-relaxed text-sm line-clamp-3">
-                      {application.description}
-                    </p>
-                    <div className="flex items-center text-arzir-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300 pt-2">
-                      <span>Explore Solutions</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  {/* Enhanced Content */}
+                  <div className="relative p-8 space-y-5">
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-heading font-bold text-black group-hover:text-arzir-primary transition-colors duration-300 leading-tight">
+                        {application.title}
+                      </h3>
+                      <p className="text-arzir-gray-600 leading-relaxed text-base line-clamp-3">
+                        {application.description}
+                      </p>
+                    </div>
+                    
+                    {/* Enhanced CTA */}
+                    <div className="flex items-center justify-between pt-4 border-t border-arzir-gray-100">
+                      <div className="flex items-center text-arzir-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300">
+                        <span className="text-lg">Explore Solutions</span>
+                        <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                      </div>
+                      
+                      {/* Interactive arrow circle */}
+                      <div className="w-12 h-12 bg-arzir-primary/10 group-hover:bg-arzir-primary rounded-full flex items-center justify-center group-hover:rotate-12 transition-all duration-300">
+                        <ArrowRight className="h-5 w-5 text-arzir-primary group-hover:text-white transition-colors duration-300" />
+                      </div>
                     </div>
                   </div>
+                  
+                  {/* Bottom decorative element */}
+                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-arzir-primary/5 to-transparent rounded-full translate-x-16 translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
                 </div>
               </Link>
             </div>
@@ -202,27 +347,108 @@ export default function ApplicationsPage() {
         </div>
       </Section>
 
-      {/* Why ARZIR */}
-      <Section background="white" size="lg">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black mb-4">
-            Why ARZIR
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {advantages.map((advantage) => (
-            <div key={advantage.title} className="text-center space-y-4">
-              <div className="w-16 h-16 bg-arzir-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                <advantage.icon className="h-8 w-8 text-arzir-primary" />
+      {/* Why Choose ARZIR - Simplified and Clean */}
+      <Section background="white" size="xl">
+        <div className="relative overflow-hidden">
+          {/* Simplified background decoration */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-1/3 -right-32 w-64 h-64 bg-gradient-to-br from-arzir-primary/8 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-tr from-arzir-primary/5 to-transparent rounded-full blur-3xl"></div>
+          </div>
+          
+          {/* Clean header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black mb-4">
+              Why Choose ARZIR?
+            </h2>
+            <p className="text-lg text-arzir-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Experience the difference that 12+ years of engineering excellence makes
+            </p>
+          </div>
+          
+          {/* Simplified advantages grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {advantages.map((advantage, index) => (
+              <div key={advantage.title} className="group text-center">
+                {/* Simple card design */}
+                <div className="bg-white border border-arzir-gray-100 rounded-2xl p-8 space-y-6 hover:shadow-lg hover:border-arzir-primary/20 transition-all duration-300">
+                  {/* Simple icon container */}
+                  <div className="w-20 h-20 bg-arzir-primary rounded-2xl flex items-center justify-center mx-auto group-hover:scale-105 transition-transform duration-300">
+                    <advantage.icon className="h-10 w-10 text-white" />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-heading font-bold text-black">
+                      {advantage.title}
+                    </h3>
+                    <p className="text-base text-arzir-gray-600 leading-relaxed">
+                      {advantage.description}
+                    </p>
+                  </div>
+                  
+                  {/* Simple number indicator */}
+                  <div className="w-8 h-8 bg-arzir-gray-100 text-arzir-gray-600 rounded-full flex items-center justify-center text-sm font-semibold mx-auto">
+                    {index + 1}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-black">
-                {advantage.title}
+            ))}
+          </div>
+          
+          {/* Customer Benefits Section */}
+          <div className="bg-gradient-to-r from-arzir-gray-50 to-white rounded-2xl p-8 lg:p-12">
+            <div className="text-center mb-8">
+              <h3 className="text-xl lg:text-2xl font-heading font-bold text-black mb-3">
+                What Our Customers Say
               </h3>
               <p className="text-arzir-gray-600">
-                {advantage.description}
+                Real results from industry leaders who chose ARZIR
               </p>
             </div>
-          ))}
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center p-4 bg-white rounded-xl border border-arzir-gray-100">
+                <div className="text-2xl lg:text-3xl font-bold text-green-600 mb-1">45%</div>
+                <div className="text-sm text-arzir-gray-600">Average Cost Reduction</div>
+              </div>
+              <div className="text-center p-4 bg-white rounded-xl border border-arzir-gray-100">
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600 mb-1">95%</div>
+                <div className="text-sm text-arzir-gray-600">Material Recovery Rate</div>
+              </div>
+              <div className="text-center p-4 bg-white rounded-xl border border-arzir-gray-100">
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600 mb-1">60%</div>
+                <div className="text-sm text-arzir-gray-600">Productivity Increase</div>
+              </div>
+              <div className="text-center p-4 bg-white rounded-xl border border-arzir-gray-100">
+                <div className="text-2xl lg:text-3xl font-bold text-orange-600 mb-1">18</div>
+                <div className="text-sm text-arzir-gray-600">Months ROI Payback</div>
+              </div>
+            </div>
+            
+            {/* Customer testimonial highlights */}
+            <div className="mt-8 pt-6 border-t border-arzir-gray-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-arzir-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-6 w-6 text-arzir-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-black mb-1">Reduced Operational Costs</h4>
+                    <p className="text-sm text-arzir-gray-600">Lower energy consumption and maintenance requirements</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-arzir-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Globe className="h-6 w-6 text-arzir-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-black mb-1">Faster Implementation</h4>
+                    <p className="text-sm text-arzir-gray-600">Quick installation and commissioning process</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 

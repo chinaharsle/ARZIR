@@ -41,7 +41,7 @@ export default function RailwayScrappingPage() {
             </QuoteDialog>
           </div>
           <div className="relative">
-            <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
+            <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/images/applications/Railway Scrapping Solutions.jpg"
                 alt="Railway Scrapping Facility with ARZIR Heavy-Duty Equipment"

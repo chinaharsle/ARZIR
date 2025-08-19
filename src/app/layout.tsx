@@ -85,10 +85,19 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://vercel.live" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
         {/* Preload critical resources for LCP */}
         <link rel="preload" as="image" href="/images/hero/home-hero.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/about/about-home.png" />
+        
+        {/* Preload critical CSS for above-the-fold content */}
+        <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
+        
+        {/* Performance optimizations */}
+        <link rel="prefetch" href="/products" />
+        <link rel="prefetch" href="/applications" />
+        <link rel="prefetch" href="/contact" />
         
         {/* Mobile optimizations */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
