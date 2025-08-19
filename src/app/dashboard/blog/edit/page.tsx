@@ -545,6 +545,7 @@ function BlogEditContent() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
                   <Image className="h-5 w-5" />
                   Cover Image
                 </CardTitle>
@@ -555,6 +556,7 @@ function BlogEditContent() {
                     <div className="border border-gray-200 rounded-lg p-4">
                       <div className="flex items-center gap-3">
                         <div className="w-16 h-16 bg-gradient-to-br from-arzir-primary/20 to-arzir-primary/10 rounded flex items-center justify-center">
+                          {/* eslint-disable-next-line jsx-a11y/alt-text */}
                           <Image className="h-8 w-8 text-arzir-primary" />
                         </div>
                         <div className="flex-1">
@@ -578,6 +580,7 @@ function BlogEditContent() {
                   </div>
                 ) : (
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-gray-400 transition-colors">
+                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
                     <Image className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600 mb-2">Select cover image from media library (16:9 ratio recommended)</p>
                     <Button variant="outline" size="sm" onClick={() => setShowMediaSelector(true)}>

@@ -351,7 +351,7 @@ export default function ContactPage() {
               Our Response Process
             </h2>
             <p className="text-xl text-arzir-gray-600 max-w-2xl mx-auto">
-              From initial contact to project completion, here's what you can expect when working with ARZIR.
+              From initial contact to project completion, here&apos;s what you can expect when working with ARZIR.
             </p>
           </div>
 

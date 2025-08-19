@@ -359,12 +359,14 @@ export function BlogEditor({ post, isOpen, onClose, isCreating = false }: BlogEd
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
                   <Image className="h-5 w-5" />
                   Cover Image
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
                   <Image className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                   <p className="text-gray-600 mb-2">Upload cover image (16:9 ratio recommended)</p>
                   <Button variant="outline" size="sm">
