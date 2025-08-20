@@ -104,13 +104,13 @@ export default function ScrapMetalBalerGuidePage() {
               <span>ARZIR Engineering Team</span>
             </div>
           </div>
-          <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-2xl mx-auto relative">
+          <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
               src="/images/blog/How to Choose the Right Scrap Metal Baler for Your Yard.png" 
               alt="How to Choose the Right Scrap Metal Baler for Your Yard"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               priority
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAJABADAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -330,30 +330,78 @@ export default function ScrapMetalBalerGuidePage() {
           </section>
 
           {/* Product Promo */}
-          <div className="bg-gradient-to-r from-arzir-primary to-primary-600 rounded-2xl p-8 text-white my-12">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
-              <div className="lg:col-span-2 space-y-4">
-                <h3 className="text-2xl font-heading font-bold">ARZIR Scrap Metal Baler</h3>
-                <p className="text-blue-100">
-                  High-density, reliable, and efficient. Available in 300-1200 ton configurations 
-                  with advanced hydraulic systems and automated controls.
-                </p>
-                <div className="flex gap-4">
-                  <Button variant="secondary" asChild>
+          <div className="relative overflow-hidden bg-gradient-to-r from-arzir-primary via-primary-600 to-arzir-primary rounded-2xl p-8 lg:p-12 text-white my-12 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full text-sm font-medium">
+                    <CheckCircle className="h-4 w-4" />
+                    Recommended Solution
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-heading font-bold">
+                    ARZIR Scrap Metal Baler
+                  </h3>
+                  <p className="text-lg text-blue-50 leading-relaxed">
+                    Industry-leading performance with proven ROI. Engineered for maximum density, 
+                    reliability, and operational efficiency.
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4 py-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">300-1200</div>
+                    <div className="text-sm text-blue-100">Ton Force Range</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">2.5t/m³</div>
+                    <div className="text-sm text-blue-100">Max Density</div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-blue-50">
+                    <CheckCircle className="h-4 w-4 text-green-300" />
+                    <span>Advanced hydraulic control system</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-blue-50">
+                    <CheckCircle className="h-4 w-4 text-green-300" />
+                    <span>Automated tying and discharge</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-blue-50">
+                    <CheckCircle className="h-4 w-4 text-green-300" />
+                    <span>Energy-efficient variable drives</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Button variant="secondary" asChild className="flex-1 sm:flex-initial">
                     <Link href="/products/scrap-metal-baler">
-                      View Product
+                      View Specifications
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                   <QuoteDialog source="blog_scrap_baler_guide">
-                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-arzir-primary">
-                      Get a Quote
+                    <Button variant="outline" className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-arzir-primary transition-all duration-200 flex-1 sm:flex-initial">
+                      Get Custom Quote
                     </Button>
                   </QuoteDialog>
                 </div>
               </div>
-              <div className="text-center">
-                <div className="text-8xl opacity-80">📦</div>
+              
+              <div className="relative">
+                <div className="aspect-video rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/products/recycling-baler.png"
+                    alt="ARZIR Scrap Metal Baler"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                </div>
+                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                  Best Seller
+                </div>
               </div>
             </div>
           </div>

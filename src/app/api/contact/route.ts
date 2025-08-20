@@ -157,7 +157,7 @@ export async function POST(request: NextRequest) {
         const adminEmailResult = await resend.emails.send({
           from: 'ARZIR Website <notification@harsle.com>',
           to: [process.env.NOTIFICATION_EMAIL || 'jimmy@harsle.com'],
-          subject: `New ${body.type === 'quote_request' ? 'Quote Request' : 'Inquiry'} from ${country !== 'Unknown' ? country : 'Website'}`,
+          subject: 'New Inquiry From ARZIR',
           html: `
             <!DOCTYPE html>
             <html lang="en">
@@ -223,12 +223,10 @@ export async function POST(request: NextRequest) {
                         <span style="color: #111827; font-size: 15px; word-break: break-word;">${body.whatsapp || 'Not provided'}</span>
                       </div>
                       
-                      ${country !== 'Unknown' ? `
                       <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
                         <span style="font-weight: 700; color: #374151; width: 110px; flex-shrink: 0; font-size: 14px;">🌍 Country:</span>
-                        <span style="color: #111827; font-size: 15px; word-break: break-word;">${city !== 'Unknown' ? city + ', ' : ''}${country}</span>
+                        <span style="color: #111827; font-size: 15px; word-break: break-word;">${country !== 'Unknown' ? (city !== 'Unknown' ? city + ', ' : '') + country : 'Not detected'}</span>
                       </div>
-                      ` : ''}
                       
                       ${body.productSlug ? `
                       <div style="display: flex; align-items: center; padding: 12px; background: linear-gradient(135deg, #EBF4FF 0%, #DBEAFE 100%); border-radius: 8px; border: 1px solid #3B82F6;">
@@ -246,40 +244,6 @@ export async function POST(request: NextRequest) {
                     </h2>
                     <div style="background: linear-gradient(145deg, #F8FAFC 0%, #F1F5F9 100%); padding: 16px; border-radius: 8px; border-left: 4px solid #1E40AF;">
                       <p style="color: #374151; line-height: 1.6; margin: 0; white-space: pre-wrap; font-size: 15px; font-weight: 500; word-break: break-word;">${body.message}</p>
-                    </div>
-                  </div>
-
-                  <!-- Source & Technical Information -->
-                  <div style="background: linear-gradient(145deg, #F1F5F9 0%, #E2E8F0 100%); border: 1px solid #CBD5E1; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <h2 style="color: #1E293B; margin: 0 0 16px 0; font-size: 20px; font-weight: 700; border-bottom: 3px solid #64748B; padding-bottom: 8px; display: flex; align-items: center;">
-                      <span style="margin-right: 8px;">🔍</span> Technical Details
-                    </h2>
-                    
-                    <div style="display: grid; gap: 12px; font-size: 14px;">
-                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #CBD5E1;">
-                        <span style="font-weight: 700; color: #475569; width: 120px; flex-shrink: 0;">🌐 Source Page:</span>
-                        <a href="${referer}" style="color: #1E40AF; text-decoration: none; word-break: break-all; font-weight: 500;">${referer}</a>
-                      </div>
-                      
-                      ${country !== 'Unknown' ? `
-                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #CBD5E1;">
-                        <span style="font-weight: 700; color: #475569; width: 120px; flex-shrink: 0;">🌍 Country:</span>
-                        <span style="color: #374151; background: #E2E8F0; padding: 4px 8px; border-radius: 12px; font-weight: 600;">${country}</span>
-                      </div>
-                      ` : ''}
-                      
-                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #CBD5E1;">
-                        <span style="font-weight: 700; color: #475569; width: 120px; flex-shrink: 0;">⏰ Submission:</span>
-                        <span style="color: #374151; font-weight: 600; word-break: break-word;">${new Date().toLocaleString('en-US', { 
-                          timeZone: timezone !== 'Unknown' ? timezone : 'Asia/Shanghai',
-                          year: 'numeric',
-                          month: 'long', 
-                          day: 'numeric',
-                          hour: '2-digit',
-                          minute: '2-digit',
-                          second: '2-digit'
-                        })} ${timezone !== 'Unknown' ? `(${timezone})` : '(Beijing Time)'}</span>
-                      </div>
                     </div>
                   </div>
 
@@ -304,9 +268,6 @@ export async function POST(request: NextRequest) {
                         </div>
                       </div>
                     </div>
-                    <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 13px;">
-                      <strong>info@arzir.com</strong> | <a href="https://arzir.com/dashboard" style="color: #FED7AA; text-decoration: none;">CRM Dashboard</a>
-                    </p>
                   </div>
                 </div>
 
@@ -421,7 +382,7 @@ export async function POST(request: NextRequest) {
                       We aim to respond within <strong>24 hours</strong> during business days
                     </p>
                     <p style="color: #A16207; margin: 8px 0 0 0; font-size: 14px;">
-                      For urgent matters, please call us directly at +86-xxx-xxxx-xxxx
+                      For urgent matters, please call us directly at +86-18112987553
                     </p>
                   </div>
 

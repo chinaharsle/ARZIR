@@ -2,13 +2,35 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Gauge, Wrench } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Scrap Metal Baler | ARZIR Recycling Baler Machine",
-  description: "High-density scrap metal baler for ferrous and non-ferrous materials. Robust construction, reliable compaction, and consistent bale quality for scrap yards and recycling facilities.",
+  title: "Industrial Scrap Metal Baler | ARZIR High-Density Compaction Equipment",
+  description: "ARZIR scrap metal balers deliver up to 1200 tons press force and 2.5 t/m³ density. Proven performance in recycling facilities worldwide. 300-1200T models available. Get quote today.",
+  keywords: [
+    "scrap metal baler",
+    "industrial baler machine", 
+    "metal compaction equipment",
+    "recycling baler",
+    "high-density baler",
+    "ARZIR baler",
+    "scrap processing equipment"
+  ],
+  openGraph: {
+    title: "Industrial Scrap Metal Baler | ARZIR High-Density Compaction",
+    description: "ARZIR scrap metal balers deliver up to 1200 tons press force and 2.5 t/m³ density. Proven ROI for recycling facilities worldwide.",
+    images: [
+      {
+        url: "/images/products/recycling-baler.png",
+        width: 1200,
+        height: 630,
+        alt: "ARZIR Scrap Metal Baler - High-Density Compaction Equipment"
+      }
+    ]
+  }
 };
 
 const keyFeatures = [
@@ -36,6 +58,11 @@ const keyFeatures = [
     icon: Award,
     title: "Energy Efficiency",
     description: "Advanced hydraulic technology reduces power consumption while maintaining high output"
+  },
+  {
+    icon: Gauge,
+    title: "Fast Cycle Times",
+    description: "Rapid compression cycles from 45-90 seconds enable high throughput processing"
   }
 ];
 
@@ -101,25 +128,25 @@ const applications = [
   {
     title: "Scrap Recycling",
     description: "Mixed ferrous and non-ferrous scrap processing",
-    image: "♻️",
+    image: "/images/applications/scrap-recycling.png",
     href: "/applications/scrap-recycling"
   },
   {
     title: "Automotive Dismantling",
     description: "End-of-life vehicle body and component processing",
-    image: "🚗", 
+    image: "/images/applications/automotive-dismantling-full.jpg", 
     href: "/applications/automotive-dismantling"
   },
   {
     title: "Foundries",
     description: "Foundry returns and casting scrap compaction",
-    image: "🏭",
+    image: "/images/applications/steel-mills-full.jpg",
     href: "/applications/steel-mills"
   },
   {
     title: "Metal Fabrication",
     description: "Manufacturing offcuts and fabrication waste",
-    image: "🔨",
+    image: "/images/applications/metal-fabrication-full.jpg",
     href: "/applications/metal-fabrication"
   }
 ];
@@ -138,6 +165,20 @@ const caseStudies = [
     results: "+60% processing speed, ROI in 18 months",
     metrics: "120 vehicles/day",
     equipment: "ARZIR-1200 Car Body Baler"
+  },
+  {
+    title: "Metal Recycling Facility - Germany",
+    location: "Hamburg, Germany",
+    results: "+55% material recovery, -25% transport costs",
+    metrics: "1200 tons/day capacity",
+    equipment: "ARZIR-800 + ARZIR-500 Dual Setup"
+  },
+  {
+    title: "Shipbreaking Yard - India",
+    location: "Alang, Gujarat",
+    results: "+40% processing efficiency, 22-month ROI",
+    metrics: "300 tons steel/day",
+    equipment: "ARZIR-1200 Heavy-Duty Baler"
   }
 ];
 
@@ -168,91 +209,157 @@ export default function ScrapMetalBalerPage() {
   return (
     <>
       {/* Page Hero */}
-      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 to-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-6">
-            <h1 className="text-4xl lg:text-6xl font-heading font-bold text-black leading-tight">
-              Scrap Metal Baler
-            </h1>
-            <h2 className="text-xl lg:text-2xl text-arzir-primary font-semibold">
-              High-Density Recycling Machine
-            </h2>
-            <p className="text-lg text-arzir-gray-600 leading-relaxed">
-              Robust construction and reliable compaction for ferrous and non-ferrous metals. 
-              Proven performance in scrap yards and recycling facilities worldwide.
+      <Section size="xl" className="relative overflow-hidden bg-gradient-to-br from-arzir-gray-50 via-white to-blue-50 !pt-16 sm:!pt-20 md:!pt-24">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent"></div>
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-arzir-primary to-primary-600 text-white rounded-full text-sm font-medium shadow-lg">
+                <Award className="h-4 w-4" />
+                Industry Leading Performance
+              </div>
+              <h1 className="text-4xl lg:text-7xl font-heading font-bold text-black leading-tight">
+                Industrial Scrap Metal{" "}
+                <span className="text-arzir-primary">Baler</span>
+              </h1>
+              <h2 className="text-xl lg:text-3xl text-arzir-gray-700 font-medium leading-relaxed">
+                Transform Your Scrap Processing with{" "}
+                <span className="text-arzir-primary font-semibold">Up to 1200T Force</span>
+              </h2>
+            </div>
+            
+            <p className="text-lg lg:text-xl text-arzir-gray-600 leading-relaxed">
+              Maximize material density and reduce transport costs with ARZIR's proven high-performance balers.{" "}
+              <strong className="text-black">ROI typically achieved in 24 months.</strong>
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <div className="px-4 py-2 bg-arzir-primary/10 rounded-full text-arzir-primary font-semibold text-sm">
-                300-1200T Force
+            
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-arzir-gray-100">
+                <div className="text-2xl lg:text-3xl font-bold text-arzir-primary">1200T</div>
+                <div className="text-sm text-arzir-gray-600">Max Press Force</div>
               </div>
-              <div className="px-4 py-2 bg-success/10 rounded-full text-success font-semibold text-sm">
-                Up to 2.5 t/m³
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-arzir-gray-100">
+                <div className="text-2xl lg:text-3xl font-bold text-success">2.5t/m³</div>
+                <div className="text-sm text-arzir-gray-600">Bale Density</div>
               </div>
-              <div className="px-4 py-2 bg-blue-100 rounded-full text-blue-700 font-semibold text-sm">
-                CE Certified
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-arzir-gray-100 col-span-2 lg:col-span-1">
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">200+</div>
+                <div className="text-sm text-arzir-gray-600">Installations</div>
               </div>
             </div>
-            <QuoteDialog source="scrap_metal_baler_hero">
-              <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">
-                Get a Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <QuoteDialog source="scrap_metal_baler_hero">
+                <Button size="lg" className="bg-arzir-primary hover:bg-primary-600 w-full sm:w-auto">
+                  Get Custom Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </QuoteDialog>
+              <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
+                <Link href="#specifications">
+                  View Specifications
+                </Link>
               </Button>
-            </QuoteDialog>
+            </div>
           </div>
+          
           <div className="relative">
-            <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
-              <div className="w-full h-full flex items-center justify-center text-arzir-gray-500">
-                <div className="text-center">
-                  <div className="text-8xl mb-4">📦</div>
-                  <p className="text-lg font-medium">ARZIR Scrap Metal Baler</p>
-                  <p className="text-sm text-arzir-gray-400">High-Density Compaction</p>
-                </div>
-              </div>
+            <div className="aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/products/recycling-baler.png"
+                alt="ARZIR Scrap Metal Baler - Industrial Recycling Equipment"
+                fill
+                className="object-contain sm:object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+              ✓ CE Certified
+            </div>
+            <div className="absolute -top-4 -left-4 bg-arzir-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+              #1 Choice
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Product Overview */}
+      {/* Value Proposition */}
       <Section background="white" size="lg">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
-            Product Overview
-          </h2>
-          <div className="text-lg text-arzir-gray-600 leading-relaxed space-y-4">
-            <p>
-              The ARZIR Scrap Metal Baler is engineered for high-performance recycling operations processing 
-              ferrous and non-ferrous metals. Designed for scrap yards, recycling plants, and metal processing 
-              facilities requiring reliable, high-density compaction.
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black">
+              Why ARZIR Balers Lead the Industry
+            </h2>
+            <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto">
+              Over 200 successful installations worldwide. Proven ROI and unmatched reliability.
             </p>
-            <p>
-              Suitable materials include carbon steel, aluminum, copper, stainless steel, and mixed scrap streams. 
-              Target users include scrap yards, automotive dismantlers, metal fabrication shops, and industrial 
-              recycling facilities processing 10-200 tons per day.
-            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="text-center space-y-4 p-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                <CheckCircle className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-heading font-bold text-black">Proven ROI</h3>
+              <p className="text-arzir-gray-600">
+                <strong className="text-black">18-36 month payback</strong> through increased material density, 
+                reduced transport costs, and premium pricing for high-quality bales.
+              </p>
+            </div>
+            
+            <div className="text-center space-y-4 p-6">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                <Zap className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-heading font-bold text-black">Superior Performance</h3>
+              <p className="text-arzir-gray-600">
+                <strong className="text-black">Up to 2.5 t/m³ density</strong> with 300-1200T press force range. 
+                Process ferrous, non-ferrous, and mixed scrap streams efficiently.
+              </p>
+            </div>
+            
+            <div className="text-center space-y-4 p-6">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
+                <Shield className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-heading font-bold text-black">Built to Last</h3>
+              <p className="text-arzir-gray-600">
+                <strong className="text-black">Heavy-duty construction</strong> designed for continuous operation. 
+                Minimal maintenance requirements and maximum uptime.
+              </p>
+            </div>
           </div>
         </div>
       </Section>
 
       {/* Key Features & Benefits */}
       <Section background="gray" size="lg">
-        <div className="space-y-8">
-          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
-            Why Choose ARZIR Scrap Metal Baler
-          </h2>
+        <div className="space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black">
+              Advanced Features That Drive Results
+            </h2>
+            <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto">
+              Every component engineered for maximum performance and reliability
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {keyFeatures.map((feature) => (
-              <div key={feature.title} className="bg-white p-6 rounded-xl shadow-sm border border-arzir-gray-100">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-arzir-primary/10 rounded-xl flex items-center justify-center">
-                    <feature.icon className="h-6 w-6 text-arzir-primary" />
+              <div key={feature.title} className="bg-white p-8 rounded-2xl shadow-sm border border-arzir-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <div className="space-y-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-arzir-primary to-primary-600 rounded-2xl flex items-center justify-center">
+                    <feature.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-heading font-semibold text-black">
-                    {feature.title}
-                  </h3>
-                  <p className="text-arzir-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-heading font-bold text-black">
+                      {feature.title}
+                    </h3>
+                    <p className="text-arzir-gray-600 leading-relaxed text-lg">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -260,12 +367,50 @@ export default function ScrapMetalBalerPage() {
         </div>
       </Section>
 
+      {/* Social Proof */}
+      <Section background="white" size="md">
+        <div className="text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-2xl lg:text-3xl font-heading font-bold text-black">
+              Trusted by Industry Leaders Worldwide
+            </h2>
+            <p className="text-arzir-gray-600 max-w-2xl mx-auto">
+              Join 200+ facilities that have transformed their operations with ARZIR balers
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-bold text-arzir-primary">200+</div>
+              <div className="text-sm text-arzir-gray-600">Global Installations</div>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-bold text-success">98%</div>
+              <div className="text-sm text-arzir-gray-600">Customer Satisfaction</div>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-bold text-blue-600">25+</div>
+              <div className="text-sm text-arzir-gray-600">Years Experience</div>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-bold text-purple-600">50+</div>
+              <div className="text-sm text-arzir-gray-600">Countries Served</div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* Technical Specifications */}
-      <Section background="white" size="lg">
+      <Section id="specifications" background="white" size="lg">
         <div className="space-y-8">
-          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-black text-center">
-            Technical Specifications
-          </h2>
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl lg:text-5xl font-heading font-bold text-black">
+              Choose Your Perfect Configuration
+            </h2>
+            <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto">
+              Four proven models to match your throughput and material requirements
+            </p>
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-arzir-gray-200 rounded-lg">
               <caption className="sr-only">ARZIR Scrap Metal Baler technical specifications</caption>
@@ -340,7 +485,15 @@ export default function ScrapMetalBalerPage() {
               <div key={app.title} className="group">
                 <Link href={app.href}>
                   <div className="bg-arzir-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 text-center space-y-4">
-                    <div className="text-5xl mx-auto">{app.image}</div>
+                    <div className="aspect-[4/3] relative rounded-lg overflow-hidden mb-4">
+                      <Image
+                        src={app.image}
+                        alt={app.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    </div>
                     <h3 className="text-lg font-heading font-semibold text-black group-hover:text-arzir-primary transition-colors">
                       {app.title}
                     </h3>
@@ -414,47 +567,10 @@ export default function ScrapMetalBalerPage() {
         </div>
       </Section>
 
-      {/* Request a Quote Form */}
-      <Section background="gray" size="lg">
-        <div className="bg-white rounded-3xl p-8 lg:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <h2 className="text-2xl lg:text-3xl font-heading font-bold text-black">
-                Request a Quote
-              </h2>
-              <p className="text-arzir-gray-600 leading-relaxed">
-                Our experts will respond within 24 hours with a tailored solution for your specific requirements.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-success" />
-                  <span className="text-sm text-arzir-gray-600">Detailed technical specifications</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-success" />
-                  <span className="text-sm text-arzir-gray-600">Custom configuration options</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-success" />
-                  <span className="text-sm text-arzir-gray-600">Installation and training support</span>
-                </div>
-              </div>
-            </div>
-            <div className="text-center">
-              <QuoteDialog source="scrap_metal_baler_quote">
-                <Button size="lg" className="bg-arzir-primary hover:bg-primary-600 w-full lg:w-auto">
-                  Get Detailed Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </QuoteDialog>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* Bottom CTA */}
       <ProductCTA 
-        
+        title="Transform Your Scrap Processing with ARZIR Balers"
+        description="Join hundreds of recycling facilities worldwide who trust ARZIR for high-performance scrap metal baling solutions."
         formSource="scrap-metal-baler_bottom" 
       />
     </>

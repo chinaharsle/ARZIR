@@ -7,8 +7,27 @@ import Image from "next/image";
 export function TimelineCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollAmount = 320; // match card width + gap
+  const [scrollAmount, setScrollAmount] = useState(320);
   const totalCards = 6;
+
+  // Update scroll amount based on screen size
+  useEffect(() => {
+    const updateScrollAmount = () => {
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth < 640) {
+          setScrollAmount(288 + 16); // w-72 (288px) + gap-4 (16px)
+        } else if (window.innerWidth < 768) {
+          setScrollAmount(304 + 24); // w-76 (304px) + gap-6 (24px)
+        } else {
+          setScrollAmount(320 + 32); // w-80 (320px) + gap-8 (32px)
+        }
+      }
+    };
+
+    updateScrollAmount();
+    window.addEventListener('resize', updateScrollAmount);
+    return () => window.removeEventListener('resize', updateScrollAmount);
+  }, []);
 
   const scrollNext = () => {
     if (containerRef.current) {
@@ -92,43 +111,43 @@ export function TimelineCarousel() {
   return (
     <div className="relative">
       {/* Scrollable timeline container */}
-      <div className="overflow-hidden px-16 md:px-20">
-        <div className="flex gap-8 pb-8 snap-x snap-mandatory overflow-x-auto scrollbar-hide" ref={containerRef}>
+      <div className="overflow-hidden px-4 sm:px-8 md:px-16 lg:px-20">
+        <div className="flex gap-4 sm:gap-6 md:gap-8 pb-8 snap-x snap-mandatory overflow-x-auto scrollbar-hide" ref={containerRef}>
           {milestones.map((milestone) => (
-            <div key={milestone.year} className="flex-shrink-0 w-80 snap-center">
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-arzir-gray-200 h-full relative overflow-hidden">
+            <div key={milestone.year} className="flex-shrink-0 w-72 sm:w-76 md:w-80 snap-center">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-arzir-gray-200 h-full relative overflow-hidden">
                 {/* Background decoration */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-arzir-primary/5 rounded-full -translate-y-12 translate-x-12"></div>
                 
                 <div className="relative z-10">
                   {/* Year badge */}
-                  <div className="inline-flex items-center justify-center px-4 py-2 bg-arzir-primary text-white rounded-full text-sm font-semibold mb-4">
+                  <div className="inline-flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 bg-arzir-primary text-white rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
                     {milestone.year}
                   </div>
                   
                   {/* Icon */}
-                  <div className="mb-6 text-center">
+                  <div className="mb-4 sm:mb-6 text-center">
                     <Image
                       src={milestone.image}
                       alt={`${milestone.year} ${milestone.title}`}
                       width={320}
                       height={240}
-                      sizes="320px"
-                      className="w-full h-40 object-cover rounded-xl"
+                      sizes="(max-width: 640px) 280px, (max-width: 768px) 304px, 320px"
+                      className="w-full h-32 sm:h-36 md:h-40 object-cover rounded-lg sm:rounded-xl"
                       loading="lazy"
                     />
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-heading font-bold text-black mb-3">
+                  <h3 className="text-lg sm:text-xl font-heading font-bold text-black mb-2 sm:mb-3">
                     {milestone.title}
                   </h3>
-                  <p className="text-arzir-gray-600 leading-relaxed mb-4">
+                  <p className="text-sm sm:text-base text-arzir-gray-600 leading-relaxed mb-3 sm:mb-4">
                     {milestone.description}
                   </p>
                   
                   {/* Highlight tag */}
-                  <div className="inline-flex items-center px-3 py-1 bg-arzir-gray-100 text-arzir-gray-700 rounded-full text-xs font-medium">
+                  <div className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1 bg-arzir-gray-100 text-arzir-gray-700 rounded-full text-xs font-medium">
                     {milestone.highlight}
                   </div>
                 </div>
@@ -139,20 +158,20 @@ export function TimelineCarousel() {
       </div>
 
       {/* Navigation arrows - Outside container to avoid overlap */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 z-20">
+      <div className="absolute top-1/2 -translate-y-1/2 left-1 sm:left-2 md:left-4 z-20">
         <button 
           onClick={scrollPrev}
-          className="w-12 h-12 md:w-14 md:h-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white cursor-pointer border border-arzir-gray-200"
+          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white cursor-pointer border border-arzir-gray-200"
         >
-          <ArrowRight className="h-4 w-4 md:h-5 md:w-5 rotate-180" />
+          <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 rotate-180" />
         </button>
       </div>
-      <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-20">
+      <div className="absolute top-1/2 -translate-y-1/2 right-1 sm:right-2 md:right-4 z-20">
         <button 
           onClick={scrollNext}
-          className="w-12 h-12 md:w-14 md:h-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white cursor-pointer border border-arzir-gray-200"
+          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-12 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-arzir-primary hover:bg-arzir-primary hover:text-white cursor-pointer border border-arzir-gray-200"
         >
-          <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
+          <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
         </button>
       </div>
 
