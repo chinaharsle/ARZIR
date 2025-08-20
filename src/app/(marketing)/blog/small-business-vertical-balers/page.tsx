@@ -1,6 +1,4 @@
 import { Section } from "@/components/common/Section";
-import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, Store, TrendingUp, Package, DollarSign } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -531,7 +529,7 @@ export default function SmallBusinessVerticalBalersPage() {
             </h2>
             <p>
               Small businesses achieve cost savings in multiple areas when implementing vertical balers. 
-              Here's a detailed breakdown of where the savings come from:
+              Here&apos;s a detailed breakdown of where the savings come from:
             </p>
             
             <div className="overflow-x-auto">
@@ -607,7 +605,7 @@ export default function SmallBusinessVerticalBalersPage() {
                     </div>
                     
                     <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-                      <p className="text-blue-700 italic">"{study.quote}"</p>
+                      <p className="text-blue-700 italic">&ldquo;{study.quote}&rdquo;</p>
                     </div>
                   </div>
                 </div>
@@ -621,7 +619,7 @@ export default function SmallBusinessVerticalBalersPage() {
               ROI Calculator
             </h2>
             <p>
-              Understanding return on investment is crucial for small business decisions. Here's how to calculate 
+              Understanding return on investment is crucial for small business decisions. Here&apos;s how to calculate 
               the ROI for a vertical baler investment:
             </p>
 

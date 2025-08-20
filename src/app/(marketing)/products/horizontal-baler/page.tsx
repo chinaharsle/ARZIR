@@ -752,7 +752,7 @@ export default function HorizontalBalerPage() {
                     <div className="flex items-start gap-3">
                       <Star className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-1" />
                       <div>
-                        <p className="text-arzir-gray-700 italic text-sm">"{study.testimonial}"</p>
+                        <p className="text-arzir-gray-700 italic text-sm">&ldquo;{study.testimonial}&rdquo;</p>
                       </div>
                     </div>
                   </div>

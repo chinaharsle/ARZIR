@@ -555,8 +555,6 @@ export default function TextileRecyclingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        title="Transform Your Textile Waste Management"
-        description="Optimize textile recycling operations with ARZIR vertical balers. Achieve 85% volume reduction while supporting sustainable manufacturing and circular economy initiatives."
         formSource="textile_recycling_application"
       />
     </>

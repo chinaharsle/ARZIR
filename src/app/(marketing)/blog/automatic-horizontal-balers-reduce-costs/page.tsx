@@ -1,7 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, TrendingDown, DollarSign, Zap, Settings, BarChart3, Timer, Users } from "lucide-react";
+import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, TrendingDown, Zap, Settings, BarChart3, Timer, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -733,7 +733,7 @@ export default function AutomaticHorizontalBalersReduceCostsPage() {
             </div>
             
             <p>
-              Automatic horizontal balers represent more than equipment upgrades—they're strategic 
+              Automatic horizontal balers represent more than equipment upgrades—they&apos;re strategic 
               investments that fundamentally transform operational economics. The combination of 
               reduced labor costs, increased throughput, improved quality, and enhanced efficiency 
               delivers compelling returns that justify investment across a wide range of recycling operations.

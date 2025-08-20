@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ApplicationCTA } from "@/components/common/ApplicationCTA";
-import { ArrowRight, CheckCircle, Ship, Globe, TrendingUp, Package } from "lucide-react";
+import { ArrowRight, Ship, Globe, TrendingUp, Package } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -408,8 +408,6 @@ export default function ExportTradingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        title="Optimize Your Export Trading Operations"
-        description="Reduce shipping costs by up to 80% with ARZIR compressed metal bales. Maximize container efficiency and access global markets with standardized, high-density bales designed for international export trading."
         formSource="export_trading_application"
       />
     </>

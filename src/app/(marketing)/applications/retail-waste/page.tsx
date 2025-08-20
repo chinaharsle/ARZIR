@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ApplicationCTA } from "@/components/common/ApplicationCTA";
-import { ArrowRight, CheckCircle, Store, TrendingUp, Package, Recycle } from "lucide-react";
+import { ArrowRight, Store, TrendingUp, Package, Recycle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -436,8 +436,6 @@ export default function RetailWastePage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        title="Transform Your Retail Waste Management"
-        description="Reduce waste volume by 80% with ARZIR vertical balers designed for retail operations. Optimize back-of-house space while reducing disposal costs and improving sustainability."
         formSource="retail_waste_application"
       />
     </>

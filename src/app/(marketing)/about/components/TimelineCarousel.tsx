@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
@@ -47,13 +47,13 @@ export function TimelineCarousel() {
     }
   };
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (containerRef.current) {
       const scrollLeft = containerRef.current.scrollLeft;
       const newIndex = Math.round(scrollLeft / scrollAmount);
       setCurrentIndex(newIndex);
     }
-  };
+  }, [scrollAmount]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -61,7 +61,7 @@ export function TimelineCarousel() {
       container.addEventListener('scroll', handleScroll);
       return () => container.removeEventListener('scroll', handleScroll);
     }
-  }, []);
+  }, [handleScroll]);
 
   const milestones = [
     {

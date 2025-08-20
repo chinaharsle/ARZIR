@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Download, Star, Users, Truck, Factory, Package } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Settings, Award, Star, Users, Package } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -652,7 +652,7 @@ export default function VerticalBalerPage() {
               Customer Success Stories
             </h2>
             <p className="text-xl text-arzir-gray-600 max-w-3xl mx-auto">
-              Real customer cases demonstrating ARZIR equipment's exceptional performance
+              Real customer cases demonstrating ARZIR equipment&apos;s exceptional performance
             </p>
           </div>
           
@@ -691,7 +691,7 @@ export default function VerticalBalerPage() {
                     <div className="flex items-start gap-3">
                       <Star className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-1" />
                       <div>
-                        <p className="text-arzir-gray-700 italic">"{study.testimonial}"</p>
+                        <p className="text-arzir-gray-700 italic">&ldquo;{study.testimonial}&rdquo;</p>
                       </div>
                     </div>
                   </div>

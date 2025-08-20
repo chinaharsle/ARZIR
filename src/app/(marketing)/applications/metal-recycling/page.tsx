@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ApplicationCTA } from "@/components/common/ApplicationCTA";
-import { ArrowRight, CheckCircle, Factory, TrendingUp, Package, Recycle } from "lucide-react";
+import { ArrowRight, Factory, TrendingUp, Package, Recycle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -450,8 +450,6 @@ export default function MetalRecyclingPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        title="Scale Your Metal Recycling Operations"
-        description="Transform your facility with industrial-scale recycling solutions. Process 500-2000 tons/day with ARZIR's comprehensive metal recycling systems designed for maximum efficiency and profitability."
         formSource="metal_recycling_application"
       />
     </>

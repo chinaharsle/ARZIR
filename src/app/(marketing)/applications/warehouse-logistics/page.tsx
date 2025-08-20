@@ -495,8 +495,6 @@ export default function WarehouseLogisticsPage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        title="Optimize Your Warehouse Waste Operations"
-        description="Streamline warehouse waste management with ARZIR vertical balers. Reduce handling costs, optimize floor space, and improve operational efficiency in your logistics operations."
         formSource="warehouse_logistics_application"
       />
     </>

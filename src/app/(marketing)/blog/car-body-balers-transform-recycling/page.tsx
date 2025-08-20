@@ -1,7 +1,5 @@
 import { Section } from "@/components/common/Section";
-import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, TrendingUp, Truck, Factory, Recycle } from "lucide-react";
+import { Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, TrendingUp, Truck, Factory, Recycle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";

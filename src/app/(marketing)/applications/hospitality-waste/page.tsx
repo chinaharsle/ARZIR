@@ -495,8 +495,6 @@ export default function HospitalityWastePage() {
 
       {/* Bottom CTA */}
       <ApplicationCTA 
-        title="Enhance Your Hospitality Operations"
-        description="Improve guest experience while reducing waste costs with ARZIR vertical balers. Discrete, efficient waste management solutions designed specifically for hotels and restaurants."
         formSource="hospitality_waste_application"
       />
     </>

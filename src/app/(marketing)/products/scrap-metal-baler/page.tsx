@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Gauge, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Gauge } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -229,7 +229,7 @@ export default function ScrapMetalBalerPage() {
             </div>
             
             <p className="text-lg lg:text-xl text-arzir-gray-600 leading-relaxed">
-              Maximize material density and reduce transport costs with ARZIR's proven high-performance balers.{" "}
+              Maximize material density and reduce transport costs with ARZIR&apos;s proven high-performance balers.{" "}
               <strong className="text-black">ROI typically achieved in 24 months.</strong>
             </p>
             
