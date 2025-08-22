@@ -1,9 +1,8 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, Wrench, Settings, Target, Gauge, Shield, Factory, DollarSign, TrendingUp, BarChart3, Calculator, Award } from "lucide-react";
+import { ArrowRight, Clock, User, Calendar, ChevronRight, CheckCircle, Settings, TrendingUp, Award, Target, Factory, Shield, BarChart3, Calculator } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -293,7 +292,7 @@ export default function MetalChipProcessingGuidePage() {
                 </p>
                 
                 <p>
-                  Whether you're dealing with aluminum turnings from aerospace manufacturing, steel chips from 
+                  Whether you&apos;re dealing with aluminum turnings from aerospace manufacturing, steel chips from 
                   automotive production, or copper swarf from electrical components, understanding proper processing 
                   methods can dramatically improve your material recovery value and reduce waste management costs.
                 </p>

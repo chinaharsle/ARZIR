@@ -12,61 +12,7 @@ export const metadata: Metadata = {
   description: "Multi-shaft four-shaft shredders for fine size reduction and uniform output with superior particle size control.",
 };
 
-const specifications = [
-  {
-    parameter: "Power Range",
-    value: "400-2000 kW",
-    description: "Quad motor configuration"
-  },
-  {
-    parameter: "Throughput",
-    value: "5-50 t/h",
-    description: "High-volume fine processing"
-  },
-  {
-    parameter: "Output Size",
-    value: "10-100mm",
-    description: "Fine particle control"
-  },
-  {
-    parameter: "Number of Shafts",
-    value: "4 synchronized",
-    description: "Multi-stage cutting action"
-  },
-  {
-    parameter: "Cutting Chamber",
-    value: "2.0-4.0m width",
-    description: "Large processing volume"
-  },
-  {
-    parameter: "Screen Options",
-    value: "5-80mm",
-    description: "Fine screening capability"
-  }
-];
 
-const features = [
-  {
-    title: "Multi-Stage Cutting",
-    description: "Four-stage cutting process provides superior size reduction with exceptional uniformity",
-    icon: "🔄"
-  },
-  {
-    title: "Fine Output Control",
-    description: "Precise particle size distribution ideal for downstream separation and processing",
-    icon: "🎯"
-  },
-  {
-    title: "Maximum Throughput",
-    description: "Multiple shafts enable highest capacity processing for large-scale operations",
-    icon: "📈"
-  },
-  {
-    title: "Material Liberation",
-    description: "Multiple cutting stages effectively separate bonded materials and composites",
-    icon: "⚡"
-  }
-];
 
 const technicalSpecs = [
   {
@@ -334,88 +280,8 @@ const maintenanceGuide = [
   }
 ];
 
-const cuttingStages = [
-  {
-    stage: "Primary Cutting",
-    description: "Initial size reduction from large input pieces to intermediate size",
-    shafts: "Shafts 1 & 2",
-    outputSize: "200-400mm"
-  },
-  {
-    stage: "Secondary Reduction",
-    description: "Further size reduction and material conditioning",
-    shafts: "Shafts 2 & 3", 
-    outputSize: "100-200mm"
-  },
-  {
-    stage: "Fine Cutting",
-    description: "Precision cutting for target particle size achievement",
-    shafts: "Shafts 3 & 4",
-    outputSize: "50-100mm"
-  },
-  {
-    stage: "Final Sizing",
-    description: "Final size control through screening and circulation",
-    shafts: "All 4 shafts",
-    outputSize: "10-50mm"
-  }
-];
 
-const materialSuitability = [
-  {
-    material: "Complex E-Waste",
-    effectiveness: "Excellent",
-    liberationRate: "95%",
-    applications: "PCB processing, component separation"
-  },
-  {
-    material: "Automotive ASR",
-    effectiveness: "Very Good",
-    liberationRate: "90%",
-    applications: "Fluff processing, material recovery"
-  },
-  {
-    material: "Mixed Metal Scrap",
-    effectiveness: "Good",
-    liberationRate: "85%",
-    applications: "Fine sizing for separation"
-  },
-  {
-    material: "Composite Materials",
-    effectiveness: "Excellent",
-    liberationRate: "92%",
-    applications: "Fiber separation, matrix removal"
-  },
-  {
-    material: "Appliance White Goods",
-    effectiveness: "Very Good",
-    liberationRate: "88%",
-    applications: "Material liberation, size control"
-  }
-];
 
-const benefits = [
-  {
-    title: "Superior Liberation",
-    description: "Four-stage cutting process achieves 90-95% material liberation efficiency",
-    metric: "90-95% liberation"
-  },
-  {
-    title: "Fine Size Control",
-    description: "Precise particle size distribution with minimal oversized material",
-    metric: "±10% size tolerance"
-  },
-  {
-    title: "Maximum Recovery",
-    description: "Enhanced material separation increases valuable material recovery rates",
-    metric: "15% more recovery"
-  },
-  {
-    title: "Process Efficiency",
-    description: "Single-pass processing eliminates need for multiple size reduction steps",
-    metric: "Single-pass solution"
-  }
-];
 
 const faqs = [
   {
