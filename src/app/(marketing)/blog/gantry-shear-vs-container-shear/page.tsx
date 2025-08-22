@@ -2,6 +2,8 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, Truck, Factory, Zap, Settings } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -388,7 +390,7 @@ export default function GantryShearVsContainerShearPage() {
           <div className="space-y-6">
             <p className="text-xl text-arzir-gray-600 leading-relaxed">
               When processing heavy scrap metal, choosing between a gantry shear and container shear is a critical 
-              decision that impacts your operation's efficiency, costs, and material handling capabilities. Each 
+              decision that impacts your operation&apos;s efficiency, costs, and material handling capabilities. Each 
               technology serves distinct purposes in heavy scrap processing, with significant differences in cutting 
               force, mobility, and application suitability.
             </p>

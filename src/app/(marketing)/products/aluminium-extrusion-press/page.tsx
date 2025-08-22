@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Factory, Truck, Users, Star, MapPin, Wrench, Gauge, Target, Thermometer, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Factory, Truck, Star, MapPin, Gauge, Target, Thermometer, Cpu } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -726,7 +726,7 @@ export default function AluminiumExtrusionPressPage() {
                   <div className="p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border-l-4 border-arzir-primary">
                     <div className="flex items-start gap-3">
                       <Star className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-1" />
-                      <p className="text-arzir-gray-700 italic">"{study.testimonial}"</p>
+                      <p className="text-arzir-gray-700 italic">&quot;{study.testimonial}&quot;</p>
                     </div>
                   </div>
                 </div>

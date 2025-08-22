@@ -233,7 +233,7 @@ export default function BriquettingVsBalingBlogPage() {
             {/* Introduction */}
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-arzir-gray-700 leading-relaxed">
-                Choosing the right metal waste processing equipment can significantly impact your facility's 
+                Choosing the right metal waste processing equipment can significantly impact your facility&apos;s 
                 operational efficiency, costs, and material recovery value. Two primary technologies dominate 
                 the metal waste processing market: briquetting machines and baling machines. While both serve 
                 the fundamental purpose of volume reduction and material handling improvement, they operate on 
@@ -243,7 +243,7 @@ export default function BriquettingVsBalingBlogPage() {
               <p>
                 This comprehensive comparison examines both technologies across multiple criteria including 
                 applications, costs, efficiency, and long-term value to help you make an informed decision 
-                for your facility's specific needs.
+                for your facility&apos;s specific needs.
               </p>
             </div>
 
@@ -599,7 +599,7 @@ export default function BriquettingVsBalingBlogPage() {
               <p>
                 For many facilities, the decision comes down to waste stream characteristics: if your 
                 primary waste consists of chips and turnings from machining operations, briquetting 
-                typically provides better ROI and operational efficiency. If you're processing large 
+                typically provides better ROI and operational efficiency. If you&apos;re processing large 
                 items or mixed materials, baling offers proven reliability and versatility.
               </p>
 

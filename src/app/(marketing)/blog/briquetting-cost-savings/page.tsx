@@ -192,7 +192,7 @@ export default function BriquettingCostSavingsBlogPage() {
               </h2>
               
               <p>
-                Before examining briquetting solutions, it's essential to understand the true cost of 
+                Before examining briquetting solutions, it&apos;s essential to understand the true cost of 
                 traditional metal waste storage methods. Most manufacturing facilities significantly 
                 underestimate these costs by focusing only on obvious expenses while overlooking 
                 indirect costs that compound over time.

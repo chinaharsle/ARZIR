@@ -2,6 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Clock, User, Calendar, ChevronRight, CheckCircle, Factory, Settings, Target, Star } from "lucide-react";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -88,9 +88,9 @@ export default function CircularEconomyMetalRecyclingPage() {
             {/* Introduction */}
             <div className="space-y-6 mb-12">
               <p className="text-lg text-arzir-gray-700 leading-relaxed">
-                The circular economy represents a fundamental shift from the traditional linear "take-make-dispose" model 
+                The circular economy represents a fundamental shift from the traditional linear &quot;take-make-dispose&quot; model 
                 to a regenerative approach that keeps resources in use for as long as possible. In the metal recycling 
-                industry, these principles are not just environmental imperatives—they're becoming competitive advantages 
+                industry, these principles are not just environmental imperatives&mdash;they&apos;re becoming competitive advantages 
                 that drive profitability and operational excellence.
               </p>
               
@@ -320,8 +320,8 @@ export default function CircularEconomyMetalRecyclingPage() {
                 <p className="text-lg text-arzir-gray-700 leading-relaxed">
                   As regulations tighten and environmental consciousness grows, recycling operations that have 
                   already implemented circular economy principles will find themselves with significant competitive 
-                  advantages. The time to act is now—the circular economy isn't just the future of recycling, 
-                  it's the key to thriving in today's changing marketplace.
+                  advantages. The time to act is now&mdash;the circular economy isn&apos;t just the future of recycling, 
+                  it&apos;s the key to thriving in today&apos;s changing marketplace.
                 </p>
               </div>
             </div>
@@ -330,8 +330,8 @@ export default function CircularEconomyMetalRecyclingPage() {
             <div className="bg-gradient-to-r from-arzir-primary/5 to-blue-500/5 rounded-xl p-8 mb-12">
               <h2 className="text-2xl font-heading font-bold text-black mb-4">Ready to Transform Your Operations?</h2>
               <p className="text-lg text-arzir-gray-700 mb-6">
-                Implementing circular economy principles in your metal recycling operation isn't just an environmental 
-                choice—it's a business imperative that drives efficiency, profitability, and long-term sustainability.
+                Implementing circular economy principles in your metal recycling operation isn&apos;t just an environmental 
+                choice&mdash;it&apos;s a business imperative that drives efficiency, profitability, and long-term sustainability.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-arzir-primary hover:bg-primary-600">

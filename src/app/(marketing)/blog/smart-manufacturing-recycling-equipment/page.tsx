@@ -434,8 +434,8 @@ export default function SmartManufacturingRecyclingEquipmentPage() {
                 </p>
                 
                 <p className="text-lg text-arzir-gray-700 leading-relaxed">
-                  The companies that embrace these technologies today will be the leaders of tomorrow's recycling 
-                  industry. Smart manufacturing isn't just about efficiency—it's about creating a sustainable, 
+                  The companies that embrace these technologies today will be the leaders of tomorrow&apos;s recycling 
+                  industry. Smart manufacturing isn&apos;t just about efficiency&mdash;it&apos;s about creating a sustainable, 
                   resilient, and profitable future for recycling operations worldwide.
                 </p>
               </div>

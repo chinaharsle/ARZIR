@@ -2,6 +2,8 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, TrendingUp, Zap, Shield, Timer, Factory, Settings } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -440,7 +442,7 @@ export default function GantryShearsImproveRecyclingEfficiencyPage() {
           {/* Introduction */}
           <div className="space-y-6">
             <p className="text-xl text-arzir-gray-600 leading-relaxed">
-              In today's competitive scrap metal recycling industry, operational efficiency directly impacts 
+              In today&apos;s competitive scrap metal recycling industry, operational efficiency directly impacts 
               profitability and sustainability. Gantry shear technology represents a transformative solution 
               that dramatically improves processing efficiency through advanced hydraulic cutting capabilities, 
               automated operations, and superior material handling for heavy scrap processing.
@@ -638,7 +640,7 @@ export default function GantryShearsImproveRecyclingEfficiencyPage() {
                     </div>
                     
                     <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-                      <p className="text-blue-700 italic">"{study.quote}"</p>
+                      <p className="text-blue-700 italic">&quot;{study.quote}&quot;</p>
                     </div>
                   </div>
                 </div>
@@ -739,7 +741,7 @@ export default function GantryShearsImproveRecyclingEfficiencyPage() {
       <Section background="white" size="lg">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl font-heading font-bold text-black">
-            Transform Your Recycling Operation's Efficiency
+            Transform Your Recycling Operation&apos;s Efficiency
           </h2>
           <p className="text-xl text-arzir-gray-600">
             Discover how gantry shear technology can dramatically improve your processing efficiency and profitability.

@@ -2,6 +2,8 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, Shield, Factory, Settings, Layers, Cpu } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -666,7 +668,7 @@ export default function FourShaftShreddersImproveEwasteRecyclingEfficiencyPage()
             </h2>
             <p>
               Different e-waste materials require specific processing approaches to maximize recovery. 
-              Four-shaft technology adapts to each material type's characteristics:
+              Four-shaft technology adapts to each material type&apos;s characteristics:
             </p>
             
             <div className="space-y-8">
@@ -892,7 +894,7 @@ export default function FourShaftShreddersImproveEwasteRecyclingEfficiencyPage()
                     </div>
                     
                     <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-600">
-                      <p className="text-green-700 italic">"{study.testimonial}"</p>
+                      <p className="text-green-700 italic">&quot;{study.testimonial}&quot;</p>
                     </div>
                   </div>
                 </div>

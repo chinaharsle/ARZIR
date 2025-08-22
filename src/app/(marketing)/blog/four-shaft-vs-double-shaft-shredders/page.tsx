@@ -2,6 +2,8 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, Scissors, Layers } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -250,77 +252,6 @@ const decisionCriteria = [
     fourShaftScore: "Choose four-shaft if 3-4 questions are 'yes'",
     doubleShaftScore: "Choose double-shaft if 0-2 questions are 'yes'",
     reasoning: "Economic viability of four-shaft depends on material value premiums"
-  }
-];
-
-const implementationSteps = [
-  {
-    phase: "Material Assessment & Testing",
-    duration: "2-4 weeks",
-    fourShaftTasks: [
-      "Conduct material liberation testing with four-shaft samples",
-      "Analyze contamination levels and separation requirements",
-      "Evaluate fine processing needs and output specifications",
-      "Test downstream compatibility with four-shaft output"
-    ],
-    doubleShaftTasks: [
-      "Test primary size reduction effectiveness",
-      "Evaluate throughput capacity with actual materials",
-      "Assess material handling and feeding requirements",
-      "Verify output sizing for downstream processing"
-    ],
-    outcome: "Clear understanding of processing requirements and expected performance"
-  },
-  {
-    phase: "Economic Analysis & ROI Modeling",
-    duration: "1-2 weeks",
-    fourShaftTasks: [
-      "Calculate material recovery value improvements",
-      "Model single-pass processing cost savings",
-      "Analyze premium pricing for higher quality output",
-      "Evaluate reduced downstream processing costs"
-    ],
-    doubleShaftTasks: [
-      "Calculate throughput-based revenue improvements",
-      "Model reduced labor and handling costs",
-      "Analyze energy and maintenance cost advantages",
-      "Evaluate faster payback timeline benefits"
-    ],
-    outcome: "Comprehensive ROI analysis supporting technology selection"
-  },
-  {
-    phase: "Technology Selection & Specification",
-    duration: "1-3 weeks",
-    fourShaftTasks: [
-      "Specify multi-stage cutting configuration",
-      "Design integrated screening systems",
-      "Plan synchronized maintenance protocols",
-      "Configure automation and control systems"
-    ],
-    doubleShaftTasks: [
-      "Specify dual-shaft cutting configuration",
-      "Design material handling and feeding systems",
-      "Plan standard maintenance procedures",
-      "Configure automatic reverse and protection systems"
-    ],
-    outcome: "Detailed equipment specification aligned with processing requirements"
-  },
-  {
-    phase: "Implementation & Commissioning",
-    duration: "4-8 weeks",
-    fourShaftTasks: [
-      "Install complex multi-stage system with precision alignment",
-      "Commission synchronized four-shaft operation",
-      "Train operators on multi-stage processing protocols",
-      "Optimize liberation and separation parameters"
-    ],
-    doubleShaftTasks: [
-      "Install dual-shaft system with standard procedures",
-      "Commission high-capacity processing operation",
-      "Train operators on throughput optimization",
-      "Optimize cutting and material flow parameters"
-    ],
-    outcome: "Fully operational system achieving target performance metrics"
   }
 ];
 
@@ -641,7 +572,7 @@ export default function FourShaftVsDoubleShaftShreddersPage() {
               Application-Specific Recommendations
             </h2>
             <p>
-              Different waste streams and processing goals favor different technologies. Here's our analysis 
+              Different waste streams and processing goals favor different technologies. Here&apos;s our analysis 
               of major recycling applications:
             </p>
             
