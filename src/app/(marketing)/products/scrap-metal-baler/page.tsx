@@ -264,9 +264,9 @@ export default function ScrapMetalBalerPage() {
           </div>
           
           <div className="relative">
-            <div className="aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/recycling-baler.png"
+                src="/images/products/single/scrap metal baler.png"
                 alt="ARZIR Scrap Metal Baler - Industrial Recycling Equipment"
                 fill
                 className="object-contain sm:object-cover"

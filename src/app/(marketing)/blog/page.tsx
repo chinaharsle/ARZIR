@@ -10,6 +10,50 @@ import { useState } from "react";
 
 const blogPosts = [
   {
+    title: "Circular Economy Principles in Metal Recycling: Building Sustainable Operations",
+    slug: "circular-economy-metal-recycling",
+    excerpt: "Discover how circular economy principles transform metal recycling operations through waste reduction, resource optimization, and closed-loop manufacturing systems.",
+    category: "Industry News",
+    publishedAt: "2025-09-15",
+    readTime: "12 min read",
+    author: "ARZIR Sustainability Team",
+    image: "/images/blog/circular-economy-recycling.jpg",
+    featured: true
+  },
+  {
+    title: "Smart Manufacturing Integration in Recycling Equipment: Industry 4.0 Revolution",
+    slug: "smart-manufacturing-recycling-equipment",
+    excerpt: "Explore how Industry 4.0 technologies including AI, automation, and real-time analytics are revolutionizing recycling equipment manufacturing and operations.",
+    category: "Applications",
+    publishedAt: "2025-09-10",
+    readTime: "14 min read",
+    author: "ARZIR Innovation Team",
+    image: "/images/blog/smart-manufacturing-recycling.jpg",
+    featured: true
+  },
+  {
+    title: "Advanced Sorting Technologies in Metal Recycling: AI and Optical Solutions",
+    slug: "advanced-sorting-technologies",
+    excerpt: "Explore cutting-edge sorting technologies including AI-powered optical sorting, eddy current separation, and sensor-based classification for maximum metal recovery.",
+    category: "Applications",
+    publishedAt: "2025-08-28",
+    readTime: "11 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/advanced-sorting-technologies.jpg",
+    featured: false
+  },
+  {
+    title: "IoT Integration in Recycling Equipment: Smart Monitoring Solutions",
+    slug: "iot-integration-recycling-equipment",
+    excerpt: "Discover how IoT technology transforms recycling operations through real-time monitoring, predictive maintenance, and data-driven optimization for maximum efficiency.",
+    category: "Industry News",
+    publishedAt: "2025-08-25",
+    readTime: "9 min read",
+    author: "ARZIR Technology Team",
+    image: "/images/blog/iot-integration-recycling.jpg",
+    featured: true
+  },
+  {
     title: "How to Choose the Right Scrap Metal Baler for Your Yard",
     slug: "how-to-choose-scrap-metal-baler",
     excerpt: "Identify your material mix, throughput, and bale density targets. Compare hydraulic power, chamber size, and control systems for optimal selection.",
@@ -18,7 +62,7 @@ const blogPosts = [
     readTime: "7 min read",
     author: "ARZIR Engineering Team",
     image: "/images/blog/How to Choose the Right Scrap Metal Baler for Your Yard.png",
-    featured: true
+    featured: false
   },
   {
     title: "Maximizing ROI in Metal Recycling Operations",
@@ -29,7 +73,7 @@ const blogPosts = [
     readTime: "5 min read",
     author: "Sarah Chen",
     image: "/images/blog/Maximizing ROI in Metal Recycling Operations.jpg",
-    featured: true
+    featured: false
   },
   {
     title: "Preventive Maintenance Guide for Recycling Equipment",
@@ -41,6 +85,28 @@ const blogPosts = [
     author: "Mike Rodriguez",
     image: "/images/blog/Preventive Maintenance Guide for Recycling Equipment.png",
     featured: true
+  },
+  {
+    title: "How Briquetting Machines Reduce Metal Waste Storage Costs",
+    slug: "briquetting-cost-savings",
+    excerpt: "Discover how briquetting machines can reduce metal waste storage costs by up to 90%. Learn about space savings, transportation efficiency, and ROI calculations.",
+    category: "Industry News",
+    publishedAt: "2024-12-15",
+    readTime: "8 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/briquetting-cost-savings.jpg",
+    featured: false
+  },
+  {
+    title: "Briquetting Machine vs Baling Machine: Which to Choose?",
+    slug: "briquetting-vs-baling-machine",
+    excerpt: "Complete comparison of briquetting machines vs baling machines for metal waste processing. Learn about applications, advantages, costs, and decision factors.",
+    category: "Product Guides",
+    publishedAt: "2024-12-18",
+    readTime: "12 min read",
+    author: "ARZIR Technical Team",
+    image: "/images/blog/briquetting-vs-baling.jpg",
+    featured: false
   },
   {
     title: "Steel Mill Scrap Processing: Best Practices and Equipment Selection",
@@ -74,6 +140,205 @@ const blogPosts = [
     author: "David Kim",
     image: "/images/blog/Automotive Dismantling Equipment Solutions for ELV Processing.jpg",
     featured: false
+  },
+  {
+    title: "Car Body Balers Transform Vehicle Recycling",
+    slug: "car-body-balers-transform-recycling",
+    excerpt: "Discover how car body balers are revolutionizing the automotive recycling industry with improved efficiency and cost savings.",
+    category: "Industry News",
+    publishedAt: "2024-11-20",
+    readTime: "7 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/car-body-balers-transform.jpg",
+    featured: false
+  },
+  {
+    title: "Car Baler vs Car Shredder: Which to Choose?",
+    slug: "car-baler-vs-car-shredder",
+    excerpt: "Detailed comparison of car body balers and shredders with application scenarios to help you choose the right technology.",
+    category: "Product Guides",
+    publishedAt: "2024-11-15",
+    readTime: "10 min read",
+    author: "Technical Team",
+    image: "/images/blog/car-baler-vs-shredder.jpg",
+    featured: false
+  },
+  {
+    title: "Automatic Horizontal Balers Reduce Costs",
+    slug: "automatic-horizontal-balers-reduce-costs",
+    excerpt: "Learn how automatic horizontal balers can significantly reduce operational costs while improving processing efficiency.",
+    category: "Buying Tips",
+    publishedAt: "2024-10-25",
+    readTime: "6 min read",
+    author: "Operations Team",
+    image: "/images/blog/automatic-horizontal-balers.jpg",
+    featured: false
+  },
+  {
+    title: "Container Shear vs Guillotine Shear: Complete Comparison",
+    slug: "container-shear-vs-guillotine-shear",
+    excerpt: "Compare container shears and guillotine shears to determine which cutting technology best suits your recycling operations.",
+    category: "Product Guides",
+    publishedAt: "2024-10-18",
+    readTime: "8 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/container-vs-guillotine-shear.jpg",
+    featured: false
+  },
+  {
+    title: "Container Shears Improve Recycling Efficiency",
+    slug: "container-shears-improve-recycling-efficiency",
+    excerpt: "Discover how container shears enhance recycling operations with powerful cutting capabilities and improved material handling.",
+    category: "Industry News",
+    publishedAt: "2024-10-10",
+    readTime: "5 min read",
+    author: "Technical Team",
+    image: "/images/blog/container-shears-efficiency.jpg",
+    featured: false
+  },
+  {
+    title: "Vertical vs Horizontal Baler: Which is Right for You?",
+    slug: "vertical-vs-horizontal-baler",
+    excerpt: "Complete comparison guide between vertical and horizontal balers including capacity, space requirements, and cost considerations.",
+    category: "Product Guides",
+    publishedAt: "2024-09-30",
+    readTime: "9 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/vertical-vs-horizontal-baler.jpg",
+    featured: false
+  },
+  {
+    title: "Small Business Vertical Balers: Cost-Effective Solutions",
+    slug: "small-business-vertical-balers",
+    excerpt: "Explore vertical baler options designed specifically for small businesses with budget-friendly features and compact designs.",
+    category: "Buying Tips",
+    publishedAt: "2024-09-20",
+    readTime: "6 min read",
+    author: "Sales Team",
+    image: "/images/blog/small-business-vertical-balers.jpg",
+    featured: false
+  },
+  {
+    title: "Gantry Shear vs Container Shear: Performance Analysis",
+    slug: "gantry-shear-vs-container-shear",
+    excerpt: "Detailed analysis comparing gantry shears and container shears for heavy-duty metal cutting applications.",
+    category: "Product Guides",
+    publishedAt: "2024-09-10",
+    readTime: "11 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/gantry-vs-container-shear.jpg",
+    featured: false
+  },
+  {
+    title: "Gantry Shears Improve Recycling Efficiency",
+    slug: "gantry-shears-improve-recycling-efficiency",
+    excerpt: "Learn how gantry shears enhance large-scale recycling operations with superior cutting power and material handling capabilities.",
+    category: "Industry News",
+    publishedAt: "2024-08-25",
+    readTime: "7 min read",
+    author: "Technical Team",
+    image: "/images/blog/gantry-shears-efficiency.jpg",
+    featured: false
+  },
+  {
+    title: "Alligator Shears Improve Small Scrap Efficiency",
+    slug: "alligator-shears-improve-small-scrap-efficiency",
+    excerpt: "Discover how alligator shears provide efficient cutting solutions for small to medium-scale scrap metal operations.",
+    category: "Industry News",
+    publishedAt: "2024-08-15",
+    readTime: "5 min read",
+    author: "Operations Team",
+    image: "/images/blog/alligator-shears-efficiency.jpg",
+    featured: false
+  },
+  {
+    title: "Alligator Shear vs Other Scrap Shears: Comparison Guide",
+    slug: "alligator-shear-vs-other-scrap-shears",
+    excerpt: "Compare alligator shears with other cutting technologies to find the best solution for your scrap processing needs.",
+    category: "Product Guides",
+    publishedAt: "2024-08-05",
+    readTime: "8 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/alligator-shear-comparison.jpg",
+    featured: false
+  },
+  {
+    title: "Single Shaft vs Double Shaft Shredders: Which to Choose?",
+    slug: "single-shaft-vs-double-shaft-shredders",
+    excerpt: "Comprehensive comparison of single shaft and double shaft shredders for different waste processing applications.",
+    category: "Product Guides",
+    publishedAt: "2024-07-30",
+    readTime: "10 min read",
+    author: "Technical Team",
+    image: "/images/blog/single-vs-double-shaft.jpg",
+    featured: false
+  },
+  {
+    title: "Single Shaft Shredders Improve Recycling Efficiency",
+    slug: "single-shaft-shredders-improve-recycling-efficiency",
+    excerpt: "Learn how single shaft shredders enhance material processing efficiency with precise size reduction capabilities.",
+    category: "Industry News",
+    publishedAt: "2024-07-20",
+    readTime: "6 min read",
+    author: "Operations Team",
+    image: "/images/blog/single-shaft-efficiency.jpg",
+    featured: false
+  },
+  {
+    title: "Double Shaft Shredders Enhance Recycling Efficiency",
+    slug: "double-shaft-shredders-enhance-recycling-efficiency",
+    excerpt: "Discover how double shaft shredders provide robust shredding solutions for heavy-duty recycling operations.",
+    category: "Industry News",
+    publishedAt: "2024-07-10",
+    readTime: "7 min read",
+    author: "Technical Team",
+    image: "/images/blog/double-shaft-efficiency.jpg",
+    featured: false
+  },
+  {
+    title: "Four Shaft vs Double Shaft Shredders: Advanced Comparison",
+    slug: "four-shaft-vs-double-shaft-shredders",
+    excerpt: "Detailed comparison between four shaft and double shaft shredders for high-volume industrial applications.",
+    category: "Product Guides",
+    publishedAt: "2024-06-25",
+    readTime: "12 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/four-vs-double-shaft.jpg",
+    featured: false
+  },
+  {
+    title: "Four Shaft Shredders Improve E-Waste Recycling Efficiency",
+    slug: "four-shaft-shredders-improve-ewaste-recycling-efficiency",
+    excerpt: "Learn how four shaft shredders optimize electronic waste processing with advanced multi-stage shredding technology.",
+    category: "Industry News",
+    publishedAt: "2024-06-15",
+    readTime: "8 min read",
+    author: "E-Waste Team",
+    image: "/images/blog/four-shaft-ewaste.jpg",
+    featured: false
+  },
+
+  {
+    title: "Extrusion vs Die Casting Aluminum: Process Comparison",
+    slug: "extrusion-vs-die-casting-aluminum",
+    excerpt: "Compare aluminum extrusion and die casting processes to understand their applications, advantages, and limitations.",
+    category: "Applications",
+    publishedAt: "2024-05-15",
+    readTime: "11 min read",
+    author: "Aluminum Team",
+    image: "/images/blog/extrusion-vs-die-casting.jpg",
+    featured: false
+  },
+  {
+    title: "Aluminium Extrusion Process Guide: Complete Overview",
+    slug: "aluminium-extrusion-process-guide",
+    excerpt: "Comprehensive guide to the aluminum extrusion process, including equipment, techniques, and best practices for optimal results.",
+    category: "Applications",
+    publishedAt: "2024-05-05",
+    readTime: "13 min read",
+    author: "ARZIR Engineering Team",
+    image: "/images/blog/aluminum-extrusion-guide.jpg",
+    featured: false
   }
 ];
 
@@ -90,12 +355,14 @@ export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredPosts = blogPosts
+    .filter(post => {
+      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    })
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
   return (
     <>
@@ -151,7 +418,10 @@ export default function BlogPage() {
               Featured Articles
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {blogPosts.filter(post => post.featured).map((post) => (
+              {blogPosts
+                .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+                .slice(0, 3)
+                .map((post) => (
                 <div key={post.slug} className="group">
                   <Link href={`/blog/${post.slug}`}>
                     <article className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">

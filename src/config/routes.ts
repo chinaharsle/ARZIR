@@ -19,7 +19,6 @@ export const routes = {
     singleShaftShredder: "/products/single-shaft-shredder",
     doubleShaftShredder: "/products/double-shaft-shredder",
     fourShaftShredder: "/products/four-shaft-shredder",
-    hammerShredder: "/products/hammer-shredder",
   },
   applications: {
     root: "/applications",

@@ -343,9 +343,9 @@ export default function CarBodyBalerPage() {
           </div>
           
           <div className="relative">
-            <div className="aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/recycling-baler.png"
+                src="/images/products/single/Car Body Baler.png"
                 alt="ARZIR Car Body Baler - End-of-Life Vehicle Processing Equipment"
                 fill
                 className="object-contain sm:object-cover"

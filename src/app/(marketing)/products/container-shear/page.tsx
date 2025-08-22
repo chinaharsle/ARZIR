@@ -379,9 +379,9 @@ export default function ContainerShearPage() {
           </div>
           
           <div className="relative">
-            <div className="aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/container-shear.png"
+                src="/images/products/single/container shear.png"
                 alt="ARZIR Container Shear - Hydraulic Scrap Metal Cutting Machine"
                 fill
                 className="object-contain sm:object-cover"

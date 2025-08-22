@@ -4,10 +4,20 @@ import { Section } from "@/components/common/Section";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 
 interface ApplicationCTAProps {
+  title?: string;
+  description?: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
   formSource: string;
 }
 
 export function ApplicationCTA({ 
+  title = "Ready to Work with ARZIR?",
+  description = "Join thousands of satisfied customers worldwide who trust ARZIR for their recycling and metal processing equipment needs.",
+  primaryButtonText = "Get Your Quote",
+  secondaryButtonText,
+  secondaryButtonHref,
   formSource
 }: ApplicationCTAProps) {
   return (
@@ -23,11 +33,10 @@ export function ApplicationCTA({
             <div className="relative z-10 space-y-8">
               <div>
                 <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-6">
-                  Ready to Work with ARZIR?
+                  {title}
                 </h2>
                 <p className="text-xl text-blue-100 leading-relaxed">
-                  Join thousands of satisfied customers worldwide who trust ARZIR for their 
-                  recycling and metal processing equipment needs.
+                  {description}
                 </p>
               </div>
               
@@ -68,7 +77,7 @@ export function ApplicationCTA({
             <div className="w-full space-y-6">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-heading font-bold text-black mb-2">
-                  Get Your Quote
+                  {primaryButtonText}
                 </h3>
                 <p className="text-sm text-arzir-gray-600">
                   Start your recycling equipment journey with ARZIR

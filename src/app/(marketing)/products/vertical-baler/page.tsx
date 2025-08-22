@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Compact vertical baler for cardboard, plastic, textiles. Ideal for small businesses with limited space. Single-person operation, high-density bales.",
     images: [
       {
-        url: "/images/products/vertical-baler.png",
+        url: "/images/products/single/vertical baler.png",
         width: 1200,
         height: 630,
         alt: "ARZIR Vertical Baler - Space-Saving Waste Compaction Solution"
@@ -338,9 +338,9 @@ export default function VerticalBalerPage() {
           </div>
           
           <div className="relative">
-            <div className="aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/vertical-baler.png"
+                src="/images/products/single/vertical baler.png"
                 alt="ARZIR Vertical Baler - Space-Saving Waste Compaction Solution"
                 fill
                 className="object-contain sm:object-cover"

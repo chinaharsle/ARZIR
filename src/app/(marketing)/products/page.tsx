@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { DirectQuoteForm } from "@/components/forms/DirectQuoteForm";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,25 +21,25 @@ const productCategories = [
         title: "Scrap Metal Baler",
         description: "Heavy-duty baler for mixed ferrous and non-ferrous scrap with high bale density.",
         href: "/products/scrap-metal-baler",
-        image: "📦"
+        image: "/images/products/single/scrap metal baler.png"
       },
       {
         title: "Car Body Baler", 
         description: "Designed for ELV processing with robust compression chambers and faster cycles.",
         href: "/products/car-body-baler",
-        image: "🚗"
+        image: "/images/products/single/Car Body Baler.png"
       },
       {
         title: "Vertical Baler",
         description: "Space-saving vertical baler for low-to-medium throughput operations.",
         href: "/products/vertical-baler",
-        image: "📦"
+        image: "/images/products/single/vertical baler.png"
       },
       {
         title: "Horizontal Baler",
         description: "Continuous horizontal baler for high throughput and consistent bale sizes.",
         href: "/products/horizontal-baler",
-        image: "📦"
+        image: "/images/products/single/horizontal balser_.png"
       }
     ]
   },
@@ -51,19 +52,19 @@ const productCategories = [
         title: "Container Shear",
         description: "Mobile shearing solution for on-site processing with excellent mobility.",
         href: "/products/container-shear",
-        image: "✂️"
+        image: "/images/products/single/container shear.png"
       },
       {
         title: "Gantry Shear",
         description: "High-capacity stationary shear for heavy-duty industrial applications.",
         href: "/products/gantry-shear", 
-        image: "✂️"
+        image: "/images/products/single/gantry shear.png"
       },
       {
         title: "Alligator Shear",
         description: "Fast-cycling shear for cutting structural steel and plate materials.",
         href: "/products/alligator-shear",
-        image: "✂️"
+        image: "/images/products/single/alligator shear.png"
       }
     ]
   },
@@ -76,25 +77,19 @@ const productCategories = [
         title: "Single-Shaft Shredder",
         description: "Versatile single-shaft design for mixed material processing applications.",
         href: "/products/single-shaft-shredder",
-        image: "🔧"
+        image: "/images/products/single/single-shaft-shredder.png"
       },
       {
         title: "Double-Shaft Shredder",
         description: "Dual-shaft configuration for enhanced processing capacity and efficiency.",
         href: "/products/double-shaft-shredder",
-        image: "🔧"
+        image: "/images/products/single/double-shaft shredder.png"
       },
       {
         title: "Four-Shaft Shredder",
         description: "Multi-shaft design for fine size reduction and uniform output.",
         href: "/products/four-shaft-shredder",
-        image: "🔧"
-      },
-      {
-        title: "Hammer Shredder",
-        description: "High-impact hammer design for brittle materials and rapid processing.",
-        href: "/products/hammer-shredder",
-        image: "🔧"
+        image: "/images/products/single/four-shaft shredder.png"
       }
     ]
   },
@@ -107,7 +102,7 @@ const productCategories = [
         title: "Aluminium Extrusion Press",
         description: "Precision hydraulic press for high-quality aluminium profile extrusion.",
         href: "/products/aluminium-extrusion-press",
-        image: "🏭"
+        image: "/images/products/single/Extrusion Press.png"
       }
     ]
   },
@@ -120,7 +115,7 @@ const productCategories = [
         title: "Briquetting Machine",
         description: "High-pressure briquetting for metal chips with oil recovery system.",
         href: "/products/briquetting-machine",
-        image: "🧱"
+        image: "/images/products/single/Briquetting Machine_.png"
       }
     ]
   }
@@ -168,8 +163,14 @@ export default function ProductsPage() {
                   <Link href={product.href}>
                     <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full">
                       {/* Product Image */}
-                      <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                        <span className="text-6xl filter drop-shadow-lg">{product.image}</span>
+                      <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <Image
+                          src={product.image}
+                          alt={product.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
                       </div>
 
                       {/* Product Info */}

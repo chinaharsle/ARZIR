@@ -106,6 +106,102 @@ const applications = [
     image: "/images/applications/Aerospace Recycling Solutions.jpg",
     stats: "Aviation certified",
     alt: "Aerospace recycling facility processing aircraft materials"
+  },
+  {
+    title: "Metal Recycling",
+    description: "Comprehensive metal processing solutions for mixed metal streams and general recycling operations",
+    href: "/applications/metal-recycling",
+    image: "/images/applications/metal-recycling.jpg",
+    stats: "90% recovery efficiency",
+    alt: "General metal recycling facility with ARZIR equipment"
+  },
+  {
+    title: "Export Trading",
+    description: "Optimize materials for international trade with standardized baling and processing equipment",
+    href: "/applications/export-trading",
+    image: "/images/applications/export-trading.jpg",
+    stats: "Export ready format",
+    alt: "Export trading facility preparing metal bales"
+  },
+  {
+    title: "Retail Waste Management",
+    description: "Efficient waste processing solutions for retail chains and commercial establishments",
+    href: "/applications/retail-waste",
+    image: "/images/applications/retail-waste.jpg",
+    stats: "70% cost reduction",
+    alt: "Retail waste management with ARZIR balers"
+  },
+  {
+    title: "Textile Recycling",
+    description: "Advanced textile waste processing and fiber recovery systems for sustainable fashion industry",
+    href: "/applications/textile-recycling",
+    image: "/images/applications/textile-recycling.jpg",
+    stats: "85% fiber recovery",
+    alt: "Textile recycling facility with ARZIR equipment"
+  },
+  {
+    title: "Warehouse & Logistics",
+    description: "Streamline warehouse operations with efficient waste management and material handling solutions",
+    href: "/applications/warehouse-logistics",
+    image: "/images/applications/warehouse-logistics.jpg",
+    stats: "50% space saving",
+    alt: "Warehouse logistics optimization with ARZIR systems"
+  },
+  {
+    title: "Hospitality Waste",
+    description: "Specialized waste processing solutions for hotels, restaurants, and hospitality industry",
+    href: "/applications/hospitality-waste",
+    image: "/images/applications/hospitality-waste.jpg",
+    stats: "60% waste reduction",
+    alt: "Hospitality waste management with ARZIR equipment"
+  },
+  {
+    title: "Construction Aluminum",
+    description: "Specialized aluminum processing for construction industry waste and architectural materials",
+    href: "/applications/construction-aluminum",
+    image: "/images/applications/construction-aluminum.jpg",
+    stats: "95% aluminum recovery",
+    alt: "Construction aluminum recycling with ARZIR equipment"
+  },
+  {
+    title: "Automotive Aluminum",
+    description: "Advanced aluminum processing solutions for automotive industry waste and component recycling",
+    href: "/applications/automotive-aluminum",
+    image: "/images/applications/automotive-aluminum.jpg",
+    stats: "98% aluminum purity",
+    alt: "Automotive aluminum recycling facility"
+  },
+  {
+    title: "Aerospace Aluminum",
+    description: "High-precision aluminum processing for aerospace industry with strict quality requirements",
+    href: "/applications/aerospace-aluminum",
+    image: "/images/applications/aerospace-aluminum.jpg",
+    stats: "Aerospace grade quality",
+    alt: "Aerospace aluminum processing with ARZIR equipment"
+  },
+  {
+    title: "Industrial Aluminum",
+    description: "Comprehensive aluminum processing solutions for industrial manufacturing and production facilities",
+    href: "/applications/industrial-aluminum",
+    image: "/images/applications/industrial-aluminum.jpg",
+    stats: "24/7 processing capability",
+    alt: "Industrial aluminum processing plant"
+  },
+  {
+    title: "Food & Beverage Waste",
+    description: "Specialized waste processing equipment for food and beverage industry packaging materials",
+    href: "/applications/food-beverage-waste",
+    image: "/images/applications/food-beverage-waste.jpg",
+    stats: "92% recovery rate",
+    alt: "Food and beverage waste processing with ARZIR equipment"
+  },
+  {
+    title: "Mining & Extraction Waste",
+    description: "Heavy-duty waste processing solutions for mining industry equipment and ore processing waste",
+    href: "/applications/mining-extraction-waste",
+    image: "/images/applications/mining-extraction-waste.jpg",
+    stats: "88% recovery rate",
+    alt: "Mining and extraction waste processing with ARZIR equipment"
   }
 ];
 
@@ -161,7 +257,7 @@ export default function ApplicationsPage() {
           {/* Key stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8">
             <div className="text-center">
-              <div className="text-2xl lg:text-3xl font-bold text-arzir-primary mb-2">12+</div>
+              <div className="text-2xl lg:text-3xl font-bold text-arzir-primary mb-2">24+</div>
               <div className="text-sm text-arzir-gray-600">Industries Served</div>
             </div>
             <div className="text-center border-x border-arzir-gray-200">

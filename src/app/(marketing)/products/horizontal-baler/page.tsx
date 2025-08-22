@@ -407,9 +407,9 @@ export default function HorizontalBalerPage() {
           </div>
           
           <div className="relative">
-            <div className="aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/horizontal-baler.png"
+                src="/images/products/single/horizontal balser_.png"
                 alt="ARZIR Horizontal Baler - Industrial Automatic Waste Baler Machine"
                 fill
                 className="object-contain sm:object-cover"

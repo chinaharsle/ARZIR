@@ -17,28 +17,28 @@ const products = [
     title: "Scrap Metal Baler",
     description: "Heavy-duty baler for mixed ferrous and non-ferrous scrap with high bale density.",
     href: "/products/scrap-metal-baler",
-    image: "📦",
+    image: "/images/products/single/scrap metal baler.png",
     alt: "Scrap Metal Baler compressing mixed scrap"
   },
   {
     title: "Car Body Baler", 
     description: "Designed for ELV processing with robust compression chambers and faster cycles.",
     href: "/products/car-body-baler",
-    image: "🚗",
+    image: "/images/products/single/Car Body Baler.png",
     alt: "Car Body Baler compacting end-of-life vehicles"
   },
   {
     title: "Vertical Baler",
     description: "Space-saving vertical baler for low-to-medium throughput operations.",
     href: "/products/vertical-baler",
-    image: "📦",
+    image: "/images/products/single/vertical baler.png",
     alt: "Vertical Baler for compact operations"
   },
   {
     title: "Horizontal Baler",
     description: "Continuous horizontal baler for high throughput and consistent bale sizes.",
     href: "/products/horizontal-baler",
-    image: "📦",
+    image: "/images/products/single/horizontal balser_.png",
     alt: "Horizontal Baler for continuous compaction"
   }
 ];
@@ -76,7 +76,7 @@ export default function RecyclingBalerPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/products/recycling-baler.png"
+                src="/images/products/single/horizontal balser_.png"
                 alt="ARZIR Recycling Balers - High-Density Compaction Equipment"
                 width={800}
                 height={450}
@@ -111,8 +111,14 @@ export default function RecyclingBalerPage() {
                 <Link href={product.href}>
                   <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-arzir-gray-100 overflow-hidden h-full flex flex-col">
                     {/* Product Image */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                      <span className="text-6xl filter drop-shadow-lg">{product.image}</span>
+                    <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-50 to-arzir-gray-100 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                      <Image
+                        src={product.image}
+                        alt={product.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
                     </div>
 
                     {/* Product Info */}
