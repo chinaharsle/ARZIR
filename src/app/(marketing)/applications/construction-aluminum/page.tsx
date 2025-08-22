@@ -2,8 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ApplicationCTA } from "@/components/common/ApplicationCTA";
-import { ArrowRight, CheckCircle, Factory, Building, Shield, Thermometer, Gauge, Settings, Award, Target, Timer, Users } from "lucide-react";
-import Link from "next/link";
+import { ArrowRight, CheckCircle, Factory, Building, Shield, Thermometer, Award, Target } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 

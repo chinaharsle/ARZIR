@@ -1,7 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, Thermometer, Gauge, Cog, Target, Settings, Factory, Truck, Users, Star, Timer, Cpu, Wrench, Zap } from "lucide-react";
+import { ArrowRight, Clock, User, Calendar, ChevronRight, CheckCircle, Thermometer, Gauge, Cog, Target, Settings, Factory, Truck, Users, Star, Timer, Cpu, Wrench, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";

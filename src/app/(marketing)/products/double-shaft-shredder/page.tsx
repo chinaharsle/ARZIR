@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Timer, Factory, Truck, Users, Star, MapPin, Wrench, DollarSign, TrendingUp, Scissors } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Timer, Factory, Truck, Users, Star, MapPin, Wrench, Scissors } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";

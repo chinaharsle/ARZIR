@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Timer, Factory, Truck, Users, Star, MapPin, Wrench, DollarSign, TrendingUp, Gauge, Target, Cog, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Factory, Star, MapPin, Wrench, DollarSign, Gauge, Target, Cog } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -102,33 +102,6 @@ const coreFeatures = [
     title: "Modular Construction",
     description: "Modular design allows easy maintenance access and component replacement for extended service life",
     benefit: "Reduced maintenance downtime and repair costs"
-  }
-];
-
-const materialTypes = [
-  {
-    material: "Aluminum Chips",
-    density: "6-7 g/cm³",
-    oilContent: "5-15%",
-    recovery: "98%"
-  },
-  {
-    material: "Steel Chips",
-    density: "4-6 g/cm³", 
-    oilContent: "3-12%",
-    recovery: "96%"
-  },
-  {
-    material: "Cast Iron",
-    density: "5-6.5 g/cm³",
-    oilContent: "2-8%",
-    recovery: "95%"
-  },
-  {
-    material: "Copper Chips",
-    density: "6.5-7 g/cm³",
-    oilContent: "4-10%",
-    recovery: "97%"
   }
 ];
 

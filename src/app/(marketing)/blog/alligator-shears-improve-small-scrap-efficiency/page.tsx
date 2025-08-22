@@ -837,7 +837,7 @@ export default function AlligatorShearsImproveSmallScrapEfficiencyPage() {
                     </div>
                     
                     <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-                      <p className="text-blue-700 italic">"{study.testimonial}"</p>
+                      <p className="text-blue-700 italic">&quot;{study.testimonial}&quot;</p>
                     </div>
                   </div>
                 </div>

@@ -16,8 +16,6 @@ export function ApplicationCTA({
   title = "Ready to Work with ARZIR?",
   description = "Join thousands of satisfied customers worldwide who trust ARZIR for their recycling and metal processing equipment needs.",
   primaryButtonText = "Get Your Quote",
-  secondaryButtonText,
-  secondaryButtonHref,
   formSource
 }: ApplicationCTAProps) {
   return (

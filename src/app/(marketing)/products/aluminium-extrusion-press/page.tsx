@@ -2,7 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ProductCTA } from "@/components/common/ProductCTA";
-import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Timer, Factory, Truck, Users, Star, MapPin, Wrench, DollarSign, TrendingUp, Gauge, Target, Cog, Thermometer, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Zap, Settings, Award, Factory, Truck, Users, Star, MapPin, Wrench, Gauge, Target, Thermometer, Cpu } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -105,54 +105,6 @@ const coreFeatures = [
     title: "Energy-Efficient Design",
     description: "Optimized hydraulic circuits and heat recovery systems minimize energy consumption per ton of output",
     benefit: "Reduced operating costs and environmental impact"
-  }
-];
-
-const applications = [
-  {
-    title: "Building & Construction",
-    description: "Window frames, door profiles, curtain wall systems, and structural glazing components for architectural applications",
-    image: "/images/applications/construction-aluminum.png",
-    href: "/applications/construction-aluminum",
-    materials: ["Window frames", "Door profiles", "Curtain walls", "Structural glazing"],
-    capacity: "500-1800 kg/hour",
-    icon: Factory
-  },
-  {
-    title: "Automotive Industry",
-    description: "Car body frames, radiator tubing, heat exchangers, and lightweight structural components for vehicles",
-    image: "/images/applications/automotive-aluminum.png",
-    href: "/applications/automotive-aluminum",
-    materials: ["Body frames", "Radiator tubes", "Heat sinks", "Structural components"],
-    capacity: "800-1200 kg/hour",
-    icon: Truck
-  },
-  {
-    title: "Aerospace Applications",
-    description: "Lightweight aluminum profiles for aircraft structures, precision components, and aerospace-grade extrusions",
-    image: "/images/applications/aerospace-aluminum.png",
-    href: "/applications/aerospace-aluminum",
-    materials: ["Aircraft structures", "Precision components", "Aerospace profiles", "Lightweight frames"],
-    capacity: "300-800 kg/hour",
-    icon: Settings
-  },
-  {
-    title: "Industrial Manufacturing",
-    description: "Machine frames, conveyor systems, industrial automation components, and heat dissipation profiles",
-    image: "/images/applications/industrial-aluminum.png",
-    href: "/applications/industrial-aluminum",
-    materials: ["Machine frames", "Conveyor systems", "Heat sinks", "Automation components"],
-    capacity: "600-1500 kg/hour",
-    icon: Wrench
-  },
-  {
-    title: "Furniture & Decoration",
-    description: "Aluminum furniture frames, decorative profiles, edge banding, and architectural trim applications",
-    image: "/images/applications/furniture-aluminum.png",
-    href: "/applications/furniture-aluminum",
-    materials: ["Furniture frames", "Decorative profiles", "Edge banding", "Architectural trim"],
-    capacity: "400-1000 kg/hour",
-    icon: Users
   }
 ];
 

@@ -2,8 +2,7 @@ import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
 import { ApplicationCTA } from "@/components/common/ApplicationCTA";
-import { ArrowRight, CheckCircle, Factory, Cog, Zap, Settings, Award, Target, Timer, TrendingUp, Gauge, Users, Wrench, Cpu } from "lucide-react";
-import Link from "next/link";
+import { ArrowRight, CheckCircle, Factory, Cog, Zap, Settings, Award, Target, TrendingUp, Gauge } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 

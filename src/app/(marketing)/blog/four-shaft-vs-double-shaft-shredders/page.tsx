@@ -1,9 +1,7 @@
 import { Section } from "@/components/common/Section";
 import { Button } from "@/components/ui/button";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, TrendingUp, Zap, DollarSign, Shield, Timer, Factory, Truck, Settings, Wrench, Scissors, Layers } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import { ArrowRight, Clock, User, Calendar, ChevronLeft, ChevronRight, CheckCircle, Scissors, Layers } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
