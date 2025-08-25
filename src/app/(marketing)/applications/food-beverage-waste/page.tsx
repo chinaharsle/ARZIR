@@ -155,7 +155,7 @@ export default function FoodBeverageWastePage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/food-beverage-waste.jpg"
+                src="/images/applications/Food & Beverage Waste.png"
                 alt="Food & Beverage Waste Processing"
                 width={800}
                 height={450}

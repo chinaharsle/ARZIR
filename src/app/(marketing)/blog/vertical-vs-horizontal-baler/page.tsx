@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Complete comparison guide to help you choose between vertical and horizontal balers for your operation.",
     images: [
       {
-        url: "/images/blog/vertical-vs-horizontal-baler.jpg",
+        url: "/images/blog/Vertical vs Horizontal Baler Which One to Choose.png",
         width: 1200,
         height: 630,
         alt: "Vertical vs Horizontal Baler Comparison - ARZIR Blog"
@@ -296,7 +296,7 @@ export default function VerticalVsHorizontalBalerPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/vertical-baler.png" 
+              src="/images/blog/Vertical vs Horizontal Baler Which One to Choose.png" 
               alt="Vertical vs Horizontal Baler Comparison"
               fill
               className="object-cover"

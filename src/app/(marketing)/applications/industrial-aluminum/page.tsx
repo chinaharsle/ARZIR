@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Advanced aluminum extrusion solutions for industrial manufacturing with precision manufacturing for machine frames, conveyor systems, and automation components.",
     images: [
       {
-        url: "/images/applications/industrial-aluminum.jpg",
+        url: "/images/applications/Industrial Aluminum.png",
         width: 1200,
         height: 630,
         alt: "Industrial Aluminum Applications - ARZIR"
@@ -352,7 +352,7 @@ export default function IndustrialAluminumPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/industrial-aluminum.jpg"
+                src="/images/applications/Industrial Aluminum.png"
                 alt="Industrial Aluminum Applications"
                 width={800}
                 height={450}

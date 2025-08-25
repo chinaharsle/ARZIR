@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Complete guide to selecting the optimal scrap metal baler. Learn about press force, bale density, throughput, and sizing criteria.",
     images: [
       {
-        url: "/blog/scrap-metal-baler-guide.jpg",
+        url: "/blog/How to Choose the Right Scrap Metal Baler for Your Yard.png",
         width: 1200,
         height: 630,
         alt: "Scrap Metal Baler Selection Guide - ARZIR Blog"
@@ -392,7 +392,7 @@ export default function ScrapMetalBalerGuidePage() {
               <div className="relative">
                 <div className="aspect-video rounded-lg overflow-hidden">
                   <Image
-                    src="/images/products/recycling-baler.png"
+                    src="/images/blog/How to Choose the Right Scrap Metal Baler for Your Yard.png"
                     alt="ARZIR Scrap Metal Baler"
                     fill
                     className="object-cover"

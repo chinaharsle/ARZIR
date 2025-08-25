@@ -40,7 +40,7 @@ export default function BaleDensityBlogPost() {
         <div className="max-w-4xl mx-auto">
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg relative">
             <Image 
-              src="/images/blog/Understanding Bale Density Impact on Transport and Value.jpg" 
+              src="/images/blog/Understanding Bale Density Impact on Transport and Value.png" 
               alt="Understanding Bale Density Impact on Transport and Value"
               fill
               className="object-cover"

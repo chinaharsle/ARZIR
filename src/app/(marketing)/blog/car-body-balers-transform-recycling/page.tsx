@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Discover how car body balers revolutionize automotive recycling with 80% volume reduction and maximum ROI.",
     images: [
       {
-        url: "/images/blog/car-body-balers-transform-recycling.jpg",
+        url: "/images/blog/How Car Body Balers Transform Vehicle Recycling.png",
         width: 1200,
         height: 630,
         alt: "Car Body Balers Transform Vehicle Recycling - ARZIR Blog"
@@ -187,7 +187,7 @@ export default function CarBodyBalersTransformRecyclingPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/recycling-baler.png" 
+              src="/images/blog/How Car Body Balers Transform Vehicle Recycling.png" 
               alt="Car Body Balers Transform Vehicle Recycling"
               fill
               className="object-cover"

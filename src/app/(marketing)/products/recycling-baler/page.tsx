@@ -76,7 +76,7 @@ export default function RecyclingBalerPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/products/single/horizontal balser_.png"
+                src="/images/products/single/scrap metal baler.png"
                 alt="ARZIR Recycling Balers - High-Density Compaction Equipment"
                 width={800}
                 height={450}

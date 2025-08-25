@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Comprehensive comparison of briquetting and baling technologies to help you choose the right metal waste processing solution for your facility.",
     images: [
       {
-        url: "/images/blog/briquetting-vs-baling.jpg",
+        url: "/images/blog/Briquetting Machine vs Baling Machine Which to Choose.png",
         width: 1200,
         height: 630,
         alt: "Briquetting Machine vs Baling Machine Comparison"
@@ -250,7 +250,7 @@ export default function BriquettingVsBalingBlogPage() {
             {/* Featured Image Placeholder */}
             <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden">
               <Image
-                src="/images/blog/briquetting-vs-baling.jpg"
+                src="/images/blog/Briquetting Machine vs Baling Machine Which to Choose.png"
                 alt="Briquetting Machine vs Baling Machine Comparison"
                 width={800}
                 height={450}

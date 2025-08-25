@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Learn how heavy-duty gantry shear technology enhances processing efficiency and profitability for large-scale scrap metal recycling operations.",
     images: [
       {
-        url: "/images/blog/gantry-shears-improve-efficiency.jpg",
+        url: "/images/blog/How Gantry Shears Improve Scrap Metal Recycling Efficiency.png",
         width: 1200,
         height: 630,
         alt: "Gantry Shears Improve Recycling Efficiency - ARZIR Blog"
@@ -384,7 +384,7 @@ export default function GantryShearsImproveRecyclingEfficiencyPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/gantry-shear.png" 
+              src="/images/blog/How Gantry Shears Improve Scrap Metal Recycling Efficiency.png" 
               alt="Gantry Shears Improve Scrap Metal Recycling Efficiency"
               fill
               className="object-cover"

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Learn how double-shaft shredder technology enhances processing capacity and material recovery through high-torque dual rotors and advanced automation features.",
     images: [
       {
-        url: "/images/blog/double-shaft-shredders-enhance-efficiency.jpg",
+        url: "/images/blog/How Double-Shaft Shredders Enhance Recycling Efficiency.png",
         width: 1200,
         height: 630,
         alt: "Double-Shaft Shredders Enhance Recycling Efficiency - ARZIR Blog"
@@ -437,7 +437,7 @@ export default function DoubleShaftShreddersEnhanceRecyclingEfficiencyPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/double-shaft-shredder.png" 
+              src="/images/blog/How Double-Shaft Shredders Enhance Recycling Efficiency.png" 
               alt="Double-Shaft Shredders Enhance Recycling Efficiency"
               fill
               className="object-cover"

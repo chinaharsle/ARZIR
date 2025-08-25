@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Learn how four-shaft shredder technology transforms e-waste processing through superior material liberation and precious metal recovery optimization.",
     images: [
       {
-        url: "/images/blog/four-shaft-ewaste-processing.jpg",
+        url: "/images/blog/How Four-Shaft Shredders Improve Recycling Efficiency in E-Waste Processing.png",
         width: 1200,
         height: 630,
         alt: "Four-Shaft Shredders in E-Waste Processing - ARZIR Blog"
@@ -511,7 +511,7 @@ export default function FourShaftShreddersImproveEwasteRecyclingEfficiencyPage()
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/four-shaft-shredder.png" 
+              src="/images/blog/How Four-Shaft Shredders Improve Recycling Efficiency in E-Waste Processing.png" 
               alt="Four-Shaft Shredders in E-Waste Processing"
               fill
               className="object-cover"

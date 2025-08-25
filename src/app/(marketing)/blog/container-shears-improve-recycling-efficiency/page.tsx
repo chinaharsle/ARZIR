@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Learn how containerized shear technology enhances processing efficiency and operational flexibility in scrap metal recycling.",
     images: [
       {
-        url: "/images/blog/container-shears-improve-efficiency.jpg",
+        url: "/images/blog/How Container Shears Improve Scrap Metal Recycling Efficiency.png",
         width: 1200,
         height: 630,
         alt: "How Container Shears Improve Scrap Metal Recycling Efficiency - ARZIR Blog"
@@ -316,7 +316,7 @@ export default function ContainerShearsImproveRecyclingEfficiencyPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/container-shear.png" 
+              src="/images/blog/How Container Shears Improve Scrap Metal Recycling Efficiency.png" 
               alt="How Container Shears Improve Scrap Metal Recycling Efficiency"
               fill
               className="object-cover"

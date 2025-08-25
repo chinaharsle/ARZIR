@@ -69,7 +69,7 @@ export default function SmartManufacturingRecyclingEquipmentPage() {
         <div className="max-w-6xl mx-auto">
           <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/images/blog/smart-manufacturing-recycling.jpg"
+              src="/images/blog/Smart Manufacturing Integration in Recycling Equipment Industry 4.0 Revolution.png"
               alt="Smart Manufacturing in Recycling Equipment"
               width={1200}
               height={675}

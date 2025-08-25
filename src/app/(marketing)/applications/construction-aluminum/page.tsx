@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Professional aluminum extrusion solutions for construction and building applications with precision manufacturing and superior quality.",
     images: [
       {
-        url: "/images/applications/construction-aluminum.jpg",
+        url: "/images/applications/Construction Aluminum.png",
         width: 1200,
         height: 630,
         alt: "Construction Aluminum Applications - ARZIR"
@@ -237,7 +237,7 @@ export default function ConstructionAluminumPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/construction-aluminum.jpg"
+                src="/images/applications/Construction Aluminum.png"
                 alt="Construction Aluminum Applications"
                 width={800}
                 height={450}

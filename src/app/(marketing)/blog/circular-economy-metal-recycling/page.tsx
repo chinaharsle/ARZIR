@@ -69,7 +69,7 @@ export default function CircularEconomyMetalRecyclingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/images/blog/circular-economy-metal-recycling.jpg"
+              src="/images/blog/Circular Economy Principles in Metal Recycling Building Sustainable Operations.png"
               alt="Circular Economy in Metal Recycling"
               width={1200}
               height={675}

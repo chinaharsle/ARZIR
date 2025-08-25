@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Expert comparison of aluminum extrusion and die casting processes to help you choose the optimal manufacturing method for your aluminum components.",
     images: [
       {
-        url: "/images/blog/extrusion-vs-die-casting-aluminum.jpg",
+        url: "/images/blog/Aluminium Extrusion Press vs Die Casting Which to Choose.png",
         width: 1200,
         height: 630,
         alt: "Aluminum Extrusion vs Die Casting Comparison - ARZIR Blog"

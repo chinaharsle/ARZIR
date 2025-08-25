@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Expert comparison guide to help you choose between single-shaft and double-shaft shredder technologies for your waste processing operation.",
     images: [
       {
-        url: "/images/blog/single-vs-double-shaft-shredders.jpg",
+        url: "/images/blog/Single-Shaft vs Double-Shaft Shredders Which One to Choose.png",
         width: 1200,
         height: 630,
         alt: "Single-Shaft vs Double-Shaft Shredders Comparison - ARZIR Blog"
@@ -379,7 +379,7 @@ export default function SingleShaftVsDoubleShaftShreddersPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/single-shaft-shredder.png" 
+              src="/images/blog/Single-Shaft vs Double-Shaft Shredders Which One to Choose.png" 
               alt="Single-Shaft vs Double-Shaft Shredders Comparison"
               fill
               className="object-cover"

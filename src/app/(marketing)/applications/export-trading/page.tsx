@@ -169,7 +169,7 @@ export default function ExportTradingPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/scrap-recycling.png"
+                src="/images/applications/Export Trading.png"
                 alt="Export Trading - Compressed Metal Bales for International Shipping"
                 width={600}
                 height={400}

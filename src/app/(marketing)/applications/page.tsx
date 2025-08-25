@@ -111,7 +111,7 @@ const applications = [
     title: "Metal Recycling",
     description: "Comprehensive metal processing solutions for mixed metal streams and general recycling operations",
     href: "/applications/metal-recycling",
-    image: "/images/applications/metal-recycling.jpg",
+    image: "/images/applications/Metal Recycling.png",
     stats: "90% recovery efficiency",
     alt: "General metal recycling facility with ARZIR equipment"
   },
@@ -119,7 +119,7 @@ const applications = [
     title: "Export Trading",
     description: "Optimize materials for international trade with standardized baling and processing equipment",
     href: "/applications/export-trading",
-    image: "/images/applications/export-trading.jpg",
+    image: "/images/applications/Export Trading.png",
     stats: "Export ready format",
     alt: "Export trading facility preparing metal bales"
   },
@@ -127,7 +127,7 @@ const applications = [
     title: "Retail Waste Management",
     description: "Efficient waste processing solutions for retail chains and commercial establishments",
     href: "/applications/retail-waste",
-    image: "/images/applications/retail-waste.jpg",
+    image: "/images/applications/Retail Waste Management.png",
     stats: "70% cost reduction",
     alt: "Retail waste management with ARZIR balers"
   },
@@ -135,7 +135,7 @@ const applications = [
     title: "Textile Recycling",
     description: "Advanced textile waste processing and fiber recovery systems for sustainable fashion industry",
     href: "/applications/textile-recycling",
-    image: "/images/applications/textile-recycling.jpg",
+    image: "/images/applications/Textile Recycling.png",
     stats: "85% fiber recovery",
     alt: "Textile recycling facility with ARZIR equipment"
   },
@@ -143,7 +143,7 @@ const applications = [
     title: "Warehouse & Logistics",
     description: "Streamline warehouse operations with efficient waste management and material handling solutions",
     href: "/applications/warehouse-logistics",
-    image: "/images/applications/warehouse-logistics.jpg",
+    image: "/images/applications/Warehouse & Logistics Waste Management.png",
     stats: "50% space saving",
     alt: "Warehouse logistics optimization with ARZIR systems"
   },
@@ -151,7 +151,7 @@ const applications = [
     title: "Hospitality Waste",
     description: "Specialized waste processing solutions for hotels, restaurants, and hospitality industry",
     href: "/applications/hospitality-waste",
-    image: "/images/applications/hospitality-waste.jpg",
+    image: "/images/applications/Hospitality Waste.png",
     stats: "60% waste reduction",
     alt: "Hospitality waste management with ARZIR equipment"
   },
@@ -159,7 +159,7 @@ const applications = [
     title: "Construction Aluminum",
     description: "Specialized aluminum processing for construction industry waste and architectural materials",
     href: "/applications/construction-aluminum",
-    image: "/images/applications/construction-aluminum.jpg",
+    image: "/images/applications/Construction Aluminum.png",
     stats: "95% aluminum recovery",
     alt: "Construction aluminum recycling with ARZIR equipment"
   },
@@ -167,7 +167,7 @@ const applications = [
     title: "Automotive Aluminum",
     description: "Advanced aluminum processing solutions for automotive industry waste and component recycling",
     href: "/applications/automotive-aluminum",
-    image: "/images/applications/automotive-aluminum.jpg",
+    image: "/images/applications/Automotive Aluminum.png",
     stats: "98% aluminum purity",
     alt: "Automotive aluminum recycling facility"
   },
@@ -175,7 +175,7 @@ const applications = [
     title: "Aerospace Aluminum",
     description: "High-precision aluminum processing for aerospace industry with strict quality requirements",
     href: "/applications/aerospace-aluminum",
-    image: "/images/applications/aerospace-aluminum.jpg",
+    image: "/images/applications/Aerospace Aluminum.png",
     stats: "Aerospace grade quality",
     alt: "Aerospace aluminum processing with ARZIR equipment"
   },
@@ -183,7 +183,7 @@ const applications = [
     title: "Industrial Aluminum",
     description: "Comprehensive aluminum processing solutions for industrial manufacturing and production facilities",
     href: "/applications/industrial-aluminum",
-    image: "/images/applications/industrial-aluminum.jpg",
+    image: "/images/applications/Industrial Aluminum.png",
     stats: "24/7 processing capability",
     alt: "Industrial aluminum processing plant"
   },
@@ -191,7 +191,7 @@ const applications = [
     title: "Food & Beverage Waste",
     description: "Specialized waste processing equipment for food and beverage industry packaging materials",
     href: "/applications/food-beverage-waste",
-    image: "/images/applications/food-beverage-waste.jpg",
+    image: "/images/applications/Food & Beverage Waste.png",
     stats: "92% recovery rate",
     alt: "Food and beverage waste processing with ARZIR equipment"
   },
@@ -199,7 +199,7 @@ const applications = [
     title: "Mining & Extraction Waste",
     description: "Heavy-duty waste processing solutions for mining industry equipment and ore processing waste",
     href: "/applications/mining-extraction-waste",
-    image: "/images/applications/mining-extraction-waste.jpg",
+    image: "/images/applications/Mining & Extraction Waste.png",
     stats: "88% recovery rate",
     alt: "Mining and extraction waste processing with ARZIR equipment"
   }

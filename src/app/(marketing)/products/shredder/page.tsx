@@ -67,7 +67,7 @@ export default function ShredderPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/products/single/single-shaft-shredder.png"
+                src="/images/products/single/shredder.png"
                 alt="ARZIR Industrial Shredders - Advanced Size Reduction Equipment"
                 width={800}
                 height={450}

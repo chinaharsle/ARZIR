@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Comprehensive comparison guide to help you choose between container and guillotine shears for your scrap processing operation.",
     images: [
       {
-        url: "/images/blog/container-shear-vs-guillotine-shear.jpg",
+        url: "/images/blog/Container Shear vs Guillotine Shear Which is Better for Scrap Processing.png",
         width: 1200,
         height: 630,
         alt: "Container Shear vs Guillotine Shear Comparison - ARZIR Blog"
@@ -298,7 +298,7 @@ export default function ContainerShearVsGuillotineShearPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/products/container-shear.png" 
+              src="/images/blog/Container Shear vs Guillotine Shear Which is Better for Scrap Processing.png" 
               alt="Container Shear vs Guillotine Shear Comparison"
               fill
               className="object-cover"

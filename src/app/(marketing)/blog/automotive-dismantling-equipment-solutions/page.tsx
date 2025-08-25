@@ -40,7 +40,7 @@ export default function AutomotiveDismantlingBlogPost() {
         <div className="max-w-4xl mx-auto">
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg relative">
             <Image 
-              src="/images/blog/Automotive Dismantling Equipment Solutions for ELV Processing.jpg" 
+              src="/images/blog/Automotive Dismantling Equipment Solutions for ELV Processing.png" 
               alt="Automotive Dismantling Equipment Solutions for ELV Processing"
               fill
               className="object-cover"

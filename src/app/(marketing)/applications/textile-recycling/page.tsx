@@ -215,7 +215,7 @@ export default function TextileRecyclingPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/textile-recycling.png"
+                src="/images/applications/Textile Recycling.png"
                 alt="Textile Recycling & Fabric Waste Management Solutions"
                 width={600}
                 height={400}

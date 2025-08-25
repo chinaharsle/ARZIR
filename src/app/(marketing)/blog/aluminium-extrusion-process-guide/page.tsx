@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Complete guide to aluminum extrusion process, from billet heating to profile finishing. Learn the technology behind precision aluminum manufacturing.",
     images: [
       {
-        url: "/images/blog/aluminium-extrusion-process-guide.jpg",
+        url: "/images/blog/How Aluminium Extrusion Presses Work A Complete Guide.png",
         width: 1200,
         height: 630,
         alt: "Aluminium Extrusion Process Guide - ARZIR Blog"

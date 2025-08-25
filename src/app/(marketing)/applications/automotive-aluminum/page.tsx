@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Advanced aluminum extrusion solutions for automotive applications with precision manufacturing for body frames, heat exchangers, and EV components.",
     images: [
       {
-        url: "/images/applications/automotive-aluminum.jpg",
+        url: "/images/applications/Automotive Aluminum.png",
         width: 1200,
         height: 630,
         alt: "Automotive Aluminum Applications - ARZIR"
@@ -271,7 +271,7 @@ export default function AutomotiveAluminumPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/automotive-aluminum.jpg"
+                src="/images/applications/Automotive Aluminum.png"
                 alt="Automotive Aluminum Applications"
                 width={800}
                 height={450}
