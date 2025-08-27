@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Briquetting Machine | Metal Chip Briquetter | Swarf Compacting Press | ARZIR",
+  title: "Briquetting Machine | Metal Chip Briquetter | Swarf Compacting Press",
   description: "ARZIR Briquetting Machine - hydraulic press systems for metal chips, turnings, swarf compaction. Reduce volume by 90%, oil recovery 95-98%. Get quote today.",
   keywords: [
     "briquetting machine",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "copper chips briquetter"
   ],
   openGraph: {
-    title: "Briquetting Machine | Metal Chip Briquetter | ARZIR",
+    title: "Briquetting Machine | Metal Chip Briquetter",
     description: "Industrial briquetting machines for metal chips and turnings with 90% volume reduction, 95-98% oil recovery, and automated operation.",
     images: [
       {

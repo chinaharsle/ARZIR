@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard - ARZIR Admin Portal",
+  title: "Dashboard - Admin Portal",
   description: "ARZIR administration dashboard for managing inquiries, blog posts, users, and business analytics.",
 };
 

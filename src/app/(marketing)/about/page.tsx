@@ -18,7 +18,7 @@ import { Suspense } from "react";
 
 // Metadata for better SEO and performance
 export const metadata = {
-  title: "About ARZIR - Leading Recycling Machinery Manufacturer",
+  title: "About - Leading Recycling Machinery Manufacturer",
   description: "Learn about ARZIR's 12+ years of excellence in manufacturing recycling and metal processing equipment. Serving 100+ countries with innovation and quality.",
   keywords: "ARZIR, recycling machinery, metal processing, manufacturing, industrial equipment",
   openGraph: {

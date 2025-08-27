@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Container Shear | Hydraulic Scrap Shear | Portable Metal Cutting | ARZIR",
+  title: "Container Shear | Hydraulic Scrap Shear | Portable Metal Cutting",
   description: "ARZIR Container Shear - hydraulic scrap cutting machine with containerized design for easy transport and on-site operation. Cut steel beams, car bodies, and large metal waste efficiently.",
   keywords: [
     "container shear",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "scrap metal recycling shear"
   ],
   openGraph: {
-    title: "Container Shear | Hydraulic Scrap Shear Machine | ARZIR",
+    title: "Container Shear | Hydraulic Scrap Shear Machine",
     description: "Containerized hydraulic shear for efficient cutting of large scrap metal with easy transport and quick setup.",
     images: [
       {

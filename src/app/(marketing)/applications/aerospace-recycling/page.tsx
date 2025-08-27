@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Aerospace Recycling Applications & Solutions | ARZIR",
+  title: "Aerospace Recycling Applications & Solutions",
   description: "Specialized aircraft dismantling and aerospace material recovery systems with precision processing for high-value titanium and aluminum alloys.",
 };
 

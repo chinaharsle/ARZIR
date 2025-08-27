@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Construction & Demolition Recycling Solutions | ARZIR",
+  title: "Construction & Demolition Recycling Solutions",
   description: "Efficient processing of construction debris and demolition materials with advanced sorting and recovery systems for sustainable building practices.",
 };
 

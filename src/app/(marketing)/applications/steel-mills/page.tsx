@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Steel Mills Applications & Solutions | ARZIR",
+  title: "Steel Mills Applications & Solutions",
   description: "Handle mill scrap safely with industrial-grade processing equipment designed for continuous operation in demanding steel production environments.",
 };
 

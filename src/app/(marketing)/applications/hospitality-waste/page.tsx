@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hospitality Waste Management Solutions | Hotel & Restaurant Baler | ARZIR",
+  title: "Hospitality Waste Management Solutions | Hotel & Restaurant Baler",
   description: "Efficient waste management solutions for hotels and restaurants. Vertical balers for cardboard boxes, food packaging, dining waste compaction.",
 };
 

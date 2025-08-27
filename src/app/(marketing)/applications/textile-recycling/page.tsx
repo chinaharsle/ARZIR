@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Textile Recycling & Fabric Waste Management Solutions | ARZIR",
+  title: "Textile Recycling & Fabric Waste Management Solutions",
   description: "Efficient textile waste management solutions for fabric manufacturers and textile recycling facilities. Vertical balers for fabric scraps, textile waste compaction.",
 };
 

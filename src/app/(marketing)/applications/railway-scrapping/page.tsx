@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Railway Scrapping Applications & Solutions | ARZIR",
+  title: "Railway Scrapping Applications & Solutions",
   description: "Specialized equipment for railway car dismantling and locomotive recycling with heavy-duty processing capabilities for rail industry operations.",
 };
 

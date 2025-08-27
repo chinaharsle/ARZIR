@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cable Recycling Applications & Solutions | ARZIR",
+  title: "Cable Recycling Applications & Solutions",
   description: "Efficient wire and cable processing systems for copper recovery with automated stripping and separation technology for maximum material yield.",
 };
 

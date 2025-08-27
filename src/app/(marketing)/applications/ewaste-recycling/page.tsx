@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "E-Waste Recycling Applications & Solutions | ARZIR",
+  title: "E-Waste Recycling Applications & Solutions",
   description: "Advanced electronic waste processing systems for safe recovery of precious metals and components from computers, phones, and electronic devices.",
 };
 

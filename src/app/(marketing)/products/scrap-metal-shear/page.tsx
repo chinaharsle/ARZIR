@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Scrap Metal Shears - Container, Gantry & Alligator Cutting Equipment | ARZIR",
+  title: "Scrap Metal Shears - Container, Gantry & Alligator Cutting Equipment",
   description: "Heavy-duty scrap metal shears for industrial recycling. Container shears, gantry shears, and alligator shears with superior cutting force and precision. 300-2000T cutting capacity.",
 };
 

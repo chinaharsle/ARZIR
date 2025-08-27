@@ -7,7 +7,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How to Choose the Right Scrap Metal Baler for Your Yard | ARZIR",
+  title: "How to Choose the Right Scrap Metal Baler for Your Yard",
   description: "Complete guide to selecting the optimal scrap metal baler. Learn about press force, bale density, throughput, and sizing criteria for your recycling operation.",
   openGraph: {
     title: "How to Choose the Right Scrap Metal Baler for Your Yard",

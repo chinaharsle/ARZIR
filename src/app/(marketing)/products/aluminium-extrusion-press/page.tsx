@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Aluminium Extrusion Press | Precision Hydraulic Profile Manufacturing Equipment | ARZIR",
+  title: "Aluminium Extrusion Press | Precision Hydraulic Profile Manufacturing Equipment",
   description: "ARZIR Aluminium Extrusion Press - industrial hydraulic extrusion equipment for aluminum profile manufacturing. High precision, energy-efficient, automated control systems.",
   keywords: [
     "aluminum extrusion machine",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "automated extrusion system"
   ],
   openGraph: {
-    title: "Aluminium Extrusion Press | Precision Hydraulic Profile Manufacturing Equipment | ARZIR",
+    title: "Aluminium Extrusion Press | Precision Hydraulic Profile Manufacturing Equipment",
     description: "Industrial aluminium extrusion presses for high-precision aluminum profile manufacturing with advanced hydraulic control and automation systems.",
     images: [
       {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "structural glazing profiles"
   ],
   openGraph: {
-    title: "Construction & Building Aluminum Solutions | ARZIR",
+    title: "Construction & Building Aluminum Solutions",
     description: "Professional aluminum extrusion solutions for construction and building applications with precision manufacturing and superior quality.",
     images: [
       {

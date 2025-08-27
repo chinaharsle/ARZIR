@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gantry Shear | Heavy-Duty Scrap Shear | Large Metal Cutting Machine | ARZIR",
+  title: "Gantry Shear | Heavy-Duty Scrap Shear | Large Metal Cutting Machine",
   description: "ARZIR Gantry Shear - large hydraulic shear for processing thick steel plates, long steel materials, and heavy scrap metal. Up to 2000T cutting force for steel mills and scrap yards.",
   keywords: [
     "gantry shear",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "steel mill scrap shear"
   ],
   openGraph: {
-    title: "Gantry Shear | Heavy-Duty Hydraulic Scrap Cutting Machine | ARZIR",
+    title: "Gantry Shear | Heavy-Duty Hydraulic Scrap Cutting Machine",
     description: "Large hydraulic gantry shear for processing thick steel plates and heavy scrap metal with up to 2000T cutting force.",
     images: [
       {

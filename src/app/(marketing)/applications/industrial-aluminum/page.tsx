@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "machinery aluminum extrusion"
   ],
   openGraph: {
-    title: "Industrial Aluminum Solutions | ARZIR",
+    title: "Industrial Aluminum Solutions",
     description: "Advanced aluminum extrusion solutions for industrial manufacturing with precision manufacturing for machine frames, conveyor systems, and automation components.",
     images: [
       {

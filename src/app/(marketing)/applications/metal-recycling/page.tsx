@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Large Metal Recycling Centers Solutions | Industrial Balers | ARZIR",
+  title: "Large Metal Recycling Centers Solutions | Industrial Balers",
   description: "Comprehensive recycling solutions for large metal processing facilities. High-capacity balers for scrap metal, ferrous and non-ferrous materials processing.",
 };
 

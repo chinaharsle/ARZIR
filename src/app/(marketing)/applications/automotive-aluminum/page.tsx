@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "vehicle aluminum manufacturing"
   ],
   openGraph: {
-    title: "Automotive Aluminum Solutions | ARZIR",
+    title: "Automotive Aluminum Solutions",
     description: "Advanced aluminum extrusion solutions for automotive applications with precision manufacturing for body frames, heat exchangers, and EV components.",
     images: [
       {

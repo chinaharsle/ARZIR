@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Export Trading Solutions for Compressed Metal Bales | ARZIR",
+  title: "Export Trading Solutions for Compressed Metal Bales",
   description: "Maximize container efficiency and reduce shipping costs with ARZIR compressed metal bales. Optimized for international export trading and logistics.",
 };
 

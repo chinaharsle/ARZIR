@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Industrial Shredders - Single, Double & Four-Shaft Metal Processing | ARZIR",
+  title: "Industrial Shredders - Single, Double & Four-Shaft Metal Processing",
   description: "High-performance industrial shredders for metal and waste processing. Single-shaft, double-shaft, and four-shaft shredders with superior throughput capacity. 1-50 tons/hour processing.",
 };
 

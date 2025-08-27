@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Automotive Dismantling Applications & Solutions | ARZIR", 
+  title: "Automotive Dismantling Applications & Solutions", 
   description: "Faster ELV processing with robust baling & shearing equipment built for heavy-duty automotive dismantling applications.",
 };
 

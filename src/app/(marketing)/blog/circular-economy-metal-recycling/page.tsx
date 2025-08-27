@@ -6,7 +6,7 @@ import { Section } from "@/components/common/Section";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Circular Economy Principles in Metal Recycling: Building Sustainable Operations | ARZIR",
+  title: "Circular Economy Principles in Metal Recycling: Building Sustainable Operations",
   description: "Discover how circular economy principles transform metal recycling operations through waste reduction, resource optimization, and closed-loop manufacturing systems.",
   keywords: ["circular economy", "metal recycling", "sustainable operations", "waste reduction", "resource optimization", "closed-loop manufacturing", "recycling equipment"],
   openGraph: {

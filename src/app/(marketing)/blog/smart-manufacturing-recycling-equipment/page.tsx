@@ -6,7 +6,7 @@ import { Section } from "@/components/common/Section";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Smart Manufacturing Integration in Recycling Equipment: Industry 4.0 Revolution | ARZIR",
+  title: "Smart Manufacturing Integration in Recycling Equipment: Industry 4.0 Revolution",
   description: "Explore how Industry 4.0 technologies including AI, automation, and real-time analytics are revolutionizing recycling equipment manufacturing and operations.",
   keywords: ["smart manufacturing", "Industry 4.0", "recycling equipment", "AI automation", "real-time analytics", "IoT integration", "predictive maintenance"],
   openGraph: {

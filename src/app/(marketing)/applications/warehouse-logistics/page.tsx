@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Warehouse & Logistics Waste Management Solutions | ARZIR",
+  title: "Warehouse & Logistics Waste Management Solutions",
   description: "Efficient waste management solutions for warehouses and distribution centers. Vertical balers for packaging materials, plastic films, shipping waste.",
 };
 

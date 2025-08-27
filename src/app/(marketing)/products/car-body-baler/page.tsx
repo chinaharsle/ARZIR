@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Car Body Baler | Scrap Car Baler | Auto Body Baling Machine | ARZIR",
+  title: "Car Body Baler | Scrap Car Baler | Auto Body Baling Machine",
   description: "ARZIR Car Body Baler - specialized equipment for end-of-life vehicle recycling. Process 20-40 cars/day with 600-1500T force. Mobile & stationary models available. Get quote today.",
   keywords: [
     "car body baler",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "ARZIR car baler"
   ],
   openGraph: {
-    title: "Car Body Baler | Scrap Car Baler | ARZIR ELV Processing Equipment",
+    title: "Car Body Baler | Scrap Car Baler | ELV Processing Equipment",
     description: "Specialized car body balers for efficient end-of-life vehicle processing. 600-1500T force, process 20-40 cars/day, mobile & stationary options.",
     images: [
       {

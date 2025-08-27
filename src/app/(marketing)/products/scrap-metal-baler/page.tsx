@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Industrial Scrap Metal Baler | ARZIR High-Density Compaction Equipment",
+  title: "Industrial Scrap Metal Baler | High-Density Compaction Equipment",
   description: "ARZIR scrap metal balers deliver up to 1200 tons press force and 2.5 t/m³ density. Proven performance in recycling facilities worldwide. 300-1200T models available. Get quote today.",
   keywords: [
     "scrap metal baler",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "scrap processing equipment"
   ],
   openGraph: {
-    title: "Industrial Scrap Metal Baler | ARZIR High-Density Compaction",
+    title: "Industrial Scrap Metal Baler | High-Density Compaction",
     description: "ARZIR scrap metal balers deliver up to 1200 tons press force and 2.5 t/m³ density. Proven ROI for recycling facilities worldwide.",
     images: [
       {

@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Aluminum Processing Applications & Solutions | ARZIR",
+  title: "Aluminum Processing Applications & Solutions",
   description: "Stable extrusion and compacting solutions for aluminum streams with optimal material recovery rates and advanced processing technology.",
 };
 

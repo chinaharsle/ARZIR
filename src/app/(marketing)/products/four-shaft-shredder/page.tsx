@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Four-Shaft Shredder | Fine Size Reduction | ARZIR",
+  title: "Four-Shaft Shredder | Fine Size Reduction",
   description: "Multi-shaft four-shaft shredders for fine size reduction and uniform output with superior particle size control.",
 };
 

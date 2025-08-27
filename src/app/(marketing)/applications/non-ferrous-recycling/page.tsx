@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Non-Ferrous Recycling Applications & Solutions | ARZIR",
+  title: "Non-Ferrous Recycling Applications & Solutions",
   description: "Specialized processing systems for aluminum, copper, brass, and other non-ferrous metals with advanced separation and recovery technology.",
 };
 

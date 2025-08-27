@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Shipbreaking Applications & Solutions | ARZIR",
+  title: "Shipbreaking Applications & Solutions",
   description: "Safe and efficient vessel dismantling solutions with specialized equipment for maritime recycling operations and environmental compliance.",
 };
 

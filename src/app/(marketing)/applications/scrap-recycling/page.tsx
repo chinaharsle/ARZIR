@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Scrap Recycling Applications & Solutions | ARZIR",
+  title: "Scrap Recycling Applications & Solutions",
   description: "Higher recovery rates with high-density compaction and safe workflows. Discover ARZIR scrap recycling solutions for maximum efficiency.",
 };
 

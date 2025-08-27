@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "lightweight aerospace materials"
   ],
   openGraph: {
-    title: "Aerospace Aluminum Solutions | ARZIR",
+    title: "Aerospace Aluminum Solutions",
     description: "Advanced aluminum extrusion solutions for aerospace applications with precision manufacturing and aerospace-grade quality standards.",
     images: [
       {

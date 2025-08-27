@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Recycling Balers - How Does Hydraulic Baling Process Work | ARZIR",
+  title: "Recycling Balers - How Does Hydraulic Baling Process Work",
   description: "Professional recycling baler specifications and scrap metal baler capacity from 300T-1500T. Learn how recycling baler works, cost analysis, installation guide, and buying tips for best baler selection.",
 };
 
@@ -744,34 +744,54 @@ export default function RecyclingBalerPage() {
             <div className="space-y-8">
               <h3 className="text-2xl font-heading font-semibold text-black">Selection Criteria</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="border border-arzir-gray-200 rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-black mb-3">1. Material Volume Assessment</h4>
                   <div className="space-y-2 text-sm text-arzir-gray-600">
-                    <p>• <strong>5-15 tons/day:</strong> Vertical Baler VB-300</p>
-                    <p>• <strong>20-40 tons/day:</strong> Horizontal Baler HB-600</p>
-                    <p>• <strong>50-100 tons/day:</strong> Heavy Duty Baler HD-1200</p>
-                    <p>• <strong>100+ tons/day:</strong> Industrial Baler IB-1500</p>
+                    <p>• <strong>5-15 tons/day:</strong> Vertical Baler VB-300 for small-scale operations</p>
+                    <p>• <strong>20-40 tons/day:</strong> Horizontal Baler HB-600 for medium throughput</p>
+                    <p>• <strong>50-100 tons/day:</strong> Heavy Duty Baler HD-1200 for industrial use</p>
+                    <p>• <strong>100+ tons/day:</strong> Industrial Baler IB-1500 for maximum capacity</p>
                   </div>
                 </div>
                 
                 <div className="border border-arzir-gray-200 rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-black mb-3">2. Material Type Consideration</h4>
                   <div className="space-y-2 text-sm text-arzir-gray-600">
-                    <p>• <strong>Light materials:</strong> 300-600T press force</p>
-                    <p>• <strong>Mixed scrap:</strong> 600-1000T press force</p>
-                    <p>• <strong>Heavy steel:</strong> 1200-1500T press force</p>
-                    <p>• <strong>Car bodies:</strong> Specialized ELV baler</p>
+                    <p>• <strong>Light materials:</strong> 300-600T press force (cardboard, aluminum cans)</p>
+                    <p>• <strong>Mixed scrap:</strong> 600-1000T press force (general recycling)</p>
+                    <p>• <strong>Heavy steel:</strong> 1200-1500T press force (structural materials)</p>
+                    <p>• <strong>Car bodies:</strong> Specialized ELV baler with reinforced chambers</p>
                   </div>
                 </div>
                 
                 <div className="border border-arzir-gray-200 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-black mb-3">3. Space & Infrastructure</h4>
+                  <h4 className="text-lg font-semibold text-black mb-3">3. Space & Infrastructure Requirements</h4>
                   <div className="space-y-2 text-sm text-arzir-gray-600">
-                    <p>• Minimum 6m x 8m + 3m clearance</p>
-                    <p>• Concrete foundation depth: 0.5-1.0m</p>
-                    <p>• Power supply: 380V/50Hz</p>
-                    <p>• Crane access for loading (recommended)</p>
+                    <p>• Minimum footprint: 6m x 8m plus 3m clearance on all sides</p>
+                    <p>• Foundation: Reinforced concrete 0.5-1.0m deep depending on model</p>
+                    <p>• Power: 380V/50Hz three-phase electrical connection required</p>
+                    <p>• Material handling: Crane access for loading operations (5-25 ton capacity)</p>
+                  </div>
+                </div>
+                
+                <div className="border border-arzir-gray-200 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-black mb-3">4. Budget & ROI Planning</h4>
+                  <div className="space-y-2 text-sm text-arzir-gray-600">
+                    <p>• <strong>Initial investment:</strong> $150,000-$800,000 based on capacity needs</p>
+                    <p>• <strong>Operating costs:</strong> 3-5% of purchase price annually for maintenance</p>
+                    <p>• <strong>ROI timeline:</strong> Typically 6-18 months payback through efficiency gains</p>
+                    <p>• <strong>Financing:</strong> Flexible lease and loan options available through partners</p>
+                  </div>
+                </div>
+                
+                <div className="border border-arzir-gray-200 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-black mb-3">5. Operation & Support Requirements</h4>
+                  <div className="space-y-2 text-sm text-arzir-gray-600">
+                    <p>• <strong>Training:</strong> 2-3 days comprehensive operator training program</p>
+                    <p>• <strong>Maintenance:</strong> Daily checks, weekly lubrication, monthly service</p>
+                    <p>• <strong>Support:</strong> 24/7 global technical assistance and remote diagnostics</p>
+                    <p>• <strong>Parts:</strong> Guaranteed spare parts availability with fast delivery</p>
                   </div>
                 </div>
               </div>
@@ -783,27 +803,27 @@ export default function RecyclingBalerPage() {
               <div className="space-y-4">
                 <div className="bg-arzir-gray-50 p-6 rounded-lg">
                   <h4 className="font-semibold text-black mb-2">What size baler do I need for my scrap yard?</h4>
-                  <p className="text-arzir-gray-600 text-sm">Baler size depends on daily throughput and material types. For mixed ferrous/non-ferrous scrap processing 20-50 tons daily, an HB-600 (600T) horizontal baler provides optimal balance of capacity and efficiency.</p>
+                  <p className="text-arzir-gray-600 text-sm">Baler size depends on daily throughput and material types. For mixed ferrous/non-ferrous scrap processing 20-50 tons daily, an HB-600 (600T) horizontal baler provides optimal balance of capacity and efficiency. Small operations (5-15 tons) benefit from vertical balers, while heavy-duty operations (100+ tons) require industrial models with enhanced durability and automation features.</p>
                 </div>
                 
                 <div className="bg-arzir-gray-50 p-6 rounded-lg">
                   <h4 className="font-semibold text-black mb-2">How much does a scrap baler cost?</h4>
-                  <p className="text-arzir-gray-600 text-sm">Costs range from $150,000-$800,000 depending on specifications. Include installation, training, and first-year maintenance in your budget. ROI typically achieved within 6-18 months.</p>
+                  <p className="text-arzir-gray-600 text-sm">Costs range from $150,000-$800,000 depending on specifications and capacity requirements. Vertical balers start at $150,000, horizontal balers range $300,000-$500,000, while heavy-duty industrial models reach $800,000. Include installation, training, and first-year maintenance in your budget. ROI typically achieved within 6-18 months through reduced transportation costs and improved material handling efficiency.</p>
                 </div>
                 
                 <div className="bg-arzir-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-black mb-2">What maintenance is required?</h4>
-                  <p className="text-arzir-gray-600 text-sm">Daily oil level checks, weekly lubrication, monthly hydraulic service, and annual overhauls. Maintenance costs typically 3-5% of purchase price annually.</p>
+                  <h4 className="font-semibold text-black mb-2">What maintenance is required for optimal performance?</h4>
+                  <p className="text-arzir-gray-600 text-sm">Daily oil level checks, weekly lubrication of all grease points, monthly hydraulic system service, and annual comprehensive overhauls ensure reliable operation. Maintenance costs typically 3-5% of purchase price annually. Regular blade inspection, filter replacement, and wire tension adjustments are critical. ARZIR provides detailed maintenance schedules and training programs to maximize equipment lifespan and minimize downtime.</p>
                 </div>
                 
                 <div className="bg-arzir-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-black mb-2">Can I process contaminated materials?</h4>
-                  <p className="text-arzir-gray-600 text-sm">ARZIR balers handle light contamination, but excessive oils or foreign materials should be removed. Pre-sorting improves bale quality and extends equipment life.</p>
+                  <h4 className="font-semibold text-black mb-2">Can I process contaminated materials effectively?</h4>
+                  <p className="text-arzir-gray-600 text-sm">ARZIR balers handle light contamination effectively, but excessive oils, dirt, or foreign materials should be removed through pre-sorting processes. Clean materials produce higher-quality bales with better market value and extend equipment life significantly. Advanced filtration systems and contamination sensors are available for challenging applications. Pre-sorting improves bale quality, reduces wear, and ensures consistent output specifications.</p>
                 </div>
                 
                 <div className="bg-arzir-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-black mb-2">What about financing options?</h4>
-                  <p className="text-arzir-gray-600 text-sm">ARZIR partners with equipment financing providers offering lease and loan options. Contact our sales team for customized financing solutions.</p>
+                  <h4 className="font-semibold text-black mb-2">What financing and support options are available?</h4>
+                  <p className="text-arzir-gray-600 text-sm">ARZIR partners with leading equipment financing providers offering flexible lease and loan options tailored to your cash flow requirements. We provide comprehensive installation support, operator training programs, 24/7 technical assistance, and guaranteed spare parts availability. Extended warranty options, preventive maintenance contracts, and performance monitoring services ensure maximum uptime and productivity for your investment.</p>
                 </div>
               </div>
             </div>

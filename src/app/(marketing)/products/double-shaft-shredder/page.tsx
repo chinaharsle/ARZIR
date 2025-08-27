@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Double-Shaft Shredder | Heavy-Duty Industrial Waste Shredder | High Torque Machine | ARZIR",
+  title: "Double-Shaft Shredder | Heavy-Duty Industrial Waste Shredder | High Torque Machine",
   description: "ARZIR Double-Shaft Shredder - industrial heavy-duty shredding equipment for metal, tire, plastic, and bulky waste processing. High torque, auto-reverse, modular cutters.",
   keywords: [
     "double-shaft shredder",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "tire shredding machine"
   ],
   openGraph: {
-    title: "Double-Shaft Shredder | Heavy-Duty Industrial Waste Shredder | ARZIR",
+    title: "Double-Shaft Shredder | Heavy-Duty Industrial Waste Shredder",
     description: "Industrial double-shaft shredders for heavy-duty waste processing. Metal, tire, plastic shredding with high torque dual rotors and automatic reverse function.",
     images: [
       {

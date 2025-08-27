@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Metal Fabrication Applications & Solutions | ARZIR",
+  title: "Metal Fabrication Applications & Solutions",
   description: "Turn offcuts into value with efficient baling & shearing systems designed for continuous operation in metal fabrication facilities.",
 };
 

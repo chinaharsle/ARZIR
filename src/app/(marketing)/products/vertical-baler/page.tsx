@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vertical Baler | Waste Baler | Small Baler Machine | ARZIR",
+  title: "Vertical Baler | Waste Baler | Small Baler Machine",
   description: "Space-saving vertical baler for cardboard, plastic, textiles. Perfect for small businesses, supermarkets, warehouses. Compact design, single-person operation.",
   keywords: [
     "vertical baler",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "baler for warehouse"
   ],
   openGraph: {
-    title: "Vertical Baler | Space-Saving Waste Compaction Solutions | ARZIR",
+    title: "Vertical Baler | Space-Saving Waste Compaction Solutions",
     description: "Compact vertical baler for cardboard, plastic, textiles. Ideal for small businesses with limited space. Single-person operation, high-density bales.",
     images: [
       {

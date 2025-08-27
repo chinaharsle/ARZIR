@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Retail Waste Management Solutions | Cardboard & Plastic Baler | ARZIR",
+  title: "Retail Waste Management Solutions | Cardboard & Plastic Baler",
   description: "Efficient waste management solutions for retail stores and supermarkets. Vertical balers for cardboard, plastic packaging. Reduce waste volume by 80%.",
 };
 

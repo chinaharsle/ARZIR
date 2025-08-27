@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Horizontal Baler | Automatic Waste Baler Machine | High-Capacity Baler | ARZIR",
+  title: "Horizontal Baler | Automatic Waste Baler Machine | High-Capacity Baler",
   description: "Industrial horizontal balers for continuous high-volume waste processing. Automatic horizontal baler machines for cardboard, plastic, and metal recycling. Up to 100+ tons/day capacity.",
   keywords: [
     "horizontal baler",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "recycling baler for warehouse"
   ],
   openGraph: {
-    title: "Horizontal Baler | Industrial Automatic Waste Baler Machine | ARZIR",
+    title: "Horizontal Baler | Industrial Automatic Waste Baler Machine",
     description: "Continuous horizontal balers for high-volume recycling operations. Process 20-100+ tons/day with automated feeding and consistent bale quality.",
     images: [
       {

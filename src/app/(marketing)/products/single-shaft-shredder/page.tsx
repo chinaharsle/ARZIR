@@ -8,7 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Single-Shaft Shredder | Industrial Waste Recycling Shredder | Uniform Output Machine | ARZIR",
+  title: "Single-Shaft Shredder | Industrial Waste Recycling Shredder | Uniform Output Machine",
   description: "ARZIR Single-Shaft Shredder - industrial shredding equipment for plastics, wood, textiles, and mixed waste recycling. Uniform output, efficient operation, and customizable screens.",
   keywords: [
     "single-shaft shredder",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "uniform output shredder"
   ],
   openGraph: {
-    title: "Single-Shaft Shredder | Industrial Waste Recycling Shredder | ARZIR",
+    title: "Single-Shaft Shredder | Industrial Waste Recycling Shredder",
     description: "Industrial single-shaft shredders for uniform waste processing. Plastic, wood, textile recycling with customizable output sizes and hydraulic ram feeding.",
     images: [
       {
