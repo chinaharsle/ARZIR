@@ -1,8 +1,26 @@
 import { updateSession } from "@/lib/supabase/middleware";
-import { type NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  return await updateSession(request);
+  // Add performance headers for better TTFB
+  const response = await updateSession(request);
+  
+  // Add performance optimization headers
+  response.headers.set('X-DNS-Prefetch-Control', 'on');
+  response.headers.set('X-Clacks-Overhead', 'GNU Terry Pratchett');
+  
+  // Enable compression if not already set
+  if (!response.headers.get('Content-Encoding')) {
+    response.headers.set('Vary', 'Accept-Encoding');
+  }
+  
+  // Set cache headers for static-like pages
+  const pathname = request.nextUrl.pathname;
+  if (pathname.startsWith('/products/') || pathname.startsWith('/applications/')) {
+    response.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
+  }
+  
+  return response;
 }
 
 export const config = {

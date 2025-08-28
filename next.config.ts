@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: true,
   serverExternalPackages: ['sharp'],
+  reactStrictMode: true,
   experimental: {
     optimizePackageImports: [
       '@radix-ui/react-accordion',
