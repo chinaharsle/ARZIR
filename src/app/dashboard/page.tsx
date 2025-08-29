@@ -142,7 +142,8 @@ export default function DashboardPage() {
           createdAt: inquiry.created_at,
           source: inquiry.source,
           whatsapp: inquiry.whatsapp || inquiry.phone,
-          country: inquiry.country
+          country: inquiry.country,
+          sourceUrl: inquiry.utm_source || inquiry.referrer || 'Unknown'
         }));
         setInquiries(formattedInquiries);
         

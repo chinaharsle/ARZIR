@@ -88,7 +88,8 @@ export default function InquiryDetailPage() {
             createdAt: inquiryData.created_at,
             source: inquiryData.source,
             whatsapp: inquiryData.whatsapp || inquiryData.phone,
-            country: inquiryData.country
+            country: inquiryData.country,
+            sourceUrl: inquiryData.utm_source || inquiryData.referrer || 'Unknown'
           };
           setInquiry(formattedInquiry);
           setFormData(formattedInquiry);

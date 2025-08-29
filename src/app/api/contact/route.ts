@@ -232,6 +232,11 @@ export async function POST(request: NextRequest) {
                         <span style="color: #111827; font-size: 15px; word-break: break-word;">${country !== 'Unknown' ? (city !== 'Unknown' ? city + ', ' : '') + country : 'Not detected'}</span>
                       </div>
                       
+                      <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <span style="font-weight: 700; color: #374151; width: 110px; flex-shrink: 0; font-size: 14px;">🔗 Source URL:</span>
+                        <a href="${referer}" style="color: #1E40AF; text-decoration: none; font-size: 14px; word-break: break-all; hover: text-decoration: underline;" target="_blank">${referer}</a>
+                      </div>
+                      
                       ${body.productSlug ? `
                       <div style="display: flex; align-items: center; padding: 12px; background: linear-gradient(135deg, #EBF4FF 0%, #DBEAFE 100%); border-radius: 8px; border: 1px solid #3B82F6;">
                         <span style="font-weight: 700; color: #1E40AF; width: 110px; flex-shrink: 0; font-size: 14px;">🛠️ Product:</span>
