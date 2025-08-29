@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { siteConfig } from "@/config/site";
 import { Analytics } from '@vercel/analytics/react';
 import { WebVitals } from "@/components/analytics/WebVitals";
@@ -108,20 +109,23 @@ export default function RootLayout({
         {/* Performance hints */}
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
         
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3SR3ZF4T6"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-Q3SR3ZF4T6');
-            `,
-          }}
-        />
+
       </head>
       <body className={`${inter.variable} font-body antialiased`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q3SR3ZF4T6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q3SR3ZF4T6');
+          `}
+        </Script>
+        
         {children}
         <Analytics />
         <WebVitals />
