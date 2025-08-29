@@ -104,7 +104,7 @@ export async function sendLeadNotificationEmail(data: EmailData) {
 
   try {
     const result = await resend.emails.send({
-      from: 'ARZIR Website <noreply@arzir.com>',
+      from: 'ARZIR Website <noreply@harsle.com>',
       to: ['info@arzir.com'], // Primary sales email
       subject: 'New Inquiry from ARZIR Website',
       html: emailContent,

@@ -63,6 +63,8 @@ export async function POST(request: NextRequest) {
 
     // Save inquiry to Supabase database - use admin client to bypass RLS
     console.log('Attempting to save lead to database...');
+    console.log('Database URL exists:', !!process.env.NEXT_PUBLIC_SUPABASE_URL);
+    console.log('Service role key exists:', !!process.env.SUPABASE_SERVICE_ROLE_KEY);
     
     // Try admin client first for elevated permissions
     let supabase = await createAdminClient();
@@ -152,11 +154,13 @@ export async function POST(request: NextRequest) {
     if (resend) {
       try {
         console.log("Attempting to send emails via Resend...");
+        console.log("Resend API Key exists:", !!process.env.RESEND_API_KEY);
+        console.log("Notification email target:", process.env.NOTIFICATION_EMAIL || 'info@arzir.com');
         
         // Send notification email to admin
         const adminEmailResult = await resend.emails.send({
-          from: 'ARZIR Website <notification@harsle.com>',
-          to: [process.env.NOTIFICATION_EMAIL || 'jimmy@harsle.com'],
+          from: 'ARZIR Website <noreply@harsle.com>',
+          to: [process.env.NOTIFICATION_EMAIL || 'info@arzir.com'],
           subject: 'New Inquiry From ARZIR',
           html: `
             <!DOCTYPE html>
@@ -287,7 +291,7 @@ export async function POST(request: NextRequest) {
 
         // Send auto-reply to customer
         const customerEmailResult = await resend.emails.send({
-          from: 'ARZIR <notification@harsle.com>',
+          from: 'ARZIR <noreply@harsle.com>',
           to: [body.email],
           subject: `Thank you for your ${body.type === 'quote_request' ? 'quote request' : 'inquiry'}, ${body.name}! We'll respond within 24 hours`,
           html: `

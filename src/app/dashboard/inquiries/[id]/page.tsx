@@ -19,69 +19,7 @@ import {
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
-// Mock data - in real app this would come from API
-const mockInquiries = [
-  {
-    id: 1,
-    name: "Michael Zhang",
-    company: "Shanghai Recycling Co.",
-    email: "michael@shangrecycle.com",
-    whatsapp: "+86 138 0013 8888",
-    message: "Hello, we are a recycling company based in Shanghai. We are interested in purchasing recycling equipment for our new facility. Could you please provide detailed specifications, pricing information, and delivery timeline? Our current processing capacity is around 50 tons per day and we're looking to expand. We would also like to know about installation services and operator training programs. Thank you for your time.",
-    status: "new",
-    createdAt: "2025-08-16T14:20:00Z",
-    priority: "high",
-    source: "contact_page",
-    sourceUrl: "https://www.arzir.com/contact",
-    country: "China",
-    ipAddress: "116.228.111.118"
-  },
-  {
-    id: 2,
-    name: "Sarah Kim", 
-    company: "Pacific Steel Solutions",
-    email: "sarah@pacificsteel.com",
-    whatsapp: "+1 555 123 4567",
-    message: "We are evaluating different metal processing equipment for our scrap operation. We process mainly steel bars and pipes and need efficient cutting solutions. Can you send us technical specifications, cutting force details, and power requirements? Also interested in maintenance schedules and spare parts availability. We would appreciate a consultation to discuss our specific needs.",
-    status: "contacted",
-    createdAt: "2025-08-16T10:15:00Z",
-    priority: "medium",
-    source: "website_form",
-    sourceUrl: "https://www.arzir.com/products/scrap-metal-shear",
-    country: "United States",
-    ipAddress: "192.0.2.146"
-  },
-  {
-    id: 3,
-    name: "Ahmed Hassan",
-    company: "Emirates Metal Trading",
-    email: "ahmed@emiratesmetal.ae",
-    whatsapp: "+971 50 123 4567",
-    message: "Greetings from Dubai! We operate one of the largest car dismantling facilities in the UAE and are looking to improve our processing efficiency. Please provide: 1) Detailed equipment specifications and capabilities, 2) Power consumption details, 3) Complete pricing including shipping to Dubai, 4) Installation and commissioning timeline, 5) Training program for our operators. We plan to process approximately 200 units per month. Looking forward to your response.",
-    status: "proposal_sent",
-    createdAt: "2025-08-15T16:30:00Z",
-    priority: "high",
-    source: "contact_page",
-    sourceUrl: "https://www.arzir.com/contact",
-    country: "United Arab Emirates",
-    ipAddress: "185.46.212.97"
-  },
-  {
-    id: 4,
-    name: "Elena Rodriguez",
-    company: "EcoMetal Solutions",
-    email: "elena@ecometal.es", 
-    whatsapp: "+34 666 789 012",
-    message: "Buenos días! We are expanding our metal recycling operations in Spain and need robust equipment for mixed metal waste processing. Could you provide information about: throughput capacity, noise levels (we have residential neighbors), energy efficiency ratings, and maintenance requirements? We would also appreciate a virtual demonstration if possible. Thank you for your assistance.",
-    status: "follow_up",
-    createdAt: "2025-08-15T09:45:00Z",
-    priority: "medium",
-    source: "contact_page",
-    sourceUrl: "https://www.arzir.com/contact",
-    country: "Spain",
-    ipAddress: "88.8.233.195"
-  }
-];
+
 
 const getStatusColor = (status: string) => {
   switch (status) {
@@ -128,25 +66,71 @@ export default function InquiryDetailPage() {
         return;
       }
       
-      // Find inquiry by ID (in real app, fetch from API)
-      const inquiryId = parseInt(params.id as string);
-      const foundInquiry = mockInquiries.find(i => i.id === inquiryId);
-      
-      if (foundInquiry) {
-        setInquiry(foundInquiry);
-        setFormData(foundInquiry);
+      // Fetch inquiry from database
+      try {
+        const { data: inquiryData, error } = await supabase
+          .from('leads')
+          .select('*')
+          .eq('id', params.id)
+          .single();
+        
+        if (error) {
+          console.error('Error fetching inquiry:', error);
+        } else if (inquiryData) {
+          const formattedInquiry = {
+            id: inquiryData.id,
+            name: inquiryData.name,
+            email: inquiryData.email,
+            company: inquiryData.company,
+            message: inquiryData.message,
+            status: inquiryData.status || 'new',
+            priority: inquiryData.priority || 'medium',
+            createdAt: inquiryData.created_at,
+            source: inquiryData.source,
+            whatsapp: inquiryData.whatsapp || inquiryData.phone,
+            country: inquiryData.country
+          };
+          setInquiry(formattedInquiry);
+          setFormData(formattedInquiry);
+        }
+      } catch (error) {
+        console.error('Error fetching inquiry:', error);
       }
       
       setLoading(false);
     };
 
     checkAuth();
-  }, [params.id, router, supabase.auth]);
+  }, [params.id, router, supabase]);
 
-  const handleSave = () => {
-    // In real app, save to API
-    setInquiry(formData);
-    setIsEditing(false);
+  const handleSave = async () => {
+    try {
+      const { error } = await supabase
+        .from('leads')
+        .update({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          status: formData.status,
+          priority: formData.priority,
+          whatsapp: formData.whatsapp,
+          country: formData.country
+        })
+        .eq('id', params.id);
+      
+      if (error) {
+        console.error('Error updating inquiry:', error);
+        alert('Failed to save changes. Please try again.');
+      } else {
+        setInquiry(formData);
+        setIsEditing(false);
+        alert('Changes saved successfully!');
+      }
+    } catch (error) {
+      console.error('Error saving inquiry:', error);
+      alert('Failed to save changes. Please try again.');
+    }
   };
 
   const handleCancel = () => {

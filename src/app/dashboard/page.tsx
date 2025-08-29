@@ -32,43 +32,22 @@ interface BlogPost {
   views: number;
 }
 
-// Mock data for stats
-const dashboardStats = [
+// Dashboard stats configuration
+const getStatsConfig = (stats: { totalInquiries: number; unreadInquiries: number; totalBlogs: number }) => [
   {
     title: "Total Inquiries",
-    value: "234",
-    change: "+12%",
+    value: stats.totalInquiries.toString(),
     icon: MessageSquare
   },
   {
-    title: "Active Leads",
-    value: "48",
-    change: "+8%",
+    title: "Unread Inquiries",
+    value: stats.unreadInquiries.toString(),
     icon: Users
   },
   {
     title: "Blog Posts",
-    value: "12",
-    change: "+3%",
+    value: stats.totalBlogs.toString(),
     icon: FileText
-  },
-  {
-    title: "Media Files",
-    value: "156",
-    change: "+24%",
-    icon: Image
-  },
-  {
-    title: "Monthly Views",
-    value: "8.2K",
-    change: "+15%",
-    icon: BarChart3
-  },
-  {
-    title: "Lead Conversion",
-    value: "18%",
-    change: "+2%",
-    icon: TrendingUp
   }
 ];
 
@@ -120,6 +99,11 @@ export default function DashboardPage() {
   const [inquiries, setInquiries] = useState<Record<string, unknown>[]>([]);
   const [blogs, setBlogs] = useState<Record<string, unknown>[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
+  const [dashboardStats, setDashboardStats] = useState({
+    totalInquiries: 0,
+    unreadInquiries: 0,
+    totalBlogs: 0
+  });
   
   const router = useRouter();
   const supabase = createClient();
@@ -129,19 +113,17 @@ export default function DashboardPage() {
     try {
       setDataLoading(true);
       
-      // Fetch inquiries
+      // Fetch leads (inquiries) - using correct table name
       const { data: inquiriesData } = await supabase
-        .from('inquiries')
+        .from('leads')
         .select('*')
-        .order('created_at', { ascending: false })
-        .limit(10);
+        .order('created_at', { ascending: false });
       
       // Fetch blog posts
       const { data: blogsData } = await supabase
         .from('blog_posts')
         .select('*')
-        .order('created_at', { ascending: false })
-        .limit(10);
+        .order('created_at', { ascending: false });
       
       if (inquiriesData) {
         const formattedInquiries = inquiriesData.map(inquiry => ({
@@ -154,14 +136,30 @@ export default function DashboardPage() {
           priority: inquiry.priority,
           createdAt: inquiry.created_at,
           source: inquiry.source,
-          whatsapp: inquiry.whatsapp,
+          whatsapp: inquiry.whatsapp || inquiry.phone,
           country: inquiry.country
         }));
         setInquiries(formattedInquiries);
+        
+        // Calculate stats
+        const totalInquiries = inquiriesData.length;
+        const unreadInquiries = inquiriesData.filter(inquiry => 
+          inquiry.status === 'new' || inquiry.status === 'contacted'
+        ).length;
+        
+        setDashboardStats(prev => ({
+          ...prev,
+          totalInquiries,
+          unreadInquiries
+        }));
       }
       
       if (blogsData) {
         setBlogs(blogsData);
+        setDashboardStats(prev => ({
+          ...prev,
+          totalBlogs: blogsData.length
+        }));
       }
       
     } catch (error) {
@@ -190,14 +188,14 @@ export default function DashboardPage() {
 
     checkAuth();
 
-    // Set up real-time subscription for inquiries
+    // Set up real-time subscription for leads and blog posts
     const subscription = supabase
       .channel('dashboard-changes')
       .on(
         'postgres_changes',
-        { event: '*', schema: 'public', table: 'inquiries' },
+        { event: '*', schema: 'public', table: 'leads' },
         () => {
-          console.log('Inquiry change detected, refreshing data...');
+          console.log('Lead change detected, refreshing data...');
           fetchData();
         }
       )
@@ -253,7 +251,7 @@ export default function DashboardPage() {
     try {
       if (deleteType === 'inquiry') {
         await supabase
-          .from('inquiries')
+          .from('leads')
           .delete()
           .eq('id', deleteItem.id);
       } else {
@@ -396,14 +394,19 @@ export default function DashboardPage() {
           <div className="space-y-6">
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {dashboardStats.map((stat, index) => (
+              {getStatsConfig(dashboardStats).map((stat, index) => (
                 <Card key={index}>
                   <CardContent className="p-6">
                     <div className="flex items-center">
                       <div className="flex-1">
                         <p className="text-sm font-medium text-arzir-gray-600">{stat.title}</p>
-                        <p className="text-2xl font-bold text-black">{stat.value}</p>
-                        <p className="text-sm text-green-600">{stat.change} from last month</p>
+                        <div className="text-2xl font-bold text-black">
+                          {dataLoading ? (
+                            <div className="w-8 h-8 border-2 border-arzir-primary border-t-transparent rounded-full animate-spin"></div>
+                          ) : (
+                            stat.value
+                          )}
+                        </div>
                       </div>
                       <stat.icon className="h-8 w-8 text-arzir-primary" />
                     </div>
