@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "ARZIR scrap metal balers deliver up to 1200 tons press force and 2.5 t/m³ density. Proven ROI for recycling facilities worldwide.",
     images: [
       {
-        url: "/images/products/recycling-baler.png",
+        url: "/images/products/recycling-baler.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Scrap Metal Baler - High-Density Compaction Equipment"
@@ -128,25 +128,25 @@ const applications = [
   {
     title: "Scrap Recycling",
     description: "Mixed ferrous and non-ferrous scrap processing",
-    image: "/images/applications/scrap-recycling.png",
+    image: "/images/applications/scrap-recycling.webp",
     href: "/applications/scrap-recycling"
   },
   {
     title: "Automotive Dismantling",
     description: "End-of-life vehicle body and component processing",
-    image: "/images/applications/automotive-dismantling-full.jpg", 
+    image: "/images/applications/automotive-dismantling-full.webp", 
     href: "/applications/automotive-dismantling"
   },
   {
     title: "Foundries",
     description: "Foundry returns and casting scrap compaction",
-    image: "/images/applications/steel-mills-full.jpg",
+    image: "/images/applications/steel-mills-full.webp",
     href: "/applications/steel-mills"
   },
   {
     title: "Metal Fabrication",
     description: "Manufacturing offcuts and fabrication waste",
-    image: "/images/applications/metal-fabrication-full.jpg",
+    image: "/images/applications/metal-fabrication-full.webp",
     href: "/applications/metal-fabrication"
   }
 ];
@@ -266,7 +266,7 @@ export default function ScrapMetalBalerPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/scrap metal baler.png"
+                src="/images/products/single/scrap metal baler.webp"
                 alt="ARZIR Scrap Metal Baler - Industrial Recycling Equipment"
                 fill
                 className="object-contain sm:object-cover"

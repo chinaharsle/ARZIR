@@ -88,8 +88,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
         {/* Preload critical resources for LCP */}
-        <link rel="preload" as="image" href="/images/hero/home-hero.png" fetchPriority="high" />
-        <link rel="preload" as="image" href="/images/about/about-home.png" />
+        <link rel="preload" as="image" href="/images/hero/home-hero.webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/about/about-home.webp" />
         
         {/* Preload critical CSS for above-the-fold content */}
         <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />

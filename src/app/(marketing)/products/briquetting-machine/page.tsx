@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Industrial briquetting machines for metal chips and turnings with 90% volume reduction, 95-98% oil recovery, and automated operation.",
     images: [
       {
-        url: "/images/products/single/Briquetting Machine_.png",
+        url: "/images/products/Briquetting-Machine.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Briquetting Machine - Metal Chip Compaction System"
@@ -347,7 +347,7 @@ export default function BriquettingMachinePage() {
           <div className="relative">
             <div className="aspect-[4/3] relative">
               <Image
-                src="/images/products/single/Briquetting Machine_.png"
+                src="/images/products/single/Briquetting Machine_.webp"
                 alt="ARZIR Briquetting Machine - Metal Chip Compaction System"
                 fill
                 className="object-cover rounded-2xl shadow-2xl"

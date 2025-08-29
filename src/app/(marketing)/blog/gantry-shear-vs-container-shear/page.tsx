@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Expert comparison guide to help you choose between gantry and container shears for heavy scrap metal processing operations.",
     images: [
       {
-        url: "/images/blog/Gantry Shear vs Container Shear Which One to Choose for Heavy Scrap.png",
+        url: "/images/blog/Gantry Shear vs Container Shear Which One to Choose for Heavy Scrap.webp",
         width: 1200,
         height: 630,
         alt: "Gantry Shear vs Container Shear Comparison - ARZIR Blog"
@@ -331,7 +331,7 @@ export default function GantryShearVsContainerShearPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/blog/Gantry Shear vs Container Shear Which One to Choose for Heavy Scrap.png" 
+              src="/images/blog/Gantry Shear vs Container Shear Which One to Choose for Heavy Scrap.webp" 
               alt="Gantry Shear vs Container Shear Comparison for Heavy Scrap"
               fill
               className="object-cover"

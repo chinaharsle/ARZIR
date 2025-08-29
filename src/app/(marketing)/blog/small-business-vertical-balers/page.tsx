@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Discover how vertical balers help small businesses reduce costs and improve waste management efficiency.",
     images: [
       {
-        url: "/images/blog/How Small Businesses Benefit from Vertical Balers.png",
+        url: "/images/blog/How Small Businesses Benefit from Vertical Balers.webp",
         width: 1200,
         height: 630,
         alt: "Small Business Vertical Balers Benefits - ARZIR Blog"
@@ -375,7 +375,7 @@ export default function SmallBusinessVerticalBalersPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/blog/How Small Businesses Benefit from Vertical Balers.png" 
+              src="/images/blog/How Small Businesses Benefit from Vertical Balers.webp" 
               alt="Small Business Vertical Balers Benefits"
               fill
               className="object-cover"

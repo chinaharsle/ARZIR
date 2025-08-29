@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Learn how automated horizontal baling systems can significantly reduce operational costs and improve profitability.",
     images: [
       {
-        url: "/images/blog/How Automatic Horizontal Balers Reduce Recycling Costs.png",
+        url: "/images/blog/How Automatic Horizontal Balers Reduce Recycling Costs.webp",
         width: 1200,
         height: 630,
         alt: "How Automatic Horizontal Balers Reduce Recycling Costs - ARZIR Blog"
@@ -290,7 +290,7 @@ export default function AutomaticHorizontalBalersReduceCostsPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/blog/How Automatic Horizontal Balers Reduce Recycling Costs.png" 
+              src="/images/blog/How Automatic Horizontal Balers Reduce Recycling Costs.webp" 
               alt="How Automatic Horizontal Balers Reduce Recycling Costs"
               fill
               className="object-cover"

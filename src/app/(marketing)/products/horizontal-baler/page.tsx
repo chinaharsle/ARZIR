@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: "Continuous horizontal balers for high-volume recycling operations. Process 20-100+ tons/day with automated feeding and consistent bale quality.",
     images: [
       {
-        url: "/images/products/horizontal-baler.png",
+        url: "/images/products/recycling-baler.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Horizontal Baler - Industrial Automatic Waste Compaction Equipment"
@@ -173,7 +173,7 @@ const applications = [
   {
     title: "Large Warehouses & Distribution",
     description: "Continuous processing of packaging waste from logistics and distribution operations",
-    image: "/images/applications/warehouse-logistics.png",
+    image: "/images/applications/Warehouse & Logistics Waste Management.webp",
     href: "/applications/warehouse-logistics",
     materials: ["Shipping boxes", "Stretch wrap", "Packaging materials", "Pallets"],
     capacity: "40-120 tons/day",
@@ -409,7 +409,7 @@ export default function HorizontalBalerPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/horizontal balser_.png"
+                src="/images/products/single/horizontal balser_.webp"
                 alt="ARZIR Horizontal Baler - Industrial Automatic Waste Baler Machine"
                 fill
                 className="object-contain sm:object-cover"

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Containerized hydraulic shear for efficient cutting of large scrap metal with easy transport and quick setup.",
     images: [
       {
-        url: "/images/products/container-shear.png",
+        url: "/images/products/container-shear.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Container Shear - Hydraulic Scrap Metal Cutting Machine"
@@ -103,7 +103,7 @@ const applications = [
   {
     title: "Scrap Yards & Metal Recycling",
     description: "Efficient cutting of oversized scrap metal for processing and transport optimization",
-    image: "/images/applications/scrap-recycling.png",
+    image: "/images/applications/scrap-recycling.webp",
     href: "/applications/scrap-recycling",
     materials: ["Steel beams", "Structural steel", "Heavy plate", "Mixed ferrous scrap"],
     capacity: "20-45 tons/hour",
@@ -112,7 +112,7 @@ const applications = [
   {
     title: "Automotive Dismantling",
     description: "Quick processing of car bodies, engine blocks, and automotive components",
-    image: "/images/applications/automotive-dismantling-full.jpg",
+    image: "/images/applications/automotive-dismantling-full.webp",
     href: "/applications/automotive-dismantling",
     materials: ["Car bodies", "Engine blocks", "Chassis", "Automotive parts"],
     capacity: "15-30 vehicles/day",
@@ -121,7 +121,7 @@ const applications = [
   {
     title: "Port & Container Terminals",
     description: "On-site processing of large metal waste and container processing applications",
-    image: "/images/applications/scrap-recycling.png", 
+    image: "/images/applications/scrap-recycling.webp", 
     href: "/applications/scrap-recycling",
     materials: ["Container parts", "Port equipment", "Marine scrap", "Large metal waste"],
     capacity: "25-40 tons/hour",
@@ -130,7 +130,7 @@ const applications = [
   {
     title: "Construction & Demolition",
     description: "Mobile cutting solution for construction waste and demolition site processing",
-    image: "/images/applications/construction-demolition-recycling.png",
+    image: "/images/applications/Construction & Demolition Recycling.webp",
     href: "/applications/construction-demolition-recycling", 
     materials: ["Rebar", "Structural steel", "Construction waste", "Demolition debris"],
     capacity: "20-35 tons/hour",
@@ -381,7 +381,7 @@ export default function ContainerShearPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/container shear.png"
+                src="/images/products/single/container shear.webp"
                 alt="ARZIR Container Shear - Hydraulic Scrap Metal Cutting Machine"
                 fill
                 className="object-contain sm:object-cover"

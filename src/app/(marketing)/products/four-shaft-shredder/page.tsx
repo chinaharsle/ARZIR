@@ -92,7 +92,7 @@ const applications = [
   {
     title: "E-Waste Processing Centers",
     description: "Processing electronic waste, circuit boards, and complex electronic components for precious metal recovery and material separation",
-    image: "/images/applications/ewaste-processing.png",
+    image: "/images/applications/E-Waste Recycling Solutions.webp",
     href: "/applications/ewaste-recycling",
     materials: ["Circuit boards", "Electronic components", "Computer equipment", "Mobile devices"],
     capacity: "3-15 tons/hour",
@@ -101,7 +101,7 @@ const applications = [
   {
     title: "Automotive Shredder Residue",
     description: "Fine processing of automotive fluff and mixed materials for enhanced material recovery and separation efficiency",
-    image: "/images/applications/automotive-processing.png", 
+    image: "/images/applications/automotive-dismantling-full.webp", 
     href: "/applications/automotive-dismantling", 
     materials: ["Automotive fluff", "Mixed composites", "Plastic components", "Metal fragments"],
     capacity: "10-25 tons/hour",
@@ -380,7 +380,7 @@ export default function FourShaftShredderPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/four-shaft shredder.png"
+                src="/images/products/single/four-shaft shredder.webp"
                 alt="ARZIR Four-Shaft Shredder - Precision Fine Size Reduction Equipment"
                 fill
                 className="object-contain sm:object-cover"

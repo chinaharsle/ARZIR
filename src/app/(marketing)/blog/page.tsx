@@ -17,7 +17,7 @@ const blogPosts = [
     publishedAt: "2025-09-15",
     readTime: "12 min read",
     author: "ARZIR Sustainability Team",
-    image: "/images/blog/Circular Economy Principles in Metal Recycling Building Sustainable Operations.png",
+    image: "/images/blog/Circular Economy Principles in Metal Recycling Building Sustainable Operations.webp",
     featured: true
   },
   {
@@ -28,7 +28,7 @@ const blogPosts = [
     publishedAt: "2025-09-10",
     readTime: "14 min read",
     author: "ARZIR Innovation Team",
-    image: "/images/blog/Smart Manufacturing Integration in Recycling Equipment Industry 4.0 Revolution.png",
+    image: "/images/blog/Smart Manufacturing Integration in Recycling Equipment Industry 4.0 Revolution.webp",
     featured: true
   },
   {
@@ -39,7 +39,7 @@ const blogPosts = [
     publishedAt: "2025-08-28",
     readTime: "11 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/Advanced Sorting Technologies in Metal Recycling AI and Optical Solutions.png",
+    image: "/images/blog/Advanced Sorting Technologies in Metal Recycling AI and Optical Solutions.webp",
     featured: false
   },
   {
@@ -50,7 +50,7 @@ const blogPosts = [
     publishedAt: "2025-08-25",
     readTime: "9 min read",
     author: "ARZIR Technology Team",
-    image: "/images/blog/IoT Integration in Recycling Equipment Smart Monitoring Solutions.png",
+    image: "/images/blog/IoT Integration in Recycling Equipment Smart Monitoring Solutions.webp",
     featured: true
   },
   {
@@ -61,7 +61,7 @@ const blogPosts = [
     publishedAt: "2025-08-10",
     readTime: "7 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/How to Choose the Right Scrap Metal Baler for Your Yard.png",
+    image: "/images/blog/How to Choose the Right Scrap Metal Baler for Your Yard.webp",
     featured: false
   },
   {
@@ -72,7 +72,7 @@ const blogPosts = [
     publishedAt: "2025-08-05",
     readTime: "5 min read",
     author: "Sarah Chen",
-    image: "/images/blog/Maximizing ROI in Metal Recycling Operations.png",
+    image: "/images/blog/Maximizing ROI in Metal Recycling Operations.webp",
     featured: false
   },
   {
@@ -83,7 +83,7 @@ const blogPosts = [
     publishedAt: "2025-07-28",
     readTime: "6 min read", 
     author: "Mike Rodriguez",
-    image: "/images/blog/Preventive Maintenance Guide for Recycling Equipment.png",
+    image: "/images/blog/Preventive Maintenance Guide for Recycling Equipment.webp",
     featured: true
   },
   {
@@ -94,7 +94,7 @@ const blogPosts = [
     publishedAt: "2024-12-15",
     readTime: "8 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/How Briquetting Machines Reduce Metal Waste Storage Costs.png",
+    image: "/images/blog/How Briquetting Machines Reduce Metal Waste Storage Costs.webp",
     featured: false
   },
   {
@@ -105,7 +105,7 @@ const blogPosts = [
     publishedAt: "2024-12-18",
     readTime: "12 min read",
     author: "ARZIR Technical Team",
-    image: "/images/blog/Briquetting Machine vs Baling Machine Which to Choose.png",
+    image: "/images/blog/Briquetting Machine vs Baling Machine Which to Choose.webp",
     featured: false
   },
   {
@@ -116,7 +116,7 @@ const blogPosts = [
     publishedAt: "2025-07-20",
     readTime: "8 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/Steel Mill Scrap Processing Best Practices and Equipment Selection.png",
+    image: "/images/blog/Steel Mill Scrap Processing Best Practices and Equipment Selection.webp",
     featured: false
   },
   {
@@ -127,7 +127,7 @@ const blogPosts = [
     publishedAt: "2025-07-15",
     readTime: "4 min read",
     author: "Anna Thompson",
-    image: "/images/blog/Understanding Bale Density Impact on Transport and Value.png",
+    image: "/images/blog/Understanding Bale Density Impact on Transport and Value.webp",
     featured: false
   },
   {
@@ -138,7 +138,7 @@ const blogPosts = [
     publishedAt: "2025-07-08",
     readTime: "6 min read",
     author: "David Kim",
-    image: "/images/blog/Automotive Dismantling Equipment Solutions for ELV Processing.png",
+    image: "/images/blog/Automotive Dismantling Equipment Solutions for ELV Processing.webp",
     featured: false
   },
   {
@@ -149,7 +149,7 @@ const blogPosts = [
     publishedAt: "2024-11-20",
     readTime: "7 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/How Car Body Balers Transform Vehicle Recycling.png",
+    image: "/images/blog/How Car Body Balers Transform Vehicle Recycling.webp",
     featured: false
   },
   {
@@ -160,7 +160,7 @@ const blogPosts = [
     publishedAt: "2024-11-15",
     readTime: "10 min read",
     author: "Technical Team",
-    image: "/images/blog/Car Baler vs Car Shredder Which to Choose.png",
+    image: "/images/blog/Car Baler vs Car Shredder Which to Choose.webp",
     featured: false
   },
   {
@@ -171,7 +171,7 @@ const blogPosts = [
     publishedAt: "2024-10-25",
     readTime: "6 min read",
     author: "Operations Team",
-    image: "/images/blog/How Automatic Horizontal Balers Reduce Recycling Costs.png",
+    image: "/images/blog/How Automatic Horizontal Balers Reduce Recycling Costs.webp",
     featured: false
   },
   {
@@ -182,7 +182,7 @@ const blogPosts = [
     publishedAt: "2024-10-18",
     readTime: "8 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/Container Shear vs Guillotine Shear Which is Better for Scrap Processing.png",
+    image: "/images/blog/Container Shear vs Guillotine Shear Which is Better for Scrap Processing.webp",
     featured: false
   },
   {
@@ -193,7 +193,7 @@ const blogPosts = [
     publishedAt: "2024-10-10",
     readTime: "5 min read",
     author: "Technical Team",
-    image: "/images/blog/How Container Shears Improve Scrap Metal Recycling Efficiency.png",
+    image: "/images/blog/How Container Shears Improve Scrap Metal Recycling Efficiency.webp",
     featured: false
   },
   {
@@ -204,7 +204,7 @@ const blogPosts = [
     publishedAt: "2024-09-30",
     readTime: "9 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/Vertical vs Horizontal Baler Which One to Choose.png",
+    image: "/images/blog/Vertical vs Horizontal Baler Which One to Choose.webp",
     featured: false
   },
   {
@@ -215,7 +215,7 @@ const blogPosts = [
     publishedAt: "2024-09-20",
     readTime: "6 min read",
     author: "Sales Team",
-    image: "/images/blog/How Small Businesses Benefit from Vertical Balers.png",
+    image: "/images/blog/How Small Businesses Benefit from Vertical Balers.webp",
     featured: false
   },
   {
@@ -226,7 +226,7 @@ const blogPosts = [
     publishedAt: "2024-09-10",
     readTime: "11 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/Gantry Shear vs Container Shear Which One to Choose for Heavy Scrap.png",
+    image: "/images/blog/Gantry Shear vs Container Shear Which One to Choose for Heavy Scrap.webp",
     featured: false
   },
   {
@@ -237,7 +237,7 @@ const blogPosts = [
     publishedAt: "2024-08-25",
     readTime: "7 min read",
     author: "Technical Team",
-    image: "/images/blog/How Gantry Shears Improve Scrap Metal Recycling Efficiency.png",
+    image: "/images/blog/How Gantry Shears Improve Scrap Metal Recycling Efficiency.webp",
     featured: false
   },
   {
@@ -248,7 +248,7 @@ const blogPosts = [
     publishedAt: "2024-08-15",
     readTime: "5 min read",
     author: "Operations Team",
-    image: "/images/blog/How Alligator Shears Improve Efficiency in Small Scrap Cutting.png",
+    image: "/images/blog/How Alligator Shears Improve Efficiency in Small Scrap Cutting.webp",
     featured: false
   },
   {
@@ -259,7 +259,7 @@ const blogPosts = [
     publishedAt: "2024-08-05",
     readTime: "8 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/Alligator Shear vs Other Scrap Shears Which to Choose.png",
+    image: "/images/blog/Alligator Shear vs Other Scrap Shears Which to Choose.webp",
     featured: false
   },
   {
@@ -270,7 +270,7 @@ const blogPosts = [
     publishedAt: "2024-07-30",
     readTime: "10 min read",
     author: "Technical Team",
-    image: "/images/blog/Single-Shaft vs Double-Shaft Shredders Which One to Choose.png",
+    image: "/images/blog/Single-Shaft vs Double-Shaft Shredders Which One to Choose.webp",
     featured: false
   },
   {
@@ -281,7 +281,7 @@ const blogPosts = [
     publishedAt: "2024-07-20",
     readTime: "6 min read",
     author: "Operations Team",
-    image: "/images/blog/How Single-Shaft Shredders Improve Recycling Efficiency.png",
+    image: "/images/blog/How Single-Shaft Shredders Improve Recycling Efficiency.webp",
     featured: false
   },
   {
@@ -292,7 +292,7 @@ const blogPosts = [
     publishedAt: "2024-07-10",
     readTime: "7 min read",
     author: "Technical Team",
-    image: "/images/blog/How Double-Shaft Shredders Enhance Recycling Efficiency.png",
+    image: "/images/blog/How Double-Shaft Shredders Enhance Recycling Efficiency.webp",
     featured: false
   },
   {
@@ -303,7 +303,7 @@ const blogPosts = [
     publishedAt: "2024-06-25",
     readTime: "12 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/Four-Shaft vs Double-Shaft Shredders Which One to Choose.png",
+    image: "/images/blog/Four-Shaft vs Double-Shaft Shredders Which One to Choose.webp",
     featured: false
   },
   {
@@ -314,7 +314,7 @@ const blogPosts = [
     publishedAt: "2024-06-15",
     readTime: "8 min read",
     author: "E-Waste Team",
-    image: "/images/blog/How Four-Shaft Shredders Improve Recycling Efficiency in E-Waste Processing.png",
+    image: "/images/blog/How Four-Shaft Shredders Improve Recycling Efficiency in E-Waste Processing.webp",
     featured: false
   },
 
@@ -326,7 +326,7 @@ const blogPosts = [
     publishedAt: "2024-05-15",
     readTime: "11 min read",
     author: "Aluminum Team",
-    image: "/images/blog/Aluminium Extrusion Press vs Die Casting Which to Choose.png",
+    image: "/images/blog/Aluminium Extrusion Press vs Die Casting Which to Choose.webp",
     featured: false
   },
   {
@@ -337,7 +337,7 @@ const blogPosts = [
     publishedAt: "2024-05-05",
     readTime: "13 min read",
     author: "ARZIR Engineering Team",
-    image: "/images/blog/How Aluminium Extrusion Presses Work A Complete Guide.png",
+    image: "/images/blog/How Aluminium Extrusion Presses Work A Complete Guide.webp",
     featured: false
   }
 ];

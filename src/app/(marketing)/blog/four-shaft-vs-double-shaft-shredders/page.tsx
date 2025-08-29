@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Comprehensive comparison of four-shaft and double-shaft shredder technologies to help you choose the right equipment for your recycling operation.",
     images: [
       {
-        url: "/images/blog/Four-Shaft vs Double-Shaft Shredders Which One to Choose.png",
+        url: "/images/blog/Four-Shaft vs Double-Shaft Shredders Which One to Choose.webp",
         width: 1200,
         height: 630,
         alt: "Four-Shaft vs Double-Shaft Shredders Comparison - ARZIR Blog"
@@ -407,7 +407,7 @@ export default function FourShaftVsDoubleShaftShreddersPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/blog/Four-Shaft vs Double-Shaft Shredders Which One to Choose.png" 
+              src="/images/blog/Four-Shaft vs Double-Shaft Shredders Which One to Choose.webp" 
               alt="Four-Shaft vs Double-Shaft Shredders Comparison"
               fill
               className="object-cover"

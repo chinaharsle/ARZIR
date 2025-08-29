@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Advanced aluminum extrusion solutions for aerospace applications with precision manufacturing and aerospace-grade quality standards.",
     images: [
       {
-        url: "/images/applications/Aerospace Aluminum.png",
+        url: "/images/applications/Aerospace Aluminum.webp",
         width: 1200,
         height: 630,
         alt: "Aerospace Aluminum Applications - ARZIR"
@@ -333,7 +333,7 @@ export default function AerospaceAluminumPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/Aerospace Aluminum.png"
+                src="/images/applications/Aerospace Aluminum.webp"
                 alt="Aerospace Aluminum Applications"
                 width={800}
                 height={450}

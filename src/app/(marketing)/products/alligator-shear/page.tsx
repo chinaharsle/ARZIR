@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Compact hydraulic alligator shears for efficient cutting of rebar, steel rods, and small metal structures. Portable and cost-effective solution.",
     images: [
       {
-        url: "/images/products/alligator-shear.png",
+        url: "/images/products/scrap-metal-shear.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Alligator Shear - Compact Scrap Metal Cutting Machine"
@@ -112,7 +112,7 @@ const applications = [
   {
     title: "Scrap Steel Recycling Centers",
     description: "Efficient cutting of scrap steel, copper, aluminum for size reduction and processing preparation",
-    image: "/images/applications/scrap-recycling.png",
+    image: "/images/applications/scrap-recycling.webp",
     href: "/applications/scrap-recycling",
     materials: ["Scrap steel pieces", "Copper pipes", "Aluminum sections", "Mixed ferrous materials"],
     capacity: "200-400 cuts/hour",
@@ -121,7 +121,7 @@ const applications = [
   {
     title: "Rebar Processing Facilities",
     description: "Cutting rebar and steel rods to required lengths for construction and recycling applications",
-    image: "/images/applications/metal-fabrication.png",
+    image: "/images/applications/metal-fabrication-full.webp",
     href: "/applications/metal-fabrication",
     materials: ["Construction rebar", "Steel rods", "Reinforcement bars", "Round steel"],
     capacity: "150-300 cuts/hour",
@@ -130,7 +130,7 @@ const applications = [
   {
     title: "Metal Products Manufacturing",
     description: "Processing pipes, profiles, and small steel structures for manufacturing and fabrication operations",
-    image: "/images/applications/metal-fabrication.png",
+    image: "/images/applications/metal-fabrication-full.webp",
     href: "/applications/metal-fabrication",
     materials: ["Steel pipes", "Metal profiles", "Small structures", "Fabricated parts"],
     capacity: "100-250 cuts/hour",
@@ -139,7 +139,7 @@ const applications = [
   {
     title: "Construction Demolition Sites",
     description: "On-site cutting of construction scrap for efficient removal and recycling processing",
-    image: "/images/applications/construction-demolition-recycling.png",
+    image: "/images/applications/Construction & Demolition Recycling.webp",
     href: "/applications/construction-demolition-recycling",
     materials: ["Construction debris", "Building steel", "Demolished structures", "Site cleanup materials"],
     capacity: "80-200 cuts/hour",
@@ -388,7 +388,7 @@ export default function AlligatorShearPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/alligator shear.png"
+                src="/images/products/single/alligator shear.webp"
                 alt="ARZIR Alligator Shear - Compact Scrap Metal Cutting Machine"
                 fill
                 className="object-contain sm:object-cover"

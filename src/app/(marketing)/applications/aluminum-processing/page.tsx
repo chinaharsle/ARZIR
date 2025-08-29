@@ -42,7 +42,7 @@ export default function AluminumProcessingPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/aluminum-processing-full.jpg"
+                src="/images/applications/aluminum-processing-full.webp"
                 alt="Aluminum Processing Facility"
                 width={800}
                 height={450}

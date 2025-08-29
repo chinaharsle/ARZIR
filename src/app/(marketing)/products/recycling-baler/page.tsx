@@ -17,28 +17,28 @@ const products = [
     title: "Scrap Metal Baler",
     description: "Heavy-duty baler for mixed ferrous and non-ferrous scrap with high bale density.",
     href: "/products/scrap-metal-baler",
-    image: "/images/products/single/scrap metal baler.png",
+    image: "/images/products/single/scrap metal baler.webp",
     alt: "Scrap Metal Baler compressing mixed scrap"
   },
   {
     title: "Car Body Baler", 
     description: "Designed for ELV processing with robust compression chambers and faster cycles.",
     href: "/products/car-body-baler",
-    image: "/images/products/single/Car Body Baler.png",
+    image: "/images/products/single/Car Body Baler.webp",
     alt: "Car Body Baler compacting end-of-life vehicles"
   },
   {
     title: "Vertical Baler",
     description: "Space-saving vertical baler for low-to-medium throughput operations.",
     href: "/products/vertical-baler",
-    image: "/images/products/single/vertical baler.png",
+    image: "/images/products/single/vertical baler.webp",
     alt: "Vertical Baler for compact operations"
   },
   {
     title: "Horizontal Baler",
     description: "Continuous horizontal baler for high throughput and consistent bale sizes.",
     href: "/products/horizontal-baler",
-    image: "/images/products/single/horizontal balser_.png",
+    image: "/images/products/single/horizontal balser_.webp",
     alt: "Horizontal Baler for continuous compaction"
   }
 ];
@@ -76,7 +76,7 @@ export default function RecyclingBalerPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/products/single/scrap metal baler.png"
+                src="/images/products/single/scrap metal baler.webp"
                 alt="ARZIR Recycling Balers - High-Density Compaction Equipment"
                 width={800}
                 height={450}

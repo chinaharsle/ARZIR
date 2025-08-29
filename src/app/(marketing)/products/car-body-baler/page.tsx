@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Specialized car body balers for efficient end-of-life vehicle processing. 600-1500T force, process 20-40 cars/day, mobile & stationary options.",
     images: [
       {
-        url: "/images/products/recycling-baler.png",
+        url: "/images/products/recycling-baler.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Car Body Baler - End-of-Life Vehicle Processing Equipment"
@@ -345,7 +345,7 @@ export default function CarBodyBalerPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/Car Body Baler.png"
+                src="/images/products/single/Car Body Baler.webp"
                 alt="ARZIR Car Body Baler - End-of-Life Vehicle Processing Equipment"
                 fill
                 className="object-contain sm:object-cover"

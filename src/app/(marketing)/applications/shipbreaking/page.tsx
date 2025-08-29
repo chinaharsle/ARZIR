@@ -42,7 +42,7 @@ export default function ShipbreakingPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/shipbreaking-full.jpg"
+                src="/images/applications/shipbreaking-full.webp"
                 alt="Shipbreaking Operation"
                 width={800}
                 height={450}

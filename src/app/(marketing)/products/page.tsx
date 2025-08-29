@@ -21,25 +21,25 @@ const productCategories = [
         title: "Scrap Metal Baler",
         description: "Heavy-duty baler for mixed ferrous and non-ferrous scrap with high bale density.",
         href: "/products/scrap-metal-baler",
-        image: "/images/products/single/scrap metal baler.png"
+        image: "/images/products/single/scrap metal baler.webp"
       },
       {
         title: "Car Body Baler", 
         description: "Designed for ELV processing with robust compression chambers and faster cycles.",
         href: "/products/car-body-baler",
-        image: "/images/products/single/Car Body Baler.png"
+        image: "/images/products/single/Car Body Baler.webp"
       },
       {
         title: "Vertical Baler",
         description: "Space-saving vertical baler for low-to-medium throughput operations.",
         href: "/products/vertical-baler",
-        image: "/images/products/single/vertical baler.png"
+        image: "/images/products/single/vertical baler.webp"
       },
       {
         title: "Horizontal Baler",
         description: "Continuous horizontal baler for high throughput and consistent bale sizes.",
         href: "/products/horizontal-baler",
-        image: "/images/products/single/horizontal balser_.png"
+        image: "/images/products/single/horizontal balser_.webp"
       }
     ]
   },
@@ -52,19 +52,19 @@ const productCategories = [
         title: "Container Shear",
         description: "Mobile shearing solution for on-site processing with excellent mobility.",
         href: "/products/container-shear",
-        image: "/images/products/single/container shear.png"
+        image: "/images/products/single/container shear.webp"
       },
       {
         title: "Gantry Shear",
         description: "High-capacity stationary shear for heavy-duty industrial applications.",
         href: "/products/gantry-shear", 
-        image: "/images/products/single/gantry shear.png"
+        image: "/images/products/single/gantry shear.webp"
       },
       {
         title: "Alligator Shear",
         description: "Fast-cycling shear for cutting structural steel and plate materials.",
         href: "/products/alligator-shear",
-        image: "/images/products/single/alligator shear.png"
+        image: "/images/products/single/alligator shear.webp"
       }
     ]
   },
@@ -77,19 +77,19 @@ const productCategories = [
         title: "Single-Shaft Shredder",
         description: "Versatile single-shaft design for mixed material processing applications.",
         href: "/products/single-shaft-shredder",
-        image: "/images/products/single/single-shaft-shredder.png"
+        image: "/images/products/single/single-shaft-shredder.webp"
       },
       {
         title: "Double-Shaft Shredder",
         description: "Dual-shaft configuration for enhanced processing capacity and efficiency.",
         href: "/products/double-shaft-shredder",
-        image: "/images/products/single/double-shaft shredder.png"
+        image: "/images/products/single/double-shaft shredder.webp"
       },
       {
         title: "Four-Shaft Shredder",
         description: "Multi-shaft design for fine size reduction and uniform output.",
         href: "/products/four-shaft-shredder",
-        image: "/images/products/single/four-shaft shredder.png"
+        image: "/images/products/single/four-shaft shredder.webp"
       }
     ]
   },
@@ -102,7 +102,7 @@ const productCategories = [
         title: "Aluminium Extrusion Press",
         description: "Precision hydraulic press for high-quality aluminium profile extrusion.",
         href: "/products/aluminium-extrusion-press",
-        image: "/images/products/single/Extrusion Press.png"
+        image: "/images/products/single/Extrusion Press.webp"
       }
     ]
   },
@@ -115,7 +115,7 @@ const productCategories = [
         title: "Briquetting Machine",
         description: "High-pressure briquetting for metal chips with oil recovery system.",
         href: "/products/briquetting-machine",
-        image: "/images/products/single/Briquetting Machine_.png"
+        image: "/images/products/single/Briquetting Machine_.webp"
       }
     ]
   }

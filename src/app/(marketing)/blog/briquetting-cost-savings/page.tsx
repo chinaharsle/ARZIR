@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Learn how briquetting machines deliver significant cost savings through reduced storage space, improved transportation efficiency, and higher scrap metal values.",
     images: [
       {
-        url: "/images/blog/How Briquetting Machines Reduce Metal Waste Storage Costs.png",
+        url: "/images/blog/How Briquetting Machines Reduce Metal Waste Storage Costs.webp",
         width: 1200,
         height: 630,
         alt: "Briquetting Machine Cost Savings Analysis"
@@ -177,7 +177,7 @@ export default function BriquettingCostSavingsBlogPage() {
             {/* Featured Image Placeholder */}
             <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden">
               <Image
-                src="/images/blog/How Briquetting Machines Reduce Metal Waste Storage Costs.png"
+                src="/images/blog/How Briquetting Machines Reduce Metal Waste Storage Costs.webp"
                 alt="Briquetting Machine Cost Savings Analysis"
                 width={800}
                 height={450}

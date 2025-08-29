@@ -17,21 +17,21 @@ const products = [
     title: "Single-Shaft Shredder",
     description: "Versatile single-shaft design for mixed material processing with excellent flexibility and efficiency.",
     href: "/products/single-shaft-shredder",
-    image: "/images/products/single/single-shaft-shredder.png",
+    image: "/images/products/single/single-shaft-shredder.webp",
     alt: "Single-Shaft Shredder for versatile processing"
   },
   {
     title: "Double-Shaft Shredder",
     description: "Dual-shaft configuration for enhanced processing capacity and consistent output quality.",
     href: "/products/double-shaft-shredder",
-    image: "/images/products/single/double-shaft shredder.png",
+    image: "/images/products/single/double-shaft shredder.webp",
     alt: "Double-Shaft Shredder for high capacity"
   },
   {
     title: "Four-Shaft Shredder",
     description: "Multi-shaft design for fine size reduction and uniform output with precision control.",
     href: "/products/four-shaft-shredder",
-    image: "/images/products/single/four-shaft shredder.png",
+    image: "/images/products/single/four-shaft shredder.webp",
     alt: "Four-Shaft Shredder for fine processing"
   }
 ];
@@ -67,7 +67,7 @@ export default function ShredderPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/products/single/shredder.png"
+                src="/images/products/single/shredder.webp"
                 alt="ARZIR Industrial Shredders - Advanced Size Reduction Equipment"
                 width={800}
                 height={450}

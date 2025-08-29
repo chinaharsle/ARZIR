@@ -61,7 +61,7 @@ const equipment = [
     title: "Car Body Baler System",
     description: "Specialized equipment for end-of-life vehicle processing and automotive scrap",
     href: "/products/car-body-baler", 
-    image: "/images/applications/automotive-dismantling-full.jpg"
+    image: "/images/applications/automotive-dismantling-full.webp"
   },
   {
     title: "Non-Ferrous Processing Line",
@@ -182,7 +182,7 @@ export default function MetalRecyclingPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/Metal Recycling.png"
+                src="/images/applications/Metal Recycling.webp"
                 alt="Large Metal Recycling Centers - Industrial Processing Solutions"
                 width={600}
                 height={400}

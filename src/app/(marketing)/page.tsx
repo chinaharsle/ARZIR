@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="relative order-1 lg:order-2">
             <div className="aspect-[4/3] lg:aspect-[5/4] bg-arzir-gray-200 rounded-2xl overflow-hidden">
               <Image
-                src="/images/hero/home-hero.png"
+                src="/images/hero/home-hero.webp"
                 alt="Industrial Equipment - ARZIR Manufacturing Machinery"
                 width={800}
                 height={600}
@@ -188,7 +188,7 @@ export default function HomePage() {
                 {/* Main Image Container */}
                 <div className="aspect-[4/5] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-3xl overflow-hidden shadow-2xl relative">
                   <Image
-                    src="/images/about/about-home.png"
+                    src="/images/about/about-home.webp"
                     alt="ARZIR Manufacturing Facility - Excellence in Engineering"
                     width={600}
                     height={750}
@@ -261,7 +261,7 @@ export default function HomePage() {
               title: "Scrap Recycling",
               description: "Maximize recovery value with high-density compaction solutions that transform waste into valuable resources",
               href: "/applications/scrap-recycling",
-              image: "/images/applications/scrap-recycling.png",
+              image: "/images/applications/scrap-recycling.webp",
               stats: "85% efficiency increase",
               color: "from-green-500 to-emerald-600"
             },
@@ -269,7 +269,7 @@ export default function HomePage() {
               title: "Metal Fabrication",
               description: "Turn offcuts into value with efficient baling & shearing systems designed for continuous operation",
               href: "/applications/metal-fabrication", 
-              image: "/images/applications/metal-fabrication-full.jpg",
+              image: "/images/applications/metal-fabrication-full.webp",
               stats: "60% waste reduction",
               color: "from-blue-500 to-cyan-600"
             },
@@ -277,7 +277,7 @@ export default function HomePage() {
               title: "Automotive Dismantling",
               description: "Faster ELV processing with robust baling & shearing equipment built for heavy-duty applications",
               href: "/applications/automotive-dismantling",
-              image: "/images/applications/automotive-dismantling-full.jpg",
+              image: "/images/applications/automotive-dismantling-full.webp",
               stats: "45% faster processing",
               color: "from-orange-500 to-red-600"
             },
@@ -285,7 +285,7 @@ export default function HomePage() {
               title: "Aluminum Processing",
               description: "Stable extrusion and compacting solutions for aluminum streams. Advanced technology ensures optimal material recovery rates.",
               href: "/applications/aluminum-processing",
-              image: "/images/applications/aluminum-processing-full.jpg",
+              image: "/images/applications/aluminum-processing-full.webp",
               stats: "95% material recovery",
               color: "from-purple-500 to-violet-600"
             },
@@ -293,7 +293,7 @@ export default function HomePage() {
               title: "Steel Mills",
               description: "Handle mill scrap safely with industrial-grade processing equipment. Designed for continuous operation in demanding production.",
               href: "/applications/steel-mills",
-              image: "/images/applications/steel-mills-full.jpg",
+              image: "/images/applications/steel-mills-full.webp",
               stats: "24/7 operation",
               color: "from-gray-500 to-slate-600"
             },
@@ -301,7 +301,7 @@ export default function HomePage() {
               title: "Shipbreaking",
               description: "Heavy sections processing with high-tonnage equipment designed for maritime industry demands",
               href: "/applications/shipbreaking",
-              image: "/images/applications/shipbreaking-full.jpg",
+              image: "/images/applications/shipbreaking-full.webp",
               stats: "1000+ ton capacity",
               color: "from-teal-500 to-blue-600"
             }

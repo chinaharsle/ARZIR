@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Industrial single-shaft shredders for uniform waste processing. Plastic, wood, textile recycling with customizable output sizes and hydraulic ram feeding.",
     images: [
       {
-        url: "/images/products/single/single-shaft-shredder.png",
+        url: "/images/products/shredder.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Single-Shaft Shredder - Industrial Waste Recycling Equipment"
@@ -130,7 +130,7 @@ const applications = [
   {
     title: "Textile Recycling Centers",
     description: "Processing fabric waste, clothing, carpets, and fiber materials for material recovery and recycling",
-    image: "/images/applications/textile-recycling.png",
+    image: "/images/applications/Textile Recycling.webp",
     href: "/applications/textile-recycling",
     materials: ["Fabric waste", "Used clothing", "Carpet materials", "Textile fibers"],
     capacity: "1-5 tons/hour",
@@ -388,7 +388,7 @@ export default function SingleShaftShredderPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/single-shaft-shredder.png"
+                src="/images/products/single/single-shaft-shredder.webp"
                 alt="ARZIR Single-Shaft Shredder - Industrial Waste Recycling Equipment"
                 fill
                 className="object-contain sm:object-cover"

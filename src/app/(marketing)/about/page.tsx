@@ -368,37 +368,37 @@ export default function AboutPage() {
               name: "Michael Chen",
               role: "Chief Executive Officer",
               bio: "15+ years in industrial machinery with expertise in global market expansion.",
-              image: "/images/our team/Michael Chen.png"
+              image: "/images/our team/Michael Chen.webp"
             },
             {
               name: "Sarah Wang",
               role: "Chief Technology Officer", 
               bio: "Leading our R&D initiatives with 12+ years in mechanical engineering.",
-              image: "/images/our team/Sarah Wang.png"
+              image: "/images/our team/Sarah Wang.webp"
             },
             {
               name: "David Liu",
               role: "VP of Sales & Marketing",
               bio: "Expert in international business development and customer relationship management.",
-              image: "/images/our team/David Liu.png"
+              image: "/images/our team/David Liu.webp"
             },
             {
               name: "Anna Zhang",
               role: "Head of Quality Assurance",
               bio: "Ensuring excellence through systematic quality control and ISO compliance.",
-              image: "/images/our team/Anna Zhang.png"
+              image: "/images/our team/Anna Zhang.webp"
             },
             {
               name: "Robert Kim",
               role: "International Sales Director",
               bio: "Building global partnerships with extensive experience in export markets.",
-              image: "/images/our team/Robert Kim.png"
+              image: "/images/our team/Robert Kim.webp"
             },
             {
               name: "Lisa Brown",
               role: "Customer Service Manager",
               bio: "Dedicated to exceptional customer support and after-sales service excellence.",
-              image: "/images/our team/Lisa Brown.png"
+              image: "/images/our team/Lisa Brown.webp"
             }
           ].map((member) => (
             <div key={member.name} className="bg-white rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-200">

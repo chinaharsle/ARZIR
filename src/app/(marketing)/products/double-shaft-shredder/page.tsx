@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Industrial double-shaft shredders for heavy-duty waste processing. Metal, tire, plastic shredding with high torque dual rotors and automatic reverse function.",
     images: [
       {
-        url: "/images/products/double-shaft-shredder.png",
+        url: "/images/products/shredder.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Double-Shaft Shredder - Heavy-Duty Industrial Waste Shredding Equipment"
@@ -169,7 +169,7 @@ const applications = [
   {
     title: "Metal Recycling Operations",
     description: "Processing steel scrap, aluminum waste, copper materials, and non-ferrous metals for volume reduction and recovery",
-    image: "/images/applications/metal-recycling.png",
+    image: "/images/applications/Metal Recycling.webp",
     href: "/applications/non-ferrous-recycling",
     materials: ["Steel scrap", "Aluminum waste", "Copper materials", "Non-ferrous metals"],
     capacity: "15-35 tons/hour",
@@ -196,7 +196,7 @@ const applications = [
   {
     title: "E-Waste Processing Centers",
     description: "Shredding electronic waste, computers, appliances, and complex electronic components for material recovery",
-    image: "/images/applications/ewaste-processing.png",
+    image: "/images/applications/E-Waste Recycling Solutions.webp",
     href: "/applications/ewaste-recycling",
     materials: ["Electronic waste", "Computer equipment", "Appliances", "Electronic components"],
     capacity: "5-15 tons/hour",
@@ -397,7 +397,7 @@ export default function DoubleShaftShredderPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/double-shaft shredder.png"
+                src="/images/products/single/double-shaft shredder.webp"
                 alt="ARZIR Double-Shaft Shredder - Heavy-Duty Industrial Waste Shredding Equipment"
                 fill
                 className="object-contain sm:object-cover"

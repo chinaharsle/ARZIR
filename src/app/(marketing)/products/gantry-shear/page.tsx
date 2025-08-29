@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Large hydraulic gantry shear for processing thick steel plates and heavy scrap metal with up to 2000T cutting force.",
     images: [
       {
-        url: "/images/products/gantry-shear.png",
+        url: "/images/products/scrap-metal-shear.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Gantry Shear - Heavy-Duty Scrap Metal Cutting Machine"
@@ -115,7 +115,7 @@ const applications = [
   {
     title: "Scrap Yards & Metal Recycling",
     description: "High-volume processing of thick steel plates, structural steel, and mixed heavy scrap materials",
-    image: "/images/applications/scrap-recycling.png",
+    image: "/images/applications/scrap-recycling.webp",
     href: "/applications/scrap-recycling", 
     materials: ["Thick steel plates", "Structural steel", "Heavy scrap metal", "Mixed ferrous materials"],
     capacity: "150-220 tons/hour",
@@ -124,7 +124,7 @@ const applications = [
   {
     title: "Steel Mills & Smelting Plants",
     description: "Processing mill scale, heavy returns, and production waste for remelting operations",
-    image: "/images/applications/steel-mills.png",
+    image: "/images/applications/steel-mills-full.webp",
     href: "/applications/steel-mills",
     materials: ["Mill scale", "Heavy returns", "Production waste", "Thick steel sections"],
     capacity: "120-180 tons/hour", 
@@ -133,7 +133,7 @@ const applications = [
   {
     title: "Shipyards & Marine Industry",
     description: "Cutting heavy maritime steel structures, ship hull sections, and large marine components",
-    image: "/images/applications/shipbreaking.png",
+    image: "/images/applications/shipbreaking-full.webp",
     href: "/applications/shipbreaking",
     materials: ["Ship hull sections", "Maritime structures", "Marine components", "Heavy marine steel"],
     capacity: "100-150 tons/hour",
@@ -142,7 +142,7 @@ const applications = [
   {
     title: "Construction & Demolition Sites",
     description: "Processing large construction steel, demolition debris, and heavy structural components",
-    image: "/images/applications/construction-demolition-recycling.png",
+    image: "/images/applications/Construction & Demolition Recycling.webp",
     href: "/applications/construction-demolition-recycling",
     materials: ["Construction steel", "Demolition debris", "Structural components", "Heavy building materials"],
     capacity: "80-120 tons/hour",
@@ -382,7 +382,7 @@ export default function GantryShearPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/products/single/gantry shear.png"
+                src="/images/products/single/gantry shear.webp"
                 alt="ARZIR Gantry Shear - Heavy-Duty Scrap Metal Cutting Machine"
                 fill
                 className="object-contain sm:object-cover"

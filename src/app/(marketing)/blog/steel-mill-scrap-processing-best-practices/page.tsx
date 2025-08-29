@@ -40,7 +40,7 @@ export default function SteelMillScrapBlogPost() {
         <div className="max-w-4xl mx-auto">
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg relative">
             <Image 
-              src="/images/blog/Steel Mill Scrap Processing Best Practices and Equipment Selection.png" 
+              src="/images/blog/Steel Mill Scrap Processing Best Practices and Equipment Selection.webp" 
               alt="Steel Mill Scrap Processing Best Practices and Equipment Selection"
               fill
               className="object-cover"

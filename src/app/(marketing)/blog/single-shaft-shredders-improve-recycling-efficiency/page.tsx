@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Learn how single-shaft shredder technology enhances processing efficiency and output quality in recycling operations through precision cutting and uniform sizing.",
     images: [
       {
-        url: "/images/blog/How Single-Shaft Shredders Improve Recycling Efficiency.png",
+        url: "/images/blog/How Single-Shaft Shredders Improve Recycling Efficiency.webp",
         width: 1200,
         height: 630,
         alt: "Single-Shaft Shredders Improve Recycling Efficiency - ARZIR Blog"
@@ -437,7 +437,7 @@ export default function SingleShaftShreddersImproveRecyclingEfficiencyPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/blog/How Single-Shaft Shredders Improve Recycling Efficiency.png" 
+              src="/images/blog/How Single-Shaft Shredders Improve Recycling Efficiency.webp" 
               alt="Single-Shaft Shredders Improve Recycling Efficiency"
               fill
               className="object-cover"

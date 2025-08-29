@@ -75,7 +75,7 @@ export function TimelineCarousel() {
       year: "2014",
       title: "First International Export",
       description: "Successfully exported our first recycling baler to Southeast Asia, marking the beginning of global expansion.",
-      image: "/images/our journey/First International Export.png",
+      image: "/images/our journey/First International Export.webp",
       highlight: "Global Reach"
     },
     {
@@ -89,7 +89,7 @@ export function TimelineCarousel() {
       year: "2017",
       title: "ISO Certification",
       description: "Achieved ISO 9001 certification, demonstrating our commitment to quality management systems.",
-      image: "/images/our journey/ISO Certification.png",
+      image: "/images/our journey/ISO Certification.webp",
       highlight: "Quality Excellence"
     },
     {

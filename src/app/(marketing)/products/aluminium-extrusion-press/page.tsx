@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Industrial aluminium extrusion presses for high-precision aluminum profile manufacturing with advanced hydraulic control and automation systems.",
     images: [
       {
-        url: "/images/products/aluminium-extrusion-press.png",
+        url: "/images/products/aluminum-extrusion-press.webp",
         width: 1200,
         height: 630,
         alt: "ARZIR Aluminium Extrusion Press - Precision Hydraulic Profile Manufacturing Equipment"
@@ -348,7 +348,7 @@ export default function AluminiumExtrusionPressPage() {
           <div className="relative">
             <div className="aspect-square lg:aspect-[4/3] relative">
               <Image
-                src="/images/products/single/Extrusion Press.png"
+                src="/images/products/single/Extrusion Press.webp"
                 alt="ARZIR Aluminium Extrusion Press - Precision Hydraulic Profile Manufacturing Equipment"
                 fill
                 className="object-cover rounded-2xl shadow-2xl"

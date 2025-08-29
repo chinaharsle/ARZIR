@@ -103,8 +103,8 @@ export function ResourcePreloader() {
   useEffect(() => {
     // Preload critical resources
     const criticalResources = [
-      { href: '/images/hero/home-hero.png', as: 'image' },
-      { href: '/images/about/about-home.png', as: 'image' },
+      { href: '/images/hero/home-hero.webp', as: 'image' },
+      { href: '/images/about/about-home.webp', as: 'image' },
       { href: '/products', as: 'document' },
       { href: '/applications', as: 'document' },
     ];

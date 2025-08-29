@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Complete comparison guide to help you choose between car balers and car shredders for your recycling operation.",
     images: [
       {
-        url: "/images/blog/Car Baler vs Car Shredder Which to Choose.png",
+        url: "/images/blog/Car Baler vs Car Shredder Which to Choose.webp",
         width: 1200,
         height: 630,
         alt: "Car Baler vs Car Shredder Comparison - ARZIR Blog"
@@ -269,7 +269,7 @@ export default function CarBalerVsCarShredderPage() {
           </div>
           <div className="aspect-[16/9] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto relative">
             <Image 
-              src="/images/blog/Car Baler vs Car Shredder Which to Choose.png" 
+              src="/images/blog/Car Baler vs Car Shredder Which to Choose.webp" 
               alt="Car Baler vs Car Shredder Comparison"
               fill
               className="object-cover"

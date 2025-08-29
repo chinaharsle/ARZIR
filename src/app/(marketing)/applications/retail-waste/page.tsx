@@ -176,7 +176,7 @@ export default function RetailWastePage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/applications/Retail Waste Management.png"
+                src="/images/applications/Retail Waste Management.webp"
                 alt="Retail Waste Management - Vertical Baler for Cardboard and Packaging"
                 width={600}
                 height={400}

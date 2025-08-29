@@ -17,21 +17,21 @@ const products = [
     title: "Container Shear",
     description: "Mobile shearing solution for on-site processing with excellent mobility and versatility.",
     href: "/products/container-shear",
-    image: "/images/products/single/container shear.png",
+    image: "/images/products/single/container shear.webp",
     alt: "Container Shear for mobile processing"
   },
   {
     title: "Gantry Shear",
     description: "High-capacity stationary shear for heavy-duty industrial applications and maximum efficiency.",
     href: "/products/gantry-shear", 
-    image: "/images/products/single/gantry shear.png",
+    image: "/images/products/single/gantry shear.webp",
     alt: "Gantry Shear for stationary operations"
   },
   {
     title: "Alligator Shear",
     description: "Fast-cycling shear for cutting structural steel and plate materials with rapid processing.",
     href: "/products/alligator-shear",
-    image: "/images/products/single/alligator shear.png",
+    image: "/images/products/single/alligator shear.webp",
     alt: "Alligator Shear for structural steel"
   }
 ];
@@ -67,7 +67,7 @@ export default function ScrapMetalShearPage() {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-arzir-gray-100 to-arzir-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/products/single/gantry shear.png"
+                src="/images/products/single/gantry shear.webp"
                 alt="ARZIR Scrap Metal Shears - Heavy-Duty Cutting Equipment"
                 width={800}
                 height={450}
