@@ -109,19 +109,26 @@ export default function DashboardPage() {
 
   const fetchData = useCallback(async () => {
     try {
+      console.log('Starting data fetch...');
       setDataLoading(true);
       
       // Fetch leads (inquiries) - using correct table name
-      const { data: inquiriesData } = await supabase
+      console.log('Fetching leads...');
+      const { data: inquiriesData, error: leadsError } = await supabase
         .from('leads')
         .select('*')
         .order('created_at', { ascending: false });
       
+      console.log('Leads fetch result:', { inquiriesData, leadsError });
+      
       // Fetch blog posts
-      const { data: blogsData } = await supabase
-        .from('blog_posts')
+      console.log('Fetching blog posts...');
+      const { data: blogsData, error: blogsError } = await supabase
+        .from('posts')
         .select('*')
         .order('created_at', { ascending: false });
+      
+      console.log('Blogs fetch result:', { blogsData, blogsError });
       
       if (inquiriesData) {
         const formattedInquiries = inquiriesData.map(inquiry => ({
@@ -145,6 +152,8 @@ export default function DashboardPage() {
           inquiry.status === 'new' || inquiry.status === 'contacted'
         ).length;
         
+        console.log('Stats calculated:', { totalInquiries, unreadInquiries });
+        
         setDashboardStats(prev => ({
           ...prev,
           totalInquiries,
@@ -159,6 +168,8 @@ export default function DashboardPage() {
           totalBlogs: blogsData.length
         }));
       }
+      
+      console.log('Data fetch completed successfully');
       
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -175,17 +186,44 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) {
-        router.push('/auth/login');
-        return;
+      try {
+        console.log('Checking authentication...');
+        const { data: { user }, error } = await supabase.auth.getUser();
+        console.log('Auth check result:', { user, error });
+        
+        if (!user) {
+          console.log('No user found, redirecting to login...');
+          router.push('/auth/login');
+          return;
+        }
+        
+        console.log('User authenticated:', user.email);
+        setUser(user);
+        setLoading(false);
+      } catch (error) {
+        console.error('Authentication error:', error);
+        setLoading(false);
       }
-      setUser(user);
-      setLoading(false);
     };
 
-    checkAuth();
+    // Add timeout to prevent infinite loading
+    const loadingTimeout = setTimeout(() => {
+      console.log('Loading timeout reached, forcing stop...');
+      setLoading(false);
+    }, 10000); // 10 seconds timeout
 
+    checkAuth();
+    
+    // Clear timeout if auth completes early
+    return () => clearTimeout(loadingTimeout);
+  }, [router, supabase.auth]);
+
+  // Separate useEffect for subscription setup after auth
+  useEffect(() => {
+    if (!user) return; // Only set up subscription if user is authenticated
+
+    console.log('Setting up real-time subscription...');
+    
     // Set up real-time subscription for leads and blog posts
     const subscription = supabase
       .channel('dashboard-changes')
@@ -199,17 +237,19 @@ export default function DashboardPage() {
       )
       .on(
         'postgres_changes',
-        { event: '*', schema: 'public', table: 'blog_posts' },
+        { event: '*', schema: 'public', table: 'posts' },
         () => {
           console.log('Blog post change detected, refreshing data...');
           fetchData();
         }
       )
       .subscribe(async (status) => {
+        console.log('Subscription status:', status);
         if (status === 'SUBSCRIBED') {
           // Only fetch data once when subscription is ready
           if (!initialDataLoaded.current) {
-            fetchData();
+            console.log('Initial data load starting...');
+            await fetchData();
             initialDataLoaded.current = true;
           }
         }
@@ -217,9 +257,10 @@ export default function DashboardPage() {
     );
 
     return () => {
+      console.log('Cleaning up subscription...');
       subscription.unsubscribe();
     };
-  }, [fetchData, router, supabase]);
+  }, [user, fetchData, supabase]);
 
   const handleViewInquiry = (inquiry: Record<string, unknown>) => {
     // Navigate directly to inquiry detail page instead of showing dialog
@@ -254,7 +295,7 @@ export default function DashboardPage() {
           .eq('id', deleteItem.id);
       } else {
         await supabase
-          .from('blog_posts')
+          .from('posts')
           .delete()
           .eq('id', deleteItem.id);
       }
